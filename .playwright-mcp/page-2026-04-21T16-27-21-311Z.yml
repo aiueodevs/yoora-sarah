@@ -1,0 +1,195 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Yoora Sarah" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img "Yoora Sarah" [ref=e9]
+        - navigation [ref=e10]:
+          - button "Women" [ref=e11] [cursor=pointer]:
+            - generic [ref=e13]: Women
+          - button "Collections" [expanded] [active] [ref=e14] [cursor=pointer]:
+            - generic [ref=e15]: Collections
+          - button "Footwear" [ref=e16] [cursor=pointer]:
+            - generic [ref=e17]: Footwear
+          - button "Accessories" [ref=e18] [cursor=pointer]:
+            - generic [ref=e19]: Accessories
+          - button "AI Styling" [ref=e20] [cursor=pointer]:
+            - generic [ref=e21]:
+              - text: AI Styling
+              - img [ref=e22]
+        - generic [ref=e24]:
+          - link "Search" [ref=e25] [cursor=pointer]:
+            - /url: /search
+            - img [ref=e26]
+          - link "Bag" [ref=e29] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e30]
+    - generic [ref=e99]:
+      - button "Close menu" [ref=e100] [cursor=pointer]
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - paragraph [ref=e104]: Collections Route
+          - button [ref=e105] [cursor=pointer]:
+            - img [ref=e106]
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - paragraph [ref=e111]: Editorial Routes
+            - heading "Collections built around mood, not product count." [level=2] [ref=e112]
+            - paragraph [ref=e113]: "Setiap route terasa seperti lookbook: occasion, tone, and styling intent dipilih dulu sebelum belanja dimulai."
+            - generic [ref=e114]:
+              - link "Daily Ease Clean layering staples for repeat wear." [ref=e115] [cursor=pointer]:
+                - /url: /essentials-7002
+                - paragraph [ref=e116]: Daily Ease
+                - paragraph [ref=e117]: Clean layering staples for repeat wear.
+              - link "Event Dressing More elevated silhouettes for special moments." [ref=e118] [cursor=pointer]:
+                - /url: /dress
+                - paragraph [ref=e119]: Event Dressing
+                - paragraph [ref=e120]: More elevated silhouettes for special moments.
+              - link "Family Moments Coordinated soft-tone looks." [ref=e121] [cursor=pointer]:
+                - /url: /kids-9967
+                - paragraph [ref=e122]: Family Moments
+                - paragraph [ref=e123]: Coordinated soft-tone looks.
+              - link "Footwear Edit Grounded finishing choices." [ref=e124] [cursor=pointer]:
+                - /url: /footwear-8675
+                - paragraph [ref=e125]: Footwear Edit
+                - paragraph [ref=e126]: Grounded finishing choices.
+              - link "Accessories Edit Quiet accents and texture shifts." [ref=e127] [cursor=pointer]:
+                - /url: /accessories-4472
+                - paragraph [ref=e128]: Accessories Edit
+                - paragraph [ref=e129]: Quiet accents and texture shifts.
+              - link "New Arrival Fresh editorial drop with softer studio energy." [ref=e130] [cursor=pointer]:
+                - /url: /dress/yoora-dress-9662
+                - paragraph [ref=e131]: New Arrival
+                - paragraph [ref=e132]: Fresh editorial drop with softer studio energy.
+            - generic [ref=e133]:
+              - button "Women" [ref=e134] [cursor=pointer]
+              - button "Collections" [ref=e135] [cursor=pointer]
+              - button "Footwear" [ref=e136] [cursor=pointer]
+              - button "Accessories" [ref=e137] [cursor=pointer]
+              - button "AI Styling" [ref=e138] [cursor=pointer]
+          - link "Collections built around mood, not product count. Scene direction Event edits, essentials, and family moments. Explore Collections" [ref=e139] [cursor=pointer]:
+            - /url: /one-set-5182
+            - img "Collections built around mood, not product count." [ref=e141]
+            - generic [ref=e143]:
+              - generic [ref=e144]:
+                - paragraph [ref=e145]: Scene direction
+                - paragraph [ref=e146]: Event edits, essentials, and family moments.
+              - generic [ref=e147]: Explore Collections
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - link:
+              - /url: /
+              - generic:
+                - img
+            - button:
+              - img
+          - generic:
+            - paragraph: Scene Navigation
+            - generic:
+              - button:
+                - generic:
+                  - generic: Women
+                - paragraph: Bukan katalog penuh. Ini adalah edit modestwear yang terasa selesai, tenang, dan disengaja dari frame pertama.
+              - button:
+                - generic:
+                  - generic: Collections
+                - paragraph: "Setiap route terasa seperti lookbook: occasion, tone, and styling intent dipilih dulu sebelum belanja dimulai."
+              - button:
+                - generic:
+                  - generic: Footwear
+                - paragraph: Bukan sekadar pelengkap. Footwear diposisikan sebagai final proportion tool untuk look yang lebih matang.
+              - button:
+                - generic:
+                  - generic: Accessories
+                - paragraph: "Setiap aksen dipilih untuk menggeser tone look secara halus: calmer, brighter, or more polished."
+              - button:
+                - generic:
+                  - generic: AI Styling
+                  - img
+                - paragraph: "AI Styling diposisikan sebagai concierge: bantu memilih mood, silhouette, and palette lalu arahkan ke edit yang paling cocok."
+          - generic:
+            - paragraph: Collections Route
+            - generic:
+              - link:
+                - /url: /essentials-7002
+                - text: Daily Ease
+                - generic: Clean layering staples for repeat wear.
+              - link:
+                - /url: /dress
+                - text: Event Dressing
+                - generic: More elevated silhouettes for special moments.
+              - link:
+                - /url: /kids-9967
+                - text: Family Moments
+                - generic: Coordinated soft-tone looks.
+              - link:
+                - /url: /footwear-8675
+                - text: Footwear Edit
+                - generic: Grounded finishing choices.
+              - link:
+                - /url: /accessories-4472
+                - text: Accessories Edit
+                - generic: Quiet accents and texture shifts.
+              - link:
+                - /url: /dress/yoora-dress-9662
+                - text: New Arrival
+                - generic: Fresh editorial drop with softer studio energy.
+          - generic:
+            - link:
+              - /url: /search
+              - img
+              - text: Find Your Style
+            - link:
+              - /url: /cart
+              - img
+              - text: View Bag
+    - main [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - img "Women, presented like a soft editorial." [ref=e37]
+          - img "Collections built around mood, not product count." [ref=e40]
+          - img "Footwear that anchors the silhouette quietly." [ref=e43]
+          - img "Accessories used as mood, not decoration." [ref=e46]
+          - img "Find your style before you enter the catalog." [ref=e49]
+        - generic [ref=e53]:
+          - generic [ref=e148]:
+            - paragraph [ref=e149]: Editorial Routes
+            - heading "Collections built around mood, not product count." [level=1] [ref=e150]
+            - paragraph [ref=e151]: "Setiap route terasa seperti lookbook: occasion, tone, and styling intent dipilih dulu sebelum belanja dimulai."
+            - generic [ref=e152]:
+              - link "Explore Collections" [ref=e153] [cursor=pointer]:
+                - /url: /one-set-5182
+              - button "Open Routes" [ref=e154] [cursor=pointer]:
+                - img [ref=e155]
+                - text: Open Routes
+          - generic [ref=e65]:
+            - generic [ref=e66]:
+              - generic [ref=e67]:
+                - paragraph [ref=e68]: Current Scene
+                - paragraph [ref=e69]: Collections
+              - button "Close Overlay" [ref=e157] [cursor=pointer]
+            - generic [ref=e70]:
+              - button "Women Rose ash, cocoa, sandstone." [ref=e71] [cursor=pointer]:
+                - generic [ref=e72]: Women
+                - generic [ref=e73]: Rose ash, cocoa, sandstone.
+              - button "Collections Event edits, essentials, and family moments." [ref=e74] [cursor=pointer]:
+                - generic [ref=e75]: Collections
+                - generic [ref=e76]: Event edits, essentials, and family moments.
+              - button "Footwear Sharper hems, softer uppers, balanced finish." [ref=e77] [cursor=pointer]:
+                - generic [ref=e78]: Footwear
+                - generic [ref=e79]: Sharper hems, softer uppers, balanced finish.
+              - button "Accessories Matte finishes, soft shine, and quiet contrast." [ref=e80] [cursor=pointer]:
+                - generic [ref=e81]: Accessories
+                - generic [ref=e82]: Matte finishes, soft shine, and quiet contrast.
+              - button "AI Styling Occasion, coverage, palette, and ease level." [ref=e83] [cursor=pointer]:
+                - generic [ref=e84]: AI Styling
+                - generic [ref=e85]: Occasion, coverage, palette, and ease level.
+            - generic [ref=e86]:
+              - paragraph [ref=e87]: Scene direction
+              - paragraph [ref=e88]: Event edits, essentials, and family moments.
+  - button "Open Next.js Dev Tools" [ref=e94] [cursor=pointer]:
+    - img [ref=e95]
+  - alert [ref=e98]

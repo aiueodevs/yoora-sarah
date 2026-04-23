@@ -1,0 +1,360 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - generic [ref=e2]:
+    - banner [ref=e206]:
+      - generic [ref=e208]:
+        - link "logo" [ref=e210] [cursor=pointer]:
+          - /url: /id
+          - img "logo" [ref=e211]
+        - generic [ref=e212]:
+          - link "search" [ref=e213] [cursor=pointer]:
+            - /url: /id/search
+            - button "search" [ref=e214]:
+              - img
+          - link "favorites" [ref=e215] [cursor=pointer]:
+            - /url: /id/wishlist
+            - button "favorites" [ref=e216]:
+              - img
+          - link "cart" [ref=e217] [cursor=pointer]:
+            - /url: /id/cart
+            - button "cart" [ref=e218]:
+              - img
+          - button "user" [ref=e219] [cursor=pointer]:
+            - img
+          - button "language" [ref=e220] [cursor=pointer]:
+            - img
+      - generic [ref=e221]:
+        - generic:
+          - generic:
+            - generic [ref=e223]:
+              - img [ref=e224]
+              - textbox "Search by keyword" [ref=e227]
+            - generic [ref=e228]:
+              - link "Clara Dress Clara Dress" [ref=e229] [cursor=pointer]:
+                - /url: /id/dress/clara-dress-5254
+                - img "Clara Dress" [ref=e231]
+                - paragraph [ref=e232]: Clara Dress
+              - link "Yoora Dress Yoora Dress" [ref=e233] [cursor=pointer]:
+                - /url: /id/dress/yoora-dress-9662
+                - img "Yoora Dress" [ref=e235]
+                - paragraph [ref=e236]: Yoora Dress
+              - link "Bella Dress Bella Dress" [ref=e237] [cursor=pointer]:
+                - /url: /id/dress/bella-dress-4179
+                - img "Bella Dress" [ref=e239]
+                - paragraph [ref=e240]: Bella Dress
+              - link "Medina Dress Medina Dress" [ref=e241] [cursor=pointer]:
+                - /url: /id/dress/medina-dress-8751
+                - img "Medina Dress" [ref=e243]
+                - paragraph [ref=e244]: Medina Dress
+              - link "Safiyyah Sora Dress Safiyyah Sora Dress" [ref=e245] [cursor=pointer]:
+                - /url: /id/dress/safiyyah-sora-dress-5068
+                - img "Safiyyah Sora Dress" [ref=e247]
+                - paragraph [ref=e248]: Safiyyah Sora Dress
+              - link "Yume Striped Dress Yume Striped Dress" [ref=e249] [cursor=pointer]:
+                - /url: /id/dress/yume-striped-dress-5604
+                - img "Yume Striped Dress" [ref=e251]
+                - paragraph [ref=e252]: Yume Striped Dress
+              - link "Medina Poka Dress Medina Poka Dress" [ref=e253] [cursor=pointer]:
+                - /url: /id/dress/medina-poka-dress-9582
+                - img "Medina Poka Dress" [ref=e255]
+                - paragraph [ref=e256]: Medina Poka Dress
+    - main [ref=e257]:
+      - navigation [ref=e260]:
+        - link "Dress" [ref=e261] [cursor=pointer]:
+          - /url: /id/dress
+        - link "Abaya" [ref=e262] [cursor=pointer]:
+          - /url: /id/abaya-2481
+        - link "Khimar" [ref=e263] [cursor=pointer]:
+          - /url: /id/khimar-5295
+        - link "Pashmina" [ref=e264] [cursor=pointer]:
+          - /url: /id/pashmina-2310
+        - link "Hijab" [ref=e265] [cursor=pointer]:
+          - /url: /id/hijab-1544
+        - link "Footwear" [ref=e266] [cursor=pointer]:
+          - /url: /id/footwear-8675
+        - link "Accessories" [ref=e267] [cursor=pointer]:
+          - /url: /id/accessories-4472
+        - link "Kids" [ref=e268] [cursor=pointer]:
+          - /url: /id/kids-9967
+        - link "Essentials" [ref=e269] [cursor=pointer]:
+          - /url: /id/essentials-7002
+        - link "One Set" [ref=e270] [cursor=pointer]:
+          - /url: /id/one-set-5182
+      - generic [ref=e271]:
+        - img "Dress" [ref=e272]
+        - generic [ref=e275]:
+          - heading "Dress" [level=1] [ref=e276]
+          - paragraph [ref=e277]: Setiap Dress Memiliki Ceritanya
+      - generic [ref=e278]:
+        - heading "Dress" [level=2] [ref=e279]
+        - generic [ref=e280]:
+          - generic [ref=e281]:
+            - paragraph [ref=e282]: "Hasil: 7 Item"
+            - button "Urutkan berdasarkan" [ref=e283] [cursor=pointer]:
+              - img [ref=e284]
+              - paragraph [ref=e287]: Urutkan berdasarkan
+              - img [ref=e288]
+          - generic [ref=e290]:
+            - generic [ref=e292]:
+              - generic [ref=e293] [cursor=pointer]:
+                - link "Clara Dress" [ref=e294]:
+                  - /url: /id/dress/clara-dress-5254
+                  - img "Clara Dress" [ref=e295]
+                - button [ref=e296]:
+                  - img
+                - button [ref=e297]:
+                  - img
+                - generic [ref=e298]:
+                  - button [ref=e299]
+                  - button [ref=e300]
+                  - button [ref=e301]
+                  - button [ref=e302]
+                  - button [ref=e303]
+              - generic [ref=e304]:
+                - generic [ref=e305]:
+                  - generic [ref=e307]:
+                    - button "Cappucino" [ref=e308]
+                    - button "Camel" [ref=e309]
+                    - button "Black" [ref=e310]
+                    - button "Hazelnut" [ref=e311]
+                    - link "+13" [ref=e312] [cursor=pointer]:
+                      - /url: /id/dress/clara-dress-5254
+                  - generic [ref=e313]:
+                    - img [ref=e314] [cursor=pointer]
+                    - img [ref=e318] [cursor=pointer]
+                - generic [ref=e320]:
+                  - paragraph [ref=e321]: S, M, L, XL
+                  - paragraph [ref=e322]: Clara Dress
+                  - paragraph [ref=e323]: Rp199.999
+            - generic [ref=e325]:
+              - generic [ref=e326] [cursor=pointer]:
+                - link "Yoora Dress" [ref=e327]:
+                  - /url: /id/dress/yoora-dress-9662
+                  - img "Yoora Dress" [ref=e328]
+                - button [ref=e329]:
+                  - img
+                - button [ref=e330]:
+                  - img
+                - generic [ref=e331]:
+                  - button [ref=e332]
+                  - button [ref=e333]
+                  - button [ref=e334]
+                  - button [ref=e335]
+              - generic [ref=e336]:
+                - generic [ref=e337]:
+                  - generic [ref=e339]:
+                    - button "Dark Teal" [ref=e340]
+                    - button "Denim" [ref=e341]
+                    - button "Dark Maroon" [ref=e342]
+                    - button "Burgundy" [ref=e343]
+                    - link "+10" [ref=e344] [cursor=pointer]:
+                      - /url: /id/dress/yoora-dress-9662
+                  - generic [ref=e345]:
+                    - img [ref=e346] [cursor=pointer]
+                    - img [ref=e350] [cursor=pointer]
+                - generic [ref=e352]:
+                  - paragraph [ref=e353]: S, M, L
+                  - paragraph [ref=e354]: Yoora Dress
+                  - paragraph [ref=e355]: Rp199.999
+            - generic [ref=e357]:
+              - generic [ref=e358] [cursor=pointer]:
+                - link "Bella Dress" [ref=e359]:
+                  - /url: /id/dress/bella-dress-4179
+                  - img "Bella Dress" [ref=e360]
+                - button [ref=e361]:
+                  - img
+                - button [ref=e362]:
+                  - img
+                - generic [ref=e363]:
+                  - button [ref=e364]
+                  - button [ref=e365]
+                  - button [ref=e366]
+                  - button [ref=e367]
+                  - button [ref=e368]
+              - generic [ref=e369]:
+                - generic [ref=e370]:
+                  - generic [ref=e372]:
+                    - button "Caramel" [ref=e373]
+                    - button "Dark Maroon" [ref=e374]
+                    - button "Dark Plum" [ref=e375]
+                    - button "Bitter Coklat" [ref=e376]
+                    - link "+18" [ref=e377] [cursor=pointer]:
+                      - /url: /id/dress/bella-dress-4179
+                  - generic [ref=e378]:
+                    - img [ref=e379] [cursor=pointer]
+                    - img [ref=e383] [cursor=pointer]
+                - generic [ref=e385]:
+                  - paragraph [ref=e386]: S, M, L, XL
+                  - paragraph [ref=e387]: Bella Dress
+                  - paragraph [ref=e388]: Rp419.000
+            - generic [ref=e390]:
+              - link "Medina Dress" [ref=e392] [cursor=pointer]:
+                - /url: /id/dress/medina-dress-8751
+                - img "Medina Dress" [ref=e393]
+              - generic [ref=e394]:
+                - generic [ref=e395]:
+                  - generic [ref=e397]:
+                    - button "Jett Black" [ref=e398]
+                    - button "Caramel" [ref=e399]
+                    - button "Denim" [ref=e400]
+                    - button "Dark Teal" [ref=e401]
+                    - link "+10" [ref=e402] [cursor=pointer]:
+                      - /url: /id/dress/medina-dress-8751
+                  - generic [ref=e403]:
+                    - img [ref=e404] [cursor=pointer]
+                    - img [ref=e408] [cursor=pointer]
+                - generic [ref=e410]:
+                  - paragraph [ref=e411]: S, M, L, XL
+                  - paragraph [ref=e412]: Medina Dress
+                  - paragraph [ref=e413]: Rp179.999
+            - generic [ref=e415]:
+              - generic [ref=e416] [cursor=pointer]:
+                - link "Safiyyah Sora Dress" [ref=e417]:
+                  - /url: /id/dress/safiyyah-sora-dress-5068
+                  - img "Safiyyah Sora Dress" [ref=e418]
+                - button [ref=e419]:
+                  - img
+                - button [ref=e420]:
+                  - img
+                - generic [ref=e421]:
+                  - button [ref=e422]
+                  - button [ref=e423]
+                  - button [ref=e424]
+                  - button [ref=e425]
+                  - button [ref=e426]
+              - generic [ref=e427]:
+                - generic [ref=e428]:
+                  - generic [ref=e430]:
+                    - button "Dark Maroon" [ref=e431]
+                    - button "Carafe" [ref=e432]
+                    - button "Pink Rose" [ref=e433]
+                    - button "Pennsylvania" [ref=e434]
+                    - link "+21" [ref=e435] [cursor=pointer]:
+                      - /url: /id/dress/safiyyah-sora-dress-5068
+                  - generic [ref=e436]:
+                    - img [ref=e437] [cursor=pointer]
+                    - img [ref=e441] [cursor=pointer]
+                - generic [ref=e443]:
+                  - paragraph [ref=e444]: S, M, L, XL
+                  - paragraph [ref=e445]: Safiyyah Sora Dress
+                  - paragraph [ref=e446]: Rp359.000
+            - generic [ref=e448]:
+              - generic [ref=e449] [cursor=pointer]:
+                - link "Yume Striped Dress" [ref=e450]:
+                  - /url: /id/dress/yume-striped-dress-5604
+                  - img "Yume Striped Dress" [ref=e451]
+                - button [ref=e452]:
+                  - img
+                - button [ref=e453]:
+                  - img
+                - generic [ref=e454]:
+                  - button [ref=e455]
+                  - button [ref=e456]
+                  - button [ref=e457]
+                  - button [ref=e458]
+                  - button [ref=e459]
+              - generic [ref=e460]:
+                - generic [ref=e461]:
+                  - generic [ref=e463]:
+                    - button "Gray" [ref=e464]
+                    - button "Cream" [ref=e465]
+                    - button "Mocca" [ref=e466]
+                    - button "Bitter Coklat" [ref=e467]
+                    - link "+7" [ref=e468] [cursor=pointer]:
+                      - /url: /id/dress/yume-striped-dress-5604
+                  - generic [ref=e469]:
+                    - img [ref=e470] [cursor=pointer]
+                    - img [ref=e474] [cursor=pointer]
+                - generic [ref=e476]:
+                  - paragraph [ref=e477]: S, M, L, XL
+                  - paragraph [ref=e478]: Yume Striped Dress
+                  - paragraph [ref=e479]: Rp315.000
+            - generic [ref=e481]:
+              - link "Medina Poka Dress" [ref=e483] [cursor=pointer]:
+                - /url: /id/dress/medina-poka-dress-9582
+                - img "Medina Poka Dress" [ref=e484]
+              - generic [ref=e485]:
+                - generic [ref=e486]:
+                  - generic [ref=e488]:
+                    - button "Baby Blue" [ref=e489]
+                    - button "Maroon" [ref=e490]
+                    - button "Black" [ref=e491]
+                    - button "Broken White" [ref=e492]
+                  - generic [ref=e493]:
+                    - img [ref=e494] [cursor=pointer]
+                    - img [ref=e498] [cursor=pointer]
+                - generic [ref=e500]:
+                  - paragraph [ref=e501]: S, M, L, XL
+                  - paragraph [ref=e502]: Medina Poka Dress
+                  - paragraph [ref=e503]: Rp199.999
+          - generic [ref=e505]:
+            - paragraph [ref=e506]: Anda telah mencapai akhir
+            - paragraph [ref=e507]: 7 produk ditampilkan
+    - contentinfo [ref=e509]:
+      - generic [ref=e511]:
+        - generic [ref=e512]:
+          - paragraph [ref=e513]: PT Yoora Sarah Sentosa
+          - paragraph [ref=e514]: Jl. Otto Iskandardinata No.271, Karanganyar, Kec. Subang, Kabupaten Subang, Jawa Barat 41211 KAB. SUBANG - SUBANG JAWA BARAT ID 41211
+        - generic [ref=e515]:
+          - generic [ref=e516]:
+            - paragraph [ref=e517]: Layanan Pelanggan
+            - link "+6282315866088" [ref=e518] [cursor=pointer]:
+              - /url: tel:+6282315866088
+          - generic [ref=e519]:
+            - paragraph [ref=e520]: Bantuan Belanja
+            - list [ref=e521]:
+              - listitem [ref=e522]:
+                - link "Cara Pemesanan" [ref=e523] [cursor=pointer]:
+                  - /url: /pages/cara-belanja
+              - listitem [ref=e524]:
+                - link "Cara Pembayaran" [ref=e525] [cursor=pointer]:
+                  - /url: /pages/metode-pembayaran
+              - listitem [ref=e526]:
+                - link "Pengiriman & Ongkos Kirim" [ref=e527] [cursor=pointer]:
+                  - /url: /pages/pengiriman
+              - listitem [ref=e528]:
+                - link "Pengembalian & Penukaran" [ref=e529] [cursor=pointer]:
+                  - /url: /pages/pengembalian-penukaran-produk
+              - listitem [ref=e530]:
+                - link "Panduan Ukuran" [ref=e531] [cursor=pointer]:
+                  - /url: /pages/panduan-ukuran
+          - generic [ref=e532]:
+            - paragraph [ref=e533]: Tentang Kami
+            - list [ref=e534]:
+              - listitem [ref=e535]:
+                - link "Tentang Yoora Sarah" [ref=e536] [cursor=pointer]:
+                  - /url: /pages/tentang-yoora-sarah
+              - listitem [ref=e537]:
+                - link "Hubungi Kami" [ref=e538] [cursor=pointer]:
+                  - /url: /pages/hubungi-kami
+              - listitem [ref=e539]:
+                - link "Karir" [ref=e540] [cursor=pointer]:
+                  - /url: /pages/karir
+          - generic [ref=e541]:
+            - paragraph [ref=e542]: Kebijakan
+            - list [ref=e543]:
+              - listitem [ref=e544]:
+                - link "Syarat & Ketentuan" [ref=e545] [cursor=pointer]:
+                  - /url: /pages/syarat-dan-ketentuan
+              - listitem [ref=e546]:
+                - link "Kebijakan Privasi" [ref=e547] [cursor=pointer]:
+                  - /url: /pages/kebijakan-privasi
+              - listitem [ref=e548]:
+                - link "Kebijakan Cookie" [ref=e549] [cursor=pointer]:
+                  - /url: /pages/kebijakan-cookie
+        - generic [ref=e551]:
+          - paragraph [ref=e553]: © 2026 Yoora Sarah. All rights reserved.
+          - generic [ref=e554]:
+            - link "Instagram" [ref=e555] [cursor=pointer]:
+              - /url: https://www.instagram.com/yoora.sarah
+              - img "Instagram" [ref=e556]
+            - link "Tiktok" [ref=e558] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@yoora_sarah
+              - img "TikTok" [ref=e559]
+            - link "Shopee" [ref=e561] [cursor=pointer]:
+              - /url: https://shopee.co.id/yoora.sarah
+              - img "Shopee" [ref=e562]
+  - link "Chat with Customer Care on WhatsApp" [ref=e20] [cursor=pointer]:
+    - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+    - img "WhatsApp" [ref=e21]
+  - alert [ref=e23]: Kategori dress | Yoora Sarah

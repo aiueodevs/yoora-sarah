@@ -1,0 +1,20 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Yoora Sarah" [ref=e5] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=e8]
+        - generic [ref=e19]
+    - main [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e43]
+        - generic [ref=e52]
+    - contentinfo [ref=e170]:
+      - generic [ref=e171]:
+        - generic [ref=e172]
+        - generic [ref=e219]
+    - link "Chat with Customer Care on WhatsApp" [ref=e225] [cursor=pointer]:
+      - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+      - img [ref=e226]
+  - alert [ref=e228]

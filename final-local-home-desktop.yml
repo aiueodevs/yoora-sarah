@@ -1,0 +1,48 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Yoora Sarah" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Yoora Sarah" [ref=e7]
+        - navigation [ref=e8]:
+          - link "Dress" [ref=e9] [cursor=pointer]:
+            - /url: /dress
+          - link "Abaya" [ref=e10] [cursor=pointer]:
+            - /url: /abaya-2481
+          - link "Khimar" [ref=e11] [cursor=pointer]:
+            - /url: /khimar-5295
+          - link "Pashmina" [ref=e12] [cursor=pointer]:
+            - /url: /pashmina-2310
+          - link "Hijab" [ref=e13] [cursor=pointer]:
+            - /url: /hijab-1544
+          - link "Footwear" [ref=e14] [cursor=pointer]:
+            - /url: /footwear-8675
+          - link "Accessories" [ref=e15] [cursor=pointer]:
+            - /url: /accessories-4472
+          - link "Kids" [ref=e16] [cursor=pointer]:
+            - /url: /kids-9967
+          - link "Essentials" [ref=e17] [cursor=pointer]:
+            - /url: /essentials-7002
+          - link "One Set" [ref=e18] [cursor=pointer]:
+            - /url: /one-set-5182
+        - generic [ref=e19]:
+          - link "Cari" [ref=e20] [cursor=pointer]:
+            - /url: /search
+          - link "Wishlist" [ref=e24] [cursor=pointer]:
+            - /url: /wishlist
+          - link "Keranjang" [ref=e27] [cursor=pointer]:
+            - /url: /cart
+          - link "Akun" [ref=e31] [cursor=pointer]:
+            - /url: /profile
+          - button "Ubah bahasa" [ref=e35] [cursor=pointer]
+    - main [ref=e39]:
+      - generic [ref=e40]:
+        - img "Yumee Dress" [ref=e101]
+        - generic [ref=e44]:
+          - generic [ref=e45]
+          - generic [ref=e90]
+    - link "Chat with Customer Care on WhatsApp" [ref=e97] [cursor=pointer]:
+      - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+      - img [ref=e98]
+  - alert [ref=e100]

@@ -1,0 +1,53 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "logo" [ref=e7] [cursor=pointer]:
+          - /url: /id
+        - navigation [ref=e24]
+        - generic [ref=e9]
+      - generic [ref=e35]:
+        - generic
+    - generic [ref=e73]:
+      - generic [ref=e76]:
+        - link [ref=e78] [cursor=pointer]:
+          - /url: /id/dress
+        - link [ref=e85] [cursor=pointer]:
+          - /url: /id/dress
+        - link [ref=e92] [cursor=pointer]:
+          - /url: /id/dress
+        - link [ref=e99] [cursor=pointer]:
+          - /url: /id/dress
+        - link [ref=e106] [cursor=pointer]:
+          - /url: /id/dress
+        - link [ref=e113] [cursor=pointer]:
+          - /url: /id/dress
+      - link [ref=e129] [cursor=pointer]:
+        - /url: /id/abaya-2481
+        - figure [ref=e130]
+      - link [ref=e139] [cursor=pointer]:
+        - /url: /id/khimar-5295
+        - figure [ref=e140]
+      - link [ref=e149] [cursor=pointer]:
+        - /url: /id/pashmina-2310
+        - figure [ref=e150]
+      - link [ref=e159] [cursor=pointer]:
+        - /url: /id/hijab-1544
+        - figure [ref=e160]
+      - link [ref=e168] [cursor=pointer]:
+        - /url: /id/footwear-8675
+        - figure [ref=e169]
+      - link [ref=e178] [cursor=pointer]:
+        - /url: /id/accessories-4472
+        - figure [ref=e179]
+      - link [ref=e188] [cursor=pointer]:
+        - /url: /id/kids-9967
+        - figure [ref=e189]
+      - link [ref=e198] [cursor=pointer]:
+        - /url: /id/essentials-7002
+        - figure [ref=e199]
+  - link "Chat with Customer Care on WhatsApp" [ref=e20] [cursor=pointer]:
+    - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+    - img "WhatsApp" [ref=e21]
+  - alert [ref=e23]

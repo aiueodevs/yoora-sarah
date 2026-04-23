@@ -1,0 +1,74 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - img [ref=e7] [cursor=pointer]
+    - banner [ref=e10]:
+      - generic [ref=e11] [cursor=pointer]:
+        - img
+      - link "Fonts 100":
+        - /url: /
+        - generic: Fonts
+        - generic: "100"
+      - link "Pairs 59" [ref=e12] [cursor=pointer]:
+        - /url: /pairs
+        - generic [ref=e13]: Pairs
+        - generic [ref=e14]: "59"
+      - link "Licenses" [ref=e15] [cursor=pointer]:
+        - /url: /licenses/itf-ffl
+        - generic [ref=e16]: Licenses
+      - img [ref=e19] [cursor=pointer]
+      - generic [ref=e21]:
+        - generic:
+          - generic: No styles selected
+    - generic [ref=e23]:
+      - generic [ref=e28]:
+        - generic [ref=e30]:
+          - img [ref=e32]
+          - textbox "Search" [ref=e34]
+        - generic [ref=e36]:
+          - img [ref=e38]
+          - textbox "Your Text" [ref=e40]
+        - generic [ref=e41] [cursor=pointer]:
+          - generic
+        - generic [ref=e42] [cursor=pointer]:
+          - generic
+        - generic [ref=e43] [cursor=pointer]:
+          - generic
+        - generic [ref=e45] [cursor=pointer]:
+          - generic
+        - generic [ref=e51]:
+          - generic [ref=e52] [cursor=pointer]: Cities
+          - generic [ref=e53] [cursor=pointer]: Excerpts
+          - generic: Names
+        - generic [ref=e54]:
+          - generic [ref=e55]
+          - img [ref=e66] [cursor=pointer]
+          - generic: Reset All
+      - generic [ref=e69]:
+        - generic [ref=e70]: "100"
+        - generic [ref=e72]:
+          - generic: List view
+          - generic [ref=e73] [cursor=pointer]: Grid view
+        - generic [ref=e74]:
+          - generic [ref=e75] [cursor=pointer]: Top 20
+          - generic [ref=e76] [cursor=pointer]: Hot 20
+          - generic [ref=e77] [cursor=pointer]: Variable
+        - generic [ref=e78]:
+          - generic [ref=e79]: Sort by
+          - generic [ref=e81]
+        - generic [ref=e85]:
+          - generic [ref=e86] [cursor=pointer]: Fontshare Originals
+          - generic [ref=e87] [cursor=pointer]: Shortlisted
+      - generic [ref=e92]:
+        - generic [ref=e95]:
+          - link [ref=e97] [cursor=pointer]:
+            - /url: /fonts/satoshi
+          - generic
+        - generic [ref=e115]:
+          - link [ref=e117] [cursor=pointer]:
+            - /url: /fonts/clash-display
+          - generic
+    - contentinfo [ref=e24]:
+      - generic [ref=e25]: Copyright © 2021 — 2026 Indian Type Foundry. All rights reserved.
+  - generic:
+    - generic:
+      - img

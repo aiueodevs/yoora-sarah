@@ -1,0 +1,11 @@
+[project]
+name = "yoora-sarah-db-tools"
+version = "0.1.0"
+description = "Migration and seed runner for the Yoora Sarah platform."
+requires-python = ">=3.11"
+dependencies = [
+  "psycopg[binary]>=3.2.6,<4.0.0"
+]
+
+[tool.uv]
+package = false

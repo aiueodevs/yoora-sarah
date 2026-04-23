@@ -1,0 +1,3 @@
+[     412ms] [LOG] b16 @ https://www.fontshare.com/js/main.f7feb5d5.js:0
+[     589ms] A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+[     589ms] A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received

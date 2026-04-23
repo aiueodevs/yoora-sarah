@@ -1,0 +1,24 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Yoora Sarah" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=e9]
+        - generic [ref=e39]
+      - generic:
+        - generic
+    - main [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e59]
+        - generic [ref=e75]
+    - contentinfo [ref=e236]:
+      - generic [ref=e237]:
+        - generic [ref=e238]
+        - generic [ref=e285]
+    - link "Chat with Customer Care on WhatsApp" [ref=e291] [cursor=pointer]:
+      - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+      - img [ref=e292]
+  - button "Open Next.js Dev Tools" [ref=e299] [cursor=pointer]:
+    - img [ref=e300]
+  - alert [ref=e303]

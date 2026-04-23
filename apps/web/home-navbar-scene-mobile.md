@@ -1,0 +1,37 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Yoora Sarah" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img "Yoora Sarah" [ref=e9]
+        - button "Open menu" [ref=e100] [cursor=pointer]:
+          - generic [ref=e101]: Menu
+          - img [ref=e102]
+    - generic:
+      - button
+      - generic:
+        - generic:
+          - generic
+          - generic
+    - generic:
+      - generic:
+        - generic:
+          - generic
+          - generic
+          - generic
+          - generic
+    - main [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - img "Women, presented like a soft editorial." [ref=e37]
+          - img "Collections built around mood, not product count." [ref=e40]
+          - img "Footwear that anchors the silhouette quietly." [ref=e43]
+          - img "Accessories used as mood, not decoration." [ref=e46]
+          - img "Find your style before you enter the catalog." [ref=e49]
+        - generic [ref=e53]:
+          - generic [ref=e55]
+          - generic [ref=e65]
+  - button "Open Next.js Dev Tools" [ref=e95] [cursor=pointer]:
+    - img [ref=e96]
+  - alert [ref=e99]

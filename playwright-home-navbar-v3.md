@@ -1,0 +1,9 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]
+    - main [ref=e89]
+    - link "Chat with Customer Care on WhatsApp" [ref=e298] [cursor=pointer]:
+      - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+  - button "Open Next.js Dev Tools" [ref=e306] [cursor=pointer]:
+    - img [ref=e307]
+  - alert [ref=e310]

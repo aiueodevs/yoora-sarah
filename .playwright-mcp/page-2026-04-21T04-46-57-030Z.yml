@@ -1,0 +1,93 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "Yoora Sarah Portal" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "Dashboard" [ref=e6] [cursor=pointer]:
+          - /url: /dashboard
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Briefs" [ref=e8] [cursor=pointer]:
+          - /url: /briefs
+        - link "Designs" [ref=e9] [cursor=pointer]:
+          - /url: /design-gallery
+        - link "Patterns" [ref=e10] [cursor=pointer]:
+          - /url: /patterns
+        - link "Forecast" [ref=e11] [cursor=pointer]:
+          - /url: /forecast
+        - link "Plans" [ref=e12] [cursor=pointer]:
+          - /url: /production-plans
+        - link "Approvals" [ref=e13] [cursor=pointer]:
+          - /url: /approvals
+        - link "Settings" [ref=e14] [cursor=pointer]:
+          - /url: /settings
+      - generic [ref=e80]:
+        - generic [ref=e81]:
+          - strong [ref=e82]: Yoora Owner
+          - text: owner
+        - button "Sign Out" [ref=e84] [cursor=pointer]
+  - button "Open Next.js Dev Tools" [ref=e75] [cursor=pointer]:
+    - img [ref=e76]
+  - alert [ref=e79]
+  - main [ref=e85]:
+    - generic [ref=e86]:
+      - generic [ref=e87]: Yoora Sarah Internal Platform
+      - heading "Production intelligence starts with disciplined foundations." [level=1] [ref=e88]
+      - paragraph [ref=e89]: "This scaffold aligns the approved SDLC pack with an executable repo: portal, Python services, ordered PostgreSQL migrations, and seed data that can bootstrap local and staging environments without drifting from the strategy documents."
+      - generic [ref=e90]:
+        - link "Open Settings Shell" [ref=e91] [cursor=pointer]:
+          - /url: /settings
+        - link "Open Approvals Shell" [ref=e92] [cursor=pointer]:
+          - /url: /approvals
+      - generic [ref=e93]:
+        - article [ref=e94]:
+          - text: Current actor
+          - strong [ref=e95]: Yoora Owner
+        - article [ref=e96]:
+          - text: Current wave
+          - strong [ref=e97]: Sprint 0-1
+        - article [ref=e98]:
+          - text: Approved split migrations
+          - strong [ref=e99]: 6 domains
+        - article [ref=e100]:
+          - text: Delivery squads
+          - strong [ref=e101]: 5 squads
+        - article [ref=e102]:
+          - text: Execution rule
+          - strong [ref=e103]: Human-in-the-loop
+    - generic [ref=e104]:
+      - generic [ref=e105]:
+        - heading "Squad Ownership" [level=2] [ref=e106]
+        - paragraph [ref=e107]: The repo structure mirrors the ticket breakdown so staffing, sequencing, and handoff logic stay aligned with the SDLC artifacts.
+      - generic [ref=e108]:
+        - article [ref=e109]:
+          - text: Sprint 0-1
+          - heading "Squad 1 - Platform Foundation" [level=3] [ref=e110]
+          - paragraph [ref=e111]: Repo, auth, schema, migration, master data foundation
+        - article [ref=e112]:
+          - text: Sprint 2-4
+          - heading "Squad 2 - Design and Pattern" [level=3] [ref=e113]
+          - paragraph [ref=e114]: Briefs, generation, curation, approval handoff, pattern workflow
+        - article [ref=e115]:
+          - text: Sprint 5-7
+          - heading "Squad 3 - Planning Intelligence" [level=3] [ref=e116]
+          - paragraph [ref=e117]: Ingestion, forecast, recommendation detail, production plan
+        - article [ref=e118]:
+          - text: Sprint 1 and Sprint 8
+          - heading "Squad 4 - Control Tower" [level=3] [ref=e119]
+          - paragraph [ref=e120]: Approvals, audit visibility, owner dashboard, admin surfaces
+        - article [ref=e121]:
+          - text: Sprint 9-10
+          - heading "Squad 5 - Quality and Release" [level=3] [ref=e122]
+          - paragraph [ref=e123]: Testing, security, rehearsal, pilot launch control
+    - generic [ref=e124]:
+      - generic [ref=e125]:
+        - heading "Foundation Tracks" [level=2] [ref=e126]
+        - paragraph [ref=e127]: These are the minimum executable tracks required to move from artifact pack into implementation without inventing structure later.
+      - article [ref=e128]:
+        - list [ref=e129]:
+          - listitem [ref=e130]: Executable migrations in db/migrations
+          - listitem [ref=e131]: Idempotent seed data in db/seeds
+          - listitem [ref=e132]: FastAPI internal API skeleton
+          - listitem [ref=e133]: Next.js portal shell for owner and leads

@@ -1,0 +1,106 @@
+[    1325ms] [LOG] %c
+▲
+
+ _____ _              _                    _   _             __
+|_   _| |__   ___    / \   __ _  ___ _ __ | |_(_) ___       / /
+  | | | '_ \ / _ \  / _ \ / _` |/ _ \ '_ \| __| |/ __|     / /
+  | | | | | |  __/ / ___ \ (_| |  __/ | | | |_| | (__     /_/
+  |_| |_| |_|\___|/_/   \_\__, |\___|_| |_|\__|_|\___|    (_)
+                           |___/
+ ___        __               _                   _                 _
+|_ _|_ __  / _|_ __ __ _ ___| |_ _ __ _   _  ___| |_ _   _ _ __ ___
+ | || '_ \| |_| '__/ _` / __| __| '__| | | |/ __| __| | | | '__/ _ \
+ | || | | |  _| | | (_| \__ \ |_| |  | |_| | (__| |_| |_| | | |  __/
+|___|_| |_|_| |_|  \__,_|___/\__|_|   \__,_|\___|\__|\__,_|_|  \___|
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/_next/static/immutable/chunks/1sjcl_g7---zh.js:78
+[    1957ms] [WARNING] [GSI_LOGGER]: Your client application uses one of the Google One Tap prompt UI status methods that may stop functioning when FedCM becomes mandatory. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#display_moment and https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#skipped_moment @ https://accounts.google.com/gsi/client:84
+[    2037ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/jwt:0
+[    2363ms] [WARNING] Deprecated API for given entry type. @ https://vercel.com/_next/static/immutable/chunks/0qzfdxdn7uo4m.js:18
+[    6232ms] [WARNING] The resource https://vercel.com/_next/static/immutable/media/ebay-dark.34mho2a18qqlt.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    6232ms] [WARNING] The resource https://vercel.com/_next/static/immutable/media/adobe-light.406_7oryl71va.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    6232ms] [WARNING] The resource https://vercel.com/_next/static/immutable/media/ebay-light.3ft_ki8203ov0.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    6232ms] [WARNING] The resource https://vercel.com/_next/static/immutable/media/adobe-dark.1yc1msmmj95aw.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    6232ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/09f00n8m302ia.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    6232ms] [WARNING] The resource https://vercel.com/_next/static/immutable/media/stripe-light.2l_1jctpe6k_4.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    6232ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/02nwpwlueg1k4.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    6232ms] [WARNING] The resource https://vercel.com/_next/static/immutable/media/stripe-dark.16ozjth2vgb_3.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    9323ms] [WARNING] The resource https://vercel.com/_next/static/immutable/media/ebay-dark.34mho2a18qqlt.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    9323ms] [WARNING] The resource https://vercel.com/_next/static/immutable/media/adobe-light.406_7oryl71va.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    9323ms] [WARNING] The resource https://vercel.com/_next/static/immutable/media/ebay-light.3ft_ki8203ov0.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    9323ms] [WARNING] The resource https://vercel.com/_next/static/immutable/media/adobe-dark.1yc1msmmj95aw.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    9323ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/09f00n8m302ia.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    9323ms] [WARNING] The resource https://vercel.com/_next/static/immutable/media/stripe-light.2l_1jctpe6k_4.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    9323ms] [WARNING] The resource https://vercel.com/_next/static/immutable/chunks/02nwpwlueg1k4.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[    9323ms] [WARNING] The resource https://vercel.com/_next/static/immutable/media/stripe-dark.16ozjth2vgb_3.svg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://vercel.com/login?next=%2Fdashboard:0
+[   10665ms] [ERROR] The request has been aborted. @ https://vercel.com/login?next=%2Fdashboard:0
+[   10669ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with AbortError: signal is aborted without reason @ https://vercel.com/_next/static/immutable/chunks/04hqv1j-0o8jq.js:1
+[   10736ms] [ERROR] Failed to load resource: the server responded with a status of 429 () @ https://o205439.ingest.sentry.io/api/1323670/envelope/?sentry_key=d00780d432ac4ccf882f60dd02062e14&sentry_version=7&sentry_client=sentry.javascript.browser%2F7.111.0:0
+[   13810ms] [LOG] %c
+▲
+
+__  __                                     _            __
+\ \/ /___  __  __   _________ _____       (_)_  _______/ /_
+ \  / __ \/ / / /  / ___/ __ `/ __ \     / / / / / ___/ __/
+ / / /_/ / /_/ /  / /__/ /_/ / / / /    / / /_/ (__  ) /_
+/_/\____/\__,_/   \___/\__,_/_/ /_/  __/ /\__,_/____/\__/
+         __    _          __  __    /___/
+   _____/ /_  (_)___     / /_/ /_  (_)___  ____ ______
+  / ___/ __ \/ / __ \   / __/ __ \/ / __ \/ __ `/ ___/
+ (__  ) / / / / /_/ /  / /_/ / / / / / / / /_/ (__  )
+/____/_/ /_/_/ .___/   \__/_/ /_/_/_/ /_/\__, /____/
+            /_/                         /____/
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/_next/static/immutable/chunks/286--brt_tgh2.js:78
+[   14048ms] [WARNING] Deprecated API for given entry type. @ https://vercel.com/_next/static/immutable/chunks/0y5ga0i5xlam8.js:18
+[   14236ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://vercel.com/api/jwt:0
+[   17454ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://vercel.com/_next/data/build-TfctsWXpff2fKS/rocxman.json:0
+[   18774ms] [LOG] %c
+▲
+
+ _____ _              _                    _   _             __
+|_   _| |__   ___    / \   __ _  ___ _ __ | |_(_) ___       / /
+  | | | '_ \ / _ \  / _ \ / _` |/ _ \ '_ \| __| |/ __|     / /
+  | | | | | |  __/ / ___ \ (_| |  __/ | | | |_| | (__     /_/
+  |_| |_| |_|\___|/_/   \_\__, |\___|_| |_|\__|_|\___|    (_)
+                           |___/
+ ___        __               _                   _                 _
+|_ _|_ __  / _|_ __ __ _ ___| |_ _ __ _   _  ___| |_ _   _ _ __ ___
+ | || '_ \| |_| '__/ _` / __| __| '__| | | |/ __| __| | | | '__/ _ \
+ | || | | |  _| | | (_| \__ \ |_| |  | |_| | (__| |_| |_| | | |  __/
+|___|_| |_|_| |_|  \__,_|___/\__|_|   \__,_|\___|\__|\__,_|_|  \___|
+  
+
+Hello!
+
+- Open Source https://vercel.com/oss
+- Careers https://vercel.com/careers
+- Status https://vercel-status.com
+
+ font-family: "Geist Mono", monospace; white-space: pre; line-height: 1; @ https://vercel.com/_next/static/immutable/chunks/1sjcl_g7---zh.js:78
+[   21893ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at r1 (https://vercel.com/_next/static/immutable/chunks/1sjcl_g7---zh.js:79:44368)
+    at iE (https://vercel.com/_next/static/immutable/chunks/1sjcl_g7---zh.js:79:98380)
+    at sV (https://vercel.com/_next/static/immutable/chunks/1sjcl_g7---zh.js:79:139311)
+    at https://vercel.com/_next/static/immutable/chunks/1sjcl_g7---zh.js:79:139156
+    at sB (https://vercel.com/_next/static/immutable/chunks/1sjcl_g7---zh.js:79:139164)
+    at sO (https://vercel.com/_next/static/immutable/chunks/1sjcl_g7---zh.js:79:134221)
+    at cm (https://vercel.com/_next/static/immutable/chunks/1sjcl_g7---zh.js:79:168945)
+    at cs (https://vercel.com/_next/static/immutable/chunks/1sjcl_g7---zh.js:79:166726)
+    at cf (https://vercel.com/_next/static/immutable/chunks/1sjcl_g7---zh.js:79:167205)
+    at https://vercel.com/_next/static/immutable/chunks/1sjcl_g7---zh.js:79:169004
+[   22194ms] [WARNING] Deprecated API for given entry type. @ https://vercel.com/_next/static/immutable/chunks/0qzfdxdn7uo4m.js:18

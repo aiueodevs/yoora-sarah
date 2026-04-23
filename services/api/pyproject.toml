@@ -1,0 +1,18 @@
+[project]
+name = "yoora-sarah-api"
+version = "0.1.0"
+description = "Internal API scaffold for the Yoora Sarah Production Intelligence System."
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115.0,<1.0.0",
+  "uvicorn[standard]>=0.34.0,<1.0.0",
+  "pydantic-settings>=2.8.0,<3.0.0",
+  "psycopg[binary]>=3.2.6,<4.0.0",
+  "requests>=2.32.0,<3.0.0"
+]
+
+[project.scripts]
+app = "app.main:app"
+
+[tool.uv]
+package = false

@@ -1,0 +1,11 @@
+[project]
+name = "yoora-sarah-workers"
+version = "0.1.0"
+description = "Background worker scaffold for queued jobs."
+requires-python = ">=3.11"
+dependencies = [
+  "pydantic-settings>=2.8.0,<3.0.0"
+]
+
+[tool.uv]
+package = false

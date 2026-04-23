@@ -1,0 +1,30 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "logo" [ref=e7] [cursor=pointer]:
+          - /url: /id
+          - img "logo" [ref=e8]
+        - generic [ref=e9]:
+          - link "search" [ref=e10] [cursor=pointer]:
+            - /url: /id/search
+            - button "search" [ref=e11]:
+              - img
+          - link "favorites" [ref=e12] [cursor=pointer]:
+            - /url: /id/wishlist
+            - button "favorites" [ref=e13]:
+              - img
+          - link "cart" [ref=e14] [cursor=pointer]:
+            - /url: /id/cart
+            - button "cart" [ref=e15]:
+              - img
+          - button "user" [ref=e16] [cursor=pointer]:
+            - img
+          - button "language" [ref=e17] [cursor=pointer]:
+            - img
+    - paragraph [ref=e19]: Loading banners...
+  - link "Chat with Customer Care on WhatsApp" [ref=e20] [cursor=pointer]:
+    - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+    - img "WhatsApp" [ref=e21]
+  - alert [ref=e23]

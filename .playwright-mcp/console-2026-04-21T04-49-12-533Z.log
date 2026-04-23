@@ -1,0 +1,455 @@
+[     669ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/briefs:0
+[     906ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-dom/cjs/react-dom-client.development.js:25630
+[     962ms] TypeError: Cannot read properties of undefined (reading 'length')
+    at BriefsPage (about://React/Server/webpack-internal:///(rsc)/./app/briefs/page.tsx?55:76:28)
+    at resolveErrorDev (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-server-dom-webpack/cjs/react-server-dom-webpack-client.browser.development.js:2396:46)
+    at processFullStringRow (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-server-dom-webpack/cjs/react-server-dom-webpack-client.browser.development.js:2882:23)
+    at processFullBinaryRow (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-server-dom-webpack/cjs/react-server-dom-webpack-client.browser.development.js:2825:7)
+    at processBinaryChunk (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-server-dom-webpack/cjs/react-server-dom-webpack-client.browser.development.js:3028:15)
+    at progress (webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/react-server-dom-webpack/cjs/react-server-dom-webpack-client.browser.development.js:3294:13)
+[    1883ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:196
+[    2281ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+Import trace for requested module:
+./lib/portal-auth.ts
+./lib/forecast-api.ts
+./app/forecast/planner-client.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[    2287ms] [LOG] {file: Object} @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[    2841ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+Import trace for requested module:
+./lib/portal-auth.ts
+./lib/forecast-api.ts
+./app/forecast/planner-client.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[    2973ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+Import trace for requested module:
+./lib/portal-auth.ts
+./lib/forecast-api.ts
+./app/forecast/planner-client.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[    3569ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+Import trace for requested module:
+./lib/portal-auth.ts
+./lib/forecast-api.ts
+./app/forecast/planner-client.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[    4131ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `---- @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[    4133ms] [LOG] {file: Object} @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[    5310ms] [WARNING] The resource http://localhost:3000/_next/static/css/app/layout.css?v=1776746952562 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/briefs:0
+[  369930ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+Import trace for requested module:
+./lib/portal-auth.ts
+./lib/forecast-api.ts
+./app/forecast/planner-client.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[  369932ms] [LOG] {file: Object} @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[  370844ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/client/dev/hot-reloader/app/hot-reloader-app.js:196
+[  371236ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+Import trace for requested module:
+./lib/portal-auth.ts
+./lib/forecast-api.ts
+./app/forecast/planner-client.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[  371239ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+Import trace for requested module:
+./lib/portal-auth.ts
+./lib/forecast-api.ts
+./app/forecast/planner-client.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[  371394ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+Import trace for requested module:
+./lib/portal-auth.ts
+./lib/forecast-api.ts
+./app/forecast/planner-client.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[  371732ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+Import trace for requested module:
+./lib/portal-auth.ts
+./lib/forecast-api.ts
+./app/forecast/planner-client.tsx @ webpack-internal:///(app-pages-browser)/./node_modules/next/dist/next-devtools/userspace/app/errors/intercept-console-error.js:56
+[  371776ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/briefs:0
+[  372505ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///(pages-dir-browser)/./node_modules/react-dom/cjs/react-dom-client.development.js:28004
+[  372661ms] ModuleBuildError: Module build failed (from ./node_modules/next/dist/build/webpack/loaders/next-swc-loader.js):
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+    at processResult (file://C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\node_modules\next\dist\compiled\webpack\bundle5.js:29:407086)
+    at <unknown> (file://C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\node_modules\next\dist\compiled\webpack\bundle5.js:29:408881)
+    at <unknown> (file://C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js:1:8645)
+    at <unknown> (file://C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js:1:5019)
+    at r.callback (file://C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\node_modules\next\dist\compiled\loader-runner\LoaderRunner.js:1:4039)
+[  372662ms] [LOG] [HMR] connected @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/websocket.js:45
+[  372666ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `---- @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[  373022ms] [LOG] {file: Object} @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[  408765ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+Import trace for requested module:
+./lib/portal-auth.ts
+./lib/forecast-api.ts
+./app/forecast/planner-client.tsx @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[  408767ms] [LOG] {file: Object} @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/compiled/next-devtools/index.js:1630
+[  409039ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+Import trace for requested module:
+./lib/portal-auth.ts
+./lib/forecast-api.ts
+./app/forecast/planner-client.tsx @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[  414970ms] [ERROR] ./lib/portal-auth.ts
+Error:   x You're importing a component that needs "server-only". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:1:1]
+ 1 | import "server-only";
+   : ^^^^^^^^^^^^^^^^^^^^^
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   `----
+  x You're importing a component that needs "next/headers". That only works in a Server Component which is not supported in the pages/ directory. Read more: https://nextjs.org/docs/app/building-your-application/rendering/server-components
+  |
+
+   ,-[C:\Users\WILDISHINE\Documents\YOORA-SARAH\apps\portal\lib\portal-auth.ts:4:1]
+ 1 | import "server-only";
+ 2 | 
+ 3 | import { cache } from "react";
+ 4 | import { cookies } from "next/headers";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 5 | import { redirect } from "next/navigation";
+ 6 | 
+ 7 | import { findPortalUserByEmail, type PortalUser } from "./portal-users";
+   `----
+
+Import trace for requested module:
+./lib/portal-auth.ts
+./lib/forecast-api.ts
+./app/forecast/planner-client.tsx @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:76
+[  414971ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:206
+[  415348ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/webpack/a2bd557fc8bb3dbf.webpack.hot-update.json:0
+[  415349ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/dev/hot-reloader/pages/hot-reloader-pages.js:347
+[  435881ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/briefs:0
+[  435923ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/css/app/layout.css?v=1776747374737:0
+[  435927ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/chunks/webpack.js:0
+[  435930ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/chunks/main-app.js:0
+[  435935ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/_next/static/chunks/app-pages-internals.js:0
+[  438981ms] [WARNING] The resource http://localhost:3000/_next/static/css/app/layout.css?v=1776747374737 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3000/briefs:0

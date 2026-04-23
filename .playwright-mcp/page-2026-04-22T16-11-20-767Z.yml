@@ -1,0 +1,317 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - generic [ref=e2]:
+    - banner [ref=e206]:
+      - generic [ref=e208]:
+        - link "logo" [ref=e210] [cursor=pointer]:
+          - /url: /id
+          - img "logo" [ref=e211]
+        - generic [ref=e212]:
+          - link "search" [ref=e213] [cursor=pointer]:
+            - /url: /id/search
+            - button "search" [ref=e214]:
+              - img
+          - link "favorites" [ref=e215] [cursor=pointer]:
+            - /url: /id/wishlist
+            - button "favorites" [ref=e216]:
+              - img
+          - link "cart" [ref=e217] [cursor=pointer]:
+            - /url: /id/cart
+            - button "cart" [ref=e218]:
+              - img
+          - button "user" [ref=e219] [cursor=pointer]:
+            - img
+          - button "language" [ref=e220] [cursor=pointer]:
+            - img
+      - generic [ref=e221]:
+        - generic:
+          - generic:
+            - generic [ref=e223]:
+              - img [ref=e224]
+              - textbox "Search by keyword" [ref=e227]
+            - generic [ref=e228]:
+              - link "Clara Dress Clara Dress" [ref=e229] [cursor=pointer]:
+                - /url: /id/dress/clara-dress-5254
+                - img "Clara Dress" [ref=e231]
+                - paragraph [ref=e232]: Clara Dress
+              - link "Yoora Dress Yoora Dress" [ref=e233] [cursor=pointer]:
+                - /url: /id/dress/yoora-dress-9662
+                - img "Yoora Dress" [ref=e235]
+                - paragraph [ref=e236]: Yoora Dress
+              - link "Bella Dress Bella Dress" [ref=e237] [cursor=pointer]:
+                - /url: /id/dress/bella-dress-4179
+                - img "Bella Dress" [ref=e239]
+                - paragraph [ref=e240]: Bella Dress
+              - link "Medina Dress Medina Dress" [ref=e241] [cursor=pointer]:
+                - /url: /id/dress/medina-dress-8751
+                - img "Medina Dress" [ref=e243]
+                - paragraph [ref=e244]: Medina Dress
+              - link "Safiyyah Sora Dress Safiyyah Sora Dress" [ref=e245] [cursor=pointer]:
+                - /url: /id/dress/safiyyah-sora-dress-5068
+                - img "Safiyyah Sora Dress" [ref=e247]
+                - paragraph [ref=e248]: Safiyyah Sora Dress
+              - link "Yume Striped Dress Yume Striped Dress" [ref=e249] [cursor=pointer]:
+                - /url: /id/dress/yume-striped-dress-5604
+                - img "Yume Striped Dress" [ref=e251]
+                - paragraph [ref=e252]: Yume Striped Dress
+              - link "Medina Poka Dress Medina Poka Dress" [ref=e253] [cursor=pointer]:
+                - /url: /id/dress/medina-poka-dress-9582
+                - img "Medina Poka Dress" [ref=e255]
+                - paragraph [ref=e256]: Medina Poka Dress
+    - main [ref=e257]:
+      - navigation [ref=e260]:
+        - link "Dress" [ref=e261] [cursor=pointer]:
+          - /url: /id/dress
+        - link "Abaya" [ref=e262] [cursor=pointer]:
+          - /url: /id/abaya-2481
+        - link "Khimar" [ref=e263] [cursor=pointer]:
+          - /url: /id/khimar-5295
+        - link "Pashmina" [ref=e264] [cursor=pointer]:
+          - /url: /id/pashmina-2310
+        - link "Hijab" [ref=e265] [cursor=pointer]:
+          - /url: /id/hijab-1544
+        - link "Footwear" [ref=e266] [cursor=pointer]:
+          - /url: /id/footwear-8675
+        - link "Accessories" [ref=e267] [cursor=pointer]:
+          - /url: /id/accessories-4472
+        - link "Kids" [ref=e268] [cursor=pointer]:
+          - /url: /id/kids-9967
+        - link "Essentials" [ref=e269] [cursor=pointer]:
+          - /url: /id/essentials-7002
+        - link "One Set" [ref=e270] [cursor=pointer]:
+          - /url: /id/one-set-5182
+      - generic [ref=e271]:
+        - img "Abaya" [ref=e272]
+        - generic [ref=e275]:
+          - heading "Abaya" [level=1] [ref=e276]
+          - paragraph [ref=e277]: "-"
+      - generic [ref=e278]:
+        - heading "Abaya" [level=2] [ref=e279]
+        - generic [ref=e280]:
+          - generic [ref=e281]:
+            - paragraph [ref=e282]: "Hasil: 6 Item"
+            - button "Urutkan berdasarkan" [ref=e283] [cursor=pointer]:
+              - img [ref=e284]
+              - paragraph [ref=e287]: Urutkan berdasarkan
+              - img [ref=e288]
+          - generic [ref=e290]:
+            - generic [ref=e292]:
+              - generic [ref=e293] [cursor=pointer]:
+                - link "PO Lianhua Abaya" [ref=e294]:
+                  - /url: /id/abaya-2481/po-lianhua-abaya-8765
+                  - img "PO Lianhua Abaya" [ref=e295]
+                - button [ref=e296]:
+                  - img
+                - button [ref=e297]:
+                  - img
+                - generic [ref=e298]:
+                  - button [ref=e299]
+                  - button [ref=e300]
+                  - button [ref=e301]
+                  - button [ref=e302]
+              - generic [ref=e303]:
+                - generic [ref=e304]:
+                  - generic [ref=e306]:
+                    - button "Jett Black" [ref=e307]
+                    - button "Dark Maroon" [ref=e308]
+                    - button "Dark Plum" [ref=e309]
+                    - button "Caramel" [ref=e310]
+                    - link "+1" [ref=e311] [cursor=pointer]:
+                      - /url: /id/abaya-2481/po-lianhua-abaya-8765
+                  - generic [ref=e312]:
+                    - img [ref=e313] [cursor=pointer]
+                    - img [ref=e317] [cursor=pointer]
+                - generic [ref=e319]:
+                  - paragraph [ref=e320]: S, M, L
+                  - paragraph [ref=e321]: PO Lianhua Abaya
+                  - paragraph [ref=e322]: Rp329.999
+            - generic [ref=e324]:
+              - generic [ref=e325] [cursor=pointer]:
+                - link "Beyza Abaya" [ref=e326]:
+                  - /url: /id/abaya-2481/beyza-abaya-9167
+                  - img "Beyza Abaya" [ref=e327]
+                - button [ref=e328]:
+                  - img
+                - button [ref=e329]:
+                  - img
+                - generic [ref=e330]:
+                  - button [ref=e331]
+                  - button [ref=e332]
+                  - button [ref=e333]
+                  - button [ref=e334]
+                  - button [ref=e335]
+              - generic [ref=e336]:
+                - generic [ref=e337]:
+                  - generic [ref=e339]:
+                    - button "Caviar" [ref=e340]
+                    - button "Amber" [ref=e341]
+                    - button "Forest" [ref=e342]
+                    - button "Oat" [ref=e343]
+                    - link "+7" [ref=e344] [cursor=pointer]:
+                      - /url: /id/abaya-2481/beyza-abaya-9167
+                  - generic [ref=e345]:
+                    - img [ref=e346] [cursor=pointer]
+                    - img [ref=e350] [cursor=pointer]
+                - generic [ref=e352]:
+                  - paragraph [ref=e353]: S, M, L
+                  - paragraph [ref=e354]: Beyza Abaya
+                  - paragraph [ref=e355]: Rp479.999
+            - generic [ref=e357]:
+              - link "Talia Denim Abaya" [ref=e359] [cursor=pointer]:
+                - /url: /id/abaya-2481/talia-denim-abaya-8738
+                - img "Talia Denim Abaya" [ref=e360]
+              - generic [ref=e361]:
+                - generic [ref=e362]:
+                  - generic [ref=e364]:
+                    - button "Gray" [ref=e365]
+                    - button "Black" [ref=e366]
+                    - button "Earth" [ref=e367]
+                    - button "Bitter Coklat" [ref=e368]
+                    - link "+3" [ref=e369] [cursor=pointer]:
+                      - /url: /id/abaya-2481/talia-denim-abaya-8738
+                  - generic [ref=e370]:
+                    - img [ref=e371] [cursor=pointer]
+                    - img [ref=e375] [cursor=pointer]
+                - generic [ref=e377]:
+                  - paragraph [ref=e378]: S, M, L
+                  - paragraph [ref=e379]: Talia Denim Abaya
+                  - paragraph [ref=e380]: Rp199.999
+            - generic [ref=e382]:
+              - link "Bloom Love Abaya" [ref=e384] [cursor=pointer]:
+                - /url: /id/abaya-2481/bloom-love-abaya-5945
+                - img "Bloom Love Abaya" [ref=e385]
+              - generic [ref=e386]:
+                - generic [ref=e387]:
+                  - generic [ref=e389]:
+                    - button "Gray" [ref=e390]
+                    - button "Earth" [ref=e391]
+                    - button "Choco" [ref=e392]
+                    - button "Maroon" [ref=e393]
+                    - link "+4" [ref=e394] [cursor=pointer]:
+                      - /url: /id/abaya-2481/bloom-love-abaya-5945
+                  - generic [ref=e395]:
+                    - img [ref=e396] [cursor=pointer]
+                    - img [ref=e400] [cursor=pointer]
+                - generic [ref=e402]:
+                  - paragraph [ref=e403]: S, M, L
+                  - paragraph [ref=e404]: Bloom Love Abaya
+                  - paragraph [ref=e405]: Rp189.900
+            - generic [ref=e407]:
+              - link "Bloom Flower Abaya" [ref=e409] [cursor=pointer]:
+                - /url: /id/abaya-2481/bloom-flower-abaya-3855
+                - img "Bloom Flower Abaya" [ref=e410]
+              - generic [ref=e411]:
+                - generic [ref=e412]:
+                  - generic [ref=e414]:
+                    - button "Earth" [ref=e415]
+                    - button "Gray" [ref=e416]
+                    - button "Navy" [ref=e417]
+                    - button "Maroon" [ref=e418]
+                    - link "+4" [ref=e419] [cursor=pointer]:
+                      - /url: /id/abaya-2481/bloom-flower-abaya-3855
+                  - generic [ref=e420]:
+                    - img [ref=e421] [cursor=pointer]
+                    - img [ref=e425] [cursor=pointer]
+                - generic [ref=e427]:
+                  - paragraph [ref=e428]: S, M, L
+                  - paragraph [ref=e429]: Bloom Flower Abaya
+                  - paragraph [ref=e430]: Rp189.900
+            - generic [ref=e432]:
+              - generic [ref=e433] [cursor=pointer]:
+                - link "Zippa Abaya" [ref=e434]:
+                  - /url: /id/abaya-2481/zippa-abaya-3494
+                  - img "Zippa Abaya" [ref=e435]
+                - button [ref=e436]:
+                  - img
+                - button [ref=e437]:
+                  - img
+                - generic [ref=e438]:
+                  - button [ref=e439]
+                  - button [ref=e440]
+                  - button [ref=e441]
+                  - button [ref=e442]
+              - generic [ref=e443]:
+                - generic [ref=e444]:
+                  - generic [ref=e446]:
+                    - button "Bitter Coklat" [ref=e447]
+                    - button "Black" [ref=e448]
+                    - button "Deep Choco" [ref=e449]
+                    - button "Gray" [ref=e450]
+                  - generic [ref=e451]:
+                    - img [ref=e452] [cursor=pointer]
+                    - img [ref=e456] [cursor=pointer]
+                - generic [ref=e458]:
+                  - paragraph [ref=e459]: S, M, L
+                  - paragraph [ref=e460]: Zippa Abaya
+                  - paragraph [ref=e461]: Rp199.999
+          - generic [ref=e463]:
+            - paragraph [ref=e464]: Anda telah mencapai akhir
+            - paragraph [ref=e465]: 6 produk ditampilkan
+    - contentinfo [ref=e467]:
+      - generic [ref=e469]:
+        - generic [ref=e470]:
+          - paragraph [ref=e471]: PT Yoora Sarah Sentosa
+          - paragraph [ref=e472]: Jl. Otto Iskandardinata No.271, Karanganyar, Kec. Subang, Kabupaten Subang, Jawa Barat 41211 KAB. SUBANG - SUBANG JAWA BARAT ID 41211
+        - generic [ref=e473]:
+          - generic [ref=e474]:
+            - paragraph [ref=e475]: Layanan Pelanggan
+            - link "+6282315866088" [ref=e476] [cursor=pointer]:
+              - /url: tel:+6282315866088
+          - generic [ref=e477]:
+            - paragraph [ref=e478]: Bantuan Belanja
+            - list [ref=e479]:
+              - listitem [ref=e480]:
+                - link "Cara Pemesanan" [ref=e481] [cursor=pointer]:
+                  - /url: /pages/cara-belanja
+              - listitem [ref=e482]:
+                - link "Cara Pembayaran" [ref=e483] [cursor=pointer]:
+                  - /url: /pages/metode-pembayaran
+              - listitem [ref=e484]:
+                - link "Pengiriman & Ongkos Kirim" [ref=e485] [cursor=pointer]:
+                  - /url: /pages/pengiriman
+              - listitem [ref=e486]:
+                - link "Pengembalian & Penukaran" [ref=e487] [cursor=pointer]:
+                  - /url: /pages/pengembalian-penukaran-produk
+              - listitem [ref=e488]:
+                - link "Panduan Ukuran" [ref=e489] [cursor=pointer]:
+                  - /url: /pages/panduan-ukuran
+          - generic [ref=e490]:
+            - paragraph [ref=e491]: Tentang Kami
+            - list [ref=e492]:
+              - listitem [ref=e493]:
+                - link "Tentang Yoora Sarah" [ref=e494] [cursor=pointer]:
+                  - /url: /pages/tentang-yoora-sarah
+              - listitem [ref=e495]:
+                - link "Hubungi Kami" [ref=e496] [cursor=pointer]:
+                  - /url: /pages/hubungi-kami
+              - listitem [ref=e497]:
+                - link "Karir" [ref=e498] [cursor=pointer]:
+                  - /url: /pages/karir
+          - generic [ref=e499]:
+            - paragraph [ref=e500]: Kebijakan
+            - list [ref=e501]:
+              - listitem [ref=e502]:
+                - link "Syarat & Ketentuan" [ref=e503] [cursor=pointer]:
+                  - /url: /pages/syarat-dan-ketentuan
+              - listitem [ref=e504]:
+                - link "Kebijakan Privasi" [ref=e505] [cursor=pointer]:
+                  - /url: /pages/kebijakan-privasi
+              - listitem [ref=e506]:
+                - link "Kebijakan Cookie" [ref=e507] [cursor=pointer]:
+                  - /url: /pages/kebijakan-cookie
+        - generic [ref=e509]:
+          - paragraph [ref=e511]: © 2026 Yoora Sarah. All rights reserved.
+          - generic [ref=e512]:
+            - link "Instagram" [ref=e513] [cursor=pointer]:
+              - /url: https://www.instagram.com/yoora.sarah
+              - img "Instagram" [ref=e514]
+            - link "Tiktok" [ref=e516] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@yoora_sarah
+              - img "TikTok" [ref=e517]
+            - link "Shopee" [ref=e519] [cursor=pointer]:
+              - /url: https://shopee.co.id/yoora.sarah
+              - img "Shopee" [ref=e520]
+  - link "Chat with Customer Care on WhatsApp" [ref=e20] [cursor=pointer]:
+    - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+    - img "WhatsApp" [ref=e21]
+  - alert [ref=e23]: Kategori abaya-2481 | Yoora Sarah

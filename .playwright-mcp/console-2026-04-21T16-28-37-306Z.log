@@ -1,0 +1,16 @@
+[     338ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[     381ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[    9409ms] [WARNING] Image with src "https://www.yoorasarah.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-topbar.08em~oeq_vqsv.png&w=3840&q=75&dpl=dpl_E6iLp5xSGbcp4otPmSfkhG3LN4hJ" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[    9568ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[    9588ms] [LOG] [Fast Refresh] done in 132ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[   38846ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[   39030ms] [LOG] [Fast Refresh] done in 267ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[   48165ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[   48308ms] [LOG] [Fast Refresh] done in 245ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[   62523ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[   62615ms] [LOG] [Fast Refresh] done in 201ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[   70995ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[   71421ms] [LOG] [Fast Refresh] done in 533ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  108609ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  108771ms] [LOG] [Fast Refresh] done in 273ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297

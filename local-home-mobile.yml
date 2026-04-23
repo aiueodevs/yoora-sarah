@@ -1,0 +1,24 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Yoora Sarah" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Yoora Sarah" [ref=e7]
+        - button "Buka menu" [ref=e9] [cursor=pointer]:
+          - img [ref=e10]
+    - main [ref=e11]:
+      - generic [ref=e12]:
+        - img "Dress" [ref=e13]
+        - generic [ref=e18]:
+          - paragraph [ref=e19]: Setiap Dress Memiliki Ceritanya
+          - heading "Dress" [level=1] [ref=e20]
+          - paragraph [ref=e21]: Siluet anggun, warna cantik, dan potongan yang nyaman untuk menemani setiap momen.
+          - link "Jelajahi Koleksi" [ref=e23] [cursor=pointer]:
+            - /url: /dress
+            - text: Jelajahi Koleksi
+            - img [ref=e24]
+    - link "Chat with Customer Care on WhatsApp" [ref=e27] [cursor=pointer]:
+      - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+      - img [ref=e28]
+  - alert [ref=e30]

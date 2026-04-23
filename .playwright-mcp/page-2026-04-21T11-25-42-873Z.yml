@@ -1,0 +1,94 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Yoora Sarah" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Yoora Sarah" [ref=e7]
+        - navigation [ref=e8]:
+          - link "Dress" [ref=e9] [cursor=pointer]:
+            - /url: /dress
+          - link "Abaya" [ref=e10] [cursor=pointer]:
+            - /url: /abaya-2481
+          - link "Khimar" [ref=e11] [cursor=pointer]:
+            - /url: /khimar-5295
+          - link "Pashmina" [ref=e12] [cursor=pointer]:
+            - /url: /pashmina-2310
+          - link "Hijab" [ref=e13] [cursor=pointer]:
+            - /url: /hijab-1544
+          - link "Footwear" [ref=e14] [cursor=pointer]:
+            - /url: /footwear-8675
+          - link "Accessories" [ref=e15] [cursor=pointer]:
+            - /url: /accessories-4472
+          - link "Kids" [ref=e16] [cursor=pointer]:
+            - /url: /kids-9967
+          - link "Essentials" [ref=e17] [cursor=pointer]:
+            - /url: /essentials-7002
+          - link "One Set" [ref=e18] [cursor=pointer]:
+            - /url: /one-set-5182
+        - generic [ref=e19]:
+          - link "Cari" [ref=e20] [cursor=pointer]:
+            - /url: /search
+            - img [ref=e21]
+          - link "Wishlist" [ref=e24] [cursor=pointer]:
+            - /url: /wishlist
+            - img [ref=e25]
+          - link "Keranjang" [ref=e27] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e28]
+          - link "Akun" [ref=e31] [cursor=pointer]:
+            - /url: /profile
+            - img [ref=e32]
+          - button "Ubah bahasa" [ref=e35] [cursor=pointer]:
+            - img [ref=e36]
+    - main [ref=e39]:
+      - generic [ref=e40]:
+        - img "Dress" [ref=e41]
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - paragraph [ref=e47]: Setiap Dress Memiliki Ceritanya
+              - heading "Dress" [level=1] [ref=e48]
+              - paragraph [ref=e49]: Siluet anggun, warna cantik, dan potongan yang nyaman untuk menemani setiap momen.
+              - link "Jelajahi Koleksi" [ref=e51] [cursor=pointer]:
+                - /url: /dress
+                - text: Jelajahi Koleksi
+                - img [ref=e52]
+            - generic [ref=e56]:
+              - paragraph [ref=e57]: Story Queue
+              - generic [ref=e58]:
+                - button "Dress Siluet anggun, warna cantik, dan potongan yang nyaman untuk menemani setiap momen." [ref=e59] [cursor=pointer]:
+                  - generic [ref=e61]:
+                    - paragraph [ref=e62]: Dress
+                    - paragraph [ref=e63]: Siluet anggun, warna cantik, dan potongan yang nyaman untuk menemani setiap momen.
+                - button "Safiyyah Sora Dress Editorial motion thumbnail" [ref=e64] [cursor=pointer]:
+                  - generic [ref=e66]:
+                    - paragraph [ref=e67]: Safiyyah Sora Dress
+                    - paragraph [ref=e68]: Editorial motion thumbnail
+                - button "Yumee Dress Soft studio portrait" [ref=e69] [cursor=pointer]:
+                  - generic [ref=e71]:
+                    - paragraph [ref=e72]: Yumee Dress
+                    - paragraph [ref=e73]: Soft studio portrait
+                - button "Fania Dress Muted elegant silhouette" [ref=e74] [cursor=pointer]:
+                  - generic [ref=e76]:
+                    - paragraph [ref=e77]: Fania Dress
+                    - paragraph [ref=e78]: Muted elegant silhouette
+                - button "Bella Dress Graceful textures" [ref=e79] [cursor=pointer]:
+                  - generic [ref=e81]:
+                    - paragraph [ref=e82]: Bella Dress
+                    - paragraph [ref=e83]: Graceful textures
+                - button "Almeera Dress Evening-ready flow" [ref=e84] [cursor=pointer]:
+                  - generic [ref=e86]:
+                    - paragraph [ref=e87]: Almeera Dress
+                    - paragraph [ref=e88]: Evening-ready flow
+          - generic [ref=e90]:
+            - button "Buka slide Dress" [ref=e91] [cursor=pointer]
+            - button "Buka slide Safiyyah Sora Dress" [ref=e92] [cursor=pointer]
+            - button "Buka slide Yumee Dress" [ref=e93] [cursor=pointer]
+            - button "Buka slide Fania Dress" [ref=e94] [cursor=pointer]
+            - button "Buka slide Bella Dress" [ref=e95] [cursor=pointer]
+            - button "Buka slide Almeera Dress" [ref=e96] [cursor=pointer]
+    - link "Chat with Customer Care on WhatsApp" [ref=e97] [cursor=pointer]:
+      - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+      - img [ref=e98]
+  - alert [ref=e100]

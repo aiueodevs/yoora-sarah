@@ -1,0 +1,106 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Yoora Sarah" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e6]: YS
+          - generic [ref=e7]
+        - navigation [ref=e10]:
+          - link "Dress" [ref=e11] [cursor=pointer]:
+            - /url: /dress
+          - link "Abaya" [ref=e12] [cursor=pointer]:
+            - /url: /abaya-2481
+          - link "Khimar" [ref=e13] [cursor=pointer]:
+            - /url: /khimar-5295
+          - link "Pashmina" [ref=e14] [cursor=pointer]:
+            - /url: /pashmina-2310
+          - link "Hijab" [ref=e15] [cursor=pointer]:
+            - /url: /hijab-1544
+          - link "Footwear" [ref=e16] [cursor=pointer]:
+            - /url: /footwear-8675
+          - link "Accessories" [ref=e17] [cursor=pointer]:
+            - /url: /accessories-4472
+          - link "Kids" [ref=e18] [cursor=pointer]:
+            - /url: /kids-9967
+          - link "Essentials" [ref=e19] [cursor=pointer]:
+            - /url: /essentials-7002
+          - link "One Set" [ref=e20] [cursor=pointer]:
+            - /url: /one-set-5182
+        - generic [ref=e21]:
+          - link "Cari" [ref=e22] [cursor=pointer]:
+            - /url: /search
+          - link "Wishlist" [ref=e26] [cursor=pointer]:
+            - /url: /wishlist
+          - link "Keranjang" [ref=e29] [cursor=pointer]:
+            - /url: /cart
+          - link "Akun" [ref=e33] [cursor=pointer]:
+            - /url: /profile
+          - button "Ubah bahasa" [ref=e37] [cursor=pointer]
+    - main [ref=e41]:
+      - generic [ref=e42]:
+        - img "Dress" [ref=e43]
+        - generic [ref=e47]:
+          - generic [ref=e48]
+          - generic [ref=e61]
+      - generic [ref=e90]:
+        - link "Safiyyah Sora Dress Lookbook Safiyyah Sora Dress Editorial motion thumbnail" [ref=e91] [cursor=pointer]:
+          - /url: /dress/safiyyah-sora-dress-5068
+          - generic [ref=e92]
+        - link "Yumee Dress Lookbook Yumee Dress Soft studio portrait" [ref=e104] [cursor=pointer]:
+          - /url: /dress/yoora-dress-9662
+          - generic [ref=e105]
+        - link "Fania Dress Lookbook Fania Dress Muted elegant silhouette" [ref=e117] [cursor=pointer]:
+          - /url: /dress/bella-dress-4179
+          - generic [ref=e118]
+        - link "Bella Dress Lookbook Bella Dress Graceful textures" [ref=e130] [cursor=pointer]:
+          - /url: /dress/bella-dress-4179
+          - generic [ref=e131]
+        - link "Almeera Dress Lookbook Almeera Dress Evening-ready flow" [ref=e143] [cursor=pointer]:
+          - /url: /dress/medina-dress-8751
+          - generic [ref=e144]
+      - generic [ref=e157]:
+        - generic [ref=e158]:
+          - generic [ref=e159]
+          - paragraph [ref=e162]: Kategori pada situs referensi dibangun dari banner visual yang kuat, copy yang singkat, dan jalur navigasi yang sangat langsung. Section ini menerjemahkan pola itu ke storefront lokal agar terasa lebih premium tanpa kehilangan kejelasan.
+        - generic [ref=e163]:
+          - link "Abaya Category Abaya Siluet yang jatuh sempurna, menghadirkan ketenangan dan keanggunan yang terasa utuh." [ref=e164] [cursor=pointer]:
+            - /url: /abaya-2481
+          - link "Khimar Category Khimar Khimar dengan siluet anggun dan pilihan warna yang menenangkan, dirancang untuk melengkapi setiap langkahmu dengan nyaman." [ref=e172] [cursor=pointer]:
+            - /url: /khimar-5295
+          - link "Pashmina Category Pashmina Pashmina dengan tekstur lembut dan warna-warna cantik yang mudah dipadukan untuk melengkapi setiap penampilanmu." [ref=e180] [cursor=pointer]:
+            - /url: /pashmina-2310
+          - link "Hijab Category Hijab Pilihan hijab refined dengan tone lembut yang terasa rapi, ringan, dan modern." [ref=e188] [cursor=pointer]:
+            - /url: /hijab-1544
+          - link "Footwear Category Footwear Langkah yang tegas dengan desain refined yang melengkapi tampilan secara effortless." [ref=e196] [cursor=pointer]:
+            - /url: /footwear-8675
+          - link "Accessories Category Accessories Detail elegan yang menyempurnakan tampilan dengan sentuhan berkelas yang halus." [ref=e204] [cursor=pointer]:
+            - /url: /accessories-4472
+      - generic [ref=e213]:
+        - generic [ref=e214]:
+          - generic [ref=e215]
+          - link "Lihat seluruh koleksi" [ref=e219] [cursor=pointer]:
+            - /url: /dress
+        - generic [ref=e223]:
+          - link "Clara Dress Best Seller +13 warna S, M, L, XL Clara Dress Rp199.999" [ref=e224] [cursor=pointer]:
+            - /url: /dress/clara-dress-5254
+          - link "Yoora Dress +10 warna S, M, L Yoora Dress Rp199.999" [ref=e240] [cursor=pointer]:
+            - /url: /dress/yoora-dress-9662
+          - link "Bella Dress +18 warna S, M, L, XL Bella Dress Rp419.000" [ref=e255] [cursor=pointer]:
+            - /url: /dress/bella-dress-4179
+          - link "Medina Dress +10 warna S, M, L, XL Medina Dress Rp179.999" [ref=e270] [cursor=pointer]:
+            - /url: /dress/medina-dress-8751
+    - contentinfo [ref=e285]:
+      - generic [ref=e286]:
+        - generic [ref=e287]:
+          - generic [ref=e288]
+          - generic [ref=e305]
+          - generic [ref=e318]
+          - generic [ref=e327]
+        - generic [ref=e336]:
+          - paragraph [ref=e337]: © 2026 Yoora Sarah. All rights reserved.
+          - generic [ref=e338]
+    - link "Chat with Customer Care on WhatsApp" [ref=e342] [cursor=pointer]:
+      - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+      - img [ref=e343]
+  - alert [ref=e345]

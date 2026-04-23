@@ -1,0 +1,309 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Yoora Sarah" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "Yoora Sarah" [ref=e8]
+        - button "Buka daftar kategori" [ref=e9] [cursor=pointer]:
+          - generic [ref=e10]:
+            - generic [ref=e11]: Collections
+            - generic [ref=e12]: Collections
+        - generic [ref=e13]:
+          - link "Cari" [ref=e14] [cursor=pointer]:
+            - /url: /search
+            - generic [ref=e15]:
+              - generic [ref=e16]: Cari
+              - generic [ref=e17]: Cari
+          - link "Wishlist" [ref=e18] [cursor=pointer]:
+            - /url: /wishlist
+            - generic [ref=e19]:
+              - generic [ref=e20]: Wishlist
+              - generic [ref=e21]: Wishlist
+          - link "Keranjang" [ref=e22] [cursor=pointer]:
+            - /url: /cart
+            - generic [ref=e23]:
+              - generic [ref=e24]: Keranjang
+              - generic [ref=e25]: Keranjang
+          - link "Akun" [ref=e26] [cursor=pointer]:
+            - /url: /profile
+            - generic [ref=e27]:
+              - generic [ref=e28]: Akun
+              - generic [ref=e29]: Akun
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - link:
+                - /url: /
+                - generic:
+                  - img
+            - button:
+              - img
+          - generic:
+            - link:
+              - /url: /search
+              - text: Cari produk atau kategori
+          - navigation:
+            - paragraph: Kategori
+            - list:
+              - listitem:
+                - link:
+                  - /url: /dress
+                  - text: Dress
+                  - generic: Siluet anggun, warna cantik, dan potongan yang nyaman untuk menemani setiap momen.
+              - listitem:
+                - link:
+                  - /url: /abaya-2481
+                  - text: Abaya
+                  - generic: Siluet yang jatuh sempurna, menghadirkan ketenangan dan keanggunan yang terasa utuh.
+              - listitem:
+                - link:
+                  - /url: /khimar-5295
+                  - text: Khimar
+                  - generic: Khimar dengan siluet anggun dan pilihan warna yang menenangkan, dirancang untuk melengkapi setiap langkahmu dengan nyaman.
+              - listitem:
+                - link:
+                  - /url: /pashmina-2310
+                  - text: Pashmina
+                  - generic: Pashmina dengan tekstur lembut dan warna-warna cantik yang mudah dipadukan untuk melengkapi setiap penampilanmu.
+              - listitem:
+                - link:
+                  - /url: /hijab-1544
+                  - text: Hijab
+                  - generic: Pilihan hijab refined dengan tone lembut yang terasa rapi, ringan, dan modern.
+              - listitem:
+                - link:
+                  - /url: /footwear-8675
+                  - text: Footwear
+                  - generic: Langkah yang tegas dengan desain refined yang melengkapi tampilan secara effortless.
+              - listitem:
+                - link:
+                  - /url: /accessories-4472
+                  - text: Accessories
+                  - generic: Detail elegan yang menyempurnakan tampilan dengan sentuhan berkelas yang halus.
+              - listitem:
+                - link:
+                  - /url: /kids-9967
+                  - text: Kids
+                  - generic: Pilihan busana yang nyaman dan manis untuk si kecil, dengan warna-warna lembut yang siap menemani setiap langkah cerianya.
+              - listitem:
+                - link:
+                  - /url: /essentials-7002
+                  - text: Essentials
+                  - generic: Essentials serbaguna untuk layering yang terasa bersih, ringkas, dan matang.
+              - listitem:
+                - link:
+                  - /url: /one-set-5182
+                  - text: One Set
+                  - generic: Edit komplit yang memudahkan styling dengan proporsi yang sudah selesai sejak awal.
+          - generic:
+            - generic:
+              - link:
+                - /url: /search
+                - img
+                - generic: Cari
+              - link:
+                - /url: /wishlist
+                - img
+                - generic: Wishlist
+              - link:
+                - /url: /cart
+                - img
+                - generic: Bag
+              - link:
+                - /url: /profile
+                - img
+                - generic: Akun
+            - generic:
+              - generic:
+                - paragraph: Bahasa situs
+                - paragraph: Konten saat ini tersedia dalam Bahasa Indonesia.
+              - generic:
+                - img
+                - text: ID
+    - main [ref=e30]:
+      - generic [ref=e31]:
+        - img "Dress" [ref=e32]
+        - complementary "Produk clearance":
+          - generic [ref=e37]:
+            - generic [ref=e40]:
+              - heading "Clearance Sale" [level=2] [ref=e41]
+              - generic [ref=e42]: Last
+            - generic [ref=e44]:
+              - generic [ref=e45]:
+                - article [ref=e46]:
+                  - generic [ref=e48]:
+                    - img "Bella Dress" [ref=e50]
+                    - generic [ref=e51]:
+                      - generic [ref=e52]:
+                        - generic [ref=e53]:
+                          - paragraph [ref=e54]: Lot 01
+                          - heading "Bella Dress" [level=3] [ref=e55]
+                        - generic [ref=e56]: 4 left
+                      - generic [ref=e57]:
+                        - generic [ref=e58]:
+                          - paragraph [ref=e59]: Rp419.000
+                          - paragraph [ref=e60]: Rp327.000
+                        - paragraph [ref=e61]: Yoora Edit
+                - article [ref=e62]:
+                  - generic [ref=e64]:
+                    - img "Clara Dress" [ref=e66]
+                    - generic [ref=e67]:
+                      - generic [ref=e68]:
+                        - generic [ref=e69]:
+                          - paragraph [ref=e70]: Lot 02
+                          - heading "Clara Dress" [level=3] [ref=e71]
+                        - generic [ref=e72]: 6 left
+                      - generic [ref=e73]:
+                        - generic [ref=e74]:
+                          - paragraph [ref=e75]: Rp199.999
+                          - paragraph [ref=e76]: Rp156.000
+                        - paragraph [ref=e77]: Yoora Edit
+                - article [ref=e78]:
+                  - generic [ref=e80]:
+                    - img "Safiyyah Sora Dress" [ref=e82]
+                    - generic [ref=e83]:
+                      - generic [ref=e84]:
+                        - generic [ref=e85]:
+                          - paragraph [ref=e86]: Lot 03
+                          - heading "Safiyyah Sora Dress" [level=3] [ref=e87]
+                        - generic [ref=e88]: 7 left
+                      - generic [ref=e89]:
+                        - generic [ref=e90]:
+                          - paragraph [ref=e91]: Rp359.000
+                          - paragraph [ref=e92]: Rp280.000
+                        - paragraph [ref=e93]: Yoora Edit
+                - article [ref=e94]:
+                  - generic [ref=e96]:
+                    - img "Yoora Dress" [ref=e98]
+                    - generic [ref=e99]:
+                      - generic [ref=e100]:
+                        - generic [ref=e101]:
+                          - paragraph [ref=e102]: Lot 04
+                          - heading "Yoora Dress" [level=3] [ref=e103]
+                        - generic [ref=e104]: 8 left
+                      - generic [ref=e105]:
+                        - generic [ref=e106]:
+                          - paragraph [ref=e107]: Rp199.999
+                          - paragraph [ref=e108]: Rp156.000
+                        - paragraph [ref=e109]: Yoora Edit
+                - article [ref=e110]:
+                  - generic [ref=e112]:
+                    - img "Yume Striped Dress" [ref=e114]
+                    - generic [ref=e115]:
+                      - generic [ref=e116]:
+                        - generic [ref=e117]:
+                          - paragraph [ref=e118]: Lot 05
+                          - heading "Yume Striped Dress" [level=3] [ref=e119]
+                        - generic [ref=e120]: 9 left
+                      - generic [ref=e121]:
+                        - generic [ref=e122]:
+                          - paragraph [ref=e123]: Rp315.000
+                          - paragraph [ref=e124]: Rp246.000
+                        - paragraph [ref=e125]: Yoora Edit
+                - article [ref=e126]:
+                  - generic [ref=e128]:
+                    - img "Medina Poka Dress" [ref=e130]
+                    - generic [ref=e131]:
+                      - generic [ref=e132]:
+                        - generic [ref=e133]:
+                          - paragraph [ref=e134]: Lot 06
+                          - heading "Medina Poka Dress" [level=3] [ref=e135]
+                        - generic [ref=e136]: 11 left
+                      - generic [ref=e137]:
+                        - generic [ref=e138]:
+                          - paragraph [ref=e139]: Rp199.999
+                          - paragraph [ref=e140]: Rp156.000
+                        - paragraph [ref=e141]: Yoora Edit
+              - generic [ref=e142]:
+                - article [ref=e143]:
+                  - generic [ref=e145]:
+                    - img "Bella Dress" [ref=e147]
+                    - generic [ref=e148]:
+                      - generic [ref=e149]:
+                        - generic [ref=e150]:
+                          - paragraph [ref=e151]: Lot 01
+                          - heading "Bella Dress" [level=3] [ref=e152]
+                        - generic [ref=e153]: 4 left
+                      - generic [ref=e154]:
+                        - generic [ref=e155]:
+                          - paragraph [ref=e156]: Rp419.000
+                          - paragraph [ref=e157]: Rp327.000
+                        - paragraph [ref=e158]: Yoora Edit
+                - article [ref=e159]:
+                  - generic [ref=e161]:
+                    - img "Clara Dress" [ref=e163]
+                    - generic [ref=e164]:
+                      - generic [ref=e165]:
+                        - generic [ref=e166]:
+                          - paragraph [ref=e167]: Lot 02
+                          - heading "Clara Dress" [level=3] [ref=e168]
+                        - generic [ref=e169]: 6 left
+                      - generic [ref=e170]:
+                        - generic [ref=e171]:
+                          - paragraph [ref=e172]: Rp199.999
+                          - paragraph [ref=e173]: Rp156.000
+                        - paragraph [ref=e174]: Yoora Edit
+                - article [ref=e175]:
+                  - generic [ref=e177]:
+                    - img "Safiyyah Sora Dress" [ref=e179]
+                    - generic [ref=e180]:
+                      - generic [ref=e181]:
+                        - generic [ref=e182]:
+                          - paragraph [ref=e183]: Lot 03
+                          - heading "Safiyyah Sora Dress" [level=3] [ref=e184]
+                        - generic [ref=e185]: 7 left
+                      - generic [ref=e186]:
+                        - generic [ref=e187]:
+                          - paragraph [ref=e188]: Rp359.000
+                          - paragraph [ref=e189]: Rp280.000
+                        - paragraph [ref=e190]: Yoora Edit
+                - article [ref=e191]:
+                  - generic [ref=e193]:
+                    - img "Yoora Dress" [ref=e195]
+                    - generic [ref=e196]:
+                      - generic [ref=e197]:
+                        - generic [ref=e198]:
+                          - paragraph [ref=e199]: Lot 04
+                          - heading "Yoora Dress" [level=3] [ref=e200]
+                        - generic [ref=e201]: 8 left
+                      - generic [ref=e202]:
+                        - generic [ref=e203]:
+                          - paragraph [ref=e204]: Rp199.999
+                          - paragraph [ref=e205]: Rp156.000
+                        - paragraph [ref=e206]: Yoora Edit
+                - article [ref=e207]:
+                  - generic [ref=e209]:
+                    - img "Yume Striped Dress" [ref=e211]
+                    - generic [ref=e212]:
+                      - generic [ref=e213]:
+                        - generic [ref=e214]:
+                          - paragraph [ref=e215]: Lot 05
+                          - heading "Yume Striped Dress" [level=3] [ref=e216]
+                        - generic [ref=e217]: 9 left
+                      - generic [ref=e218]:
+                        - generic [ref=e219]:
+                          - paragraph [ref=e220]: Rp315.000
+                          - paragraph [ref=e221]: Rp246.000
+                        - paragraph [ref=e222]: Yoora Edit
+                - article [ref=e223]:
+                  - generic [ref=e225]:
+                    - img "Medina Poka Dress" [ref=e227]
+                    - generic [ref=e228]:
+                      - generic [ref=e229]:
+                        - generic [ref=e230]:
+                          - paragraph [ref=e231]: Lot 06
+                          - heading "Medina Poka Dress" [level=3] [ref=e232]
+                        - generic [ref=e233]: 11 left
+                      - generic [ref=e234]:
+                        - generic [ref=e235]:
+                          - paragraph [ref=e236]: Rp199.999
+                          - paragraph [ref=e237]: Rp156.000
+                        - paragraph [ref=e238]: Yoora Edit
+    - link "Chat with Customer Care on WhatsApp" [ref=e239] [cursor=pointer]:
+      - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+      - img [ref=e240]
+  - button "Open Next.js Dev Tools" [ref=e247] [cursor=pointer]:
+    - img [ref=e248]
+  - alert [ref=e251]

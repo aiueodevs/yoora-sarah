@@ -1,0 +1,4 @@
+[     529ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[     727ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[   75843ms] [ERROR] Access to fetch at 'https://api.fontshare.com/v2/css?f[]=sentient@700&f[]=satoshi@500,700&f[]=gambetta@700&f[]=cabinet-grotesk@600,700&display=swap' from origin 'http://127.0.0.1:3000' has been blocked by CORS policy: The 'Access-Control-Allow-Origin' header has a value 'https://api.fontshare.com' that is not equal to the supplied origin. Have the server send the header with a valid value. @ http://127.0.0.1:3000/:0
+[   75844ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.fontshare.com/v2/css?f[]=sentient@700&f[]=satoshi@500,700&f[]=gambetta@700&f[]=cabinet-grotesk@600,700&display=swap:0

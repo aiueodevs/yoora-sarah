@@ -1,0 +1,139 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - img [ref=e7] [cursor=pointer]
+    - banner [ref=e10]:
+      - generic [ref=e11] [cursor=pointer]:
+        - img
+      - link "Fonts 100":
+        - /url: /
+        - generic: Fonts
+        - generic: "100"
+      - link "Pairs 59" [ref=e12] [cursor=pointer]:
+        - /url: /pairs
+        - generic [ref=e13]: Pairs
+        - generic [ref=e14]: "59"
+      - link "Licenses" [ref=e15] [cursor=pointer]:
+        - /url: /licenses/itf-ffl
+        - generic [ref=e16]: Licenses
+      - img [ref=e19] [cursor=pointer]
+      - generic [ref=e21]:
+        - generic:
+          - generic: No styles selected
+    - generic [ref=e26]:
+      - generic [ref=e27]:
+        - link "Back to Fonts" [ref=e28] [cursor=pointer]:
+          - /url: /
+          - img [ref=e29]
+          - generic [ref=e31]: Back to Fonts
+        - generic [ref=e32]:
+          - generic [ref=e34] [cursor=pointer]: Styles
+          - generic [ref=e36] [cursor=pointer]: Glyphs
+          - generic [ref=e38] [cursor=pointer]: Layouts
+          - generic [ref=e40] [cursor=pointer]: Details
+          - generic [ref=e42] [cursor=pointer]: License
+        - generic [ref=e43] [cursor=pointer]:
+          - img [ref=e44]
+          - text: Download Family
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e49]: Gambetta
+          - img [ref=e50] [cursor=pointer]
+        - heading "Gambetta" [level=1] [ref=e52]
+        - generic [ref=e54]:
+          - generic [ref=e55]: 10 styles
+          - generic [ref=e56]: Variable
+        - generic [ref=e58]:
+          - generic [ref=e59]: Designed By
+          - link "Indian Type Foundry" [ref=e60] [cursor=pointer]:
+            - /url: /?q=Indian%20Type%20Foundry
+        - generic [ref=e61] [cursor=pointer]: Closed Source
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e65]: 10 styles
+          - generic [ref=e66]:
+            - generic [ref=e68]
+            - generic [ref=e73]
+            - generic [ref=e77] [cursor=pointer]
+            - generic [ref=e83]
+          - generic [ref=e98]:
+            - generic [ref=e100]
+            - generic [ref=e111]
+            - generic [ref=e122]
+            - generic [ref=e133]
+            - generic [ref=e144]
+            - generic [ref=e155]
+            - generic [ref=e166]
+            - generic [ref=e177]
+            - generic [ref=e188]
+            - generic [ref=e199]
+        - generic [ref=e209]:
+          - generic [ref=e211]: 2 variables
+          - generic [ref=e212]:
+            - generic [ref=e214]
+            - generic [ref=e219]
+            - generic [ref=e223] [cursor=pointer]
+            - generic [ref=e229]
+          - generic [ref=e244]:
+            - generic [ref=e246]
+            - generic [ref=e263]
+      - generic [ref=e280]:
+        - generic [ref=e282]: 368 Glyphs
+        - generic [ref=e283]:
+          - generic [ref=e284]:
+            - generic [ref=e285]: Capital Letter R
+            - generic [ref=e286]: U+0052
+          - generic [ref=e287]:
+            - generic: Solid
+            - generic [ref=e288] [cursor=pointer]: Outlines
+          - generic [ref=e289] [cursor=pointer]:
+            - generic
+          - generic [ref=e290]:
+            - generic: Basic Set
+            - generic [ref=e291] [cursor=pointer]: Full Set
+          - generic [ref=e293]:
+            - img [ref=e295]
+            - textbox "Type your letters" [ref=e297]
+        - generic [ref=e303]:
+          - generic [ref=e304]:
+            - paragraph [ref=e306]: Uppercase
+            - paragraph [ref=e361]: Lowercase
+            - paragraph [ref=e416]: Numerals
+          - generic [ref=e438] [cursor=pointer]: Show Full Set
+      - generic [ref=e442]:
+        - generic [ref=e444]: Layouts
+        - generic [ref=e445]:
+          - generic [ref=e446] [cursor=pointer]: + New Layout
+          - generic [ref=e447]:
+            - generic: Default Layout
+          - generic [ref=e448] [cursor=pointer]: Reset
+        - generic [ref=e450]:
+          - generic [ref=e451]:
+            - generic
+          - generic [ref=e464]:
+            - generic
+          - generic [ref=e477]:
+            - generic
+      - generic [ref=e490]:
+        - generic [ref=e491]:
+          - heading "Details" [level=2] [ref=e492]
+          - heading "License" [level=2] [ref=e493] [cursor=pointer]
+        - generic [ref=e496]:
+          - generic [ref=e497]:
+            - heading "Specifications" [level=3] [ref=e498]
+            - generic [ref=e500]
+            - generic [ref=e504]
+            - generic [ref=e509]
+            - generic [ref=e512]
+            - generic [ref=e532]
+            - generic [ref=e541]
+            - generic [ref=e545]
+            - generic [ref=e549]
+            - generic [ref=e553]
+          - generic [ref=e556]:
+            - heading "Story" [level=3] [ref=e557]
+            - generic [ref=e558]: Gambetta is a family of serif fonts designed for use in text. Its ten styles are spread across five weights, ranging from Light to Bold; each weight has an upright and a companion italic font on offer. Gambetta’s letterforms are drawn with diagonal stress, and they letters have visible contrast, too. The degree of contrast that is visible increases with every weight in the family. Several of the terminals on the strokes of Gambetta’s letterforms feature very prominent wedge-shapes. In the upright fonts’ uppercase, every vertical terminal has been designed with one of these ‘wedge terminals’. These have been left off of other letterforms, judiciously. For example, the lowercase ‘a’ in the upright fonts don’t have a top-left terminal. This decision results in ‘a’ counterforms that are quite open. The numerals in Gambetta are proportional lining figures; the top of the ‘3’ is very distinctive, as it is flat. The numeral height is slightly lower than that of the uppercase letters; the lowercase ascenders, in turn, are taller than the capitals. In Gambetta’s italic fonts, the lowercase ‘g’ is double-storey, while the ‘a’ is single-storey. The ear on the ‘g’ is a prominent diagonal stroke, and the top-right part of the ‘k’ is an open loop. Gambetta is intended for use in book design and in editorial design; the fonts come from Paul Troppmar.
+    - contentinfo [ref=e23]:
+      - generic [ref=e24]: Copyright © 2021 — 2026 Indian Type Foundry. All rights reserved.
+  - generic:
+    - generic:
+      - img

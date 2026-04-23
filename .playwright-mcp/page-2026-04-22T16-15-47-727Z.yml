@@ -1,0 +1,55 @@
+- generic [active] [ref=e1]:
+  - region "Notifications alt+T"
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "logo" [ref=e7] [cursor=pointer]:
+          - /url: /id
+          - img "logo" [ref=e8]
+        - generic [ref=e9]:
+          - link "search" [ref=e10] [cursor=pointer]:
+            - /url: /id/search
+            - button "search" [ref=e11]:
+              - img
+          - link "favorites" [ref=e12] [cursor=pointer]:
+            - /url: /id/wishlist
+            - button "favorites" [ref=e13]:
+              - img
+          - link "cart" [ref=e14] [cursor=pointer]:
+            - /url: /id/cart
+            - button "cart" [ref=e15]:
+              - img
+          - button "user" [ref=e16] [cursor=pointer]:
+            - img
+          - button "language" [ref=e17] [cursor=pointer]:
+            - img
+    - main [ref=e18]:
+      - navigation [ref=e21]:
+        - generic [ref=e22]: Loading...
+      - paragraph [ref=e27]: Loading...
+      - heading "dress" [level=2] [ref=e29]
+    - contentinfo [ref=e72]:
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - paragraph [ref=e76]: PT Yoora Sarah Sentosa
+          - paragraph [ref=e77]: Subang, Jawa Barat, Indonesia
+        - generic [ref=e79]:
+          - paragraph [ref=e80]: Layanan Pelanggan
+          - link "+6829712367263" [ref=e81] [cursor=pointer]:
+            - /url: tel:+6829712367263
+        - generic [ref=e83]:
+          - paragraph [ref=e85]: © 2026 Yoora Sarah. Seluruh hak cipta dilindungi.
+          - generic [ref=e86]:
+            - link "Instagram" [ref=e87] [cursor=pointer]:
+              - /url: https://www.instagram.com/yoora.sarah
+              - img "Instagram" [ref=e88]
+            - link "Tiktok" [ref=e90] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@yoora_sarah
+              - img "TikTok" [ref=e91]
+            - link "Shopee" [ref=e93] [cursor=pointer]:
+              - /url: https://shopee.co.id/yoora.sarah
+              - img "Shopee" [ref=e94]
+  - link "Chat with Customer Care on WhatsApp" [ref=e96] [cursor=pointer]:
+    - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+    - img "WhatsApp" [ref=e97]
+  - alert [ref=e99]

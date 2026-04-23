@@ -1,0 +1,261 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Yoora Sarah" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img "Yoora Sarah" [ref=e8]
+        - navigation [ref=e199]:
+          - link "Terbaru" [ref=e200] [cursor=pointer]:
+            - /url: /dress/safiyyah-sora-dress-5068
+            - generic [ref=e201]:
+              - generic [ref=e202]: Terbaru
+              - generic [ref=e203]: Terbaru
+          - button "Perempuan" [ref=e204] [cursor=pointer]:
+            - generic [ref=e205]:
+              - generic [ref=e206]: Perempuan
+              - generic [ref=e207]: Perempuan
+            - img [ref=e208]
+          - link "Sepatu" [ref=e210] [cursor=pointer]:
+            - /url: /footwear-8675
+            - generic [ref=e211]:
+              - generic [ref=e212]: Sepatu
+              - generic [ref=e213]: Sepatu
+          - link "Aksesori" [ref=e214] [cursor=pointer]:
+            - /url: /accessories-4472
+            - generic [ref=e215]:
+              - generic [ref=e216]: Aksesori
+              - generic [ref=e217]: Aksesori
+          - button "Koleksi" [ref=e218] [cursor=pointer]:
+            - generic [ref=e219]:
+              - generic [ref=e220]: Koleksi
+              - generic [ref=e221]: Koleksi
+            - img [ref=e222]
+          - link "Promo" [ref=e224] [cursor=pointer]:
+            - /url: /#clearance
+            - generic [ref=e225]:
+              - generic [ref=e226]: Promo
+              - generic [ref=e227]: Promo
+          - link "One Set" [ref=e228] [cursor=pointer]:
+            - /url: /one-set-5182
+        - generic [ref=e229]:
+          - link [ref=e230] [cursor=pointer]:
+            - /url: /search
+            - img [ref=e231]
+          - link [ref=e234] [cursor=pointer]:
+            - /url: /wishlist
+            - img [ref=e235]
+          - link [ref=e237] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e238]
+          - link [ref=e241] [cursor=pointer]:
+            - /url: /profile
+            - img [ref=e242]
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - link:
+                - /url: /
+                - generic
+            - button:
+              - img
+          - generic:
+            - link:
+              - /url: /search
+              - text: Cari produk atau kategori
+          - navigation:
+            - generic:
+              - generic:
+                - paragraph: Temukan
+                - list
+              - generic:
+                - paragraph: Perempuan
+                - list
+              - generic:
+                - paragraph: Koleksi
+                - list
+          - generic:
+            - generic:
+              - link:
+                - /url: /search
+                - img
+                - generic: Cari
+              - link:
+                - /url: /wishlist
+                - img
+                - generic: Wishlist
+              - link:
+                - /url: /cart
+                - img
+                - generic: Keranjang
+              - link:
+                - /url: /profile
+                - img
+                - generic: Akun
+            - generic:
+              - generic:
+                - paragraph: Bahasa situs
+                - paragraph: Konten saat ini tersedia dalam Bahasa Indonesia.
+              - generic:
+                - img
+                - text: ID
+    - main [ref=e12]:
+      - generic [ref=e14]:
+        - navigation [ref=e15]:
+          - link "Beranda" [ref=e16] [cursor=pointer]:
+            - /url: /
+          - img [ref=e17]
+          - link "Dress" [ref=e19] [cursor=pointer]:
+            - /url: /dress
+          - img [ref=e20]
+          - generic [ref=e22]: Clara Dress
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - img "Clara Dress Cappucino 1" [ref=e27]
+            - img "Clara Dress Cappucino 2" [ref=e30]
+            - img "Clara Dress Cappucino 3" [ref=e33]
+            - img "Clara Dress Cappucino 4" [ref=e36]
+          - generic [ref=e38]:
+            - paragraph [ref=e39]: Detail Produk
+            - heading "Clara Dress" [level=1] [ref=e40]
+            - paragraph [ref=e41]: Produk ini dirancang untuk memberi tampilan yang rapi, nyaman, dan mudah disesuaikan dengan kebutuhan harian maupun acara khusus.
+            - generic [ref=e42]:
+              - generic [ref=e43]:
+                - paragraph [ref=e44]: "Warna yang dipilih: Cappucino"
+                - generic [ref=e45]
+              - paragraph [ref=e51]: Sisa stok 6
+            - generic [ref=e52]:
+              - paragraph [ref=e53]: "Ukuran yang dipilih: S"
+              - generic [ref=e54]:
+                - button "S" [ref=e55] [cursor=pointer]
+                - button "M" [ref=e56] [cursor=pointer]
+                - button "L" [ref=e57] [cursor=pointer]
+                - button "XL" [ref=e58] [cursor=pointer]
+            - generic [ref=e59]:
+              - paragraph [ref=e60]: Rp199.999
+              - button "Panduan Ukuran" [ref=e61] [cursor=pointer]:
+                - img [ref=e62]
+                - text: Panduan Ukuran
+            - generic [ref=e68]:
+              - generic [ref=e69]:
+                - button "Kurangi jumlah" [ref=e70] [cursor=pointer]
+                - generic [ref=e72]: "1"
+                - button "Tambah jumlah" [ref=e73] [cursor=pointer]
+              - button "Tambah ke Keranjang" [ref=e75] [cursor=pointer]
+            - button "Tambah ke Wishlist" [ref=e76] [cursor=pointer]:
+              - img [ref=e77]
+              - text: Tambah ke Wishlist
+            - generic [ref=e79]:
+              - paragraph [ref=e80]: Ringkasan
+              - paragraph [ref=e81]: Rp199.999
+              - paragraph [ref=e82]: 1 item, ukuran S, warna Cappucino.
+            - generic [ref=e83]:
+              - generic [ref=e84]:
+                - generic [ref=e85]
+                - paragraph [ref=e90]: Belum ada rekomendasi pendamping yang cukup kuat untuk produk ini.
+              - generic [ref=e91]:
+                - article [ref=e92]
+                - article [ref=e96]
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - paragraph [ref=e104]: Tentang Produk
+            - heading "Deskripsi" [level=2] [ref=e105]
+            - generic [ref=e106]:
+              - paragraph [ref=e107]: Clara Dress dari Yoora Sarah hadir sebagai pilihan feminin dengan sentuhan glamor yang tetap sopan.
+              - paragraph [ref=e108]: Terbuat dari Ceruty Babydoll berkualitas tinggi dan full puring premium berbahan jersey, dress ini terasa ringan, jatuh sempurna, dan tetap adem saat dipakai.
+              - paragraph [ref=e109]: Busui friendly dengan resleting depan, detail lengan balon berhias payet, serta pilihan ukuran lengkap untuk tampilan formal maupun momen spesial.
+          - generic [ref=e110]:
+            - generic [ref=e111]:
+              - paragraph [ref=e112]: Informasi Bahan
+              - heading "Bahan" [level=3] [ref=e113]
+              - list [ref=e114]:
+                - listitem [ref=e115]: Ceruty Babydoll dengan jatuh kain yang lembut dan flowy.
+                - listitem [ref=e116]: Full puring premium berbahan jersey agar lebih adem di kulit.
+                - listitem [ref=e117]: Detail payet menjulang pada lengan untuk aksen refined.
+            - generic [ref=e118]:
+              - paragraph [ref=e119]: Perawatan
+              - heading "Cara merawat produk" [level=3] [ref=e120]
+              - list [ref=e121]:
+                - listitem [ref=e122]: Cuci tangan atau gunakan mode lembut dengan air dingin.
+                - listitem [ref=e123]: Jemur di tempat teduh untuk menjaga warna tetap stabil.
+                - listitem [ref=e124]: Setrika suhu rendah dari sisi dalam atau gunakan steamer.
+        - generic [ref=e125]:
+          - paragraph [ref=e126]: Ulasan
+          - heading "Ulasan produk" [level=3] [ref=e127]
+          - paragraph [ref=e128]: Belum ada ulasan untuk produk ini. Saat ulasan tersedia, pelanggan dapat melihat pengalaman pemakaian dan kecocokan ukuran dengan lebih mudah.
+    - contentinfo [ref=e129]:
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - generic [ref=e132]:
+            - link "Yoora Sarah" [ref=e133] [cursor=pointer]:
+              - /url: /
+              - img "Yoora Sarah" [ref=e135]
+            - paragraph [ref=e136]: PT Yoora Sarah Sentosa
+            - generic [ref=e137]:
+              - generic [ref=e138]:
+                - img [ref=e139]
+                - generic [ref=e142]: Jl. Otto Iskandardinata No.271, Karanganyar, Kec. Subang, Kabupaten Subang, Jawa Barat 41211 KAB. SUBANG - SUBANG JAWA BARAT ID 41211
+              - generic [ref=e143]:
+                - img [ref=e144]
+                - link "+6282315866088" [ref=e146] [cursor=pointer]:
+                  - /url: tel:+6282315866088
+          - generic [ref=e147]:
+            - heading "Bantuan Belanja" [level=4] [ref=e148]
+            - list [ref=e149]:
+              - listitem [ref=e150]:
+                - link "Cara Pemesanan" [ref=e151] [cursor=pointer]:
+                  - /url: /pages/cara-belanja
+              - listitem [ref=e152]:
+                - link "Cara Pembayaran" [ref=e153] [cursor=pointer]:
+                  - /url: /pages/metode-pembayaran
+              - listitem [ref=e154]:
+                - link "Pengiriman & Ongkos Kirim" [ref=e155] [cursor=pointer]:
+                  - /url: /pages/pengiriman
+              - listitem [ref=e156]:
+                - link "Pengembalian & Penukaran" [ref=e157] [cursor=pointer]:
+                  - /url: /pages/pengembalian-penukaran-produk
+              - listitem [ref=e158]:
+                - link "Panduan Ukuran" [ref=e159] [cursor=pointer]:
+                  - /url: /pages/panduan-ukuran
+          - generic [ref=e160]:
+            - heading "Tentang Kami" [level=4] [ref=e161]
+            - list [ref=e162]:
+              - listitem [ref=e163]:
+                - link "Tentang Yoora Sarah" [ref=e164] [cursor=pointer]:
+                  - /url: /pages/tentang-yoora-sarah
+              - listitem [ref=e165]:
+                - link "Hubungi Kami" [ref=e166] [cursor=pointer]:
+                  - /url: /pages/hubungi-kami
+              - listitem [ref=e167]:
+                - link "Karir" [ref=e168] [cursor=pointer]:
+                  - /url: /pages/karir
+          - generic [ref=e169]:
+            - heading "Kebijakan" [level=4] [ref=e170]
+            - list [ref=e171]:
+              - listitem [ref=e172]:
+                - link "Syarat & Ketentuan" [ref=e173] [cursor=pointer]:
+                  - /url: /pages/syarat-dan-ketentuan
+              - listitem [ref=e174]:
+                - link "Kebijakan Privasi" [ref=e175] [cursor=pointer]:
+                  - /url: /pages/kebijakan-privasi
+              - listitem [ref=e176]:
+                - link "Kebijakan Cookie" [ref=e177] [cursor=pointer]:
+                  - /url: /pages/kebijakan-cookie
+        - generic [ref=e178]:
+          - paragraph [ref=e179]: © 2026 Yoora Sarah. Semua hak dilindungi.
+          - generic [ref=e180]:
+            - link "Instagram" [ref=e181] [cursor=pointer]:
+              - /url: https://www.instagram.com/yoora.sarah
+            - link "TikTok" [ref=e182] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@yoora_sarah
+            - link "Shopee" [ref=e183] [cursor=pointer]:
+              - /url: https://shopee.co.id/yoora.sarah
+    - link "Chat with Customer Care on WhatsApp" [ref=e184] [cursor=pointer]:
+      - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bantuan%20terkait%20pesanan%20saya.
+      - img [ref=e185]
+    - button "Buka asisten belanja" [ref=e187] [cursor=pointer]:
+      - img [ref=e188]
+  - button "Open Next.js Dev Tools" [ref=e195] [cursor=pointer]:
+    - img [ref=e196]
+  - alert [ref=e245]

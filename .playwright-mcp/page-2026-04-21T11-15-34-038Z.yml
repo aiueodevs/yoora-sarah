@@ -1,0 +1,257 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link "Yoora Sarah" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e8]:
+          - searchbox "Cari produk..." [ref=e9]
+          - button [ref=e10]:
+            - img [ref=e11]
+        - generic [ref=e14]:
+          - link [ref=e15] [cursor=pointer]:
+            - /url: /wishlist
+            - button [ref=e16]:
+              - img [ref=e17]
+          - link [ref=e19] [cursor=pointer]:
+            - /url: /cart
+            - button [ref=e20]:
+              - img [ref=e21]
+          - link [ref=e25] [cursor=pointer]:
+            - /url: /profile
+            - button [ref=e26]:
+              - img [ref=e27]
+          - button [ref=e30]:
+            - img [ref=e31]
+      - generic [ref=e33]:
+        - searchbox "Cari produk..." [ref=e34]
+        - button [ref=e35]:
+          - img [ref=e36]
+  - main [ref=e39]:
+    - generic [ref=e40]:
+      - generic [ref=e43]:
+        - generic [ref=e44]:
+          - heading "Busana MuslimahElegan & Berkualitas" [level=1] [ref=e45]
+          - paragraph [ref=e46]: Temukan koleksi terbaru hijab, gamis, dan busana muslimah premium dari Yoora Sarah.
+          - generic [ref=e47]:
+            - link "Lihat Koleksi" [ref=e48] [cursor=pointer]:
+              - /url: /category/new-arrival
+            - link "Tentang Kami" [ref=e49] [cursor=pointer]:
+              - /url: /about
+        - generic [ref=e51]: Hero Image
+      - generic [ref=e54]:
+        - button "Terlaris" [ref=e55]
+        - button "Diskon" [ref=e56]
+        - button "Koleksi Terbaru" [ref=e57]
+        - button "Eksklusif" [ref=e58]
+        - button "Segera Hadir" [ref=e59]
+      - generic [ref=e61]:
+        - heading "Produk Terlaris" [level=2] [ref=e62]
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - img "Gamis Modern Premium" [ref=e66]
+              - button [ref=e67]:
+                - img [ref=e68]
+              - generic [ref=e70]: "-22%"
+            - heading "Gamis Modern Premium" [level=3] [ref=e71]
+            - generic [ref=e72]:
+              - generic [ref=e73]: Rp 350.000
+              - generic [ref=e74]: Rp 450.000
+            - button "Tambah ke Keranjang" [ref=e75]:
+              - img [ref=e76]
+              - text: Tambah ke Keranjang
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - img "Hijab Segiempat Silk" [ref=e82]
+              - button [ref=e83]:
+                - img [ref=e84]
+            - heading "Hijab Segiempat Silk" [level=3] [ref=e86]
+            - generic [ref=e88]: Rp 85.000
+            - button "Tambah ke Keranjang" [ref=e89]:
+              - img [ref=e90]
+              - text: Tambah ke Keranjang
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - img "Tunik Muslimah Elegant" [ref=e96]
+              - button [ref=e97]:
+                - img [ref=e98]
+              - generic [ref=e100]: "-21%"
+            - heading "Tunik Muslimah Elegant" [level=3] [ref=e101]
+            - generic [ref=e102]:
+              - generic [ref=e103]: Rp 275.000
+              - generic [ref=e104]: Rp 350.000
+            - button "Tambah ke Keranjang" [ref=e105]:
+              - img [ref=e106]
+              - text: Tambah ke Keranjang
+          - generic [ref=e110]:
+            - generic [ref=e111]:
+              - img "Blouse Muslim Casual" [ref=e112]
+              - button [ref=e113]:
+                - img [ref=e114]
+            - heading "Blouse Muslim Casual" [level=3] [ref=e116]
+            - generic [ref=e118]: Rp 195.000
+            - button "Tambah ke Keranjang" [ref=e119]:
+              - img [ref=e120]
+              - text: Tambah ke Keranjang
+      - generic [ref=e125]:
+        - heading "Koleksi Terbaru" [level=2] [ref=e126]
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e129]:
+              - img "Gamis Modern Premium" [ref=e130]
+              - button [ref=e131]:
+                - img [ref=e132]
+              - generic [ref=e134]: "-22%"
+            - heading "Gamis Modern Premium" [level=3] [ref=e135]
+            - generic [ref=e136]:
+              - generic [ref=e137]: Rp 350.000
+              - generic [ref=e138]: Rp 450.000
+            - button "Tambah ke Keranjang" [ref=e139]:
+              - img [ref=e140]
+              - text: Tambah ke Keranjang
+          - generic [ref=e144]:
+            - generic [ref=e145]:
+              - img "Hijab Segiempat Silk" [ref=e146]
+              - button [ref=e147]:
+                - img [ref=e148]
+            - heading "Hijab Segiempat Silk" [level=3] [ref=e150]
+            - generic [ref=e152]: Rp 85.000
+            - button "Tambah ke Keranjang" [ref=e153]:
+              - img [ref=e154]
+              - text: Tambah ke Keranjang
+          - generic [ref=e158]:
+            - generic [ref=e159]:
+              - img "Tunik Muslimah Elegant" [ref=e160]
+              - button [ref=e161]:
+                - img [ref=e162]
+              - generic [ref=e164]: "-21%"
+            - heading "Tunik Muslimah Elegant" [level=3] [ref=e165]
+            - generic [ref=e166]:
+              - generic [ref=e167]: Rp 275.000
+              - generic [ref=e168]: Rp 350.000
+            - button "Tambah ke Keranjang" [ref=e169]:
+              - img [ref=e170]
+              - text: Tambah ke Keranjang
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - img "Blouse Muslim Casual" [ref=e176]
+              - button [ref=e177]:
+                - img [ref=e178]
+            - heading "Blouse Muslim Casual" [level=3] [ref=e180]
+            - generic [ref=e182]: Rp 195.000
+            - button "Tambah ke Keranjang" [ref=e183]:
+              - img [ref=e184]
+              - text: Tambah ke Keranjang
+      - generic [ref=e189]:
+        - heading "Sedang Diskon" [level=2] [ref=e190]
+        - generic [ref=e191]:
+          - generic [ref=e192]:
+            - generic [ref=e193]:
+              - img "Gamis Modern Premium" [ref=e194]
+              - button [ref=e195]:
+                - img [ref=e196]
+              - generic [ref=e198]: "-22%"
+            - heading "Gamis Modern Premium" [level=3] [ref=e199]
+            - generic [ref=e200]:
+              - generic [ref=e201]: Rp 350.000
+              - generic [ref=e202]: Rp 450.000
+            - button "Tambah ke Keranjang" [ref=e203]:
+              - img [ref=e204]
+              - text: Tambah ke Keranjang
+          - generic [ref=e208]:
+            - generic [ref=e209]:
+              - img "Hijab Segiempat Silk" [ref=e210]
+              - button [ref=e211]:
+                - img [ref=e212]
+            - heading "Hijab Segiempat Silk" [level=3] [ref=e214]
+            - generic [ref=e216]: Rp 85.000
+            - button "Tambah ke Keranjang" [ref=e217]:
+              - img [ref=e218]
+              - text: Tambah ke Keranjang
+          - generic [ref=e222]:
+            - generic [ref=e223]:
+              - img "Tunik Muslimah Elegant" [ref=e224]
+              - button [ref=e225]:
+                - img [ref=e226]
+              - generic [ref=e228]: "-21%"
+            - heading "Tunik Muslimah Elegant" [level=3] [ref=e229]
+            - generic [ref=e230]:
+              - generic [ref=e231]: Rp 275.000
+              - generic [ref=e232]: Rp 350.000
+            - button "Tambah ke Keranjang" [ref=e233]:
+              - img [ref=e234]
+              - text: Tambah ke Keranjang
+          - generic [ref=e238]:
+            - generic [ref=e239]:
+              - img "Blouse Muslim Casual" [ref=e240]
+              - button [ref=e241]:
+                - img [ref=e242]
+            - heading "Blouse Muslim Casual" [level=3] [ref=e244]
+            - generic [ref=e246]: Rp 195.000
+            - button "Tambah ke Keranjang" [ref=e247]:
+              - img [ref=e248]
+              - text: Tambah ke Keranjang
+  - contentinfo [ref=e252]:
+    - generic [ref=e253]:
+      - generic [ref=e254]:
+        - generic [ref=e255]:
+          - heading "Yoora Sarah" [level=3] [ref=e256]
+          - paragraph [ref=e257]: Brand Fashion Muslim Terdepan dengan koleksi terbaru hijab, gamis, tunik, dan aksesoris muslimah berkualitas.
+        - generic [ref=e258]:
+          - heading "Tautan Cepat" [level=4] [ref=e259]
+          - list [ref=e260]:
+            - listitem [ref=e261]:
+              - link "Tentang Kami" [ref=e262] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e263]:
+              - link "Hubungi Kami" [ref=e264] [cursor=pointer]:
+                - /url: /contact
+            - listitem [ref=e265]:
+              - link "FAQ" [ref=e266] [cursor=pointer]:
+                - /url: /faq
+            - listitem [ref=e267]:
+              - link "Panduan Ukuran" [ref=e268] [cursor=pointer]:
+                - /url: /size-guide
+        - generic [ref=e269]:
+          - heading "Layanan Pelanggan" [level=4] [ref=e270]
+          - list [ref=e271]:
+            - listitem [ref=e272]:
+              - link "Pengiriman" [ref=e273] [cursor=pointer]:
+                - /url: /shipping
+            - listitem [ref=e274]:
+              - link "Pengembalian" [ref=e275] [cursor=pointer]:
+                - /url: /returns
+            - listitem [ref=e276]:
+              - link "Kebijakan Privasi" [ref=e277] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=e278]:
+              - link "Syarat & Ketentuan" [ref=e279] [cursor=pointer]:
+                - /url: /terms
+        - generic [ref=e280]:
+          - heading "Hubungi Kami" [level=4] [ref=e281]
+          - list [ref=e282]:
+            - listitem [ref=e283]:
+              - img [ref=e284]
+              - text: Subang, Jawa Barat, Indonesia
+            - listitem [ref=e287]:
+              - img [ref=e288]
+              - link "+62 823 1586 6088" [ref=e290] [cursor=pointer]:
+                - /url: tel:+6282315866088
+            - listitem [ref=e291]:
+              - img [ref=e292]
+              - link "info@yoorasarah.com" [ref=e295] [cursor=pointer]:
+                - /url: mailto:info@yoorasarah.com
+      - generic [ref=e296]:
+        - heading "Metode Pembayaran" [level=4] [ref=e297]
+        - generic [ref=e298]:
+          - generic [ref=e299]: BCA
+          - generic [ref=e300]: Mandiri
+          - generic [ref=e301]: BNI
+          - generic [ref=e302]: BRI
+          - generic [ref=e303]: GoPay
+          - generic [ref=e304]: OVO
+      - paragraph [ref=e306]: © 2026 Yoora Sarah. Seluruh hak cipta dilindungi.
+  - link "Chat with Customer Care on WhatsApp" [ref=e307] [cursor=pointer]:
+    - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+    - img [ref=e308]

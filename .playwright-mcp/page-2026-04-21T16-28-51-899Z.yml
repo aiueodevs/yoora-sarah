@@ -1,0 +1,180 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Yoora Sarah" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img "Yoora Sarah" [ref=e9]
+        - button "Open menu" [ref=e98] [cursor=pointer]:
+          - generic [ref=e99]: Menu
+          - img [ref=e100]
+    - generic:
+      - button
+      - generic:
+        - generic:
+          - generic:
+            - paragraph: Women Edit
+            - button:
+              - img
+          - generic:
+            - generic:
+              - paragraph: Curated Womenswear
+              - heading [level=2]: Women, presented like a soft editorial.
+              - paragraph: Bukan katalog penuh. Ini adalah edit modestwear yang terasa selesai, tenang, dan disengaja dari frame pertama.
+              - generic:
+                - link:
+                  - /url: /dress
+                  - paragraph: Dress
+                  - paragraph: Fluid dressing for occasion and daywear.
+                - link:
+                  - /url: /abaya-2481
+                  - paragraph: Abaya
+                  - paragraph: Quiet layers with stronger structure.
+                - link:
+                  - /url: /one-set-5182
+                  - paragraph: One Set
+                  - paragraph: Complete looks with finished proportion.
+                - link:
+                  - /url: /hijab-1544
+                  - paragraph: Hijab
+                  - paragraph: Refined daily wraps.
+                - link:
+                  - /url: /khimar-5295
+                  - paragraph: Khimar
+                  - paragraph: Longline coverage with softer movement.
+                - link:
+                  - /url: /pashmina-2310
+                  - paragraph: Pashmina
+                  - paragraph: Drape-led essentials.
+              - generic:
+                - button: Women
+                - button: Collections
+                - button: Footwear
+                - button: Accessories
+                - button: AI Styling
+            - link:
+              - /url: /dress
+              - generic:
+                - img
+              - generic:
+                - generic:
+                  - paragraph: Signature palette
+                  - paragraph: Rose ash, cocoa, sandstone.
+                - generic: Explore Women
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - link:
+              - /url: /
+              - generic:
+                - img
+            - button:
+              - img
+          - generic:
+            - paragraph: Scene Navigation
+            - generic:
+              - button:
+                - generic:
+                  - generic: Women
+                - paragraph: Bukan katalog penuh. Ini adalah edit modestwear yang terasa selesai, tenang, dan disengaja dari frame pertama.
+              - button:
+                - generic:
+                  - generic: Collections
+                - paragraph: "Setiap route terasa seperti lookbook: occasion, tone, and styling intent dipilih dulu sebelum belanja dimulai."
+              - button:
+                - generic:
+                  - generic: Footwear
+                - paragraph: Bukan sekadar pelengkap. Footwear diposisikan sebagai final proportion tool untuk look yang lebih matang.
+              - button:
+                - generic:
+                  - generic: Accessories
+                - paragraph: "Setiap aksen dipilih untuk menggeser tone look secara halus: calmer, brighter, or more polished."
+              - button:
+                - generic:
+                  - generic: AI Styling
+                  - img
+                - paragraph: "AI Styling diposisikan sebagai concierge: bantu memilih mood, silhouette, and palette lalu arahkan ke edit yang paling cocok."
+          - generic:
+            - paragraph: Women Edit
+            - generic:
+              - link:
+                - /url: /dress
+                - text: Dress
+                - generic: Fluid dressing for occasion and daywear.
+              - link:
+                - /url: /abaya-2481
+                - text: Abaya
+                - generic: Quiet layers with stronger structure.
+              - link:
+                - /url: /one-set-5182
+                - text: One Set
+                - generic: Complete looks with finished proportion.
+              - link:
+                - /url: /hijab-1544
+                - text: Hijab
+                - generic: Refined daily wraps.
+              - link:
+                - /url: /khimar-5295
+                - text: Khimar
+                - generic: Longline coverage with softer movement.
+              - link:
+                - /url: /pashmina-2310
+                - text: Pashmina
+                - generic: Drape-led essentials.
+          - generic:
+            - link:
+              - /url: /search
+              - img
+              - text: Find Your Style
+            - link:
+              - /url: /cart
+              - img
+              - text: View Bag
+    - main [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - img "Women, presented like a soft editorial." [ref=e37]
+          - img "Collections built around mood, not product count." [ref=e40]
+          - img "Footwear that anchors the silhouette quietly." [ref=e43]
+          - img "Accessories used as mood, not decoration." [ref=e46]
+          - img "Find your style before you enter the catalog." [ref=e49]
+        - generic [ref=e55]:
+          - paragraph [ref=e56]: Curated Womenswear
+          - heading "Women, presented like a soft editorial." [level=1] [ref=e57]
+          - paragraph [ref=e58]: Bukan katalog penuh. Ini adalah edit modestwear yang terasa selesai, tenang, dan disengaja dari frame pertama.
+          - generic [ref=e59]:
+            - link "Explore Women" [ref=e60] [cursor=pointer]:
+              - /url: /dress
+            - button "Open Edit" [ref=e61] [cursor=pointer]:
+              - img [ref=e62]
+              - text: Open Edit
+          - generic [ref=e101]:
+            - paragraph [ref=e102]: Scene Navigation
+            - generic [ref=e103]:
+              - button "Women" [ref=e104] [cursor=pointer]
+              - button "Collections" [ref=e105] [cursor=pointer]
+              - button "Footwear" [ref=e106] [cursor=pointer]
+              - button "Accessories" [ref=e107] [cursor=pointer]
+              - button "AI Styling" [ref=e108] [cursor=pointer]
+            - generic [ref=e109]:
+              - paragraph [ref=e110]: Signature palette
+              - paragraph [ref=e111]: Rose ash, cocoa, sandstone.
+  - generic [active]:
+    - menu "Next.js Dev Tools Items" [ref=e113]:
+      - generic [ref=e114]:
+        - menuitem "Route Static" [ref=e115] [cursor=pointer]:
+          - generic [ref=e116]: Route
+          - generic [ref=e117]: Static
+        - generic "Turbopack is enabled." [ref=e118]:
+          - generic [ref=e119]: Bundler
+          - generic [ref=e120]: Turbopack
+        - menuitem "Route Info" [ref=e121]:
+          - generic [ref=e122]: Route Info
+          - img [ref=e124]
+      - menuitem "Preferences" [ref=e127]:
+        - generic [ref=e128]: Preferences
+        - img [ref=e130]
+    - button "Close Next.js Dev Tools" [expanded] [ref=e132] [cursor=pointer]:
+      - img [ref=e95]
+  - alert [ref=e112]

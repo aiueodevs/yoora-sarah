@@ -1,0 +1,106 @@
+[   16128ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[   16299ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  315159ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  315461ms] [ERROR] ./apps/web/components/home/hero.tsx:4:1
+Module not found: Can't resolve './hero-sequence'
+  2 |
+  3 | import { CategoryFeature } from '@/lib/storefront-data';
+> 4 | import { HeroSequence } from './hero-sequence';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface HeroProps {
+  7 |   category: CategoryFeature;
+
+Import trace:
+  Server Component:
+    ./apps/web/components/home/hero.tsx
+    ./apps/web/app/page.tsx
+
+https://nextjs.org/docs/messages/module-not-found @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:3127
+[  330907ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  331402ms] [LOG] [Fast Refresh] done in 244ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  372387ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  372507ms] [LOG] [Fast Refresh] done in 228ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  372884ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  373071ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  426750ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  426836ms] [LOG] [Fast Refresh] done in 182ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  441901ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  442175ms] [LOG] [Fast Refresh] done in 383ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  442464ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  442536ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  449466ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  449528ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  612844ms] [WARNING] Image with src "https://www.yoorasarah.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-topbar.08em~oeq_vqsv.png&w=3840&q=75&dpl=dpl_E6iLp5xSGbcp4otPmSfkhG3LN4hJ" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 1440302ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 1440382ms] [LOG] [Fast Refresh] done in 150ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 1446300ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 1446579ms] [LOG] [Fast Refresh] done in 383ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 1447050ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 1447192ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 1450976ms] A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+[ 1450977ms] A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+[ 1450977ms] A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+[ 1458011ms] A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+[ 1548465ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=WE0di6IwmMKsk5j8RFFom' failed:  @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10876
+[ 1551514ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=WE0di6IwmMKsk5j8RFFom' failed:  @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10876
+[ 1554564ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=WE0di6IwmMKsk5j8RFFom' failed:  @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10876
+[ 1557608ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=WE0di6IwmMKsk5j8RFFom' failed:  @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10876
+[ 1560639ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=WE0di6IwmMKsk5j8RFFom' failed:  @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10876
+[ 1567674ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=WE0di6IwmMKsk5j8RFFom' failed:  @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10876
+[ 1574740ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=WE0di6IwmMKsk5j8RFFom' failed:  @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10876
+[ 1581771ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=WE0di6IwmMKsk5j8RFFom' failed:  @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10876
+[ 1588813ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=WE0di6IwmMKsk5j8RFFom' failed:  @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10876
+[ 1595875ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=WE0di6IwmMKsk5j8RFFom' failed:  @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10876
+[ 1602909ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=WE0di6IwmMKsk5j8RFFom' failed:  @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10876
+[ 1609943ms] [ERROR] WebSocket connection to 'ws://127.0.0.1:3000/_next/webpack-hmr?id=WE0di6IwmMKsk5j8RFFom' failed:  @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10876
+[ 1700549ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 1700674ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 1708182ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 1708201ms] [LOG] [Fast Refresh] done in 129ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2276635ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2278613ms] [LOG] [Fast Refresh] done in 1703ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2319061ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2319324ms] [LOG] [Fast Refresh] done in 343ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2331946ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2332314ms] [LOG] [Fast Refresh] done in 340ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2427769ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2428144ms] [ERROR] ./apps/web/app/layout.tsx:4:1
+Module not found: Can't resolve '@/components/layout/header'
+  2 | import './globals.css';
+  3 | import { Providers } from './providers';
+> 4 | import { Header } from '@/components/layout/header';
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { Footer } from '@/components/layout/footer';
+  6 | import { WhatsAppButton } from '@/components/layout/whatsapp-button';
+  7 |
+
+Import map: aliased to relative './components/layout/header' inside of [project]/apps/web
+
+https://nextjs.org/docs/messages/module-not-found @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:3127
+[ 2492886ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2493302ms] [WARNING] [HMR] Invalid message: {"isTrusted":true}
+TypeError: Cannot convert undefined or null to object
+    at Object.keys (<anonymous>)
+    at extractModulesFromTurbopackMessage (http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:11208:39)
+    at TurbopackHmr.onTurbopackMessage (http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:11155:32)
+    at processMessage (http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:11587:30)
+    at WebSocket.handleMessage (http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_client_de122c72._.js:10912:52) @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2493605ms] [LOG] [Fast Refresh] done in 525ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2501890ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2502497ms] [LOG] [Fast Refresh] done in 693ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2514816ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2515022ms] [LOG] [Fast Refresh] done in 312ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2515463ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2515670ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2553488ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2553789ms] [LOG] [Fast Refresh] done in 314ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2562641ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2562878ms] [LOG] [Fast Refresh] done in 262ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2627432ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2627864ms] [LOG] [Fast Refresh] done in 540ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2628232ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2628316ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2669570ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[ 2669610ms] [LOG] [Fast Refresh] done in 145ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297

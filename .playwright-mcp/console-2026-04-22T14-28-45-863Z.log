@@ -1,0 +1,37 @@
+[    1120ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[    1296ms] [LOG] [HMR] connected @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  812928ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  814145ms] [ERROR] ./apps/web/app/lib/buyer-ai-api.ts:168:9
+Parsing ecmascript source code failed
+  166 |
+  167 |   const result = await readStorefrontApi<Array<{
+> 168 |   const result = await requestStorefrontApi<Array<{
+      |         ^^^^^^
+  169 |     name: string;
+  170 |     slug: string;
+  171 |     category: string;
+
+Unexpected token `result`. Expected ... , *,  (, [, :, , ?, =, an identifier, public, protected, private, readonly, <.
+
+Import traces:
+  Client Component Browser:
+    ./apps/web/app/lib/buyer-ai-api.ts [Client Component Browser]
+    ./apps/web/components/buyer-assistant.tsx [Client Component Browser]
+    ./apps/web/components/buyer-assistant.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./apps/web/app/lib/buyer-ai-api.ts [Client Component SSR]
+    ./apps/web/components/buyer-assistant.tsx [Client Component SSR]
+    ./apps/web/components/buyer-assistant.tsx [Server Component]
+    ./apps/web/app/layout.tsx [Server Component] @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:3127
+[  827380ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  827732ms] [LOG] [Fast Refresh] done in 243ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  827847ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  827972ms] [LOG] [Fast Refresh] done in 228ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  872772ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  872945ms] [LOG] [Fast Refresh] done in 272ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  884622ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  885178ms] [LOG] [Fast Refresh] done in 190ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  886790ms] [LOG] [Fast Refresh] rebuilding @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297
+[  886805ms] [LOG] [Fast Refresh] done in 122ms @ http://127.0.0.1:3000/_next/static/chunks/5bcb1_next_dist_da08b0c4._.js:2297

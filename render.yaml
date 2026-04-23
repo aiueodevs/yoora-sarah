@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: yoora-sarah-api
+    runtime: docker
+    dockerContext: .
+    dockerfilePath: ./services/api/Dockerfile
+    plan: starter
+    autoDeploy: true
+    healthCheckPath: /api/v1/ready
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: YOORA_INTERNAL_API_SHARED_SECRET
+        sync: false

@@ -1,0 +1,152 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Yoora Sarah" [ref=e7] [cursor=pointer]:
+          - /url: /
+          - img "Yoora Sarah" [ref=e9]
+        - button "Buka menu" [ref=e11] [cursor=pointer]:
+          - img [ref=e12]
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - link:
+                - /url: /
+                - generic:
+                  - img
+            - button:
+              - img
+          - generic:
+            - link:
+              - /url: /search
+              - text: Cari produk atau kategori
+          - navigation:
+            - paragraph: Kategori
+            - list:
+              - listitem:
+                - link:
+                  - /url: /dress
+                  - text: Dress
+                  - generic: Siluet anggun, warna cantik, dan potongan yang nyaman untuk menemani setiap momen.
+              - listitem:
+                - link:
+                  - /url: /abaya-2481
+                  - text: Abaya
+                  - generic: Siluet yang jatuh sempurna, menghadirkan ketenangan dan keanggunan yang terasa utuh.
+              - listitem:
+                - link:
+                  - /url: /khimar-5295
+                  - text: Khimar
+                  - generic: Khimar dengan siluet anggun dan pilihan warna yang menenangkan, dirancang untuk melengkapi setiap langkahmu dengan nyaman.
+              - listitem:
+                - link:
+                  - /url: /pashmina-2310
+                  - text: Pashmina
+                  - generic: Pashmina dengan tekstur lembut dan warna-warna cantik yang mudah dipadukan untuk melengkapi setiap penampilanmu.
+              - listitem:
+                - link:
+                  - /url: /hijab-1544
+                  - text: Hijab
+                  - generic: Pilihan hijab refined dengan tone lembut yang terasa rapi, ringan, dan modern.
+              - listitem:
+                - link:
+                  - /url: /footwear-8675
+                  - text: Footwear
+                  - generic: Langkah yang tegas dengan desain refined yang melengkapi tampilan secara effortless.
+              - listitem:
+                - link:
+                  - /url: /accessories-4472
+                  - text: Accessories
+                  - generic: Detail elegan yang menyempurnakan tampilan dengan sentuhan berkelas yang halus.
+              - listitem:
+                - link:
+                  - /url: /kids-9967
+                  - text: Kids
+                  - generic: Pilihan busana yang nyaman dan manis untuk si kecil, dengan warna-warna lembut yang siap menemani setiap langkah cerianya.
+              - listitem:
+                - link:
+                  - /url: /essentials-7002
+                  - text: Essentials
+                  - generic: Essentials serbaguna untuk layering yang terasa bersih, ringkas, dan matang.
+              - listitem:
+                - link:
+                  - /url: /one-set-5182
+                  - text: One Set
+                  - generic: Edit komplit yang memudahkan styling dengan proporsi yang sudah selesai sejak awal.
+          - generic:
+            - generic:
+              - link:
+                - /url: /search
+                - img
+                - generic: Cari
+              - link:
+                - /url: /wishlist
+                - img
+                - generic: Wishlist
+              - link:
+                - /url: /cart
+                - img
+                - generic: Bag
+              - link:
+                - /url: /profile
+                - img
+                - generic: Akun
+            - generic:
+              - generic:
+                - paragraph: Bahasa situs
+                - paragraph: Konten saat ini tersedia dalam Bahasa Indonesia.
+              - generic:
+                - img
+                - text: ID
+    - main [ref=e13]:
+      - generic [ref=e14]:
+        - img "Dress" [ref=e15]
+        - region "Produk clearance" [ref=e20]:
+          - generic [ref=e21]:
+            - generic [ref=e22]:
+              - paragraph [ref=e23]: Clearance Sale
+              - paragraph [ref=e24]: Final stock picks from the current Yoora Sarah edit.
+            - generic [ref=e25]:
+              - article [ref=e26]:
+                - generic [ref=e27]:
+                  - img "Bella Dress" [ref=e29]
+                  - generic [ref=e30]:
+                    - paragraph [ref=e31]: 4 left
+                    - heading "Bella Dress" [level=3] [ref=e32]
+                    - paragraph [ref=e33]: Rp419.000
+                    - paragraph [ref=e34]: Rp327.000
+              - article [ref=e35]:
+                - generic [ref=e36]:
+                  - img "Clara Dress" [ref=e38]
+                  - generic [ref=e39]:
+                    - paragraph [ref=e40]: 6 left
+                    - heading "Clara Dress" [level=3] [ref=e41]
+                    - paragraph [ref=e42]: Rp199.999
+                    - paragraph [ref=e43]: Rp156.000
+              - article [ref=e44]:
+                - generic [ref=e45]:
+                  - img "Safiyyah Sora Dress" [ref=e47]
+                  - generic [ref=e48]:
+                    - paragraph [ref=e49]: 7 left
+                    - heading "Safiyyah Sora Dress" [level=3] [ref=e50]
+                    - paragraph [ref=e51]: Rp359.000
+                    - paragraph [ref=e52]: Rp280.000
+              - article [ref=e53]:
+                - generic [ref=e54]:
+                  - img "Yoora Dress" [ref=e56]
+                  - generic [ref=e57]:
+                    - paragraph [ref=e58]: 8 left
+                    - heading "Yoora Dress" [level=3] [ref=e59]
+                    - paragraph [ref=e60]: Rp199.999
+                    - paragraph [ref=e61]: Rp156.000
+        - generic:
+          - generic:
+            - paragraph: Dress
+            - heading "Motion-led modestwear with a sharper editorial edge." [level=1]
+            - paragraph: Siluet anggun, warna cantik, dan potongan yang nyaman untuk menemani setiap momen.
+    - link "Chat with Customer Care on WhatsApp" [ref=e62] [cursor=pointer]:
+      - /url: https://wa.me/6282315866088?text=Halo%20Yoora%20Sarah%2C%20saya%20ingin%20bertanya%20tentang%20produk...
+      - img [ref=e63]
+  - button "Open Next.js Dev Tools" [ref=e70] [cursor=pointer]:
+    - img [ref=e71]
