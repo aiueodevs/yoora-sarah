@@ -6,7 +6,7 @@
 | --- | --- |
 | Date | 2026-04-22 |
 | Status | Draft backlog |
-| Parent documents | `DOC.md`, PRD, BRD, Technical Design, AI Strategy, Execution Plan |
+| Parent documents | `README.md`, PRD, BRD, Technical Design, AI Strategy, Execution Plan |
 
 ## 1. Planning Assumptions
 

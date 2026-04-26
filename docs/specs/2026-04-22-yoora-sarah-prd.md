@@ -7,7 +7,7 @@
 | Date | 2026-04-22 |
 | Step | SDLC Step 0 - Product Requirement Document |
 | Status | Draft ready for stakeholder review |
-| Parent document | `DOC.md` |
+| Parent document | `README.md` |
 
 ## 1. Product Summary
 

@@ -6,7 +6,7 @@
 | --- | --- |
 | Date | 2026-04-22 |
 | Status | Draft implementation tickets |
-| Parent documents | `DOC.md`, PRD, BRD, Technical Design, AI Strategy, Technical Backlog |
+| Parent documents | `README.md`, PRD, BRD, Technical Design, AI Strategy, Technical Backlog |
 
 ## Ticket Format
 

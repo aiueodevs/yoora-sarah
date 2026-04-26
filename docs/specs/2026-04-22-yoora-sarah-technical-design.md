@@ -7,7 +7,7 @@
 | Date | 2026-04-22 |
 | Step | SDLC Step 3 and Step 4 bridge |
 | Status | Draft for technical alignment |
-| Parent document | `DOC.md` |
+| Parent document | `README.md` |
 
 ## 1. Objective
 

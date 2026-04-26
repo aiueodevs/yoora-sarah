@@ -6,7 +6,7 @@
 | --- | --- |
 | Date | 2026-04-22 |
 | Status | Strategic blueprint |
-| Parent document | `DOC.md` |
+| Parent document | `README.md` |
 
 ## 1. AI Thesis
 

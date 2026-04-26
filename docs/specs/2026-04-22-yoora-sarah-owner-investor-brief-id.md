@@ -6,7 +6,7 @@
 | --- | --- |
 | Tanggal | 2026-04-22 |
 | Status | Draft eksekutif |
-| Basis dokumen | `DOC.md`, PRD, BRD, Technical Design, AI Strategy |
+| Basis dokumen | `README.md`, PRD, BRD, Technical Design, AI Strategy |
 
 ## 1. Ringkasan Eksekutif
 

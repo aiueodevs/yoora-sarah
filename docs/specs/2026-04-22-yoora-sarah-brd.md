@@ -7,7 +7,7 @@
 | Date | 2026-04-22 |
 | Step | SDLC Step 1 - Business Requirement Document |
 | Status | Draft ready for cross-functional review |
-| Parent document | `DOC.md` |
+| Parent document | `README.md` |
 
 ## 1. Business Objective
 

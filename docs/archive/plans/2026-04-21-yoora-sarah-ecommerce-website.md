@@ -6,7 +6,7 @@
 | --- | --- |
 | Date | 2026-04-22 |
 | Status | Active execution plan |
-| Parent documents | `DOC.md`, `docs/specs/2026-04-22-yoora-sarah-prd.md`, `docs/specs/2026-04-22-yoora-sarah-brd.md`, `docs/specs/2026-04-22-yoora-sarah-technical-design.md`, `docs/specs/2026-04-22-yoora-sarah-ai-strategy.md` |
+| Parent documents | `README.md`, `docs/specs/2026-04-22-yoora-sarah-prd.md`, `docs/specs/2026-04-22-yoora-sarah-brd.md`, `docs/specs/2026-04-22-yoora-sarah-technical-design.md`, `docs/specs/2026-04-22-yoora-sarah-ai-strategy.md` |
 
 Related execution control artifact:
 
