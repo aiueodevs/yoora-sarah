@@ -37,10 +37,11 @@ loading-state-*.png
 buyer-assistant-*.png
 stylist-gap-*.png
 
-# YAML (except render.yaml)
+# YAML snapshots (except render.yaml and pnpm-workspace.yaml)
 *.yml
 *.yaml
 !render.yaml
+!pnpm-workspace.yaml
 
 # Python
 __pycache__/
@@ -51,14 +52,28 @@ __pycache__/
 .gstack/
 .claude/
 
+# Codex artifacts
+.codex-*/
+.codex-*.log
+.codex-*.err.log
+
+# Ruff / uv caches
+.ruff_cache/
+.uv-cache/
+
+# Vercel inspect
+.vercel-inspect-*.txt
+
 # Temp / debug files
 layout-measurements*.json
 portal-console-warn.txt
 scripts/stylist_qa.cjs
 yoora-audit-report.pdf
+payload.json
 
 # Media
 Video/
+VIDEO/
 
 # OS files
 .DS_Store
