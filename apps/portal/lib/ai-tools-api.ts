@@ -41,8 +41,6 @@ export type AISupportPolicyArticle = {
   topics: string[];
 };
 
-import { readInternalApi } from "./api-client";
-
 export async function searchProducts(
   query?: string,
   category?: string,
