@@ -119,9 +119,18 @@ class AIAssistantSource:
 
 
 @dataclass
+class AIAssistantAction:
+    key: str
+    label: str
+    href: str | None = None
+    kind: str = "link"
+
+
+@dataclass
 class AIAssistantResponse:
     content: str
     sources: list[AIAssistantSource] | None = None
+    actions: list[AIAssistantAction] | None = None
     mode: str = "fallback"
 
 
@@ -909,6 +918,7 @@ class AIToolsService:
         return AIAssistantResponse(
             content=content.strip(),
             sources=fallback_response.sources,
+            actions=fallback_response.actions,
             mode="groq",
         )
 
@@ -931,16 +941,16 @@ class AIToolsService:
                 content=(
                     f"{handoff.get('summary', 'Kasus ini lebih aman ditangani support.')}\n\n"
                     f"{handoff.get('nextAction', 'Lanjutkan ke WhatsApp support untuk penanganan manual.')}\n\n"
-                    "Saya sarankan lanjut ke tim support agar kasus ini ditangani manual dengan lebih aman."
+                    "Agar penanganannya lebih cepat dan akurat, saya sarankan melanjutkan percakapan ini ke tim kami melalui WhatsApp."
                 ),
-                sources=self._validate_sources(
-                    [
-                        {
-                            "title": "Lanjut ke WhatsApp support",
-                            "href": contact.get("whatsappHref", "/pages/hubungi-kami"),
-                        }
-                    ]
-                ),
+                actions=[
+                    AIAssistantAction(
+                        key="whatsapp_handoff",
+                        label="Chat CS via WhatsApp",
+                        href=contact.get("whatsappHref", "/pages/hubungi-kami"),
+                        kind="whatsapp",
+                    )
+                ] if contact.get("whatsappHref") else None,
                 mode="fallback",
             )
 
@@ -963,15 +973,19 @@ class AIToolsService:
             if alternative_sizes:
                 chunks.append(f"Alternatif aman: {', '.join(alternative_sizes)}.")
             sources = []
+            actions = None
             if handoff and size_guidance.get("handoff_recommended"):
                 contact = handoff.get("contact") or {}
                 chunks.append(handoff.get("nextAction"))
-                sources.append(
-                    {
-                        "title": "Lanjut ke WhatsApp support",
-                        "href": contact.get("whatsappHref", "/pages/hubungi-kami"),
-                    }
-                )
+                if contact.get("whatsappHref"):
+                    actions = [
+                        AIAssistantAction(
+                            key="whatsapp_handoff",
+                            label="Chat CS via WhatsApp",
+                            href=contact.get("whatsappHref", "/pages/hubungi-kami"),
+                            kind="whatsapp",
+                        )
+                    ]
             elif anchor_product is not None:
                 sources.append(
                     {
@@ -983,6 +997,7 @@ class AIToolsService:
             return AIAssistantResponse(
                 content="\n\n".join(chunk for chunk in chunks if chunk),
                 sources=self._validate_sources(sources),
+                actions=actions,
                 mode="fallback",
             )
 
@@ -1061,22 +1076,21 @@ class AIToolsService:
                 mode="fallback",
             )
 
-        if any(keyword in query_lower for keyword in {"halo", "hai", "hi"}):
+        if any(keyword in query_lower for keyword in {"halo", "hai", "hi", "selamat pagi", "selamat siang"}):
             return AIAssistantResponse(
-                content="Halo! Saya bisa bantu cari produk, cek ukuran, lacak pesanan, atau jelaskan kebijakan toko.",
+                content="Halo, selamat datang di Yoora Sarah! Saya siap membantu Anda menemukan outfit yang tepat, mengecek panduan ukuran, atau melacak status pesanan Anda. Ada yang bisa saya bantu hari ini?",
                 mode="fallback",
             )
 
-        if any(keyword in query_lower for keyword in {"terima kasih", "thanks"}):
+        if any(keyword in query_lower for keyword in {"terima kasih", "thanks", "makasih"}):
             return AIAssistantResponse(
-                content="Sama-sama. Kalau masih ada yang ingin dicek, tinggal tulis pertanyaannya.",
+                content="Dengan senang hati! Jangan ragu untuk bertanya lagi jika Anda masih membutuhkan bantuan seputar koleksi Yoora Sarah.",
                 mode="fallback",
             )
 
         return AIAssistantResponse(
             content=(
-                "Saya bisa membantu mencari produk, menjelaskan ukuran, melacak pesanan, "
-                "atau menunjukkan kebijakan pengiriman dan penukaran. Tulis pertanyaan Anda lebih spesifik, ya."
+                "Saya siap membantu Anda menyusun rekomendasi gaya, menemukan panduan ukuran yang pas, atau memandu seputar kebijakan layanan Yoora Sarah. Boleh ceritakan lebih detail apa yang sedang Anda cari?"
             ),
             mode="fallback",
         )

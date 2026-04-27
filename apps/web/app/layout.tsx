@@ -3,10 +3,8 @@ import './globals.css';
 import { Providers } from './providers';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { WhatsAppButton } from '@/components/layout/whatsapp-button';
 import { BuyerAssistant } from '@/components/buyer-assistant';
 import { getStorefrontShellData } from '@/lib/storefront-catalog';
-import { getStorefrontSupportContact } from '@/lib/storefront-commerce';
 
 export const metadata: Metadata = {
   title: 'Beranda | Yoora Sarah',
@@ -19,10 +17,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [{ featuredStories, footer }, supportContact] = await Promise.all([
-    getStorefrontShellData(),
-    getStorefrontSupportContact(),
-  ]);
+  const { featuredStories, footer } = await getStorefrontShellData();
 
   return (
     <html lang="id">
@@ -35,7 +30,6 @@ export default async function RootLayout({
             <Header featuredStories={featuredStories} />
             <main className="flex-1">{children}</main>
             <Footer footerData={footer} />
-            <WhatsAppButton href={supportContact.whatsappHref} />
             <BuyerAssistant />
           </div>
         </Providers>

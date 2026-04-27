@@ -110,9 +110,14 @@ def _get_storefront_shell() -> tuple[list[StorefrontQuickLink], list[str], list[
 
 def _get_product(category_slug: str, product_slug: str) -> CatalogProductDetail:
     product = catalog_store.get_product_detail(category_slug, product_slug)
-    if product is None:
-        raise ValueError(f"Missing catalog fixture for {category_slug}/{product_slug}")
-    return product
+    if product is not None:
+        return product
+
+    fallback_products = catalog_store.list_product_details(category_slug)
+    if fallback_products:
+        return fallback_products[0]
+
+    raise ValueError(f"Missing catalog fixture for {category_slug}/{product_slug}")
 
 
 def _build_cart_item(

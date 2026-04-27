@@ -12,6 +12,7 @@ interface Message {
   role: "user" | "assistant";
   content: string;
   sources?: Array<{ title: string; href: string }>;
+  actions?: Array<{ key: string; label: string; href?: string | null; kind: string }>;
 }
 
 interface BuyerAssistantProps {
@@ -62,6 +63,7 @@ export function BuyerAssistant({ className = "" }: BuyerAssistantProps) {
           response?.content ??
           "Mohon maaf, saya belum bisa mengambil jawaban saat ini. Silakan coba lagi atau hubungi support kami.",
         sources: response?.sources ?? undefined,
+        actions: response?.actions ?? undefined,
       };
 
       setMessages((prev) => [...prev, assistantMessage]);
@@ -126,6 +128,21 @@ export function BuyerAssistant({ className = "" }: BuyerAssistantProps) {
                     }`}
                   >
                     <div className="whitespace-pre-wrap">{message.content}</div>
+                    {message.actions && message.actions.length > 0 && (
+                      <div className="mt-3 flex flex-wrap gap-2 border-t border-neutral-200 pt-3">
+                        {message.actions.map((action) => (
+                          <a
+                            key={action.key}
+                            href={action.href ?? '/pages/hubungi-kami'}
+                            className={`inline-flex items-center rounded-full px-3 py-2 text-xs font-semibold transition ${action.kind === 'whatsapp' ? 'bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-[0_8px_20px_rgba(18,140,126,0.24)] hover:scale-[1.02]' : 'bg-[#f4ede7] text-[#241915] hover:bg-[#eadfd7]'}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {action.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                     {message.sources && message.sources.length > 0 && (
                       <div className="mt-3 border-t border-neutral-200 pt-2">
                         <p className="mb-1 text-xs font-medium text-[#8a6c5f]">Lihat juga:</p>
