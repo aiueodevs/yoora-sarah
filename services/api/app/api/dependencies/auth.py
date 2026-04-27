@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Annotated
@@ -42,10 +43,17 @@ def require_internal_actor(
     user_id = store.find_user_id_by_email(normalized_email) if normalized_email else None
 
     if not configured_secret:
+        # Fail closed by default; only allow insecure mode if explicitly opted in
+        allow_insecure = os.environ.get("ALLOW_INSECURE_AUTH", "false").lower() == "true"
+        if not allow_insecure:
+            raise HTTPException(
+                status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                detail="Internal API auth is not configured. Set INTERNAL_API_SHARED_SECRET or enable ALLOW_INSECURE_AUTH for development.",
+            )
         return InternalActor(
             email=normalized_email,
             roles=frozenset(),
-            auth_mode="open",
+            auth_mode="insecure-dev",
             actor_id=_normalize_actor_id(normalized_email, user_id),
             user_id=user_id,
         )
@@ -94,7 +102,7 @@ def require_roles(*allowed_roles: str) -> Callable[[InternalActor], InternalActo
     def dependency(
         actor: Annotated[InternalActor, Depends(require_internal_actor)],
     ) -> InternalActor:
-        if actor.auth_mode == "open":
+        if actor.auth_mode in ("open", "insecure-dev"):
             return actor
 
         if actor.roles.intersection(allowed):

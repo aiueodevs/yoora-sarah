@@ -22,9 +22,13 @@
     "ai:run": "uv run --directory services/ai python app/main.py",
     "db:status": "uv run --directory tools/db python run_migrations.py status",
     "db:migrate": "uv run --directory tools/db python run_migrations.py migrate",
-    "db:seed": "uv run --directory tools/db python run_migrations.py seed"
+    "db:seed": "uv run --directory tools/db python run_migrations.py seed",
+    "test": "turbo run test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "devDependencies": {
+    "prettier": "^3.8.3",
     "turbo": "^2.0.12"
   },
   "dependencies": {
