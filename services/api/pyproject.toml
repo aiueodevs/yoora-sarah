@@ -8,7 +8,8 @@ dependencies = [
   "uvicorn[standard]>=0.34.0,<1.0.0",
   "pydantic-settings>=2.8.0,<3.0.0",
   "psycopg[binary]>=3.2.6,<4.0.0",
-  "requests>=2.32.0,<3.0.0"
+  "requests>=2.32.0,<3.0.0",
+  "aiohttp>=3.10.0,<4.0.0"
 ]
 
 [project.scripts]

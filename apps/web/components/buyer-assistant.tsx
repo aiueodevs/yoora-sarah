@@ -134,9 +134,9 @@ export function BuyerAssistant({ className = "" }: BuyerAssistantProps) {
                           <a
                             key={action.key}
                             href={action.href ?? '/pages/hubungi-kami'}
+                            className={`inline-flex items-center rounded-full px-3 py-2 text-xs font-semibold transition ${action.kind === 'whatsapp' ? 'bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-[0_8px_20px_rgba(18,140,126,0.24)] hover:scale-[1.02]' : 'bg-[#f4ede7] text-[#241915] hover:bg-[#eadfd7]'}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`inline-flex items-center rounded-full px-3 py-2 text-xs font-semibold transition ${action.kind === 'whatsapp' ? 'bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-[0_8px_20px_rgba(18,140,126,0.24)] hover:scale-[1.02]' : 'bg-[#f4ede7] text-[#241915] hover:bg-[#eadfd7]'}`}
                           >
                             {action.label}
                           </a>
