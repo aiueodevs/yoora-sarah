@@ -1,0 +1,12 @@
+# Default owners
+* @aiueodevs
+
+# Frontend
+apps/web/ @aiueodevs
+apps/portal/ @aiueodevs
+
+# Backend
+services/ @aiueodevs
+
+# Infrastructure
+.github/ @aiueodevs

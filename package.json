@@ -24,10 +24,12 @@
     "db:migrate": "uv run --directory tools/db python run_migrations.py migrate",
     "db:seed": "uv run --directory tools/db python run_migrations.py seed",
     "test": "turbo run test",
+    "test:e2e": "playwright test",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "prettier": "^3.8.3",
     "turbo": "^2.0.12"
   },

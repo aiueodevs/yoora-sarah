@@ -31,6 +31,11 @@ node_modules/
 # Playwright MCP
 .playwright-mcp/
 
+# Playwright test outputs
+test-results/
+playwright-report/
+blob-report/
+
 # Screenshots / images (generated)
 *.png
 *.jpg
@@ -40,11 +45,13 @@ loading-state-*.png
 buyer-assistant-*.png
 stylist-gap-*.png
 
-# YAML snapshots (except render.yaml and pnpm-workspace.yaml)
+# YAML snapshots (except tracked config files)
 *.yml
 *.yaml
 !render.yaml
 !pnpm-workspace.yaml
+!.github/**/*.yml
+!.github/**/*.yaml
 
 # Python
 __pycache__/
@@ -88,6 +95,11 @@ VIDEO/
 
 # Debug scripts
 test-db.js
+
+# Coverage
+coverage/
+**/coverage/
+*.lcov
 
 # OS files
 .DS_Store
