@@ -202,6 +202,11 @@
     animation: marquee-slide 38s linear infinite;
   }
 
+  .animate-stylist-product-rail {
+    animation: marquee-slide 72s linear infinite;
+    will-change: transform;
+  }
+
   .hover-lift:hover {
     transform: translateY(-4px);
     box-shadow: 0 28px 80px rgba(64, 48, 48, 0.1);

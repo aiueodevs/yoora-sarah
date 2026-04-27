@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const heroPoster = '/hero-sequence/ezgif-frame-001.jpg';
 const heroVideoMp4 = '/hero-video/hero-original.mp4';
+const heroVideoWebm = '/hero-video/hero-sequence-1080p.webm';
 
 interface HeroSequenceProps {
   alt: string;
@@ -89,6 +90,7 @@ export function HeroSequence({ alt, mediaClassName = '' }: HeroSequenceProps) {
           }`.trim()}
         >
           <source src={heroVideoMp4} type="video/mp4" />
+          <source src={heroVideoWebm} type="video/webm" />
         </video>
       ) : null}
     </>
