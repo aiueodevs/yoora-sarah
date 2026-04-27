@@ -1,3 +1,5 @@
+import { readInternalApi } from "./api-client";
+
 export type AIProductLookupResult = {
   found: boolean;
   product_name?: string | null;
@@ -39,32 +41,7 @@ export type AISupportPolicyArticle = {
   topics: string[];
 };
 
-const internalApiBaseUrl = process.env.YOORA_INTERNAL_API_BASE_URL?.replace(/\/$/, "");
-const internalApiSharedSecret = process.env.YOORA_INTERNAL_API_SHARED_SECRET?.trim();
-
-async function readInternalApi<T>(path: string): Promise<T | null> {
-  if (!internalApiBaseUrl) {
-    return null;
-  }
-
-  const headers = new Headers();
-  if (internalApiSharedSecret) {
-    headers.set("x-yoora-internal-key", internalApiSharedSecret);
-  }
-
-  try {
-    const response = await fetch(`${internalApiBaseUrl}${path}`, {
-      cache: "no-store",
-      headers,
-    });
-    if (!response.ok) {
-      return null;
-    }
-    return (await response.json()) as T;
-  } catch {
-    return null;
-  }
-}
+import { readInternalApi } from "./api-client";
 
 export async function searchProducts(
   query?: string,

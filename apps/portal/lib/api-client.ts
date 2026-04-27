@@ -1,63 +1,102 @@
-const internalApiBaseUrl = process.env.YOORA_INTERNAL_API_BASE_URL?.replace(/\/$/, "");
-const internalApiSharedSecret = process.env.YOORA_INTERNAL_API_SHARED_SECRET?.trim();
+type InternalApiOptions = {
+  actorEmail?: string;
+};
 
-export async function fetchInternalApi<T>(path: string, options?: RequestInit): Promise<T> {
-  if (!internalApiBaseUrl) {
+function getInternalApiBaseUrl(): string | null {
+  return process.env.YOORA_INTERNAL_API_BASE_URL?.replace(/\/$/, "") ?? null;
+}
+
+function getInternalApiSharedSecret(): string | null {
+  return process.env.YOORA_INTERNAL_API_SHARED_SECRET?.trim() ?? null;
+}
+
+function buildInternalApiHeaders(headers?: HeadersInit, actorEmail?: string): Headers {
+  const mergedHeaders = new Headers(headers);
+  const sharedSecret = getInternalApiSharedSecret();
+
+  if (!mergedHeaders.has("Content-Type")) {
+    mergedHeaders.set("Content-Type", "application/json");
+  }
+
+  if (sharedSecret) {
+    mergedHeaders.set("x-yoora-internal-key", sharedSecret);
+  }
+
+  if (actorEmail) {
+    mergedHeaders.set("x-yoora-actor-email", actorEmail);
+  }
+
+  return mergedHeaders;
+}
+
+async function parseJsonResponse<T>(response: Response): Promise<T> {
+  if (response.status === 204) {
+    return null as T;
+  }
+
+  const text = await response.text();
+  if (!text) {
+    return null as T;
+  }
+
+  return JSON.parse(text) as T;
+}
+
+async function buildInternalApiError(response: Response): Promise<Error> {
+  try {
+    const payload = await parseJsonResponse<{ detail?: string; message?: string }>(response);
+    const message = payload?.detail || payload?.message;
+    if (message) {
+      return new Error(message);
+    }
+  } catch {}
+
+  return new Error(`API error: ${response.status}`);
+}
+
+export function isInternalApiConfigured(): boolean {
+  return Boolean(getInternalApiBaseUrl());
+}
+
+export async function fetchInternalApi<T>(
+  path: string,
+  init?: RequestInit,
+  options?: InternalApiOptions,
+): Promise<T> {
+  const baseUrl = getInternalApiBaseUrl();
+  if (!baseUrl) {
     throw new Error("Internal API not configured");
   }
 
-  const headers = new Headers(options?.headers);
-  headers.set("Content-Type", "application/json");
-
-  if (internalApiSharedSecret) {
-    headers.set("x-yoora-internal-key", internalApiSharedSecret);
-  }
-
-  const response = await fetch(`${internalApiBaseUrl}${path}`, {
-    ...options,
-    headers,
+  const response = await fetch(`${baseUrl}${path}`, {
+    ...init,
+    headers: buildInternalApiHeaders(init?.headers, options?.actorEmail),
   });
 
   if (!response.ok) {
-    const error = await response.json().catch(() => ({ detail: "Unknown error" }));
-    throw new Error(error.detail || `API error: ${response.status}`);
+    throw await buildInternalApiError(response);
   }
 
-  return response.json();
+  return parseJsonResponse<T>(response);
 }
 
-export type Brief = {
-  id: string;
-  brandId: string;
-  brandName?: string;
-  title: string;
-  category: string;
-  targetSegment: string;
-  campaignName?: string;
-  status: "draft" | "active" | "completed";
-  notes?: string;
-  createdAt: string;
-  updatedAt: string;
-};
+export async function readInternalApi<T>(
+  path: string,
+  options?: InternalApiOptions,
+): Promise<T | null> {
+  if (!isInternalApiConfigured()) {
+    return null;
+  }
 
-export type Brand = {
-  id: string;
-  code: string;
-  name: string;
-  brandType: string;
-};
-
-export async function createBrief(data: Record<string, FormDataEntryValue>): Promise<Brief> {
-  return fetchInternalApi<Brief>("/briefs", {
-    method: "POST",
-    body: JSON.stringify(data),
-  });
-}
-
-export async function getBrands(): Promise<{ brands: Brand[] }> {
   try {
-    return await fetchInternalApi<{ brands: Brand[] }>("/master-data/brands");
+    return await fetchInternalApi<T>(
+      path,
+      {
+        cache: "no-store",
+      },
+      options,
+    );
   } catch {
-    return { brands: [] };
+    return null;
   }
 }

@@ -1,5 +1,7 @@
 import "server-only";
 
+import { readInternalApi } from "./api-client";
+
 export type BriefSummary = {
   id: string;
   title: string;
@@ -88,58 +90,30 @@ export type WorkflowStatusSummary = {
   plans_by_status: Record<string, number>;
 };
 
-const internalApiBaseUrl = process.env.YOORA_INTERNAL_API_BASE_URL?.replace(/\/$/, "");
-const internalApiSharedSecret = process.env.YOORA_INTERNAL_API_SHARED_SECRET?.trim();
-
-async function readInternalApi<T>(path: string, actorEmail?: string): Promise<T | null> {
-  if (!internalApiBaseUrl) {
-    return null;
-  }
-
-  const headers = new Headers();
-  if (internalApiSharedSecret) {
-    headers.set("x-yoora-internal-key", internalApiSharedSecret);
-  }
-  if (actorEmail) {
-    headers.set("x-yoora-actor-email", actorEmail);
-  }
-
-  try {
-    const response = await fetch(`${internalApiBaseUrl}${path}`, {
-      cache: "no-store",
-      headers,
-    });
-    if (!response.ok) {
-      return null;
-    }
-    return (await response.json()) as T;
-  } catch {
-    return null;
-  }
-}
+import { readInternalApi } from "./api-client";
 
 export async function getBriefSummaries(actorEmail?: string): Promise<BriefSummary[]> {
-  const result = await readInternalApi<BriefSummary[]>("/internal-ai/briefs/summaries", actorEmail);
+  const result = await readInternalApi<BriefSummary[]>("/internal-ai/briefs/summaries", { actorEmail });
   return result ?? [];
 }
 
 export async function getApprovalSummaries(actorEmail?: string): Promise<ApprovalSummary[]> {
-  const result = await readInternalApi<ApprovalSummary[]>("/internal-ai/approvals/summaries", actorEmail);
+  const result = await readInternalApi<ApprovalSummary[]>("/internal-ai/approvals/summaries", { actorEmail });
   return result ?? [];
 }
 
 export async function getForecastSummaries(actorEmail?: string): Promise<ForecastSummary[]> {
-  const result = await readInternalApi<ForecastSummary[]>("/internal-ai/forecast/summaries", actorEmail);
+  const result = await readInternalApi<ForecastSummary[]>("/internal-ai/forecast/summaries", { actorEmail });
   return result ?? [];
 }
 
 export async function getProductionPlanSummaries(actorEmail?: string): Promise<ProductionPlanSummary[]> {
-  const result = await readInternalApi<ProductionPlanSummary[]>("/internal-ai/production-plans/summaries", actorEmail);
+  const result = await readInternalApi<ProductionPlanSummary[]>("/internal-ai/production-plans/summaries", { actorEmail });
   return result ?? [];
 }
 
 export async function getWorkflowStatusSummary(actorEmail?: string): Promise<WorkflowStatusSummary | null> {
-  return readInternalApi<WorkflowStatusSummary>("/internal-ai/workflow-status", actorEmail);
+  return readInternalApi<WorkflowStatusSummary>("/internal-ai/workflow-status", { actorEmail });
 }
 
 export async function getBriefCopilotNote(
@@ -147,7 +121,7 @@ export async function getBriefCopilotNote(
   actorEmail?: string,
 ): Promise<BriefCopilotNote | null> {
   const params = briefId ? `?briefId=${encodeURIComponent(briefId)}` : "";
-  return readInternalApi<BriefCopilotNote>(`/internal-ai/briefs/copilot${params}`, actorEmail);
+  return readInternalApi<BriefCopilotNote>(`/internal-ai/briefs/copilot${params}`, { actorEmail });
 }
 
 export async function getKnowledgeArticles(
@@ -163,7 +137,7 @@ export async function getKnowledgeArticles(
     params.set("topic", topic);
   }
   const suffix = params.size ? `?${params.toString()}` : "";
-  const result = await readInternalApi<KnowledgeArticle[]>(`/internal-ai/knowledge/articles${suffix}`, actorEmail);
+  const result = await readInternalApi<KnowledgeArticle[]>(`/internal-ai/knowledge/articles${suffix}`, { actorEmail });
   return result ?? [];
 }
 
@@ -172,7 +146,7 @@ export async function getOnboardingGuidance(
   role?: string,
 ): Promise<KnowledgeArticle[]> {
   const suffix = role ? `?role=${encodeURIComponent(role)}` : "";
-  const result = await readInternalApi<KnowledgeArticle[]>(`/internal-ai/knowledge/onboarding${suffix}`, actorEmail);
+  const result = await readInternalApi<KnowledgeArticle[]>(`/internal-ai/knowledge/onboarding${suffix}`, { actorEmail });
   return result ?? [];
 }
 
@@ -181,17 +155,17 @@ export async function getContentDraft(
   briefId?: string,
 ): Promise<ContentDraft | null> {
   const suffix = briefId ? `?briefId=${encodeURIComponent(briefId)}` : "";
-  return readInternalApi<ContentDraft>(`/internal-ai/content/draft${suffix}`, actorEmail);
+  return readInternalApi<ContentDraft>(`/internal-ai/content/draft${suffix}`, { actorEmail });
 }
 
 export async function getPerformanceInsight(actorEmail?: string): Promise<LeadershipInsight | null> {
-  return readInternalApi<LeadershipInsight>("/internal-ai/insights/performance", actorEmail);
+  return readInternalApi<LeadershipInsight>("/internal-ai/insights/performance", { actorEmail });
 }
 
 export async function getLaunchReadinessInsight(actorEmail?: string): Promise<LeadershipInsight | null> {
-  return readInternalApi<LeadershipInsight>("/internal-ai/insights/launch-readiness", actorEmail);
+  return readInternalApi<LeadershipInsight>("/internal-ai/insights/launch-readiness", { actorEmail });
 }
 
 export async function getMerchandisingInsight(actorEmail?: string): Promise<LeadershipInsight | null> {
-  return readInternalApi<LeadershipInsight>("/internal-ai/insights/merchandising", actorEmail);
+  return readInternalApi<LeadershipInsight>("/internal-ai/insights/merchandising", { actorEmail });
 }

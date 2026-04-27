@@ -1,35 +1,5 @@
+import { fetchInternalApi } from "./api-client";
 import { extractList } from "./response-normalizers";
-
-const internalApiBaseUrl = process.env.YOORA_INTERNAL_API_BASE_URL?.replace(/\/$/, "");
-const internalApiSharedSecret = process.env.YOORA_INTERNAL_API_SHARED_SECRET?.trim();
-
-async function fetchInternalApi<T>(path: string, options?: RequestInit, actorEmail?: string): Promise<T> {
-  if (!internalApiBaseUrl) {
-    throw new Error("Internal API not configured");
-  }
-
-  const headers = new Headers(options?.headers);
-  headers.set("Content-Type", "application/json");
-
-  if (internalApiSharedSecret) {
-    headers.set("x-yoora-internal-key", internalApiSharedSecret);
-  }
-  if (actorEmail) {
-    headers.set("x-yoora-actor-email", actorEmail);
-  }
-
-  const response = await fetch(`${internalApiBaseUrl}${path}`, {
-    ...options,
-    headers,
-  });
-
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({ detail: "Unknown error" }));
-    throw new Error(error.detail || `API error: ${response.status}`);
-  }
-
-  return response.json();
-}
 
 export type PatternJob = {
   id: string;
@@ -79,7 +49,7 @@ export async function getPatternJobs(
     const payload = await fetchInternalApi<unknown>(
       `/pattern-jobs${params}`,
       undefined,
-      actorEmail,
+      { actorEmail },
     );
     return { items: extractList<PatternJob>(payload, "items", "jobs") };
   } catch {
@@ -88,7 +58,7 @@ export async function getPatternJobs(
 }
 
 export async function getPatternJob(jobId: string, actorEmail?: string): Promise<PatternJob> {
-  return fetchInternalApi<PatternJob>(`/pattern-jobs/${jobId}`, undefined, actorEmail);
+  return fetchInternalApi<PatternJob>(`/pattern-jobs/${jobId}`, undefined, { actorEmail });
 }
 
 export async function createPatternJob(
@@ -96,13 +66,17 @@ export async function createPatternJob(
   sizeChartId: string,
   actorEmail?: string,
 ): Promise<PatternJob> {
-  return fetchInternalApi<PatternJob>("/pattern-jobs", {
-    method: "POST",
-    body: JSON.stringify({
-      design_option_id: designOptionId,
-      size_chart_id: sizeChartId,
-    }),
-  }, actorEmail);
+  return fetchInternalApi<PatternJob>(
+    "/pattern-jobs",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        design_option_id: designOptionId,
+        size_chart_id: sizeChartId,
+      }),
+    },
+    { actorEmail },
+  );
 }
 
 export async function getPatternOutputs(
@@ -113,7 +87,7 @@ export async function getPatternOutputs(
     const payload = await fetchInternalApi<unknown>(
       `/pattern-jobs/${jobId}/outputs`,
       undefined,
-      actorEmail,
+      { actorEmail },
     );
     return { items: extractList<PatternOutput>(payload, "items", "outputs") };
   } catch {
@@ -126,7 +100,7 @@ export async function getSizeCharts(actorEmail?: string): Promise<{ sizeCharts: 
     const payload = await fetchInternalApi<unknown>(
       "/master-data/size-charts",
       undefined,
-      actorEmail,
+      { actorEmail },
     );
     return { sizeCharts: extractList<SizeChart>(payload, "sizeCharts", "items") };
   } catch {

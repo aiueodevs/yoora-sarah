@@ -1,3 +1,5 @@
+import { readInternalApi } from "./api-client";
+
 export type Brand = {
   id: string;
   code: string;
@@ -108,8 +110,8 @@ type UserRow = {
   email: string;
 };
 
-const internalApiBaseUrl = process.env.YOORA_INTERNAL_API_BASE_URL?.replace(/\/$/, "");
-const internalApiSharedSecret = process.env.YOORA_INTERNAL_API_SHARED_SECRET?.trim();
+import { readInternalApi } from "./api-client";
+
 const supabaseUrl = process.env.SUPABASE_URL?.replace(/\/$/, "");
 const supabaseSecretKey = process.env.SUPABASE_SECRET_KEY;
 
@@ -164,32 +166,6 @@ async function readSupabaseRows<T>(path: string, fallbackValue: T): Promise<T> {
   }
 }
 
-async function readInternalApi<T>(path: string, actorEmail?: string): Promise<T | null> {
-  if (!internalApiBaseUrl) {
-    return null;
-  }
-
-  const headers = new Headers();
-  if (internalApiSharedSecret) {
-    headers.set("x-yoora-internal-key", internalApiSharedSecret);
-  }
-  if (actorEmail) {
-    headers.set("x-yoora-actor-email", actorEmail);
-  }
-
-  try {
-    const response = await fetch(`${internalApiBaseUrl}${path}`, {
-      cache: "no-store",
-      headers,
-    });
-    if (!response.ok) {
-      return null;
-    }
-    return (await response.json()) as T;
-  } catch {
-    return null;
-  }
-}
 
 export async function getSettingsData(actorEmail?: string): Promise<{
   brands: Brand[];
@@ -197,9 +173,9 @@ export async function getSettingsData(actorEmail?: string): Promise<{
   sizeCharts: SizeChart[];
 }> {
   const apiResult = await Promise.all([
-    readInternalApi<Brand[]>("/master-data/brands", actorEmail),
-    readInternalApi<Fabric[]>("/master-data/fabrics", actorEmail),
-    readInternalApi<SizeChart[]>("/master-data/size-charts", actorEmail),
+    readInternalApi<Brand[]>("/master-data/brands", { actorEmail }),
+    readInternalApi<Fabric[]>("/master-data/fabrics", { actorEmail }),
+    readInternalApi<SizeChart[]>("/master-data/size-charts", { actorEmail }),
   ]);
 
   const [brandsFromApi, fabricsFromApi, sizeChartsFromApi] = apiResult;
@@ -291,7 +267,7 @@ export type Style = {
 
 export async function getStyles(actorEmail?: string): Promise<{ items: Style[] }> {
   try {
-    const result = await readInternalApi<Style[]>("/master-data/styles", actorEmail);
+    const result = await readInternalApi<Style[]>("/master-data/styles", { actorEmail });
     if (result) {
       return { items: result };
     }
@@ -301,7 +277,7 @@ export async function getStyles(actorEmail?: string): Promise<{ items: Style[] }
 
 export async function getCollections(actorEmail?: string): Promise<{ items: Collection[] }> {
   try {
-    const result = await readInternalApi<Collection[]>("/master-data/collections", actorEmail);
+    const result = await readInternalApi<Collection[]>("/master-data/collections", { actorEmail });
     if (result) {
       return { items: result };
     }
@@ -314,8 +290,8 @@ export async function getApprovalData(actorEmail?: string): Promise<{
   auditEvents: AuditEvent[];
 }> {
   const [approvalsFromApi, auditFromApi] = await Promise.all([
-    readInternalApi<Approval[]>("/approvals", actorEmail),
-    readInternalApi<{ items: AuditEvent[]; count: number }>("/audit/events", actorEmail),
+    readInternalApi<Approval[]>("/approvals", { actorEmail }),
+    readInternalApi<{ items: AuditEvent[]; count: number }>("/audit/events", { actorEmail }),
   ]);
 
   if (approvalsFromApi && auditFromApi) {

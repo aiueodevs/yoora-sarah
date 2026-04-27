@@ -1,35 +1,5 @@
+import { fetchInternalApi } from "./api-client";
 import { extractList } from "./response-normalizers";
-
-const internalApiBaseUrl = process.env.YOORA_INTERNAL_API_BASE_URL?.replace(/\/$/, "");
-const internalApiSharedSecret = process.env.YOORA_INTERNAL_API_SHARED_SECRET?.trim();
-
-async function fetchInternalApi<T>(path: string, options?: RequestInit, actorEmail?: string): Promise<T> {
-  if (!internalApiBaseUrl) {
-    throw new Error("Internal API not configured");
-  }
-
-  const headers = new Headers(options?.headers);
-  headers.set("Content-Type", "application/json");
-
-  if (internalApiSharedSecret) {
-    headers.set("x-yoora-internal-key", internalApiSharedSecret);
-  }
-  if (actorEmail) {
-    headers.set("x-yoora-actor-email", actorEmail);
-  }
-
-  const response = await fetch(`${internalApiBaseUrl}${path}`, {
-    ...options,
-    headers,
-  });
-
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({ detail: "Unknown error" }));
-    throw new Error(error.detail || `API error: ${response.status}`);
-  }
-
-  return response.json();
-}
 
 export type DesignJob = {
   id: string;
@@ -78,7 +48,7 @@ export type DesignJobCreate = {
 export async function getDesignJobs(briefId?: string, actorEmail?: string): Promise<{ items: DesignJob[] }> {
   try {
     const params = briefId ? `?brief_id=${briefId}` : "";
-    const payload = await fetchInternalApi<unknown>(`/design-jobs${params}`, undefined, actorEmail);
+    const payload = await fetchInternalApi<unknown>(`/design-jobs${params}`, undefined, { actorEmail });
     return { items: extractList<DesignJob>(payload, "items", "jobs") };
   } catch {
     return { items: [] };
@@ -86,7 +56,7 @@ export async function getDesignJobs(briefId?: string, actorEmail?: string): Prom
 }
 
 export async function getDesignJob(jobId: string, actorEmail?: string): Promise<DesignJob> {
-  return fetchInternalApi<DesignJob>(`/design-jobs/${jobId}`, undefined, actorEmail);
+  return fetchInternalApi<DesignJob>(`/design-jobs/${jobId}`, undefined, { actorEmail });
 }
 
 export async function createDesignJob(data: DesignJobCreate): Promise<DesignJob> {
@@ -109,7 +79,7 @@ export async function getDesignOptions(
     const payload = await fetchInternalApi<unknown>(
       `/design-jobs/options${query ? `?${query}` : ""}`,
       undefined,
-      actorEmail,
+      { actorEmail },
     );
     return { items: extractList<DesignOption>(payload, "items", "options") };
   } catch {
@@ -118,7 +88,7 @@ export async function getDesignOptions(
 }
 
 export async function getDesignOption(optionId: string, actorEmail?: string): Promise<DesignOption> {
-  return fetchInternalApi<DesignOption>(`/design-jobs/options/${optionId}`, undefined, actorEmail);
+  return fetchInternalApi<DesignOption>(`/design-jobs/options/${optionId}`, undefined, { actorEmail });
 }
 
 export async function updateOptionStatus(
@@ -129,7 +99,7 @@ export async function updateOptionStatus(
   return fetchInternalApi<DesignOption>(`/design-jobs/options/${optionId}/status`, {
     method: "PATCH",
     body: JSON.stringify({ status: newStatus }),
-  }, actorEmail);
+  }, { actorEmail });
 }
 
 export async function getAnnotations(optionId: string, actorEmail?: string): Promise<{ items: DesignAnnotation[] }> {
@@ -137,7 +107,7 @@ export async function getAnnotations(optionId: string, actorEmail?: string): Pro
     const payload = await fetchInternalApi<unknown>(
       `/design-jobs/options/${optionId}/annotations`,
       undefined,
-      actorEmail,
+      { actorEmail },
     );
     return { items: extractList<DesignAnnotation>(payload, "items", "annotations") };
   } catch {
@@ -154,5 +124,5 @@ export async function addAnnotation(
   return fetchInternalApi<DesignAnnotation>(`/design-jobs/options/${optionId}/annotations`, {
     method: "POST",
     body: JSON.stringify({ annotation_type: annotationType, note }),
-  }, actorEmail);
+  }, { actorEmail });
 }
