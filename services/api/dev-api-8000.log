@@ -1,3 +1,0 @@
-INFO:     127.0.0.1:56201 - "GET /api/v1/ai-tools/products/search?query=Kalau%20Clara%20Dress%20lebih%20aman%20mulai%20ukuran%20apa%3F&limit=5 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51124 - "POST /api/v1/ai-tools/assistant/respond HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51125 - "POST /api/v1/ai-tools/assistant/respond HTTP/1.1" 200 OK

@@ -21,9 +21,12 @@ node_modules/
 # Logs
 *.log
 *.err.log
+.next-dev.err
 
 # TypeScript
 *.tsbuildinfo
+**/package-lock.json
+!package-lock.json
 
 # Playwright MCP
 .playwright-mcp/
@@ -74,6 +77,17 @@ payload.json
 # Media
 Video/
 VIDEO/
+*.mp4
+*.webm
+!apps/web/public/hero-video/hero-sequence-1080p.mp4
+!apps/web/public/hero-video/hero-sequence-1080p.webm
+
+# Python venv
+.venv/
+**/.venv/
+
+# Debug scripts
+test-db.js
 
 # OS files
 .DS_Store
