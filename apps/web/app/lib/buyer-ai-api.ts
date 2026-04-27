@@ -111,9 +111,17 @@ export type AIAssistantSource = {
   href: string;
 };
 
+export type AIAssistantAction = {
+  key: string;
+  label: string;
+  href?: string | null;
+  kind: 'link' | 'whatsapp';
+};
+
 export type AIAssistantResponse = {
   content: string;
   sources?: AIAssistantSource[] | null;
+  actions?: AIAssistantAction[] | null;
   mode?: "groq" | "fallback";
 };
 

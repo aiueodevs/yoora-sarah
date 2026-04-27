@@ -119,9 +119,18 @@ class AIAssistantSource:
 
 
 @dataclass
+class AIAssistantAction:
+    key: str
+    label: str
+    href: str | None = None
+    kind: str = "link"
+
+
+@dataclass
 class AIAssistantResponse:
     content: str
     sources: list[AIAssistantSource] | None = None
+    actions: list[AIAssistantAction] | None = None
     mode: str = "fallback"
 
 
@@ -933,14 +942,14 @@ class AIToolsService:
                     f"{handoff.get('nextAction', 'Lanjutkan ke WhatsApp support untuk penanganan manual.')}\n\n"
                     "Saya sarankan lanjut ke tim support agar kasus ini ditangani manual dengan lebih aman."
                 ),
-                sources=self._validate_sources(
-                    [
-                        {
-                            "title": "Lanjut ke WhatsApp support",
-                            "href": contact.get("whatsappHref", "/pages/hubungi-kami"),
-                        }
-                    ]
-                ),
+                actions=[
+                    AIAssistantAction(
+                        key="whatsapp_handoff",
+                        label="Chat CS via WhatsApp",
+                        href=contact.get("whatsappHref", "/pages/hubungi-kami"),
+                        kind="whatsapp"
+                    )
+                ] if contact.get("whatsappHref") else None,
                 mode="fallback",
             )
 
@@ -980,9 +989,23 @@ class AIToolsService:
                     }
                 )
 
+            actions = None
+            if handoff and size_guidance.get("handoff_recommended"):
+                contact = handoff.get("contact") or {}
+                if contact.get("whatsappHref"):
+                    actions = [
+                        AIAssistantAction(
+                            key="whatsapp_handoff",
+                            label="Chat CS via WhatsApp",
+                            href=contact.get("whatsappHref", "/pages/hubungi-kami"),
+                            kind="whatsapp"
+                        )
+                    ]
+
             return AIAssistantResponse(
                 content="\n\n".join(chunk for chunk in chunks if chunk),
                 sources=self._validate_sources(sources),
+                actions=actions,
                 mode="fallback",
             )
 
