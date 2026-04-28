@@ -234,32 +234,43 @@ Auth · User/Profile · Product/Catalog · Order/Payment · Production · Invent
 
 ## 🛍️ 10. Customer Website Features (Full)
 
-| Feature | Description | Current Status |
-| :--- | :--- | :---: |
-| AI Stylist | Chat-based outfit recommendation | ✅ Implemented |
-| Smart Recommendation | Behavior-based product suggestions | ⚪ Planned |
-| Image-Based Recommendation | Upload foto → AI analisa → rekomendasi | 🟡 Partial (Gemini vision) |
-| Size Recommendation AI | Height/weight → size + confidence | ✅ Implemented |
-| AI Customer Support | Multi-channel auto-reply | ✅ Implemented (Web) |
-| Personalized Homepage | Dynamic content per user | ⚪ Planned |
+| Feature | Description | Current Status | Priority |
+| :--- | :--- | :---: | :---: |
+| AI Stylist | Chat-based outfit recommendation | ✅ Implemented | — |
+| AI Customer Support (Concierge) | Multi-channel auto-reply with WhatsApp handoff | ✅ Implemented (Web) | — |
+| Size Recommendation AI | Height/weight → size + confidence | ✅ Implemented | — |
+| Image-Based Recommendation | Upload foto → AI analisa → rekomendasi | 🟡 Partial (Gemini vision) | 🥈 |
+| **AI Virtual Try-On** | Customer upload foto diri → AI preview "memakai" produk Yoora Sarah. Mengurangi retur, meningkatkan confidence beli. | ⚪ Planned | 🥉 |
+| **AI Color Match** | Upload foto wajah/tangan → AI analisa undertone kulit → rekomendasikan warna produk paling cocok (Cappuccino, Camel, Hazelnut, dll). | ⚪ Planned | 🥈 |
+| **AI Smart Size Predictor** | ML model yang belajar dari data retur untuk memperbaiki rekomendasi ukuran seiring waktu (feedback loop). | ⚪ Planned | 🥉 |
+| **AI Cart Recovery** | Ketika customer tinggalkan cart, AI kirim pesan WhatsApp personal: "Clara Dress warna Cappuccino masih menunggu. Stok tinggal 3." | ⚪ Planned | 🥇 |
+| **AI Personalized Homepage** | Homepage berbeda per pengunjung: new visitor → best seller; returning → "Cocok dengan pembelian terakhir Anda". | ⚪ Planned | 🥈 |
+| **AI Omnichannel Inbox** | Semua pesan dari WhatsApp, IG DM, TikTok, dan web chat masuk ke satu inbox. AI jawab yang bisa, tandai yang perlu manusia. | ⚪ Planned | 🥇 |
+| **AI Loyalty & Reorder Engine** | AI deteksi pola beli (misal: beli dress tiap 2 bulan) → proaktif kirim rekomendasi + promo personal sebelum customer cari sendiri. | ⚪ Planned | 🥈 |
+| Smart Recommendation | Behavior-based product suggestions | ⚪ Planned | 🥈 |
 
 ---
 
 ## 💼 11. Internal Dashboard (Full Enterprise)
 
-| Module | Description | Current Status |
-| :--- | :--- | :---: |
-| **Design Assistant** | AI generate ide desain & variasi | ⚪ Planned |
-| **Pattern Management** | Size grading, version control, export | ✅ Partial (Portal) |
-| **Production Planner AI** | Prediksi demand, distribusi size | ⚪ Planned |
-| **Inventory Intelligence** | Stock tracking, auto reorder | ⚪ Planned |
-| **Production Tracking** | Cutting → Sewing → QC → Packaging | ⚪ Planned |
-| **HR & SDM** | Employee DB, attendance, payroll, performance AI | ⚪ Planned |
-| **Finance & Accounting** | Revenue, P&L, cashflow, AI pricing optimizer | ⚪ Planned |
-| **Marketing AI** | Campaign, content generator, analytics | ⚪ Planned |
-| **Sales & Omnichannel** | Unified orders (Shopee, TikTok, IG, Web) | ⚪ Planned |
-| **Logistics** | Shipment tracking, route optimization | ⚪ Planned |
-| **Dashboard per Role** | Owner KPI, Production Queue, CS Panel, Marketing | 🟡 Partial |
+| Module | Description | Current Status | Priority |
+| :--- | :--- | :---: | :---: |
+| **Pattern Management** | Size grading, version control, export | ✅ Partial (Portal) | — |
+| **Dashboard per Role** | Owner KPI, Production Queue, CS Panel, Marketing | 🟡 Partial | 🥇 |
+| **AI CEO Dashboard** | Dashboard yang bukan hanya angka, tapi memberikan insight & rekomendasi proaktif: "Revenue turun 15% karena stok Bella Dress habis. Rekomendasi: restock 200 pcs." | ⚪ Planned | 🥇 |
+| **AI Content Factory** | Auto-generate caption IG (tone Yoora Sarah), script TikTok (hook 3 detik), deskripsi Shopee (SEO), moodboard photoshoot. | ⚪ Planned | 🥇 |
+| **AI Production Planner** | Baca data penjualan + trend TikTok/IG + musim → prediksi jumlah produksi per produk per minggu. | ⚪ Planned | 🥈 |
+| **AI Inventory Auto-Reorder** | Stok mendekati threshold → AI buat PO draft ke supplier, lengkap distribusi ukuran & warna dari data penjualan. | ⚪ Planned | 🥈 |
+| **AI Production Tracking** | Lacak batch dari Cutting → Sewing → QC → Packaging. AI deteksi bottleneck & alert keterlambatan. | ⚪ Planned | 🥈 |
+| **AI Financial Analyst** | Hitung margin per produk (termasuk produksi + shipping + marketing), cashflow prediction 30 hari, alert pengeluaran abnormal. | ⚪ Planned | 🥈 |
+| **AI HR Performance Tracker** | Lacak produktivitas tim (order/orang/hari, response time CS, output konten) dan rekomendasi penugasan optimal. | ⚪ Planned | 🥉 |
+| **AI Marketplace Optimizer** | Otomatis optimasi listing Shopee: title SEO, deskripsi conversion-optimized, harga competitive. | ⚪ Planned | 🥈 |
+| **Design Assistant** | AI generate ide desain & variasi koleksi | ⚪ Planned | 🥉 |
+| **HR & SDM** | Employee DB, attendance, payroll, AI hiring assistant | ⚪ Planned | 🥉 |
+| **Finance & Accounting** | Revenue, P&L, cashflow, AI pricing optimizer | ⚪ Planned | 🥈 |
+| **Marketing AI** | Campaign analytics, trend analysis | ⚪ Planned | 🥈 |
+| **Sales & Omnichannel** | Unified orders (Shopee, TikTok, IG, Web), Customer 360, AI churn prediction | ⚪ Planned | 🥈 |
+| **Logistics** | Shipment tracking, courier integration, AI route optimization | ⚪ Planned | 🥉 |
 
 ---
 
@@ -361,19 +372,30 @@ PRODUCT_VARIANTS (1) ──── (1:N) INVENTORY_LOGS
 ## 🗺️ 17. Implementation Roadmap (MVP)
 
 ### Phase 1 — CORE (Week 1–4)
-- Dashboard basic (KPI + Order + Inventory)
-- AI Customer Service & AI Content Generator
-*Impact: Langsung naik conversion + efisiensi.*
+- AI Content Factory (caption IG, script TikTok, deskripsi Shopee)
+- AI Cart Recovery (WhatsApp abandoned cart)
+- AI CEO Dashboard (real-time KPI + insight proaktif)
+- Dashboard per Role (Owner, Production, CS)
+*Impact: Langsung naik conversion + efisiensi operasional.*
 
 ### Phase 2 — GROWTH (Week 5–8)
-- AI Marketing Analyst & AI Recommendation
-- Production Tracking & Dashboard Analytics
-*Impact: Scale revenue + operasional rapi.*
+- AI Color Match (analisa skin undertone → rekomendasi warna produk)
+- AI Production Planner (prediksi demand dari data sales + trend sosmed)
+- AI Omnichannel Inbox (WhatsApp + IG DM + TikTok → satu queue)
+- AI Financial Analyst (margin per produk + cashflow 30 hari)
+- AI Marketplace Optimizer (Shopee SEO title + deskripsi)
+- Production Tracking (Cutting → Sewing → QC → Packaging)
+*Impact: Scale revenue + operasional rapi + CS lebih cepat.*
 
 ### Phase 3 — ADVANCED (Week 9–12)
-- CEO AI (Basic Insight) & Command Center UI
-- Multi-Agent Ecosystem & Auto-Execution
-*Impact: Automation tinggi + decision making kuat.*
+- AI Smart Size Predictor (ML feedback loop dari data retur)
+- AI Inventory Auto-Reorder (auto PO draft ke supplier)
+- AI Virtual Try-On (customer foto → preview pakai produk)
+- AI Personalized Homepage (dynamic per visitor)
+- AI Loyalty & Reorder Engine (proaktif kirim rekomendasi repeat)
+- CEO AI Agent + Multi-Agent Ecosystem
+- AI Command Center & Auto-Execution (Level 1–3)
+*Impact: Automation tinggi + hyper-personalization + decision making kuat.*
 
 ---
 
