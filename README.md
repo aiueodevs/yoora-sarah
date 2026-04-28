@@ -1,33 +1,52 @@
-# YOORA-SARAH — Single Source of Truth (SSOT) v2.0
+# YOORA-SARAH — Single Source of Truth
 
-> **SDLC Framework Alignment:** This project follows the [Professional Fullstack Development Lifecycle v2.0](https://sdlc-framework.vercel.app/) (23-Step Methodology).
+> **Vision:** Transform Yoora Sarah from a conventional modest fashion brand into an **AI-driven fashion enterprise** — a Digital Operating System for the entire company.
+>
+> **SDLC Alignment:** [Professional Fullstack Development Lifecycle v2.0](https://sdlc-framework.vercel.app/) (23-Step Methodology).
 
 ---
 
 ## 📑 Table of Contents
 
+### Part A — Current State (Factual)
 1. [Executive Summary](#-1-executive-summary)
 2. [Monorepo Structure](#-2-monorepo-structure)
-3. [Master Tech Stack](#-3-master-tech-stack)
-4. [Development Lifecycle Status (23 Steps)](#-4-development-lifecycle-status-23-steps)
-5. [Core Features Implementation](#-5-core-features-implementation)
+3. [Tech Stack (Actual)](#-3-tech-stack-actual)
+4. [SDLC Lifecycle Status](#-4-sdlc-lifecycle-status-23-steps)
+5. [Implemented Features](#-5-implemented-features)
 6. [Environment Variables](#-6-environment-variables)
 7. [Development Commands](#-7-development-commands)
 8. [Pre-Production Checklist](#-8-pre-production-checklist)
-9. [Governance & Responsibility (RACI)](#-9-governance--responsibility-raci)
-10. [Roadmap](#-10-roadmap)
+
+### Part B — Enterprise Blueprint (Vision)
+9. [System Architecture (Target)](#-9-system-architecture-target)
+10. [Customer Website Features (Full)](#-10-customer-website-features-full)
+11. [Internal Dashboard (Full Enterprise)](#-11-internal-dashboard-full-enterprise)
+12. [AI Multi-Agent Ecosystem](#-12-ai-multi-agent-ecosystem)
+13. [AI Command Center & Auto-Execution](#-13-ai-command-center--auto-execution)
+14. [Database Schema (Target ERD)](#-14-database-schema-target-erd)
+15. [API Specifications (Target)](#-15-api-specifications-target)
+16. [Infra Cost & Team Structure](#-16-infra-cost--team-structure)
+17. [Implementation Roadmap (MVP)](#-17-implementation-roadmap-mvp)
+18. [Governance (RACI)](#-18-governance-raci)
+
+---
+
+# PART A — CURRENT STATE (FACTUAL)
+
+*This section describes what is actually implemented, tested, and running in the codebase today.*
 
 ---
 
 ## 🏗️ 1. Executive Summary
 
-**YOORA-SARAH** is a premium modest fashion e-commerce ecosystem built as a modern Turborepo monorepo. It integrates three core surfaces:
+**YOORA-SARAH** is a premium modest fashion e-commerce ecosystem built as a modern Turborepo monorepo. It currently integrates three core surfaces:
 
-- **Customer Storefront** — AI-powered shopping experience with styling studio.
-- **Internal Portal** — Production intelligence dashboard for staff operations.
-- **FastAPI Backend** — Commerce engine, AI orchestration, and workflow services.
+- **Customer Storefront (`apps/web`)** — AI-powered shopping experience with styling studio.
+- **Internal Portal (`apps/portal`)** — Production intelligence dashboard for staff operations.
+- **FastAPI Backend (`services/api`)** — Commerce engine, AI orchestration, and workflow services.
 
-The platform is designed with a *dual-mode architecture*: all commerce and AI features query PostgreSQL first, and gracefully fall back to in-memory fixtures when the database is not yet configured. This ensures the system is always runnable locally without external dependencies.
+The platform uses a *dual-mode architecture*: all commerce and AI features query PostgreSQL first, and gracefully fall back to in-memory fixtures when the database is not yet configured.
 
 ---
 
@@ -51,10 +70,7 @@ YOORA-SARAH/
 ├── tools/
 │   └── db/               → Python migration runner (psycopg)
 ├── e2e/                  → Playwright E2E smoke tests
-├── .github/
-│   ├── workflows/ci.yml  → GitHub Actions CI pipeline
-│   ├── CODEOWNERS        → Code ownership rules
-│   └── PULL_REQUEST_TEMPLATE.md
+├── .github/              → CI workflow, CODEOWNERS, PR template
 ├── CONTRIBUTING.md
 ├── README.md             → This document (SSOT)
 ├── render.yaml           → Backend deployment config (Render)
@@ -64,7 +80,7 @@ YOORA-SARAH/
 
 ---
 
-## ⚙️ 3. Master Tech Stack
+## ⚙️ 3. Tech Stack (Actual)
 
 | Layer | Technology | Application |
 | :--- | :--- | :--- |
@@ -79,139 +95,289 @@ YOORA-SARAH/
 | **Testing** | Vitest, Pytest, Playwright | Unit, Integration, & E2E |
 | **Monorepo** | Turborepo, pnpm workspaces | Optimized build & execution pipeline |
 | **CI / CD** | GitHub Actions | Automated lint, typecheck, build, & test |
-| **Deployment** | Render (Backend), Vercel (Frontend — pending) | Cloud hosting targets |
 
 ---
 
-## ◈ 4. Development Lifecycle Status (23 Steps)
+## ◈ 4. SDLC Lifecycle Status (23 Steps)
 
 | Step | Phase | Status | Details |
 | :---: | :--- | :---: | :--- |
-| 0 | PRD | ✅ | Product vision and concierge scope defined |
-| 1 | BRD | ✅ | Monorepo business logic mapped |
-| 2 | UI/UX Design | ✅ | High-res video hero & Premium Stylist UI implemented |
-| 3 | Technical Design | ✅ | Data architecture & Internal API consolidated |
-| 4 | Software Architecture | ✅ | Turborepo orchestration & fail-closed backend |
-| 5 | API Specification | ✅ | FastAPI domain endpoints defined |
-| 6 | Development | 🟡 | Core surfaces active; iterative refinement ongoing |
-| 7 | Non-Prod Deployment | 🟡 | Local parity confirmed; staging pending |
-| 8 | Testing & QA | ✅ | Vitest, Pytest, Playwright smoke tests active |
-| 9 | Prod Deployment | ❌ | Infrastructure configured; deployment pending |
-| 10 | Maintenance & CI | ✅ | GitHub Actions CI workflow established |
-| 11 | Operational Readiness | 🟡 | Startup scripts available; runbooks pending |
-| 12 | Data Governance | 🟡 | PII removed from git history; **secret rotation required** |
-| 13 | Advanced Security | ✅ | Internal API fail-closed protection enabled |
-| 14 | Release Engineering | ✅ | PR templates & CODEOWNERS implemented |
-| 15–22 | Platform / AIOps / Green IT | ⚪ | Future expansion targets |
+| 0 | PRD | ✅ | Product vision defined |
+| 1 | BRD | ✅ | Business logic mapped |
+| 2 | UI/UX Design | ✅ | Hero video & Premium Stylist UI |
+| 3 | Technical Design | ✅ | API consolidated |
+| 4 | Software Architecture | ✅ | Turborepo & fail-closed auth |
+| 5 | API Specification | ✅ | FastAPI endpoints defined |
+| 6 | Development | 🟡 | Iterative refinement ongoing |
+| 7 | Non-Prod Deployment | 🟡 | Local parity confirmed |
+| 8 | Testing & QA | ✅ | Vitest, Pytest, Playwright |
+| 9 | Prod Deployment | ❌ | Pending |
+| 10 | Maintenance & CI | ✅ | GitHub Actions active |
+| 11 | Operational Readiness | 🟡 | Startup scripts available |
+| 12 | Data Governance | 🟡 | PII removed; **secret rotation required** |
+| 13 | Advanced Security | ✅ | Fail-closed auth enabled |
+| 14 | Release Engineering | ✅ | PR templates & CODEOWNERS |
+| 15–22 | Platform / AIOps / Green IT | ⚪ | Future (see Blueprint below) |
 
-**Legend:** ✅ Complete · 🟡 In Progress / Partial · ❌ Not Started · ⚪ Planned
+**Legend:** ✅ Complete · 🟡 In Progress · ❌ Not Started · ⚪ Planned
 
 ---
 
-## 🌟 5. Core Features Implementation
+## 🌟 5. Implemented Features
 
 ### 5.1 Customer Storefront (`apps/web`)
 
-| Feature | Description | Dependency |
-| :--- | :--- | :--- |
-| **AI Buyer Premium Concierge** | Single floating entry point for product discovery, sizing, order tracking, and policy inquiries. | `GROQ_API_KEY` for LLM; grounded fallback without it |
-| **WhatsApp Handoff** | Contextual CS escalation rendered as in-chat CTA button for sensitive queries. | Integrated into AI Buyer; no separate button |
-| **AI Stylist Studio** (`/stylist`) | Full-viewport interactive studio: OutfitComposer + ProductToModelStudio + StylistProductRail. | `GROQ_API_KEY`, `GEMINI_API_KEY`; image gen requires Replicate/OpenAI keys |
-| **Hero Experience** | 1080p looping video (MP4+WebM) with cross-fade transitions and reduced-motion support. | Local assets in `public/hero-video/` |
+| Feature | Status | Dependency |
+| :--- | :---: | :--- |
+| AI Buyer Premium Concierge | ✅ | `GROQ_API_KEY`; grounded fallback without it |
+| WhatsApp Handoff (in-chat CTA) | ✅ | Integrated into AI Buyer |
+| AI Stylist Studio (`/stylist`) | ✅ | `GROQ_API_KEY` + `GEMINI_API_KEY` |
+| Hero Experience (1080p video) | ✅ | Local assets |
+| Product Catalog & Detail Pages | ✅ | Tigris + fixture fallback |
+| Cart, Checkout, Wishlist, Profile | ✅ | Dual-mode (DB-first → in-memory) |
 
 ### 5.2 Internal Portal (`apps/portal`)
 
-| Feature | Description | Mode |
-| :--- | :--- | :--- |
-| **Briefs** | Create and review design briefs | Demo fixtures |
-| **Design Gallery** | Visual review of design job outputs | Demo fixtures |
-| **Patterns** | Pattern work tracking and production handoff | Demo fixtures |
-| **Forecast** | Demand planning and forecast runs | Demo fixtures |
-| **Production Plans** | Plan management with approval queues | Demo fixtures |
-| **Approvals** | Centralized approval queue across workflows | Demo fixtures |
-| **Dashboard** | Aggregated active queues, risk signals, daily decisions | Demo fixtures |
-| **Settings** | Master data management | Demo fixtures |
-| **Unified Transport** | Consolidated API client with internal key + actor email headers | `api-client.ts` |
+| Feature | Status | Mode |
+| :--- | :---: | :--- |
+| Briefs, Design, Patterns, Forecast | ✅ | Demo fixtures |
+| Production Plans & Approvals | ✅ | Demo fixtures |
+| Dashboard (KPI overview) | ✅ | Demo fixtures |
+| Consolidated API Client | ✅ | `api-client.ts` |
+| Auth (JWT + Role-based) | ✅ | Middleware + Supabase |
 
-> *Portal workflows currently use demo/in-memory data fixtures. Full persistence activates when database migrations are applied.*
+### 5.3 Backend (`services/api`)
 
-### 5.3 Backend Infrastructure (`services/api`)
-
-| Component | Description | Mode |
-| :--- | :--- | :--- |
-| **Commerce Engine** | Cart, orders, checkout, wishlist, profile via `storefront_postgres_store.py` | **Dual-mode:** DB-first → in-memory fallback |
-| **AI Tools Service** | Multi-turn conversational AI with intent routing, grounded search, and confidence scoring | Requires `GROQ_API_KEY` |
-| **Catalog Store** | 10-category product catalog with live sync from `api.yoorasarah.com` and Tigris assets | Auto-fallback to fixtures |
-| **Auth System** | Fail-closed internal API auth with RBAC (`require_roles`) | `ALLOW_INSECURE_AUTH=true` for dev |
-| **Migration Runner** | Custom Python tool for SQL schema migrations and seed data (`tools/db/`) | `DATABASE_URL` required |
+| Component | Status | Mode |
+| :--- | :---: | :--- |
+| Commerce Engine (Cart/Order/Checkout) | ✅ | Dual-mode: DB → fallback |
+| AI Tools Service (Buyer Concierge) | ✅ | Groq LLM + grounded |
+| Catalog Store (10 categories) | ✅ | Live sync + fixture |
+| Auth (fail-closed + RBAC) | ✅ | `ALLOW_INSECURE_AUTH` for dev |
+| Migration Runner | ✅ | `tools/db/` |
 
 ---
 
 ## 🔐 6. Environment Variables
 
-Create `.env` files based on `.env.example`. Key variables:
-
 | Variable | Required | Purpose |
 | :--- | :---: | :--- |
-| `DATABASE_URL` | ✅ | PostgreSQL connection (Supabase pooler) |
+| `DATABASE_URL` | ✅ | PostgreSQL connection |
 | `SUPABASE_URL` | ✅ | Supabase project URL |
-| `SUPABASE_PUBLISHABLE_KEY` | ✅ | Supabase public/anon key |
+| `SUPABASE_PUBLISHABLE_KEY` | ✅ | Supabase anon key |
 | `SUPABASE_SECRET_KEY` | ✅ | Supabase service role key |
-| `YOORA_INTERNAL_API_BASE_URL` | ✅ | FastAPI URL (e.g. `http://127.0.0.1:8000/api/v1`) |
-| `YOORA_INTERNAL_API_SHARED_SECRET` | ✅ | Shared secret for internal API auth |
-| `YOORA_PORTAL_AUTH_SECRET` | Portal | JWT signing secret for portal sessions |
-| `YOORA_PORTAL_BOOTSTRAP_PASSWORD` | Portal | Shared bootstrap password for portal login |
-| `GROQ_API_KEY` | AI | Groq LLM for AI Buyer & AI Stylist chat |
-| `GEMINI_API_KEY` | AI | Google Gemini for vision/image analysis |
-| `REPLICATE_API_TOKEN` | AI | Replicate for product-to-model image generation |
-| `OPENAI_API_KEY` | AI | OpenAI for product-to-model (alternative provider) |
+| `YOORA_INTERNAL_API_BASE_URL` | ✅ | FastAPI URL |
+| `YOORA_INTERNAL_API_SHARED_SECRET` | ✅ | Internal API auth |
+| `YOORA_PORTAL_AUTH_SECRET` | Portal | JWT signing secret |
+| `YOORA_PORTAL_BOOTSTRAP_PASSWORD` | Portal | Shared login password |
+| `GROQ_API_KEY` | AI | Groq LLM |
+| `GEMINI_API_KEY` | AI | Google Gemini |
+| `REPLICATE_API_TOKEN` | AI | Image generation |
 
 ---
 
 ## 🚀 7. Development Commands
 
-Execute from the repository root:
-
-### Running Servers
 ```bash
-npm run dev              # Start Web & Portal (ports 3000, 3001)
-npm run api:dev          # Start FastAPI backend (port 8000)
-```
+# Servers
+npm run dev              # Web & Portal (ports 3000, 3001)
+npm run api:dev          # FastAPI backend (port 8000)
 
-### Quality & Testing
-```bash
-npm run lint             # ESLint across all JS/TS workspaces
-npm run typecheck        # TypeScript type checking (tsc --noEmit)
-npm run test             # Vitest (frontend) + Pytest (backend)
-npm run test:e2e         # Playwright browser smoke tests
-npm run format:check     # Prettier formatting check
-```
+# Quality
+npm run lint             # ESLint
+npm run typecheck        # TypeScript
+npm run test             # Vitest + Pytest
+npm run test:e2e         # Playwright
+npm run format:check     # Prettier
 
-### Database
-```bash
-npm run db:status        # Check migration status
-npm run db:migrate       # Apply pending schema migrations
-npm run db:seed          # Populate with master/demo seed data
+# Database
+npm run db:migrate       # Apply migrations
+npm run db:seed          # Seed data
 ```
 
 ---
 
 ## ⚠️ 8. Pre-Production Checklist
 
-> These items **must** be addressed before any production deployment:
+- [ ] **Rotate Secrets:** Regenerate all keys exposed in git history.
+- [ ] **Run Migrations:** `npm run db:migrate && npm run db:seed` on production Supabase.
+- [ ] **Configure AI Keys:** Set `GROQ_API_KEY` and `GEMINI_API_KEY` in production.
+- [ ] **Deploy Frontend:** Vercel for `apps/web` and `apps/portal`.
+- [ ] **Deploy Backend:** Render for `services/api`.
+- [ ] **Revoke GitHub PATs.**
 
-- [ ] **Rotate Secrets:** Regenerate all API keys previously exposed in git history (Supabase, Groq, Cloudflare).
-- [ ] **Run Database Migrations:** Execute `npm run db:migrate && npm run db:seed` against the production Supabase instance.
-- [ ] **Configure AI Keys:** Set `GROQ_API_KEY` and `GEMINI_API_KEY` in the production environment.
-- [ ] **Deploy Frontend:** Set up Vercel projects for `apps/web` and `apps/portal`.
-- [ ] **Deploy Backend:** Verify Render deployment of `services/api` with correct `DATABASE_URL`.
-- [ ] **Revoke GitHub PATs:** Delete all Personal Access Tokens used during initial setup.
+> **💡 Developer Note:** Kodenya sudah jadi semua. Jalankan `npm run db:migrate` dan pasang API Keys agar fiturnya benar-benar hidup penuh.
 
-> **💡 Developer Note:** Kodenya sudah jadi semua. Jalankan `npm run db:migrate` dan pasang API Keys agar fiturnya benar-benar hidup penuh. Dokumen ini dirancang untuk menceritakan secara transparan apa yang sudah ada, apa yang sudah siap secara arsitektural, dan apa yang wajib dilakukan sebelum sistem dinyatakan "Live".
+---
+---
+
+# PART B — ENTERPRISE BLUEPRINT (VISION)
+
+*This section describes the full target architecture. Features listed here are the north star for incremental implementation.*
 
 ---
 
-## 🤝 9. Governance & Responsibility (RACI)
+## 🏛️ 9. System Architecture (Target)
+
+### Three Decoupled Layers
+1. **Website** → Customer Experience Layer (conversion engine)
+2. **Dashboard** → Management & SDM Layer (decision engine)
+3. **AI Brain** → Intelligence Layer (automation engine)
+
+### Target Microservices
+Auth · User/Profile · Product/Catalog · Order/Payment · Production · Inventory · AI Orchestrator · Notification
+
+### Target Data Flow
+`Client → CDN → API Gateway → Microservices → DB/Cache → Queue/Workers → AI Engine → Client`
+
+---
+
+## 🛍️ 10. Customer Website Features (Full)
+
+| Feature | Description | Current Status |
+| :--- | :--- | :---: |
+| AI Stylist | Chat-based outfit recommendation | ✅ Implemented |
+| Smart Recommendation | Behavior-based product suggestions | ⚪ Planned |
+| Image-Based Recommendation | Upload foto → AI analisa → rekomendasi | 🟡 Partial (Gemini vision) |
+| Size Recommendation AI | Height/weight → size + confidence | ✅ Implemented |
+| AI Customer Support | Multi-channel auto-reply | ✅ Implemented (Web) |
+| Personalized Homepage | Dynamic content per user | ⚪ Planned |
+
+---
+
+## 💼 11. Internal Dashboard (Full Enterprise)
+
+| Module | Description | Current Status |
+| :--- | :--- | :---: |
+| **Design Assistant** | AI generate ide desain & variasi | ⚪ Planned |
+| **Pattern Management** | Size grading, version control, export | ✅ Partial (Portal) |
+| **Production Planner AI** | Prediksi demand, distribusi size | ⚪ Planned |
+| **Inventory Intelligence** | Stock tracking, auto reorder | ⚪ Planned |
+| **Production Tracking** | Cutting → Sewing → QC → Packaging | ⚪ Planned |
+| **HR & SDM** | Employee DB, attendance, payroll, performance AI | ⚪ Planned |
+| **Finance & Accounting** | Revenue, P&L, cashflow, AI pricing optimizer | ⚪ Planned |
+| **Marketing AI** | Campaign, content generator, analytics | ⚪ Planned |
+| **Sales & Omnichannel** | Unified orders (Shopee, TikTok, IG, Web) | ⚪ Planned |
+| **Logistics** | Shipment tracking, route optimization | ⚪ Planned |
+| **Dashboard per Role** | Owner KPI, Production Queue, CS Panel, Marketing | 🟡 Partial |
+
+---
+
+## 🤖 12. AI Multi-Agent Ecosystem
+
+### The Agents
+
+| Agent | Role | Status |
+| :--- | :--- | :---: |
+| **CEO Agent** | Strategic decisions, cross-division insight | ⚪ Planned |
+| **Marketing Agent** | Campaign execution, ads optimization | ⚪ Planned |
+| **Creative Agent** | Moodboard, script video, caption IG | ⚪ Planned |
+| **Sales Agent** | Conversion optimization | ⚪ Planned |
+| **CS Support Agent** | Auto-reply, complaint handling | ✅ Implemented |
+| **Production Agent** | Capacity planning | ⚪ Planned |
+| **Inventory Agent** | Restock logic | ⚪ Planned |
+| **Finance Agent** | Margin control | ⚪ Planned |
+| **HR Agent** | Performance tracking | ⚪ Planned |
+
+### Multi-Agent Collaboration Flow
+```text
+TikTok Viral → Social Agent detect → Marketing Agent push ads
+→ Production Agent check capacity → Inventory Agent check stock
+→ Finance Agent validate budget → CEO AI approve decision
+```
+
+---
+
+## 🧠 13. AI Command Center & Auto-Execution
+
+### Command Center UI (Target)
+```text
+--------------------------------------------------
+|                AI COMMAND CENTER                 |
+--------------------------------------------------
+|                 [ CEO AI CORE ]                  |
+--------------------------------------------------
+| SALES | MARKETING | CREATIVE | OPS | HR | FIN   |
+--------------------------------------------------
+| LIVE FEED:                                       |
+| - TikTok spike detected                          |
+| - Stock low on Bella Dress                       |
+| - Campaign X performing well                     |
+--------------------------------------------------
+```
+
+### Auto-Execution Levels
+- **Level 1:** AI recommends → human decides.
+- **Level 2:** AI recommends → human approves → system executes.
+- **Level 3:** AI detects pattern → auto-executes → audit log.
+
+---
+
+## 📊 14. Database Schema (Target ERD)
+
+```text
+USERS (1) ──── (1) CUSTOMER_PROFILE
+   │
+   ├─── (1:N) ORDERS ──── (1:N) ORDER_ITEMS ──── (N:1) PRODUCT_VARIANTS ──── (N:1) PRODUCTS
+   │
+   └─── (1:N) AI_LOGS
+
+PRODUCTS (1) ──── (1:N) PRODUCT_VARIANTS
+PRODUCTS (1) ──── (1:N) PATTERNS
+ORDERS   (1) ──── (1:1) PRODUCTION_JOBS
+PRODUCT_VARIANTS (1) ──── (1:N) INVENTORY_LOGS
+```
+
+---
+
+## 📡 15. API Specifications (Target)
+
+| Domain | Method | Endpoint |
+|---|---|---|
+| Auth | POST | `/auth/login`, `/auth/register` |
+| Products | GET/POST | `/products`, `/products/{id}` |
+| AI Stylist | POST | `/ai/style-chat` |
+| AI Vision | POST | `/ai/analyze-image` |
+| Orders | GET/POST | `/orders`, `/orders/{id}` |
+| Production | GET/POST | `/production/jobs`, `/production/assign` |
+| Inventory | GET/POST | `/inventory`, `/inventory/update` |
+| AI Design | POST | `/ai/design-generate` |
+
+---
+
+## 💰 16. Infra Cost & Team Structure
+
+### Infra Cost (AWS/GCP)
+- **Small (Start):** $100–250/month (~Rp1.5–4 juta)
+- **Medium:** $400–900/month
+- **High (Microservices):** $1000+/month
+
+### Core Team (Minimum)
+- Frontend (1-2), Backend (1-2), AI Engineer (1), UI/UX (1)
+- *Estimated:* Rp40–80jt/bulan
+
+---
+
+## 🗺️ 17. Implementation Roadmap (MVP)
+
+### Phase 1 — CORE (Week 1–4)
+- Dashboard basic (KPI + Order + Inventory)
+- AI Customer Service & AI Content Generator
+*Impact: Langsung naik conversion + efisiensi.*
+
+### Phase 2 — GROWTH (Week 5–8)
+- AI Marketing Analyst & AI Recommendation
+- Production Tracking & Dashboard Analytics
+*Impact: Scale revenue + operasional rapi.*
+
+### Phase 3 — ADVANCED (Week 9–12)
+- CEO AI (Basic Insight) & Command Center UI
+- Multi-Agent Ecosystem & Auto-Execution
+*Impact: Automation tinggi + decision making kuat.*
+
+---
+
+## 🤝 18. Governance (RACI)
 
 *R = Responsible · A = Accountable · C = Consulted · I = Informed*
 
@@ -226,17 +392,6 @@ npm run db:seed          # Populate with master/demo seed data
 
 ---
 
-## 📈 10. Roadmap
-
-- [ ] Finalize Vercel production deployment for Frontend surfaces.
-- [ ] Expand AI Stylist Studio with specialized vision models.
-- [ ] Implement Step 15 (FinOps): API credit & cost monitoring for AI operations.
-- [ ] Implement Step 18 (AIOps): Tracking metrics for AI assistant accuracy and conversion rates.
-- [ ] Activate persistent commerce by running migrations against production Supabase.
-- [ ] Implement Step 11: Operational runbooks and disaster recovery procedures.
-
----
-
 <p align="center"><sub><em>End of SSOT · Last Updated: 2026-04-29</em></sub></p>
 
-> *Standar profesional sejati bukan tentang mengklaim kesempurnaan — melainkan menceritakan dengan jujur apa yang ada, apa yang sudah siap, dan apa yang harus dilakukan sebelum production. Pola dual-mode dan graceful fallback memastikan sistem tetap stabil selama masa transisi ini.*
+> *Standar profesional sejati bukan tentang mengklaim kesempurnaan — melainkan menceritakan dengan jujur apa yang ada, apa yang sudah siap, dan apa yang harus dilakukan. Pola dual-mode dan graceful fallback memastikan sistem tetap stabil selama transformasi menuju AI-operated fashion enterprise.*
