@@ -91,6 +91,8 @@
 - [ ] **Deploy Backend:** Verify Render deployment of `services/api` with correct `DATABASE_URL`.
 - [ ] **Revoke GitHub PATs:** Delete all Personal Access Tokens used during initial setup.
 
+> **💡 Developer Note:** "Oke, kodenya sudah jadi semua, tapi saya harus run `npm run db:migrate` dan pasang API Keys agar fiturnya benar-benar hidup penuh." Dokumen ini dirancang untuk menceritakan secara transparan apa yang sudah ada, apa yang sudah siap secara arsitektural, dan apa yang wajib dilakukan sebelum sistem benar-benar dinyatakan "Live".
+
 ---
 
 ## 🚀 5. Development Commands
@@ -129,3 +131,5 @@ Execute these commands from the repository root:
 - [ ] **Step 18 (AIOps):** Implement tracking metrics for AI assistant accuracy and conversion rates.
 
 *(End of SSOT — Last Updated: 2026-04-29)*
+
+> *Standar profesional sejati bukan tentang mengklaim kesempurnaan — melainkan menceritakan dengan jujur apa yang ada, apa yang sudah siap, dan apa yang harus dilakukan sebelum production. Pola dual-mode dan graceful fallback memastikan sistem tetap stabil selama masa transisi ini.*
