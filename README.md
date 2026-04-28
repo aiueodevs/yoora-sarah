@@ -1,100 +1,125 @@
-# YOORA-SARAH
+# YOORA-SARAH — Single Source of Truth (SSOT)
 
-YOORA-SARAH is a monorepo for the Yoora Sarah platform. It contains the customer storefront, the internal portal, the FastAPI backend, shared packages, and the database tooling that support product, merchandising, and operations workflows.
+This document serves as the sole source of truth for the **Yoora Sarah Platform Monorepo**. It replaces all previous historical design specs, planning documents, and references.
 
-## Monorepo structure
+## 🏗️ Architecture & Monorepo Structure
+
+The project uses a Turborepo-orchestrated monorepo structure with `npm` (v10+) as the root package manager and `uv` for Python environments.
 
 ```text
 apps/
-  web/           Next.js customer storefront and stylist experience
-  portal/        Next.js internal portal
+  web/           Next.js customer storefront & AI Stylist
+  portal/        Next.js internal portal for staff
 services/
-  api/           FastAPI backend
-  workers/       background worker scaffold
+  api/           FastAPI backend (powers AI logic & commerce)
+  workers/       Background worker scaffold
   ai/            AI service scaffold
 packages/
-  database/      shared database package
-  ui/            shared UI package
-scripts/         local maintenance scripts
+  database/      Shared database logic & types
+  ui/            Shared UI components (shadcn/radix)
 db/
   migrations/    SQL migrations
   seeds/         SQL seed data
 tools/
-  db/            migration and seed runner
+  db/            Migration and seed runner
+e2e/             Playwright E2E smoke tests
 ```
 
-## Prerequisites
+## 🛠️ Tech Stack & Versions
 
-- Node.js 20+
-- npm 10+
-- Python 3.11+
-- `uv` for Python environment and command execution
-- Access to the required Supabase project and environment variables
+### Frontend (Apps & Packages)
+- **Framework:** Next.js `16.1.0` (App Router) on both `apps/web` and `apps/portal`
+- **UI/Components:** React `^19.0.0`, Tailwind CSS, Radix UI Primitives, Framer Motion
+- **Tooling:** TypeScript `^5.7.2`, ESLint (flat config), Prettier
+- **Testing:** Vitest (with `@testing-library/react` and `v8` coverage provider)
+- **E2E:** Playwright (Chromium test suite)
 
-## Setup
+### Backend (Services)
+- **Framework:** FastAPI `^0.115.0`, Uvicorn
+- **Language:** Python `3.12+` (managed via `uv`)
+- **Data/Validation:** Pydantic & Pydantic-Settings `^2.14.0`
+- **Database Driver:** Psycopg 3
+- **Tooling:** Ruff (linter/formatter), Pytest (testing framework)
 
-Install workspace dependencies from the repository root:
+### External Integrations
+- **AI Models:** Groq (Llama 3.3 Versatile) for speed, Google Gemini 2.5 Flash for multimodal vision
+- **Database:** Supabase (PostgreSQL)
+- **Asset Storage:** Tigris Object Storage (used via URLs for products, though currently synchronized via `apps/web/public/products` fallback)
 
-```bash
-npm install
-```
+---
 
-If you need a portal-only install:
+## 🌟 Core Features & Implementation State
 
-```bash
-npm run portal:install
-```
+### 1. AI Buyer Premium Concierge
+- **Entry Point:** The primary floating action button on the storefront. The old global standalone WhatsApp button has been **removed**.
+- **Capabilities:** Handles product discovery, sizing queries, order status, policies, and styling.
+- **Handoff Mechanism:** If a user query is flagged as *sensitive* (e.g., complaints, refunds) or if *size ambiguity* triggers a handoff, the AI gracefully generates an `AIAssistantAction`.
+- **UI:** The frontend parses this action and renders a sleek, in-chat **"Chat CS via WhatsApp"** CTA button (a deep-link to WhatsApp with pre-filled context).
 
-## Environment setup
+### 2. AI Stylist Studio (`/stylist`)
+- A full-viewport, scrolling-locked, rich UI experience.
+- Uses `OutfitComposer`, `StylistProductRail`, and `ProductToModelStudio`.
+- Contains hybrid AI routing in `route.ts`: uses Gemini for image + text understanding, and Groq for text-only workflows.
 
-Create local environment files from the provided examples where available, then supply the values required for your target surface.
+### 3. Internal Portal (`apps/portal`)
+- A dashboard for staff handling briefs, forecasts, design jobs, pattern jobs, and AI tools.
+- API Client is consolidated into a single transport layer (`lib/api-client.ts`) handling the base URL, internal shared secrets, and error extraction.
 
-Common variables used across the repo:
+### 4. Auth & Security Hardening
+- **Backend Internal API:** Operates on a **fail-closed** default. If `INTERNAL_API_SHARED_SECRET` is missing, requests reject with 503 unless explicitly bypassed with `ALLOW_INSECURE_AUTH=true`.
+- **Demo Identities:** Demo actors (e.g., `owner@yoora.local`) have been isolated to prevent production path leakage.
 
+---
+
+## 🚀 Development Workflow
+
+### Prerequisites
+- Node.js 20+ & npm 10+
+- Python 3.12+ & `uv` package manager
+
+### Environment Setup
+Create local `.env` files based on `.env.example`.
+Key variables needed:
 - `DATABASE_URL`
-- `SUPABASE_URL`
-- `SUPABASE_PUBLISHABLE_KEY`
-- `SUPABASE_SECRET_KEY`
-- `YOORA_INTERNAL_API_BASE_URL` (for example `http://127.0.0.1:8000/api/v1`)
+- `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY`
+- `YOORA_INTERNAL_API_BASE_URL` (typically `http://127.0.0.1:8000/api/v1`)
 - `YOORA_INTERNAL_API_SHARED_SECRET`
+- `GROQ_API_KEY`, `GEMINI_API_KEY` (for AI features)
 
-Recommended flow:
+### Main Commands
 
-1. Copy `.env.example` to a local `.env` file if your workflow uses the root environment file.
-2. Add service-specific variables required by `apps/web`, `apps/portal`, and `services/api`.
-3. Keep frontend and backend internal API settings aligned when shared-secret protection is enabled.
+Run from the root directory:
 
-## Main development commands
-
-Run these from the repository root unless noted otherwise.
-
+**Running the Apps**
 ```bash
-npm run dev              # turbo dev for workspace apps
-npm run portal:dev       # portal only
-npm run api:dev          # FastAPI service
-npm run db:status        # migration status
-npm run db:migrate       # apply migrations
-npm run db:seed          # run seed data
+npm run dev        # Starts Turbo dev server (both web & portal)
+npm run api:dev    # Starts FastAPI backend on port 8000
 ```
 
-## Quality checks
-
+**Quality & Testing**
 ```bash
-npm run lint
-npm run typecheck
-npm run test
-npm run format:check
+npm run lint         # Runs ESLint across JS/TS workspaces
+npm run typecheck    # Runs tsc --noEmit
+npm run test         # Runs Vitest (frontend) & Pytest (backend via Turbo if mapped)
+npm run test:e2e     # Runs Playwright smoke tests
+npm run test:coverage # Runs Vitest with coverage report
+npm run format:check # Checks Prettier formatting
 ```
 
-Surface-specific commands are also available, including `npm run portal:build`, `npm run portal:lint`, and `npm run portal:typecheck`.
+**Database Tooling**
+```bash
+npm run db:status
+npm run db:migrate
+npm run db:seed
+```
 
-## Deployment and CI
+---
 
-Deployments depend on the target surface and environment configuration. Before shipping changes, make sure linting, typechecking, tests, and any relevant database migrations pass locally or in CI. Treat environment configuration and secrets as deployment prerequisites, not code defaults.
+## 🚦 Deployment & CI/CD
+- **GitHub Actions (`.github/workflows/ci.yml`):** Runs on push to `main` and Pull Requests.
+  - *Frontend Job:* Node setup, `npm ci`, Turbo lint, typecheck, build, Prettier check.
+  - *Backend Job:* UV setup, Python setup, Ruff check, Pytest.
+- **Rules:** The repo follows standard PR templates and `CODEOWNERS` policies. Commits modifying product images or tracked YAMLs are handled via strict `.gitignore` exceptions.
 
-## Contributing
-
-- Keep changes scoped and avoid unrelated refactors.
-- Prefer updating existing modules over introducing parallel implementations.
-- Validate the affected app or service with the relevant lint, typecheck, and test commands before opening a PR.
-- Do not commit secrets, local env files, or generated machine-specific artifacts.
+## 🤝 Contributing
+For detailed guidelines, please refer to the `CONTRIBUTING.md` document at the root of the repository.
