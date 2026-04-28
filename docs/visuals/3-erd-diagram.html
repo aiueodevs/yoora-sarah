@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yoora Sarah — Entity Relationship Diagram (ERD)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Fragment+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  /* ============ THEME ============ */
+  :root {
+    --font-body: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-mono: 'Fragment Mono', 'SF Mono', Consolas, monospace;
+
+    --bg: #fffdfa;
+    --surface: #ffffff;
+    --border: rgba(141, 115, 99, 0.16);
+    --text: #241915;
+    --text-dim: #8a6c5f;
+
+    --primary: #8a6c5f;
+    --primary-dim: rgba(138, 108, 95, 0.08);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1411;
+      --surface: #241915;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #fdfaf7;
+      --text-dim: #d1b5a5;
+
+      --primary: #c8a997;
+      --primary-dim: rgba(200, 169, 151, 0.14);
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--bg);
+    background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: var(--text);
+    font-family: var(--font-body);
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .header {
+    padding: 24px 32px 16px;
+    flex-shrink: 0;
+    z-index: 10;
+    background: linear-gradient(180deg, var(--bg) 60%, transparent);
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 { font-size: 32px; font-weight: 700; letter-spacing: -1px; margin-bottom: 4px; }
+  .subtitle { color: var(--text-dim); font-family: var(--font-mono); font-size: 11px; margin-bottom: 0; }
+
+  .diagram-shell {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .mermaid-wrap {
+    position: relative;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    cursor: grab;
+  }
+  .mermaid-wrap.is-panning { cursor: grabbing; user-select: none; }
+
+  .zoom-controls {
+    position: absolute; top: 24px; right: 32px; display: flex; gap: 2px; z-index: 20;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 2px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  .zoom-controls button {
+    width: 28px; height: 28px; border: none; background: transparent; color: var(--text-dim);
+    font-family: var(--font-mono); font-size: 14px; cursor: pointer; border-radius: 4px;
+  }
+  .zoom-controls button:hover { background: var(--border); color: var(--text); }
+
+  .mermaid-viewport { position: relative; overflow: hidden; width: 100%; height: 100%; min-height: 0; flex: 1; }
+  .mermaid-canvas { position: absolute; top: 0; left: 0; }
+  .zoom-label { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); padding: 0 6px; white-space: nowrap; line-height: 28px;}
+
+  /* Mermaid ERD overrides */
+  .mermaid .entityBox { fill: var(--surface) !important; stroke: var(--primary) !important; stroke-width: 2px !important; }
+  .mermaid .attributeBoxOdd { fill: var(--bg) !important; }
+  .mermaid .attributeBoxEven { fill: var(--surface) !important; }
+  .mermaid text { fill: var(--text) !important; font-family: var(--font-mono) !important; }
+  .mermaid .relationshipLine { stroke: var(--text-dim) !important; stroke-width: 2px !important; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>Database Schema (ERD)</h1>
+    <p class="subtitle">Core Architecture for the AI-Operated Enterprise</p>
+  </div>
+
+  <section class="diagram-shell">
+    <div class="mermaid-wrap">
+      <div class="zoom-controls">
+        <button type="button" data-action="zoom-in" title="Zoom in">+</button>
+        <button type="button" data-action="zoom-out" title="Zoom out">&minus;</button>
+        <button type="button" data-action="zoom-fit" title="Smart fit">&#8634;</button>
+        <button type="button" data-action="zoom-one" title="1:1 zoom">1:1</button>
+        <span class="zoom-label">Loading...</span>
+      </div>
+      <div class="mermaid-viewport">
+        <div class="mermaid mermaid-canvas"></div>
+      </div>
+    </div>
+    <script type="text/plain" class="diagram-source">
+      erDiagram
+        USERS {
+            uuid id PK
+            string email UK
+            string password_hash
+            uuid role_id FK
+            datetime created_at
+        }
+
+        CUSTOMER_PROFILES {
+            uuid id PK
+            uuid user_id FK
+            int height
+            int weight
+            json preferences
+        }
+
+        CATEGORIES {
+            uuid id PK
+            string slug UK
+            string name
+        }
+
+        PRODUCTS {
+            uuid id PK
+            string slug UK
+            string name
+            uuid category_id FK
+            numeric price
+            string stock_state
+            string image
+        }
+
+        PRODUCT_VARIANTS {
+            uuid id PK
+            uuid product_id FK
+            string sku UK
+            string color
+            string size
+            int stock
+        }
+
+        ORDERS {
+            uuid id PK
+            uuid customer_id FK
+            string status
+            numeric total
+            datetime created_at
+        }
+
+        ORDER_ITEMS {
+            uuid id PK
+            uuid order_id FK
+            uuid variant_id FK
+            int quantity
+            numeric unit_price
+        }
+
+        PRODUCTION_JOBS {
+            uuid id PK
+            uuid order_id FK
+            string status
+            uuid assigned_to FK
+        }
+
+        INVENTORY_LOGS {
+            uuid id PK
+            uuid variant_id FK
+            int delta
+            string type
+            datetime created_at
+        }
+
+        AI_LOGS {
+            uuid id PK
+            uuid user_id FK
+            string type
+            json input
+            json output
+        }
+
+        USERS ||--o| CUSTOMER_PROFILES : "has"
+        USERS ||--o{ ORDERS : "places"
+        USERS ||--o{ AI_LOGS : "generates"
+
+        CATEGORIES ||--o{ PRODUCTS : "contains"
+        PRODUCTS ||--o{ PRODUCT_VARIANTS : "has"
+
+        ORDERS ||--o{ ORDER_ITEMS : "contains"
+        PRODUCT_VARIANTS ||--o{ ORDER_ITEMS : "included_in"
+
+        ORDERS ||--o| PRODUCTION_JOBS : "triggers"
+        PRODUCT_VARIANTS ||--o{ INVENTORY_LOGS : "tracks"
+    </script>
+  </section>
+</div>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+  const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({
+    startOnLoad: false, theme: 'base',
+    themeVariables: {
+      fontFamily: "'Fragment Mono', monospace",
+      primaryColor: isDark ? '#241915' : '#ffffff',
+      primaryBorderColor: isDark ? '#c8a997' : '#8a6c5f',
+      primaryTextColor: isDark ? '#fdfaf7' : '#241915',
+      lineColor: isDark ? '#d1b5a5' : '#8a6c5f'
+    }
+  });
+
+  async function render() {
+    const canvas = document.querySelector('.mermaid-canvas');
+    const source = document.querySelector('.diagram-source');
+    const label = document.querySelector('.zoom-label');
+    try {
+      const { svg } = await mermaid.render('diagram-' + Date.now(), source.textContent.trim());
+      canvas.innerHTML = svg;
+      label.textContent = "100%";
+      const svgNode = canvas.querySelector('svg');
+      svgNode.style.maxWidth = '100%';
+      svgNode.style.height = 'auto';
+    } catch (e) { label.textContent = 'Error'; }
+  }
+  render();
+</script>
+</body>
+</html>
