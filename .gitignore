@@ -40,6 +40,9 @@ blob-report/
 *.png
 *.jpg
 *.jpeg
+!apps/web/public/products/**/*.png
+!apps/web/public/products/**/*.jpg
+!apps/web/public/products/**/*.jpeg
 qa-*.png
 loading-state-*.png
 buyer-assistant-*.png
