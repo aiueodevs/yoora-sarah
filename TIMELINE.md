@@ -38,7 +38,7 @@
 | 0.1 | Definisi visi produk (PRD) | ✅ | Tercatat di SSOT |
 | 0.2 | Business requirement mapping (BRD) | ✅ | Monorepo logic mapped |
 | 0.3 | Pemilihan tech stack | ✅ | Next.js 16, FastAPI, Supabase, Groq, Gemini |
-| 0.4 | Setup monorepo (Turborepo + workspaces) | ✅ | `turbo.json` + `pnpm-workspace.yaml` |
+| 0.4 | Setup monorepo (Turborepo + workspaces) | ✅ | `turbo.json` + npm workspaces |
 | 0.5 | Setup repository GitHub | ✅ | `github.com/aiueodevs/yoora-sarah` |
 | 0.6 | Buat `.gitignore` komprehensif | ✅ | UTF-8, 80+ rules |
 | 0.7 | Setup `.env.example` | ✅ | Template variabel lengkap |

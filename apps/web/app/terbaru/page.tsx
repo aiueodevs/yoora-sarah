@@ -3,7 +3,7 @@ import { ProductCard } from '@/components/product/product-card';
 
 export default async function NewArrivalsPage() {
   const catalog = await getStorefrontCatalog();
-  const products = catalog.products; // Assuming we use catalog products for demo
+  const products = catalog.products;
 
   return (
     <main className="premium-page min-h-[100dvh] pt-24 pb-20">

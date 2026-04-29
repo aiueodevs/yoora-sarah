@@ -32,6 +32,45 @@
 
 ---
 
+## 🚀 Quickstart for Developers
+
+### Official package manager
+- Use `npm` for this repository. `package-lock.json` is the authoritative lockfile and CI uses `npm ci`.
+
+### Install
+```bash
+npm install
+```
+
+### Run the apps
+```bash
+npm run dev          # Web + Portal via Turborepo
+npm run portal:dev   # Portal only
+npm run api:dev      # FastAPI backend
+```
+
+### Database setup
+```bash
+npm run db:migrate
+npm run db:seed
+```
+
+### Quality checks
+```bash
+npm run lint
+npm run typecheck
+npm run test
+npm run test:e2e
+npm run format:check
+```
+
+### Local service expectations
+- `services/api` is the core backend service for API-backed local development.
+- `services/ai` and `services/workers` are scaffold/optional services and are not required for the main local flow.
+- `apps/web` and `apps/portal` can still expose fixture, fallback, or reduced-capability behavior depending on configured environment variables.
+
+---
+
 # PART A — CURRENT STATE (FACTUAL)
 
 *This section describes what is actually implemented, tested, and running in the codebase today.*
@@ -93,7 +132,7 @@ YOORA-SARAH/
 | **AI / ML** | Groq (Llama 3.3 70B), Google Gemini 2.5 Flash | Hybrid routing: Text → Groq, Vision → Gemini |
 | **Asset Storage** | Tigris Object Storage | 1,196 product images cached in `public/products/` |
 | **Testing** | Vitest, Pytest, Playwright | Unit, Integration, & E2E |
-| **Monorepo** | Turborepo, pnpm workspaces | Optimized build & execution pipeline |
+| **Monorepo** | Turborepo, npm workspaces | Optimized build & execution pipeline |
 | **CI / CD** | GitHub Actions | Automated lint, typecheck, build, & test |
 
 ---
@@ -160,23 +199,73 @@ YOORA-SARAH/
 
 ## 🔐 6. Environment Variables
 
-| Variable | Required | Purpose |
-| :--- | :---: | :--- |
-| `DATABASE_URL` | ✅ | PostgreSQL connection |
-| `SUPABASE_URL` | ✅ | Supabase project URL |
-| `SUPABASE_PUBLISHABLE_KEY` | ✅ | Supabase anon key |
-| `SUPABASE_SECRET_KEY` | ✅ | Supabase service role key |
-| `YOORA_INTERNAL_API_BASE_URL` | ✅ | FastAPI URL |
-| `YOORA_INTERNAL_API_SHARED_SECRET` | ✅ | Internal API auth |
-| `YOORA_PORTAL_AUTH_SECRET` | Portal | JWT signing secret |
-| `YOORA_PORTAL_BOOTSTRAP_PASSWORD` | Portal | Shared login password |
-| `GROQ_API_KEY` | AI | Groq LLM |
-| `GEMINI_API_KEY` | AI | Google Gemini |
-| `REPLICATE_API_TOKEN` | AI | Image generation |
+If these variables are not fully configured, several surfaces continue to run in fixture, fallback, or reduced-capability mode instead of failing for every user-facing flow.
+
+### apps/web
+
+| Variable | Required For | Purpose |
+| :--- | :--- | :--- |
+| `YOORA_STOREFRONT_API_BASE_URL` | API-backed storefront flows | Storefront API base URL for server-side web requests |
+| `YOORA_INTERNAL_API_BASE_URL` | Internal API proxying and fallback API access | FastAPI base URL for server-side routes and commerce helpers |
+| `YOORA_INTERNAL_API_SHARED_SECRET` | Protected internal API proxy routes | Shared secret for internal API requests from Next.js routes |
+| `NEXT_PUBLIC_YOORA_STOREFRONT_API_URL` | Browser-facing storefront API access | Public storefront API URL for buyer assistant requests |
+| `GROQ_API_KEY` | Full AI concierge and stylist behavior | Groq text generation |
+| `GEMINI_API_KEY` | Full stylist vision behavior | Gemini multimodal generation |
+
+### apps/portal
+
+| Variable | Required For | Purpose |
+| :--- | :--- | :--- |
+| `YOORA_INTERNAL_API_BASE_URL` | Portal API access | FastAPI base URL for portal server-side requests |
+| `YOORA_INTERNAL_API_SHARED_SECRET` | Internal API authentication | Shared secret for protected server-side API calls |
+| `YOORA_PORTAL_AUTH_SECRET` | Local portal auth | JWT signing and verification secret |
+| `YOORA_PORTAL_BOOTSTRAP_PASSWORD` | Local portal login | Shared bootstrap password |
+| `SUPABASE_URL` | Portal user lookups and internal data access | Supabase project URL |
+| `SUPABASE_SECRET_KEY` | Portal server-side Supabase access | Supabase service-role key |
+
+### services/api
+
+| Variable | Required For | Purpose |
+| :--- | :--- | :--- |
+| `DATABASE_URL` | Database-backed API mode | PostgreSQL connection |
+| `YOORA_INTERNAL_API_SHARED_SECRET` | Protected internal API requests | Internal API auth secret |
+| `ALLOW_INSECURE_AUTH` | Dev-only fallback auth | Allows insecure development auth when explicitly enabled |
+
+### Shared Supabase client usage
+
+| Variable | Required For | Purpose |
+| :--- | :--- | :--- |
+| `NEXT_PUBLIC_SUPABASE_URL` | Shared browser/server Supabase client usage | Public Supabase URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Shared browser/server Supabase client usage | Public Supabase anon key |
+
+### Optional AI and scaffold services
+
+| Variable | Required For | Purpose |
+| :--- | :--- | :--- |
+| `REPLICATE_API_TOKEN` | Optional image generation flows | Replicate integration |
+| `YOORA_PROMPT_VERSION` | `services/ai` scaffold | Prompt version selector |
+| `YOORA_QUEUE_NAME` | `services/workers` scaffold | Queue name selector |
 
 ---
 
-## 🚀 7. Development Commands
+## 📊 7. Data Source & Runtime Status
+
+| Module | Primary Mode | Fallback / Current Status |
+| :--- | :--- | :--- |
+| Web catalog | API / synced catalog | Fixture fallback remains available |
+| Cart & checkout | PostgreSQL-backed commerce | In-memory fallback when the database is not configured |
+| Buyer AI concierge | Groq-backed responses | Grounded fallback when AI keys are missing |
+| AI Stylist Studio | Groq + Gemini | Reduced capability without full AI keys |
+| Portal dashboard | Demo fixture data | Not yet production KPI data |
+| Portal briefs / design / patterns / forecast | Fixture and workflow surfaces | Mixed demo/API readiness depending on module |
+| Production plans / approvals | Workflow surface | Demo/API-oriented current state |
+| `services/api` | Core backend | Required for API-backed local development |
+| `services/ai` | Scaffold service | Optional and not required for the main local flow |
+| `services/workers` | Scaffold service | Optional and not required for the main local flow |
+
+---
+
+## 🚀 8. Development Commands
 
 ```bash
 # Servers
@@ -195,9 +284,35 @@ npm run db:migrate       # Apply migrations
 npm run db:seed          # Seed data
 ```
 
+### Naming Conventions
+
+- URL routes use kebab-case, for example `production-plans`.
+- Python modules use snake_case, for example `pattern_jobs.py`.
+- TypeScript and TSX files should follow the local area convention; for new app API or helper files, prefer kebab-case when adjacent files already use kebab-case.
+- API resource naming should keep plural and singular usage consistent within the same resource family.
+
+### Shared API boundaries
+
+- App-specific fetchers stay inside the app that owns them.
+- Shared cross-app types or clients should move into `packages/*` only when both web and portal actively use them.
+- Do not create a new shared API package until a real cross-app contract needs it.
+
+### E2E status
+
+- `npm run test:e2e` is currently intended for local verification.
+- Playwright E2E is not yet enforced in CI; the workflow job remains commented out until the suite is promoted to a stable CI gate.
+
+### Follow-up maintainability candidates
+
+The following files are worth revisiting if they continue to grow, but they are not being refactored in this batch:
+- `apps/web/components/buyer-assistant.tsx`
+- `apps/web/components/layout/header.tsx`
+- `apps/portal/components/portal-copilot.tsx`
+- `apps/web/app/lib/storefront-data.ts`
+
 ---
 
-## ⚠️ 8. Pre-Production Checklist
+## ⚠️ 9. Pre-Production Checklist
 
 - [ ] **Rotate Secrets:** Regenerate all keys exposed in git history.
 - [ ] **Run Migrations:** `npm run db:migrate && npm run db:seed` on production Supabase.
