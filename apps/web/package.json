@@ -30,7 +30,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^2.6.0",
-    "yoora-sarah-platform": "file:../../.claude/worktrees/agent-a5bc036ed27ac73c2",
+    "yoora-sarah-platform": "file:../..",
     "zustand": "^5.0.2"
   },
   "devDependencies": {
