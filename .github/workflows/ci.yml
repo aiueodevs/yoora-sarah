@@ -17,9 +17,14 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - run: npx turbo run lint
-      - run: npx turbo run typecheck
-      - run: npx turbo run build
+      - run: npm ci --prefix web
+      - run: npm ci --prefix portal
+      - run: npm --prefix web run lint
+      - run: npm --prefix portal run lint
+      - run: npm --prefix web run typecheck
+      - run: npm --prefix portal run typecheck
+      - run: npm --prefix web run build
+      - run: npm --prefix portal run build
       - run: npx prettier --check .
 
   backend:
@@ -27,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: services/api
+        working-directory: api
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5

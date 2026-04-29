@@ -40,9 +40,9 @@ blob-report/
 *.png
 *.jpg
 *.jpeg
-!apps/web/public/products/**/*.png
-!apps/web/public/products/**/*.jpg
-!apps/web/public/products/**/*.jpeg
+!web/public/products/**/*.png
+!web/public/products/**/*.jpg
+!web/public/products/**/*.jpeg
 qa-*.png
 loading-state-*.png
 buyer-assistant-*.png
@@ -89,8 +89,8 @@ Video/
 VIDEO/
 *.mp4
 *.webm
-!apps/web/public/hero-video/hero-sequence-1080p.mp4
-!apps/web/public/hero-video/hero-sequence-1080p.webm
+!web/public/hero-video/hero-sequence-1080p.mp4
+!web/public/hero-video/hero-sequence-1080p.webm
 
 # Python venv
 .venv/

@@ -35,17 +35,20 @@
 ## 🚀 Quickstart for Developers
 
 ### Official package manager
-- Use `npm` for this repository. `package-lock.json` is the authoritative lockfile and CI uses `npm ci`.
+- Use `npm` for JavaScript projects and `uv` for Python services.
+- The root `package-lock.json` covers root tooling; `web`, `portal`, and retained shared packages keep their own lockfiles for independent deployment/install flows.
 
 ### Install
 ```bash
 npm install
+npm install --prefix web
+npm install --prefix portal
 ```
 
 ### Run the apps
 ```bash
-npm run dev          # Web + Portal via Turborepo
-npm run portal:dev   # Portal only
+npm run dev:web      # Customer storefront
+npm run dev:portal   # Internal portal
 npm run api:dev      # FastAPI backend
 ```
 
@@ -57,17 +60,20 @@ npm run db:seed
 
 ### Quality checks
 ```bash
-npm run lint
-npm run typecheck
-npm run test
+npm run lint:web
+npm run lint:portal
+npm run typecheck:web
+npm run typecheck:portal
+npm run test:web
 npm run test:e2e
 npm run format:check
 ```
 
 ### Local service expectations
-- `services/api` is the core backend service for API-backed local development.
-- `services/ai` and `services/workers` are scaffold/optional services and are not required for the main local flow.
-- `apps/web` and `apps/portal` can still expose fixture, fallback, or reduced-capability behavior depending on configured environment variables.
+- `api` is the core backend service for API-backed local development.
+- `ai` and `workers` are scaffold/optional services and are not required for the main local flow.
+- `web` and `portal` can still expose fixture, fallback, or reduced-capability behavior depending on configured environment variables.
+- Main deployment units are `web`, `portal`, and `api`; the database remains centralized via `db/` and `tools/db/`.
 
 ---
 
@@ -79,32 +85,30 @@ npm run format:check
 
 ## 🏗️ 1. Executive Summary
 
-**YOORA-SARAH** is a premium modest fashion e-commerce ecosystem built as a modern Turborepo monorepo. It currently integrates three core surfaces:
+**YOORA-SARAH** is a premium modest fashion e-commerce ecosystem organized as a single repository with top-level deployable projects. It currently integrates three core surfaces:
 
-- **Customer Storefront (`apps/web`)** — AI-powered shopping experience with styling studio.
-- **Internal Portal (`apps/portal`)** — Production intelligence dashboard for staff operations.
-- **FastAPI Backend (`services/api`)** — Commerce engine, AI orchestration, and workflow services.
+- **Customer Storefront (`web`)** — AI-powered shopping experience with styling studio.
+- **Internal Portal (`portal`)** — Production intelligence dashboard for staff operations.
+- **FastAPI Backend (`api`)** — Commerce engine, AI orchestration, and workflow services.
 
 The platform uses a *dual-mode architecture*: all commerce and AI features query PostgreSQL first, and gracefully fall back to in-memory fixtures when the database is not yet configured.
 
 ---
 
-## 📂 2. Monorepo Structure
+## 📂 2. Repository Structure
 
 ```text
 YOORA-SARAH/
-├── apps/
-│   ├── web/              → Next.js 16 · Customer Storefront & AI Stylist Studio
-│   └── portal/           → Next.js 16 · Internal Portal for staff/operations
-├── services/
-│   ├── api/              → FastAPI · Commerce, AI, & workflow backend
-│   ├── workers/          → Background worker scaffold
-│   └── ai/               → Standalone AI micro-service scaffold
+├── web/                  → Next.js 16 · Customer Storefront & AI Stylist Studio
+├── portal/               → Next.js 16 · Internal Portal for staff/operations
+├── api/                  → FastAPI · Commerce, AI, & workflow backend
+├── workers/              → Background worker scaffold (optional)
+├── ai/                   → Standalone AI micro-service scaffold (optional)
 ├── packages/
-│   ├── database/         → Shared TypeScript types & Supabase clients
-│   └── ui/               → Shared UI primitives (Button, Input, cn())
+│   ├── database/         → Shared TypeScript types & Supabase clients retained where needed
+│   └── ui/               → Shared UI primitives retained where needed
 ├── db/
-│   ├── migrations/       → 14 raw SQL schema migrations
+│   ├── migrations/       → 14 raw SQL schema migrations for the single database
 │   └── seeds/            → 5 SQL seed files (roles → commerce demo)
 ├── tools/
 │   └── db/               → Python migration runner (psycopg)
@@ -113,7 +117,6 @@ YOORA-SARAH/
 ├── CONTRIBUTING.md
 ├── README.md             → This document (SSOT)
 ├── render.yaml           → Backend deployment config (Render)
-├── turbo.json            → Turborepo pipeline definition
 └── playwright.config.ts  → E2E test configuration
 ```
 
@@ -132,7 +135,7 @@ YOORA-SARAH/
 | **AI / ML** | Groq (Llama 3.3 70B), Google Gemini 2.5 Flash | Hybrid routing: Text → Groq, Vision → Gemini |
 | **Asset Storage** | Tigris Object Storage | 1,196 product images cached in `public/products/` |
 | **Testing** | Vitest, Pytest, Playwright | Unit, Integration, & E2E |
-| **Monorepo** | Turborepo, npm workspaces | Optimized build & execution pipeline |
+| **Repository Layout** | Single repo, top-level app/service projects | Simpler deployment mental model with centralized database tooling |
 | **CI / CD** | GitHub Actions | Automated lint, typecheck, build, & test |
 
 ---
@@ -145,7 +148,7 @@ YOORA-SARAH/
 | 1 | BRD | ✅ | Business logic mapped |
 | 2 | UI/UX Design | ✅ | Hero video & Premium Stylist UI |
 | 3 | Technical Design | ✅ | API consolidated |
-| 4 | Software Architecture | ✅ | Turborepo & fail-closed auth |
+| 4 | Software Architecture | ✅ | Top-level app/service layout & fail-closed auth |
 | 5 | API Specification | ✅ | FastAPI endpoints defined |
 | 6 | Development | 🟡 | Iterative refinement ongoing |
 | 7 | Non-Prod Deployment | 🟡 | Local parity confirmed |
@@ -164,7 +167,7 @@ YOORA-SARAH/
 
 ## 🌟 5. Implemented Features
 
-### 5.1 Customer Storefront (`apps/web`)
+### 5.1 Customer Storefront (`web`)
 
 | Feature | Status | Dependency |
 | :--- | :---: | :--- |
@@ -175,7 +178,7 @@ YOORA-SARAH/
 | Product Catalog & Detail Pages | ✅ | Tigris + fixture fallback |
 | Cart, Checkout, Wishlist, Profile | ✅ | Dual-mode (DB-first → in-memory) |
 
-### 5.2 Internal Portal (`apps/portal`)
+### 5.2 Internal Portal (`portal`)
 
 | Feature | Status | Mode |
 | :--- | :---: | :--- |
@@ -185,7 +188,7 @@ YOORA-SARAH/
 | Consolidated API Client | ✅ | `api-client.ts` |
 | Auth (JWT + Role-based) | ✅ | Middleware + Supabase |
 
-### 5.3 Backend (`services/api`)
+### 5.3 Backend (`api`)
 
 | Component | Status | Mode |
 | :--- | :---: | :--- |
@@ -201,7 +204,7 @@ YOORA-SARAH/
 
 If these variables are not fully configured, several surfaces continue to run in fixture, fallback, or reduced-capability mode instead of failing for every user-facing flow.
 
-### apps/web
+### web
 
 | Variable | Required For | Purpose |
 | :--- | :--- | :--- |
@@ -212,7 +215,7 @@ If these variables are not fully configured, several surfaces continue to run in
 | `GROQ_API_KEY` | Full AI concierge and stylist behavior | Groq text generation |
 | `GEMINI_API_KEY` | Full stylist vision behavior | Gemini multimodal generation |
 
-### apps/portal
+### portal
 
 | Variable | Required For | Purpose |
 | :--- | :--- | :--- |
@@ -223,7 +226,7 @@ If these variables are not fully configured, several surfaces continue to run in
 | `SUPABASE_URL` | Portal user lookups and internal data access | Supabase project URL |
 | `SUPABASE_SECRET_KEY` | Portal server-side Supabase access | Supabase service-role key |
 
-### services/api
+### api
 
 | Variable | Required For | Purpose |
 | :--- | :--- | :--- |
@@ -243,8 +246,8 @@ If these variables are not fully configured, several surfaces continue to run in
 | Variable | Required For | Purpose |
 | :--- | :--- | :--- |
 | `REPLICATE_API_TOKEN` | Optional image generation flows | Replicate integration |
-| `YOORA_PROMPT_VERSION` | `services/ai` scaffold | Prompt version selector |
-| `YOORA_QUEUE_NAME` | `services/workers` scaffold | Queue name selector |
+| `YOORA_PROMPT_VERSION` | `ai` scaffold | Prompt version selector |
+| `YOORA_QUEUE_NAME` | `workers` scaffold | Queue name selector |
 
 ---
 
@@ -259,9 +262,9 @@ If these variables are not fully configured, several surfaces continue to run in
 | Portal dashboard | Demo fixture data | Not yet production KPI data |
 | Portal briefs / design / patterns / forecast | Fixture and workflow surfaces | Mixed demo/API readiness depending on module |
 | Production plans / approvals | Workflow surface | Demo/API-oriented current state |
-| `services/api` | Core backend | Required for API-backed local development |
-| `services/ai` | Scaffold service | Optional and not required for the main local flow |
-| `services/workers` | Scaffold service | Optional and not required for the main local flow |
+| `api` | Core backend | Required for API-backed local development |
+| `ai` | Scaffold service | Optional and not required for the main local flow |
+| `workers` | Scaffold service | Optional and not required for the main local flow |
 
 ---
 
@@ -269,13 +272,16 @@ If these variables are not fully configured, several surfaces continue to run in
 
 ```bash
 # Servers
-npm run dev              # Web & Portal (ports 3000, 3001)
+npm run dev:web          # Web (port 3000)
+npm run dev:portal       # Portal (port 3001)
 npm run api:dev          # FastAPI backend (port 8000)
 
 # Quality
-npm run lint             # ESLint
-npm run typecheck        # TypeScript
-npm run test             # Vitest + Pytest
+npm run lint:web         # Web ESLint
+npm run lint:portal      # Portal ESLint
+npm run typecheck:web    # Web TypeScript
+npm run typecheck:portal # Portal TypeScript
+npm run test:web         # Web Vitest
 npm run test:e2e         # Playwright
 npm run format:check     # Prettier
 
@@ -305,10 +311,10 @@ npm run db:seed          # Seed data
 ### Follow-up maintainability candidates
 
 The following files are worth revisiting if they continue to grow, but they are not being refactored in this batch:
-- `apps/web/components/buyer-assistant.tsx`
-- `apps/web/components/layout/header.tsx`
-- `apps/portal/components/portal-copilot.tsx`
-- `apps/web/app/lib/storefront-data.ts`
+- `web/components/buyer-assistant.tsx`
+- `web/components/layout/header.tsx`
+- `portal/components/portal-copilot.tsx`
+- `web/app/lib/storefront-data.ts`
 
 ---
 
@@ -317,8 +323,8 @@ The following files are worth revisiting if they continue to grow, but they are 
 - [ ] **Rotate Secrets:** Regenerate all keys exposed in git history.
 - [ ] **Run Migrations:** `npm run db:migrate && npm run db:seed` on production Supabase.
 - [ ] **Configure AI Keys:** Set `GROQ_API_KEY` and `GEMINI_API_KEY` in production.
-- [ ] **Deploy Frontend:** Vercel for `apps/web` and `apps/portal`.
-- [ ] **Deploy Backend:** Render for `services/api`.
+- [ ] **Deploy Frontend:** Vercel for `web` and `portal`.
+- [ ] **Deploy Backend:** Render for `api`.
 - [ ] **Revoke GitHub PATs.**
 
 > **💡 Developer Note:** Kodenya sudah jadi semua. Jalankan `npm run db:migrate` dan pasang API Keys agar fiturnya benar-benar hidup penuh.

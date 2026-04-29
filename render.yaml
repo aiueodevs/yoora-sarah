@@ -3,7 +3,7 @@ services:
     name: yoora-sarah-api
     runtime: docker
     dockerContext: .
-    dockerfilePath: ./services/api/Dockerfile
+    dockerfilePath: ./api/Dockerfile
     plan: starter
     autoDeploy: true
     healthCheckPath: /api/v1/ready

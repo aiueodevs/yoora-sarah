@@ -36,9 +36,9 @@
 | # | Task | Status | Note |
 |---|---|---|---|
 | 0.1 | Definisi visi produk (PRD) | ✅ | Tercatat di SSOT |
-| 0.2 | Business requirement mapping (BRD) | ✅ | Monorepo logic mapped |
+| 0.2 | Business requirement mapping (BRD) | ✅ | Single-repo project logic mapped |
 | 0.3 | Pemilihan tech stack | ✅ | Next.js 16, FastAPI, Supabase, Groq, Gemini |
-| 0.4 | Setup monorepo (Turborepo + workspaces) | ✅ | `turbo.json` + npm workspaces |
+| 0.4 | Setup top-level project structure | ✅ | `web`, `portal`, `api`, optional `workers`/`ai`, centralized `db` tooling |
 | 0.5 | Setup repository GitHub | ✅ | `github.com/aiueodevs/yoora-sarah` |
 | 0.6 | Buat `.gitignore` komprehensif | ✅ | UTF-8, 80+ rules |
 | 0.7 | Setup `.env.example` | ✅ | Template variabel lengkap |
@@ -49,7 +49,7 @@
 
 ## Phase 1 — Core Platform (Part A)
 
-### 1A. Customer Storefront (`apps/web`)
+### 1A. Customer Storefront (`web`)
 
 | # | Task | Status | Note |
 |---|---|---|---|
@@ -74,7 +74,7 @@
 | 1.19 | Custom font stacks (Gambetta, Sentient) | ✅ | Fontshare CDN |
 | 1.20 | Product image assets (1,196 files) | ✅ | Downloaded dari Tigris, committed ke repo |
 
-### 1B. Internal Portal (`apps/portal`)
+### 1B. Internal Portal (`portal`)
 
 | # | Task | Status | Note |
 |---|---|---|---|
@@ -92,7 +92,7 @@
 | 1.32 | Consolidated API client | ✅ | `lib/api-client.ts` — single transport layer |
 | 1.33 | Role-based user lookup (Supabase REST) | ✅ | `portal-users.ts` |
 
-### 1C. Backend API (`services/api`)
+### 1C. Backend API (`api`)
 
 | # | Task | Status | Note |
 |---|---|---|---|
@@ -129,7 +129,7 @@
 |---|---|---|---|
 | 2.1 | ESLint flat config (consistent across apps) | ✅ | `eslint.config.mjs` |
 | 2.2 | Prettier formatter | ✅ | `.prettierrc` + `.prettierignore` |
-| 2.3 | TypeScript strict (`tsc --noEmit`) | ✅ | `typecheck` script in all workspaces |
+| 2.3 | TypeScript strict (`tsc --noEmit`) | ✅ | `typecheck` script in main frontend projects |
 | 2.4 | Ruff (Python linter/formatter) | ✅ | `pyproject.toml` config |
 | 2.5 | Vitest + Testing Library setup | ✅ | `vitest.config.ts`, 6 frontend tests |
 | 2.6 | Pytest setup | ✅ | Backend tests (auth + assistant response) |
@@ -179,9 +179,9 @@
 | 4.5 | Set env vars di Vercel (web) | ❌ 🔒 | Setup Vercel project |
 | 4.6 | Set env vars di Vercel (portal) | ❌ 🔒 | Setup Vercel project |
 | 4.7 | Set env vars di Render (api) | ❌ 🔒 | Verify `render.yaml` + env |
-| 4.8 | Deploy `apps/web` ke Vercel | ❌ | Butuh Vercel account + project setup |
-| 4.9 | Deploy `apps/portal` ke Vercel | ❌ | Butuh Vercel account + project setup |
-| 4.10 | Deploy `services/api` ke Render | ❌ | `render.yaml` sudah ada |
+| 4.8 | Deploy `web` ke Vercel | ❌ | Butuh Vercel account + project setup |
+| 4.9 | Deploy `portal` ke Vercel | ❌ | Butuh Vercel account + project setup |
+| 4.10 | Deploy `api` ke Render | ❌ | `render.yaml` sudah ada |
 | 4.11 | Verify health endpoint production | ❌ | `GET /api/v1/ready` |
 | 4.12 | Smoke test production URLs | ❌ | Manual browser verification |
 | 4.13 | Ganti hero video dengan master berkualitas tinggi | ❌ 🔒 | Butuh asset dari tim kreatif |

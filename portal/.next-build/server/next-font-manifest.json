@@ -1,0 +1,59 @@
+{
+  "app": {
+    "[project]/optimistic-satoshi-e63ce6/portal/app/_not-found/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/optimistic-satoshi-e63ce6/portal/app/approvals/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/optimistic-satoshi-e63ce6/portal/app/briefs/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/optimistic-satoshi-e63ce6/portal/app/dashboard/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/optimistic-satoshi-e63ce6/portal/app/design-gallery/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/optimistic-satoshi-e63ce6/portal/app/forecast/[runId]/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/optimistic-satoshi-e63ce6/portal/app/forecast/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/optimistic-satoshi-e63ce6/portal/app/login/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/optimistic-satoshi-e63ce6/portal/app/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/optimistic-satoshi-e63ce6/portal/app/patterns/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/optimistic-satoshi-e63ce6/portal/app/production-plans/[planId]/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/optimistic-satoshi-e63ce6/portal/app/production-plans/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ],
+    "[project]/optimistic-satoshi-e63ce6/portal/app/settings/page": [
+      "static/media/2a65768255d6b625-s.p.d19752fb.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.a62025f2.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

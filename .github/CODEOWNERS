@@ -2,11 +2,13 @@
 * @aiueodevs
 
 # Frontend
-apps/web/ @aiueodevs
-apps/portal/ @aiueodevs
+web/ @aiueodevs
+portal/ @aiueodevs
 
 # Backend
-services/ @aiueodevs
+api/ @aiueodevs
+workers/ @aiueodevs
+ai/ @aiueodevs
 
 # Infrastructure
 .github/ @aiueodevs

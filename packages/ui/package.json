@@ -11,17 +11,17 @@
     "./lib/utils": "./src/lib/utils.ts"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^2.6.0",
+    "@radix-ui/react-slot": "^1.1.1",
     "class-variance-authority": "^0.7.1",
-    "@radix-ui/react-slot": "^1.1.1"
+    "clsx": "^2.1.1",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
-    "typescript": "^5.7.2",
     "@types/react": "^19.0.2",
-    "@types/react-dom": "^19.0.2"
+    "@types/react-dom": "^19.0.2",
+    "typescript": "^5.7.2"
   },
   "scripts": {
     "lint": "tsc --noEmit",

@@ -1,0 +1,3 @@
+module.exports=[16075,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(30775);a.n(d("[project]/optimistic-satoshi-e63ce6/portal/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},52062,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(30775);a.n(d("[project]/optimistic-satoshi-e63ce6/portal/node_modules/next/dist/client/components/builtin/global-error.js"))},16,a=>{"use strict";a.i(16075);var b=a.i(52062);a.n(b)}];
+
+//# sourceMappingURL=55663_next_dist_client_components_builtin_global-error_11d281af.js.map

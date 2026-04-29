@@ -22,7 +22,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "npm run dev --prefix apps/web",
+    command: "npm run dev --prefix web",
     port: 3000,
     reuseExistingServer: true,
   },

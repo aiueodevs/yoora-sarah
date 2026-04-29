@@ -1,0 +1,17 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/approvals/page": "/approvals",
+  "/briefs/page": "/briefs",
+  "/dashboard/page": "/dashboard",
+  "/design-gallery/page": "/design-gallery",
+  "/forecast/[runId]/page": "/forecast/[runId]",
+  "/forecast/page": "/forecast",
+  "/icon.svg/route": "/icon.svg",
+  "/login/page": "/login",
+  "/page": "/",
+  "/patterns/page": "/patterns",
+  "/production-plans/[planId]/page": "/production-plans/[planId]",
+  "/production-plans/page": "/production-plans",
+  "/settings/page": "/settings"
+}

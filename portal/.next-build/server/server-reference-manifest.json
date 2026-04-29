@@ -1,0 +1,1596 @@
+{
+  "node": {
+    "0019d489a7d6cbc85d2ad70bf85868f0d2a1c7d480": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "signOutAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "rsc",
+        "app/approvals/page": "rsc",
+        "app/briefs/page": "rsc",
+        "app/dashboard/page": "rsc",
+        "app/design-gallery/page": "rsc",
+        "app/forecast/[runId]/page": "rsc",
+        "app/forecast/page": "rsc",
+        "app/login/page": "rsc",
+        "app/page": "rsc",
+        "app/patterns/page": "rsc",
+        "app/production-plans/[planId]/page": "rsc",
+        "app/production-plans/page": "rsc",
+        "app/settings/page": "rsc"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts",
+      "exportedName": "signOutAction"
+    },
+    "402889182750bbdafa096a6dd8294e97c21976bb68": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "signInAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "rsc",
+        "app/approvals/page": "rsc",
+        "app/briefs/page": "rsc",
+        "app/dashboard/page": "rsc",
+        "app/design-gallery/page": "rsc",
+        "app/forecast/[runId]/page": "rsc",
+        "app/forecast/page": "rsc",
+        "app/login/page": "rsc",
+        "app/page": "rsc",
+        "app/patterns/page": "rsc",
+        "app/production-plans/[planId]/page": "rsc",
+        "app/production-plans/page": "rsc",
+        "app/settings/page": "rsc"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/login/actions.ts",
+      "exportedName": "signInAction"
+    },
+    "007f03693d7e41dafc1a4b91ae3d91ac4ea5d3ec89": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "getPortalCopilotApprovalSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "getPortalCopilotApprovalSummariesAction"
+    },
+    "4026d58c4c03c6ffe130b7d011d747f7c2b587fb06": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefCopilotAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "getPortalCopilotBriefCopilotAction"
+    },
+    "0001fb82968f6b1bc9b26a5e3cce1eaf493d5b3dd1": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "getPortalCopilotBriefSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "getPortalCopilotBriefSummariesAction"
+    },
+    "405a8ad52b410fb7865cdba8a97b67590e026fdf61": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "getPortalCopilotContentDraftAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "getPortalCopilotContentDraftAction"
+    },
+    "00ed65997a96cea1617d65a1ceb672285b7b8c2473": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "getPortalCopilotForecastSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "getPortalCopilotForecastSummariesAction"
+    },
+    "607e6f51d707a6dd6717ae50b83a1059dd143c6da2": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "getPortalCopilotKnowledgeAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "getPortalCopilotKnowledgeAction"
+    },
+    "00b4ab9a06b92a4b21cedacae15b4e6fe00fd8ccb1": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "getPortalCopilotLaunchReadinessInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "getPortalCopilotLaunchReadinessInsightAction"
+    },
+    "00f93502324b377eb703c422a5a8dffc529f3282aa": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "getPortalCopilotMerchandisingInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "getPortalCopilotMerchandisingInsightAction"
+    },
+    "408a0d87893661a0f3abd3e4a800d03794e67136d2": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "getPortalCopilotOnboardingAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "getPortalCopilotOnboardingAction"
+    },
+    "00cc32c0f9f3918a38a410a42441e630f0c77a88ba": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "getPortalCopilotPerformanceInsightAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "getPortalCopilotPerformanceInsightAction"
+    },
+    "00c2538174dec10fbcda13dadefeda5c335e8ab2fb": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "getPortalCopilotProductionPlanSummariesAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "getPortalCopilotProductionPlanSummariesAction"
+    },
+    "00bd25bd00ec0ff8eb71631cd3b5aec93600baac5a": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "getPortalCopilotWorkflowStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "getPortalCopilotWorkflowStatusAction"
+    },
+    "60da8bc437d6955d2a8e828f5b600407933ca9443d": {
+      "workers": {
+        "app/_not-found/page": {
+          "moduleId": 92102,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/approvals/page": {
+          "moduleId": 19823,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/dashboard/page": {
+          "moduleId": 88661,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/login/page": {
+          "moduleId": 35553,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/page": {
+          "moduleId": 25210,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/production-plans/page": {
+          "moduleId": 42994,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        },
+        "app/settings/page": {
+          "moduleId": 53506,
+          "async": false,
+          "exportedName": "recordPortalCopilotEventAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts"
+        }
+      },
+      "layer": {
+        "app/_not-found/page": "action-browser",
+        "app/approvals/page": "action-browser",
+        "app/briefs/page": "action-browser",
+        "app/dashboard/page": "action-browser",
+        "app/design-gallery/page": "action-browser",
+        "app/forecast/[runId]/page": "action-browser",
+        "app/forecast/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/page": "action-browser",
+        "app/patterns/page": "action-browser",
+        "app/production-plans/[planId]/page": "action-browser",
+        "app/production-plans/page": "action-browser",
+        "app/settings/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/actions/portal-copilot.ts",
+      "exportedName": "recordPortalCopilotEventAction"
+    },
+    "402b44cc5df659f2f3db72f2d74f78a14be95c8d6c": {
+      "workers": {
+        "app/briefs/page": {
+          "moduleId": 21943,
+          "async": false,
+          "exportedName": "createBriefAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/briefs/actions.ts"
+        }
+      },
+      "layer": {
+        "app/briefs/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/briefs/actions.ts",
+      "exportedName": "createBriefAction"
+    },
+    "60f15cf24cbaf308996117564b262fbf1921f8b793": {
+      "workers": {
+        "app/design-gallery/page": {
+          "moduleId": 2011,
+          "async": false,
+          "exportedName": "updateDesignOptionStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/design-gallery/actions.ts"
+        }
+      },
+      "layer": {
+        "app/design-gallery/page": "rsc"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/design-gallery/actions.ts",
+      "exportedName": "updateDesignOptionStatusAction"
+    },
+    "40cb345993977c0a48a3c1cfa705a3cf5719234850": {
+      "workers": {
+        "app/forecast/page": {
+          "moduleId": 56318,
+          "async": false,
+          "exportedName": "createForecastRunAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/forecast/actions.ts"
+        }
+      },
+      "layer": {
+        "app/forecast/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/forecast/actions.ts",
+      "exportedName": "createForecastRunAction"
+    },
+    "40bb1676f3c6090ff24ed2ae95894376afcb505a10": {
+      "workers": {
+        "app/forecast/[runId]/page": {
+          "moduleId": 21062,
+          "async": false,
+          "exportedName": "createProductionPlanForRunAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/forecast/[runId]/actions.ts"
+        }
+      },
+      "layer": {
+        "app/forecast/[runId]/page": "rsc"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/forecast/[runId]/actions.ts",
+      "exportedName": "createProductionPlanForRunAction"
+    },
+    "6028b484b364f7d94b825337abe5648d83a15f964e": {
+      "workers": {
+        "app/patterns/page": {
+          "moduleId": 60881,
+          "async": false,
+          "exportedName": "createPatternJobAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/patterns/actions.ts"
+        }
+      },
+      "layer": {
+        "app/patterns/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/patterns/actions.ts",
+      "exportedName": "createPatternJobAction"
+    },
+    "40f6d45fad50f699e30c27cfa424303cf4af7d3cff": {
+      "workers": {
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "addProductionPlanLineAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/production-plans/[planId]/actions.ts"
+        }
+      },
+      "layer": {
+        "app/production-plans/[planId]/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/production-plans/[planId]/actions.ts",
+      "exportedName": "addProductionPlanLineAction"
+    },
+    "40bde9ab91e03e3896a347b528404b2ff6b69d2393": {
+      "workers": {
+        "app/production-plans/[planId]/page": {
+          "moduleId": 3560,
+          "async": false,
+          "exportedName": "updateProductionPlanStatusAction",
+          "filename": "optimistic-satoshi-e63ce6/portal/app/production-plans/[planId]/actions.ts"
+        }
+      },
+      "layer": {
+        "app/production-plans/[planId]/page": "action-browser"
+      },
+      "filename": "optimistic-satoshi-e63ce6/portal/app/production-plans/[planId]/actions.ts",
+      "exportedName": "updateProductionPlanStatusAction"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "qcUME+uTq6NQ44MLy2GTqB0WZKz90q/s4ewPg4zrY+U="
+}
