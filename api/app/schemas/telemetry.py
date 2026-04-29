@@ -16,26 +16,34 @@ class TelemetrySchema(BaseModel):
 
 class TelemetryEventCreateRequest(TelemetrySchema):
     surface: TelemetrySurface
-    event_name: str = Field(serialization_alias="eventName", min_length=1)
-    actor_type: TelemetryActorType = Field(serialization_alias="actorType")
-    actor_id: str | None = Field(default=None, serialization_alias="actorId")
+    event_name: str = Field(alias="eventName", serialization_alias="eventName", min_length=1)
+    actor_type: TelemetryActorType = Field(alias="actorType", serialization_alias="actorType")
+    actor_id: str | None = Field(default=None, alias="actorId", serialization_alias="actorId")
     route: str | None = None
     outcome: TelemetryOutcome = "info"
-    reference_type: str | None = Field(default=None, serialization_alias="referenceType")
-    reference_id: str | None = Field(default=None, serialization_alias="referenceId")
+    reference_type: str | None = Field(
+        default=None, alias="referenceType", serialization_alias="referenceType"
+    )
+    reference_id: str | None = Field(
+        default=None, alias="referenceId", serialization_alias="referenceId"
+    )
     details: dict[str, Any] = Field(default_factory=dict)
 
 
 class TelemetryEventRecord(TelemetrySchema):
     id: str
     surface: TelemetrySurface
-    event_name: str = Field(serialization_alias="eventName")
-    actor_type: TelemetryActorType = Field(serialization_alias="actorType")
-    actor_id: str | None = Field(default=None, serialization_alias="actorId")
+    event_name: str = Field(alias="eventName", serialization_alias="eventName")
+    actor_type: TelemetryActorType = Field(alias="actorType", serialization_alias="actorType")
+    actor_id: str | None = Field(default=None, alias="actorId", serialization_alias="actorId")
     route: str | None = None
     outcome: TelemetryOutcome
-    reference_type: str | None = Field(default=None, serialization_alias="referenceType")
-    reference_id: str | None = Field(default=None, serialization_alias="referenceId")
+    reference_type: str | None = Field(
+        default=None, alias="referenceType", serialization_alias="referenceType"
+    )
+    reference_id: str | None = Field(
+        default=None, alias="referenceId", serialization_alias="referenceId"
+    )
     details: dict[str, Any] = Field(default_factory=dict)
     timestamp: datetime
 
