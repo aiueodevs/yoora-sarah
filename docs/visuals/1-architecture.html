@@ -3,158 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yoora Sarah — AI Fashion System Blueprint</title>
+<title>Yoora Sarah — System Architecture</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Fragment+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-  /* ============ THEME ============ */
+  /* ============================================================
+     THEME TOKENS
+     ============================================================ */
   :root {
     --font-body: 'Bricolage Grotesque', system-ui, sans-serif;
     --font-mono: 'Fragment Mono', 'SF Mono', Consolas, monospace;
 
-    --bg: #fffdfa;
-    --surface: #ffffff;
-    --border: rgba(141, 115, 99, 0.16);
-    --text: #241915;
-    --text-dim: #8a6c5f;
+    --bg:          #fffdfa;
+    --bg-alt:      #f7ece6;
+    --surface:     #ffffff;
+    --surface-alt: #faf5f1;
+    --border:      rgba(141, 115, 99, 0.16);
+    --border-strong: rgba(141, 115, 99, 0.32);
+    --text:        #241915;
+    --text-dim:    #8a6c5f;
+    --text-muted:  rgba(138, 108, 95, 0.55);
 
-    --primary: #8a6c5f;
+    --primary:     #8a6c5f;
     --primary-dim: rgba(138, 108, 95, 0.08);
-    --secondary: #6b7280;
-    --tertiary: #d97706;
-    --danger: #dc2626;
+    --accent:      #c8a997;
+
+    /* Legend palette */
+    --legend-client:  #3b82f6;
+    --legend-edge:    #f59e0b;
+    --legend-service: #10b981;
+    --legend-ai:      #a855f7;
+    --legend-data:    #14b8a6;
+
+    --dot-color:   rgba(141, 115, 99, 0.10);
+    --shadow-sm:   0 1px 3px rgba(36, 25, 21, 0.06);
+    --shadow-md:   0 4px 14px rgba(36, 25, 21, 0.08);
+    --shadow-lg:   0 8px 30px rgba(36, 25, 21, 0.10);
+
+    --anim-duration: 0.5s;
+    --anim-stagger:  0.08s;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #1c1411;
-      --surface: #241915;
-      --border: rgba(255, 255, 255, 0.08);
-      --text: #fdfaf7;
-      --text-dim: #d1b5a5;
+      --bg:          #1c1411;
+      --bg-alt:      #241915;
+      --surface:     #241915;
+      --surface-alt: #2e1f19;
+      --border:      rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.16);
+      --text:        #fdfaf7;
+      --text-dim:    #d1b5a5;
+      --text-muted:  rgba(209, 181, 165, 0.5);
 
-      --primary: #c8a997;
+      --primary:     #c8a997;
       --primary-dim: rgba(200, 169, 151, 0.14);
-      --secondary: #9ca3af;
-      --tertiary: #fbbf24;
-      --danger: #f87171;
+      --accent:      #c8a997;
+
+      --legend-client:  #60a5fa;
+      --legend-edge:    #fbbf24;
+      --legend-service: #34d399;
+      --legend-ai:      #c084fc;
+      --legend-data:    #2dd4bf;
+
+      --dot-color:   rgba(200, 169, 151, 0.06);
+      --shadow-sm:   0 1px 3px rgba(0, 0, 0, 0.2);
+      --shadow-md:   0 4px 14px rgba(0, 0, 0, 0.25);
+      --shadow-lg:   0 8px 30px rgba(0, 0, 0, 0.35);
     }
   }
 
-  /* ============ RESET + BASE ============ */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @media (prefers-reduced-motion: reduce) {
+    :root { --anim-duration: 0s; --anim-stagger: 0s; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  /* ============================================================
+     RESET + BASE
+     ============================================================ */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; }
 
   body {
     background-color: var(--bg);
-    background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+    background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
     background-size: 24px 24px;
     color: var(--text);
     font-family: var(--font-body);
-    padding: 0;
-    margin: 0;
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+  }
+
+  /* ============================================================
+     LAYOUT
+     ============================================================ */
+  .app {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
   }
 
   .header {
-    padding: 24px 32px 16px;
     flex-shrink: 0;
+    padding: 20px 28px 12px;
     z-index: 10;
-    background: linear-gradient(180deg, var(--bg) 60%, transparent);
-  }
-
-  .container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    flex: 1;
+    background: linear-gradient(180deg, var(--bg) 70%, transparent);
     display: flex;
-    flex-direction: column;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    animation: fadeSlideDown var(--anim-duration) ease-out both;
   }
 
-  h1 {
-    font-size: 32px;
+  @keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .header h1 {
+    font-size: 26px;
     font-weight: 700;
-    letter-spacing: -1px;
-    margin-bottom: 4px;
+    letter-spacing: -0.8px;
+    white-space: nowrap;
   }
 
-  .subtitle {
-    color: var(--text-dim);
+  .header .subtitle {
     font-family: var(--font-mono);
     font-size: 11px;
-    margin-bottom: 0;
+    color: var(--text-dim);
+    white-space: nowrap;
   }
 
-  .description {
-    display: none;
-  }
-
-  .diagram-shell {
-    position: relative;
+  .diagram-region {
     flex: 1;
     display: flex;
     flex-direction: column;
     min-height: 0;
-  }
-
-  .diagram-shell__hint {
-    position: absolute;
-    bottom: 16px;
-    left: 32px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-dim);
-    margin: 0;
-    opacity: 0.7;
-    z-index: 10;
-  }
-
-  .mermaid-wrap {
     position: relative;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    padding: 0;
-    overflow: hidden;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    cursor: grab;
+    animation: fadeIn var(--anim-duration) ease-out calc(var(--anim-stagger) * 2) both;
   }
 
-  .mermaid-wrap.is-panning { cursor: grabbing; user-select: none; }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
 
+  /* ============================================================
+     ZOOM CONTROLS
+     ============================================================ */
   .zoom-controls {
     position: absolute;
-    top: 24px;
-    right: 32px;
+    top: 12px;
+    right: 20px;
     display: flex;
     gap: 2px;
-    z-index: 20;
+    z-index: 30;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 2px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    padding: 3px;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn var(--anim-duration) ease-out calc(var(--anim-stagger) * 4) both;
   }
 
   .zoom-controls button {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     border: none;
     background: transparent;
     color: var(--text-dim);
     font-family: var(--font-mono);
     font-size: 14px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,240 +188,584 @@
   }
 
   .zoom-controls button:hover {
-    background: var(--border);
+    background: var(--primary-dim);
     color: var(--text);
   }
 
-  .diagram-shell { position: relative; }
-  .diagram-shell__hint {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-dim);
-    margin-bottom: 8px;
-    opacity: 0.7;
+  .zoom-controls button:active {
+    background: var(--border);
   }
 
-  .mermaid-viewport {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    min-height: 0;
-    flex: 1;
+  .zoom-controls .sep {
+    width: 1px;
+    background: var(--border);
+    margin: 4px 2px;
   }
 
-  .mermaid-canvas { position: absolute; top: 0; left: 0; }
   .zoom-label {
     font-family: var(--font-mono);
     font-size: 10px;
+    color: var(--text-muted);
+    padding: 0 8px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ============================================================
+     VIEWPORT + CANVAS
+     ============================================================ */
+  .mermaid-viewport {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    cursor: grab;
+    min-height: 0;
+  }
+
+  .mermaid-viewport.is-panning { cursor: grabbing; user-select: none; }
+
+  .mermaid-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+  }
+
+  .mermaid-canvas svg {
+    display: block;
+    max-width: none !important;
+  }
+
+  /* Hint bar */
+  .hint-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 24px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    pointer-events: none;
+    animation: fadeIn var(--anim-duration) ease-out calc(var(--anim-stagger) * 6) both;
+  }
+
+  .hint-bar span { pointer-events: auto; }
+
+  /* ============================================================
+     BOTTOM PANEL (Legend + Callout)
+     ============================================================ */
+  .bottom-panel {
+    flex-shrink: 0;
+    padding: 12px 24px 16px;
+    background: linear-gradient(0deg, var(--bg) 70%, transparent);
+    z-index: 10;
+    animation: fadeSlideUp var(--anim-duration) ease-out calc(var(--anim-stagger) * 8) both;
+  }
+
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
     color: var(--text-dim);
-    padding: 0 6px;
     white-space: nowrap;
   }
 
-  /* ============ MERMAID SVG OVERRIDES ============ */
-  .mermaid .nodeLabel { font-family: var(--font-body) !important; font-size: 16px !important; }
-  .mermaid .edgeLabel { font-family: var(--font-mono) !important; font-size: 13px !important; }
-  .mermaid .node rect, .mermaid .node circle, .mermaid .node polygon { stroke-width: 1.5px !important; }
-  .mermaid .edge-pattern-solid { stroke-width: 1.5px !important; }
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
 
+  /* Callout box */
+  .callout {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    max-width: 900px;
+  }
+
+  .callout strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* ============================================================
+     MERMAID SVG OVERRIDES
+     ============================================================ */
+  .mermaid-canvas .nodeLabel {
+    font-family: var(--font-body) !important;
+    font-size: 14px !important;
+  }
+  .mermaid-canvas .edgeLabel {
+    font-family: var(--font-mono) !important;
+    font-size: 11px !important;
+  }
+  .mermaid-canvas .node rect,
+  .mermaid-canvas .node circle,
+  .mermaid-canvas .node polygon {
+    stroke-width: 1.5px !important;
+  }
+  .mermaid-canvas .edge-pattern-solid {
+    stroke-width: 1.5px !important;
+  }
+  .mermaid-canvas .cluster rect {
+    rx: 8px !important;
+    ry: 8px !important;
+  }
+  .mermaid-canvas .cluster .nodeLabel {
+    font-weight: 600 !important;
+  }
+
+  /* ============================================================
+     MOBILE FALLBACK
+     ============================================================ */
+  @media (max-width: 640px) {
+    .header { padding: 14px 16px 10px; }
+    .header h1 { font-size: 18px; }
+    .zoom-controls { top: 8px; right: 12px; }
+    .zoom-controls button { width: 26px; height: 26px; font-size: 12px; }
+    .bottom-panel { padding: 10px 16px 12px; }
+    .legend { gap: 10px; }
+    .legend-item { font-size: 10px; }
+    .callout { font-size: 11px; padding: 8px 10px; }
+    .hint-bar { font-size: 10px; padding: 6px 16px; }
+  }
+
+  @media (max-width: 400px) {
+    .zoom-label { display: none; }
+    .legend { gap: 6px 12px; }
+  }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="app">
 
-  <div class="header">
+  <!-- ====== HEADER ====== -->
+  <header class="header">
     <h1>Yoora Sarah — System Architecture</h1>
-    <p class="subtitle">AI-Operated Fashion Enterprise Blueprint</p>
-  </div>
+    <span class="subtitle">AI-Operated Fashion Enterprise &middot; Full System Blueprint</span>
+  </header>
 
-  <section class="diagram-shell">
-    <p class="diagram-shell__hint">Ctrl/Cmd + wheel to zoom · Scroll to pan · Drag to pan · Double-click to fit</p>
-    <div class="mermaid-wrap">
-      <div class="zoom-controls">
-        <button type="button" data-action="zoom-in" title="Zoom in">+</button>
-        <button type="button" data-action="zoom-out" title="Zoom out">&minus;</button>
-        <button type="button" data-action="zoom-fit" title="Smart fit">&#8634;</button>
-        <button type="button" data-action="zoom-one" title="1:1 zoom">1:1</button>
-        <button type="button" data-action="zoom-expand" title="Open full size">&#x26F6;</button>
-        <span class="zoom-label">Loading...</span>
-      </div>
-      <div class="mermaid-viewport">
-        <div class="mermaid mermaid-canvas"></div>
-      </div>
+  <!-- ====== DIAGRAM ====== -->
+  <section class="diagram-region">
+
+    <div class="zoom-controls">
+      <button type="button" data-action="zoom-in" title="Zoom in (+)">+</button>
+      <button type="button" data-action="zoom-out" title="Zoom out (&minus;)">&minus;</button>
+      <div class="sep"></div>
+      <button type="button" data-action="zoom-fit" title="Fit to viewport">&#8634;</button>
+      <button type="button" data-action="zoom-one" title="Reset to 100%">1:1</button>
+      <div class="sep"></div>
+      <button type="button" data-action="zoom-expand" title="Open in new tab">&#x26F6;</button>
+      <span class="zoom-label">Loading&hellip;</span>
     </div>
-    <script type="text/plain" class="diagram-source">
-      graph TD
-        subgraph "Layer 1: Frontend (Next.js)"
-          WEB[Customer Storefront]
-          PORT[Internal Portal]
-        end
 
-        subgraph "Layer 2: API & Microservices (FastAPI)"
-          API[API Gateway / Router]
-          COMM[Commerce Engine]
-          WFLOW[Workflow Engine]
-          API --- COMM
-          API --- WFLOW
-        end
+    <div class="mermaid-viewport" id="viewport">
+      <div class="mermaid-canvas" id="canvas"></div>
+    </div>
 
-        subgraph "Layer 3: AI Orchestration (Central Brain)"
-          CEO((CEO Agent))
-          MKT(Marketing Agent)
-          CRE(Creative Agent)
-          OPS(Production Agent)
-          CS(CS Support Agent)
-          FIN(Finance Agent)
+    <div class="hint-bar">
+      <span>Ctrl/Cmd + scroll to zoom &middot; Drag to pan &middot; Double-click to fit</span>
+    </div>
 
-          CEO --> MKT
-          CEO --> CRE
-          CEO --> OPS
-          CEO --> CS
-          CEO --> FIN
-
-          MKT -.->|Cross-div signal| OPS
-        end
-
-        subgraph "Data Layer"
-          PG[(PostgreSQL)]
-          TG[(Tigris Storage)]
-          VEC[(Vector DB)]
-        end
-
-        WEB -->|REST| API
-        PORT -->|REST| API
-        COMM --> PG
-        WFLOW --> PG
-        COMM --> TG
-
-        API -->|Task| CEO
-        CEO --> VEC
-        CS -->|Conversational| API
-    </script>
   </section>
+
+  <!-- ====== DIAGRAM SOURCE (hidden) ====== -->
+  <script type="text/plain" id="diagram-source">
+graph TD
+    subgraph ClientLayer["&#127760; Client Layer"]
+        WEB["&#128722; Customer Storefront<br/>Next.js 16 · Port 3000"]
+        PORT["&#128202; Internal Portal<br/>Next.js 16 · Port 3001"]
+        MOB["&#128241; Mobile Web / PWA"]
+    end
+
+    subgraph EdgeLayer["&#9889; Edge Layer"]
+        CDN["&#9729; CDN (Cloudflare)"]
+        WAF["&#128737; WAF + Rate Limit"]
+    end
+
+    subgraph APIGateway["&#128268; API Gateway"]
+        API["&#128640; FastAPI Router<br/>Port 8000"]
+        AUTH["&#128272; Auth (Fail-Closed)<br/>JWT + RBAC"]
+        API --> AUTH
+    end
+
+    subgraph Microservices["&#129513; Microservices"]
+        COMM["&#128722; Commerce Engine<br/>Cart · Orders · Checkout"]
+        CAT["&#128230; Catalog Store<br/>10 Categories · Tigris Sync"]
+        WFLOW["&#9881; Workflow Engine<br/>Briefs · Design · Patterns"]
+        TELL["&#128200; Telemetry<br/>Event Ingestion"]
+    end
+
+    subgraph AIOrchestration["&#129302; AI Orchestration Layer"]
+        CEO(("&#129504; CEO AI<br/>Central Brain"))
+        MKT["&#128227; Marketing Agent"]
+        CRE["&#127912; Creative Agent"]
+        SAL["&#128176; Sales Agent"]
+        CS["&#128172; CS Support Agent"]
+        OPS["&#127981; Production Agent"]
+        INV["&#128230; Inventory Agent"]
+        FIN["&#128179; Finance Agent"]
+        HR["&#128101; HR Agent"]
+
+        CEO --> MKT
+        CEO --> CRE
+        CEO --> SAL
+        CEO --> CS
+        CEO --> OPS
+        CEO --> INV
+        CEO --> FIN
+        CEO --> HR
+
+        MKT -.->|"Cross-div signal"| OPS
+        INV -.->|"Stock alert"| OPS
+        SAL -.->|"Demand signal"| OPS
+    end
+
+    subgraph DataLayer["&#128190; Data Layer"]
+        PG[("&#128024; PostgreSQL<br/>Supabase")]
+        TIG[("&#128248; Tigris Storage<br/>1,196 Images")]
+        VEC[("&#129528; Vector DB<br/>AI Memory")]
+        RED[("&#9889; Redis<br/>Cache + Queue")]
+    end
+
+    WEB --> CDN
+    PORT --> CDN
+    MOB --> CDN
+    CDN --> WAF
+    WAF --> API
+
+    API --> COMM
+    API --> CAT
+    API --> WFLOW
+    API --> TELL
+
+    COMM --> PG
+    CAT --> TIG
+    WFLOW --> PG
+    TELL --> PG
+
+    API -->|"Task Dispatch"| CEO
+    CS -->|"Conversational"| API
+    CEO --> VEC
+    CEO --> RED
+  </script>
+
+  <!-- ====== BOTTOM PANEL ====== -->
+  <footer class="bottom-panel">
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--legend-client)"></div>Client Layer</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--legend-edge)"></div>Edge / Gateway</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--legend-service)"></div>Microservices</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--legend-ai)"></div>AI Agents</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--legend-data)"></div>Data Layer</div>
+    </div>
+    <div class="callout">
+      <strong>Dual-mode architecture:</strong> All services query PostgreSQL first and fall back to in-memory fixtures.
+      AI agents use <strong>Groq (Llama 3.3)</strong> for text generation and <strong>Gemini 2.5 Flash</strong> for vision tasks.
+    </div>
+  </footer>
 
 </div>
 
+<!-- ============================================================
+     MERMAID + ELK (CDN) + INTERACTION SYSTEM
+     ============================================================ -->
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
   import elkLayouts from 'https://cdn.jsdelivr.net/npm/@mermaid-js/layout-elk/dist/mermaid-layout-elk.esm.min.mjs';
 
-  const config = { fitPadding: 28, minHeight: 460, maxHeightPx: 1200, maxHeightVh: 0.84, maxInitialZoom: 1.8, minZoom: 0.08, maxZoom: 6.5, zoomStep: 0.14, readabilityFloor: 0.58 };
-  const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
+  /* ---- Config ---- */
+  const C = {
+    fitPad:       32,
+    minZoom:      0.06,
+    maxZoom:      8,
+    maxInitZoom:  2.0,
+    zoomStep:     0.14,
+    animMs:       220,
+  };
+
+  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+  /* ---- DOM refs ---- */
+  const viewport = document.getElementById('viewport');
+  const canvas   = document.getElementById('canvas');
+  const source   = document.getElementById('diagram-source');
+  const label    = document.querySelector('.zoom-label');
+
+  /* ---- State ---- */
+  let zoom = 1, panX = 0, panY = 0;
+  let svgW = 0, svgH = 0;
+  let fitMode = 'contain';
   let activeDrag = null;
 
-  addEventListener('mousemove', (e) => activeDrag?.onMove(e));
-  addEventListener('mouseup', () => { activeDrag?.onEnd(); activeDrag = null; });
+  /* ---- Helpers ---- */
+  function vpW() { return viewport.clientWidth; }
+  function vpH() { return viewport.clientHeight; }
 
+  function constrainPan() {
+    const rW = svgW * zoom, rH = svgH * zoom, pad = C.fitPad;
+    panX = (rW + pad * 2 <= vpW()) ? (vpW() - rW) / 2 : clamp(panX, vpW() - rW - pad, pad);
+    panY = (rH + pad * 2 <= vpH()) ? (vpH() - rH) / 2 : clamp(panY, vpH() - rH - pad, pad);
+  }
+
+  function canPan() {
+    return (svgW * zoom) + C.fitPad * 2 > vpW() || (svgH * zoom) + C.fitPad * 2 > vpH();
+  }
+
+  function applyTransform(smooth) {
+    const svg = canvas.querySelector('svg');
+    if (!svg || !svgW) return;
+    constrainPan();
+    svg.style.width  = (svgW * zoom) + 'px';
+    svg.style.height = (svgH * zoom) + 'px';
+    if (smooth) {
+      canvas.style.transition = `transform ${C.animMs}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+      svg.style.transition = `width ${C.animMs}ms cubic-bezier(0.25, 0.46, 0.45, 0.94), height ${C.animMs}ms cubic-bezier(0.25, 0.46, 0.45, 0.94)`;
+      setTimeout(() => { canvas.style.transition = 'none'; svg.style.transition = 'none'; }, C.animMs + 20);
+    } else {
+      canvas.style.transition = 'none';
+      svg.style.transition = 'none';
+    }
+    canvas.style.transform = `translate(${panX}px, ${panY}px)`;
+    label.textContent = Math.round(zoom * 100) + '%';
+    viewport.style.cursor = canPan() ? 'grab' : 'default';
+  }
+
+  function computeFit() {
+    const aW = Math.max(80, vpW() - C.fitPad * 2);
+    const aH = Math.max(80, vpH() - C.fitPad * 2);
+    const z = Math.min(aW / svgW, aH / svgH);
+    return clamp(z, C.minZoom, C.maxInitZoom);
+  }
+
+  function fitDiagram(smooth) {
+    if (!svgW) return;
+    zoom = computeFit();
+    fitMode = 'contain';
+    panX = (vpW() - svgW * zoom) / 2;
+    panY = (vpH() - svgH * zoom) / 2;
+    applyTransform(smooth);
+  }
+
+  function setZoomOne(smooth) {
+    zoom = 1;
+    fitMode = '1:1';
+    panX = (vpW() - svgW) / 2;
+    panY = (vpH() - svgH) / 2;
+    applyTransform(smooth);
+  }
+
+  function zoomAround(factor, cx, cy, smooth) {
+    const next = clamp(zoom * factor, C.minZoom, C.maxZoom);
+    const ratio = next / zoom;
+    panX = cx - ratio * (cx - panX);
+    panY = cy - ratio * (cy - panY);
+    zoom = next;
+    fitMode = 'custom';
+    applyTransform(smooth);
+  }
+
+  function openFullTab() {
+    const svg = canvas.querySelector('svg');
+    if (!svg) return;
+    const clone = svg.cloneNode(true);
+    clone.removeAttribute('style');
+    clone.setAttribute('width', svgW);
+    clone.setAttribute('height', svgH);
+    const blob = new Blob([clone.outerHTML], { type: 'image/svg+xml' });
+    window.open(URL.createObjectURL(blob), '_blank');
+  }
+
+  /* ---- Mermaid init ---- */
   const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
   mermaid.registerLayoutLoaders(elkLayouts);
   mermaid.initialize({
-    startOnLoad: false, theme: 'base', look: 'classic', layout: 'elk',
+    startOnLoad: false,
+    theme: 'base',
+    look: 'classic',
+    layout: 'elk',
     themeVariables: {
       fontFamily: "'Bricolage Grotesque', system-ui, sans-serif",
-      fontSize: '16px',
-      primaryColor: isDark ? '#3a2822' : '#f7ece6',
+      fontSize: '14px',
+      primaryColor:       isDark ? '#3a2822' : '#f7ece6',
       primaryBorderColor: isDark ? '#c8a997' : '#8a6c5f',
-      primaryTextColor: isDark ? '#fdfaf7' : '#241915',
-      lineColor: isDark ? '#8a6c5f' : '#b29684'
+      primaryTextColor:   isDark ? '#fdfaf7' : '#241915',
+      lineColor:          isDark ? '#8a6c5f' : '#b29684',
+      secondaryColor:     isDark ? '#2e1f19' : '#fff5ee',
+      tertiaryColor:      isDark ? '#1c1411' : '#fefcfb',
+      clusterBkg:         isDark ? 'rgba(200,169,151,0.06)' : 'rgba(138,108,95,0.04)',
+      clusterBorder:      isDark ? 'rgba(200,169,151,0.18)' : 'rgba(138,108,95,0.14)',
+      edgeLabelBackground: isDark ? '#241915' : '#fffdfa',
+      noteTextColor:      isDark ? '#fdfaf7' : '#241915',
+      noteBkgColor:       isDark ? '#2e1f19' : '#f7ece6',
     }
   });
 
-  function initDiagram(shell) {
-    const wrap = shell.querySelector('.mermaid-wrap');
-    const viewport = shell.querySelector('.mermaid-viewport');
-    const canvas = shell.querySelector('.mermaid-canvas');
-    const source = shell.querySelector('.diagram-source');
-    const label = shell.querySelector('.zoom-label');
+  /* ---- Render ---- */
+  async function render() {
+    try {
+      label.textContent = 'Rendering…';
+      const id = 'arch-' + Date.now();
+      const { svg } = await mermaid.render(id, source.textContent.trim());
+      canvas.innerHTML = svg;
+      const svgNode = canvas.querySelector('svg');
+      const r = svgNode.getBoundingClientRect();
+      svgW = r.width || 1200;
+      svgH = r.height || 900;
+      svgNode.removeAttribute('width');
+      svgNode.removeAttribute('height');
+      svgNode.style.display = 'block';
+      svgNode.style.maxWidth = 'none';
 
-    let zoom = 1, fitMode = 'contain', panX = 0, panY = 0, svgW = 0, svgH = 0;
-    let sx = 0, sy = 0, spx = 0, spy = 0;
-
-    function constrainPan() {
-      const vpW = viewport.clientWidth, vpH = viewport.clientHeight;
-      const rW = svgW * zoom, rH = svgH * zoom, pad = config.fitPadding;
-      panX = (rW + pad * 2 <= vpW) ? (vpW - rW) / 2 : clamp(panX, vpW - rW - pad, pad);
-      panY = (rH + pad * 2 <= vpH) ? (vpH - rH) / 2 : clamp(panY, vpH - rH - pad, pad);
-    }
-
-    function applyTransform() {
-      const svg = canvas.querySelector('svg');
-      if (!svg || !svgW) return;
-      constrainPan();
-      svg.style.width = (svgW * zoom) + 'px';
-      svg.style.height = (svgH * zoom) + 'px';
-      canvas.style.transform = `translate(${panX}px, ${panY}px)`;
-      label.textContent = Math.round(zoom * 100) + '% — ' + fitMode;
-    }
-
-    function canPan() { return (svgW * zoom) + config.fitPadding * 2 > viewport.clientWidth || (svgH * zoom) + config.fitPadding * 2 > viewport.clientHeight; }
-
-    function computeSmartFit() {
-      const aW = Math.max(80, viewport.clientWidth - config.fitPadding * 2);
-      const aH = Math.max(80, viewport.clientHeight - config.fitPadding * 2);
-      let z = Math.min(aW / svgW, aH / svgH);
-      return { zoom: clamp(z, config.minZoom, config.maxInitialZoom), mode: 'contain' };
-    }
-
-    function fitDiagram() {
-      if (!svgW) return;
-      const fit = computeSmartFit();
-      zoom = fit.zoom; fitMode = fit.mode;
-      panX = (viewport.clientWidth - svgW * zoom) / 2;
-      panY = (viewport.clientHeight - svgH * zoom) / 2;
-      applyTransform();
-    }
-
-    function zoomAround(factor, cx, cy) {
-      const next = clamp(zoom * factor, config.minZoom, config.maxZoom);
-      const ratio = next / zoom;
-      panX = cx - ratio * (cx - panX);
-      panY = cy - ratio * (cy - panY);
-      zoom = next; fitMode = 'custom';
-      applyTransform();
-    }
-
-    async function render() {
-      try {
-        const { svg } = await mermaid.render('diagram-' + Date.now(), source.textContent.trim());
-        canvas.innerHTML = svg;
-        const svgNode = canvas.querySelector('svg');
-        const r = svgNode.getBoundingClientRect();
-        svgW = r.width || 1000; svgH = r.height || 700;
-        svgNode.removeAttribute('width'); svgNode.removeAttribute('height');
-        svgNode.style.maxWidth = 'none'; svgNode.style.display = 'block';
-        fitDiagram();
-      } catch (e) { label.textContent = 'Error rendering'; }
-    }
-
-    wrap.querySelector('[data-action="zoom-in"]')?.addEventListener('click', () => zoomAround(1+config.zoomStep, viewport.clientWidth/2, viewport.clientHeight/2));
-    wrap.querySelector('[data-action="zoom-out"]')?.addEventListener('click', () => zoomAround(1/(1+config.zoomStep), viewport.clientWidth/2, viewport.clientHeight/2));
-    wrap.querySelector('[data-action="zoom-fit"]')?.addEventListener('click', fitDiagram);
-
-    viewport.addEventListener('wheel', (e) => {
-      if (e.ctrlKey || e.metaKey) {
-        e.preventDefault();
-        const rect = viewport.getBoundingClientRect();
-        zoomAround(e.deltaY < 0 ? 1+config.zoomStep : 1/(1+config.zoomStep), e.clientX - rect.left, e.clientY - rect.top);
-      } else if (canPan()) {
-        e.preventDefault(); panX -= e.deltaX; panY -= e.deltaY; applyTransform();
+      /* Stagger-fade nodes */
+      const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReduced) {
+        const nodes = svgNode.querySelectorAll('.node, .cluster');
+        nodes.forEach((n, i) => {
+          n.style.opacity = '0';
+          n.style.animation = `nodeFadeIn 0.4s ease-out ${i * 0.04}s forwards`;
+        });
+        const style = document.createElement('style');
+        style.textContent = `@keyframes nodeFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }`;
+        svgNode.prepend(style);
       }
-    }, { passive: false });
 
-    viewport.addEventListener('mousedown', (e) => {
-      if (!canPan() || e.target.closest('.zoom-controls')) return;
-      wrap.classList.add('is-panning');
-      sx = e.clientX; sy = e.clientY; spx = panX; spy = panY; e.preventDefault();
-      activeDrag = {
-        onMove: (ev) => { panX = spx + (ev.clientX - sx); panY = spy + (ev.clientY - sy); applyTransform(); },
-        onEnd: () => wrap.classList.remove('is-panning')
-      };
-    });
-
-    render();
+      fitDiagram(false);
+    } catch (e) {
+      label.textContent = 'Render error';
+      console.error('Mermaid render error:', e);
+    }
   }
-  document.querySelectorAll('.diagram-shell').forEach(initDiagram);
+
+  /* ---- Button handlers ---- */
+  document.querySelector('[data-action="zoom-in"]').addEventListener('click',
+    () => zoomAround(1 + C.zoomStep, vpW() / 2, vpH() / 2, true));
+  document.querySelector('[data-action="zoom-out"]').addEventListener('click',
+    () => zoomAround(1 / (1 + C.zoomStep), vpW() / 2, vpH() / 2, true));
+  document.querySelector('[data-action="zoom-fit"]').addEventListener('click',
+    () => fitDiagram(true));
+  document.querySelector('[data-action="zoom-one"]').addEventListener('click',
+    () => setZoomOne(true));
+  document.querySelector('[data-action="zoom-expand"]').addEventListener('click',
+    () => openFullTab());
+
+  /* ---- Scroll-to-zoom (Ctrl+wheel) ---- */
+  viewport.addEventListener('wheel', (e) => {
+    if (e.ctrlKey || e.metaKey) {
+      e.preventDefault();
+      const rect = viewport.getBoundingClientRect();
+      const cx = e.clientX - rect.left;
+      const cy = e.clientY - rect.top;
+      const factor = e.deltaY < 0 ? (1 + C.zoomStep) : (1 / (1 + C.zoomStep));
+      zoomAround(factor, cx, cy, false);
+    } else if (canPan()) {
+      e.preventDefault();
+      panX -= e.deltaX;
+      panY -= e.deltaY;
+      applyTransform(false);
+    }
+  }, { passive: false });
+
+  /* ---- Drag-to-pan ---- */
+  let sx = 0, sy = 0, spx = 0, spy = 0;
+
+  viewport.addEventListener('mousedown', (e) => {
+    if (e.button !== 0 || e.target.closest('.zoom-controls')) return;
+    if (!canPan()) return;
+    viewport.classList.add('is-panning');
+    sx = e.clientX; sy = e.clientY;
+    spx = panX; spy = panY;
+    e.preventDefault();
+    activeDrag = true;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!activeDrag) return;
+    panX = spx + (e.clientX - sx);
+    panY = spy + (e.clientY - sy);
+    applyTransform(false);
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (!activeDrag) return;
+    activeDrag = false;
+    viewport.classList.remove('is-panning');
+  });
+
+  /* ---- Touch pan ---- */
+  let touchId = null, tx = 0, ty = 0, tpx = 0, tpy = 0;
+
+  viewport.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1 || !canPan()) return;
+    const t = e.touches[0];
+    touchId = t.identifier;
+    tx = t.clientX; ty = t.clientY;
+    tpx = panX; tpy = panY;
+  }, { passive: true });
+
+  viewport.addEventListener('touchmove', (e) => {
+    if (touchId === null) return;
+    const t = Array.from(e.touches).find(tt => tt.identifier === touchId);
+    if (!t) return;
+    e.preventDefault();
+    panX = tpx + (t.clientX - tx);
+    panY = tpy + (t.clientY - ty);
+    applyTransform(false);
+  }, { passive: false });
+
+  viewport.addEventListener('touchend', () => { touchId = null; });
+
+  /* ---- Double-click to fit ---- */
+  viewport.addEventListener('dblclick', (e) => {
+    if (e.target.closest('.zoom-controls')) return;
+    fitDiagram(true);
+  });
+
+  /* ---- Keyboard shortcuts ---- */
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if (e.key === '+' || e.key === '=') zoomAround(1 + C.zoomStep, vpW() / 2, vpH() / 2, true);
+    if (e.key === '-' || e.key === '_') zoomAround(1 / (1 + C.zoomStep), vpW() / 2, vpH() / 2, true);
+    if (e.key === '0') fitDiagram(true);
+    if (e.key === '1') setZoomOne(true);
+  });
+
+  /* ---- Resize ---- */
+  const ro = new ResizeObserver(() => { if (fitMode === 'contain') fitDiagram(false); else applyTransform(false); });
+  ro.observe(viewport);
+
+  /* ---- GO ---- */
+  render();
 </script>
+
 </body>
 </html>

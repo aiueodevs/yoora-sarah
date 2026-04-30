@@ -1,245 +1,1123 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Yoora Sarah — AI Command Center Roadmap</title>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
+    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
     --bg: #1c1411;
     --surface: #241915;
+    --surface-2: #2b1e19;
+    --surface-3: #311f19;
     --text: #fdfaf7;
     --text-dim: #d1b5a5;
+    --text-muted: rgba(209,181,165,.65);
     --accent: #c8a997;
-    --accent-dim: rgba(200, 169, 151, 0.12);
+    --accent-2: #e3c7b8;
+    --accent-soft: rgba(200,169,151,.12);
     --green: #4ade80;
-    --yellow: #fbbf24;
-    --red: #f87171;
-    --font-body: 'Instrument Serif', Georgia, serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --green-soft: rgba(74,222,128,.12);
+    --blue: #60a5fa;
+    --blue-soft: rgba(96,165,250,.12);
+    --orange: #fbbf24;
+    --orange-soft: rgba(251,191,36,.12);
+    --rose: #fda4af;
+    --rose-soft: rgba(253,164,175,.12);
+    --shadow-lg: 0 30px 80px rgba(0,0,0,.35);
+    --shadow-md: 0 10px 30px rgba(0,0,0,.25);
+    --border: rgba(255,255,255,.08);
+    --progress: 0%;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f7ece6;
+      --surface: #fffdfb;
+      --surface-2: #fff8f4;
+      --surface-3: #f8efe9;
+      --text: #241915;
+      --text-dim: #8a6c5f;
+      --text-muted: rgba(138,108,95,.7);
+      --accent: #8a6c5f;
+      --accent-2: #a98a79;
+      --accent-soft: rgba(138,108,95,.10);
+      --green: #16a34a;
+      --green-soft: rgba(22,163,74,.12);
+      --blue: #2563eb;
+      --blue-soft: rgba(37,99,235,.10);
+      --orange: #d97706;
+      --orange-soft: rgba(217,119,6,.10);
+      --rose: #be123c;
+      --rose-soft: rgba(190,18,60,.10);
+      --shadow-lg: 0 30px 80px rgba(36,25,21,.12);
+      --shadow-md: 0 10px 30px rgba(36,25,21,.10);
+      --border: rgba(36,25,21,.08);
+    }
+  }
 
-  body {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     background: var(--bg);
     color: var(--text);
-    font-family: var(--font-body);
-    overflow: hidden;
-    height: 100vh;
+    font-family: var(--font-display);
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(200,169,151,.16), transparent 24%),
+      radial-gradient(circle at 82% 12%, rgba(227,199,184,.10), transparent 28%),
+      radial-gradient(circle at 55% 85%, rgba(138,108,95,.12), transparent 30%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .deck-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: var(--progress);
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    z-index: 100;
+    transition: width .35s ease;
+  }
+
+  .deck {
+    height: 100dvh;
+    width: 100vw;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
 
   .slide {
-    display: none;
+    height: 100dvh;
+    width: 100vw;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 60px 80px;
-    text-align: center;
-    animation: fadeIn 0.5s ease-out;
+    padding: clamp(36px, 6vh, 72px) clamp(28px, 6vw, 96px);
+    isolation: isolate;
+    opacity: 0;
+    transform: translateY(32px) scale(.985);
+    transition: opacity .65s cubic-bezier(.16,1,.3,1), transform .65s cubic-bezier(.16,1,.3,1);
   }
 
-  .slide.active { display: flex; }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  .slide.visible {
+    opacity: 1;
+    transform: none;
   }
 
-  h1 { font-size: 72px; font-weight: 400; letter-spacing: -2px; margin-bottom: 16px; }
-  h2 { font-size: 48px; font-weight: 400; letter-spacing: -1px; margin-bottom: 24px; }
-  .kicker { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 24px; }
-  .body { font-size: 22px; line-height: 1.6; color: var(--text-dim); max-width: 700px; }
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .45s cubic-bezier(.16,1,.3,1), transform .45s cubic-bezier(.16,1,.3,1);
+  }
+  .slide.visible .reveal { opacity: 1; transform: none; }
+  .slide.visible .reveal:nth-child(1) { transition-delay: .10s; }
+  .slide.visible .reveal:nth-child(2) { transition-delay: .18s; }
+  .slide.visible .reveal:nth-child(3) { transition-delay: .26s; }
+  .slide.visible .reveal:nth-child(4) { transition-delay: .34s; }
+  .slide.visible .reveal:nth-child(5) { transition-delay: .42s; }
+  .slide.visible .reveal:nth-child(6) { transition-delay: .50s; }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 40px;
-    max-width: 900px;
-    width: 100%;
+  @media (prefers-reduced-motion: reduce) {
+    .slide, .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .deck { scroll-behavior: auto; }
   }
 
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--accent-dim);
-    border-radius: 16px;
-    padding: 28px 24px;
-    text-align: left;
-  }
-
-  .card h3 { font-size: 20px; margin-bottom: 8px; font-weight: 400; }
-  .card p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
-  .card .tag { font-family: var(--font-mono); font-size: 11px; display: inline-block; padding: 2px 8px; border-radius: 4px; margin-bottom: 12px; }
-  .tag-done { background: rgba(74, 222, 128, 0.15); color: var(--green); }
-  .tag-progress { background: rgba(251, 191, 36, 0.15); color: var(--yellow); }
-  .tag-planned { background: var(--accent-dim); color: var(--accent); }
-
-  .timeline { text-align: left; max-width: 700px; width: 100%; margin-top: 32px; }
-  .timeline-item { display: flex; gap: 20px; margin-bottom: 28px; }
-  .timeline-dot { width: 12px; height: 12px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
-  .timeline-content h4 { font-size: 18px; font-weight: 400; margin-bottom: 4px; }
-  .timeline-content p { font-size: 14px; color: var(--text-dim); }
-
-  .nav {
+  .deck-dots {
     position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    gap: 8px;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+    padding: 10px;
+    background: color-mix(in srgb, var(--bg) 60%, transparent 40%);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+  }
+
+  .deck-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    opacity: .35;
+    border: none;
+    cursor: pointer;
+    transition: transform .2s ease, opacity .2s ease, background .2s ease;
+  }
+  .deck-dot:hover { opacity: .7; }
+  .deck-dot.active { opacity: 1; transform: scale(1.5); background: var(--accent); }
+
+  .deck-counter {
+    position: fixed;
+    bottom: 20px;
+    right: 28px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
     z-index: 100;
   }
 
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--accent-dim);
-    border: 1px solid var(--accent);
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  .dot.active { background: var(--accent); }
-
-  .counter {
+  .deck-hints {
     position: fixed;
-    bottom: 24px;
-    right: 40px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    z-index: 100;
+    opacity: .65;
+    white-space: nowrap;
+    transition: opacity .4s ease;
+  }
+  .deck-hints.faded { opacity: 0; }
+
+  .label {
     font-family: var(--font-mono);
     font-size: 12px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .display {
+    font-size: clamp(58px, 10vw, 120px);
+    line-height: .92;
+    letter-spacing: -2px;
+    font-weight: 400;
+  }
+
+  .heading {
+    font-size: clamp(28px, 5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+    font-weight: 400;
+    max-width: 1000px;
+  }
+
+  .body {
+    margin-top: 18px;
+    max-width: 780px;
+    font-size: clamp(16px, 2vw, 22px);
+    line-height: 1.65;
     color: var(--text-dim);
   }
 
-  .hint {
-    position: fixed;
-    bottom: 24px;
-    left: 40px;
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    width: min(1100px, 100%);
+    margin-top: 34px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    width: min(1100px, 100%);
+    margin-top: 36px;
+  }
+
+  .card {
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 94%, transparent), color-mix(in srgb, var(--surface-2) 96%, transparent));
+    border-radius: 22px;
+    padding: 24px 22px;
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(14px);
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .metric-card {
+    min-height: 220px;
+    text-align: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+  }
+  .tag-live { background: var(--green-soft); color: var(--green); }
+  .tag-growth { background: var(--orange-soft); color: var(--orange); }
+  .tag-advanced { background: var(--rose-soft); color: var(--rose); }
+
+  .card h3 {
+    margin-top: 14px;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -.4px;
+  }
+
+  .card p {
+    margin-top: 12px;
+    color: var(--text-dim);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1.25fr .95fr;
+    gap: 34px;
+    align-items: stretch;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    margin-top: 28px;
+  }
+
+  .panel {
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--surface), var(--surface-3));
+    border-radius: 26px;
+    padding: 28px;
+    box-shadow: var(--shadow-lg);
+    min-height: 0;
+  }
+
+  .big-number {
+    position: absolute;
+    right: clamp(24px, 4vw, 48px);
+    top: clamp(18px, 4vh, 36px);
+    font-size: clamp(96px, 18vw, 220px);
+    line-height: .85;
+    color: color-mix(in srgb, var(--accent) 16%, transparent 84%);
+    pointer-events: none;
+  }
+
+  .pillars, .agent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    width: min(1100px, 100%);
+    margin-top: 34px;
+  }
+
+  .pillar, .agent {
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 22px;
+    background: linear-gradient(180deg, var(--surface), var(--surface-2));
+    box-shadow: var(--shadow-md);
+  }
+
+  .pillar .emoji, .agent .emoji {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .pillar h3, .agent h3 { font-size: 20px; font-weight: 500; }
+  .pillar p, .agent p { margin-top: 10px; font-size: 14px; line-height: 1.6; color: var(--text-dim); }
+
+  .agent-status {
+    margin-top: 14px;
     font-family: var(--font-mono);
     font-size: 11px;
     color: var(--text-dim);
-    opacity: 0.5;
   }
 
-  .big-number { font-size: 120px; font-weight: 400; color: var(--accent); line-height: 1; margin-bottom: 16px; }
+  .command-center {
+    width: min(1100px, 100%);
+    margin-top: 30px;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--surface), var(--surface-2));
+    border-radius: 28px;
+    padding: 26px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .cc-core {
+    width: min(360px, 60vw);
+    margin: 0 auto 26px;
+    padding: 28px 18px;
+    border-radius: 999px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 60%), linear-gradient(180deg, color-mix(in srgb, var(--surface) 96%, transparent), color-mix(in srgb, var(--surface-3) 96%, transparent));
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 8%, transparent), 0 18px 50px rgba(0,0,0,.18);
+  }
+
+  .cc-core h3 { font-size: 28px; font-weight: 500; }
+  .cc-core p { margin-top: 6px; color: var(--text-dim); font-size: 14px; }
+
+  .cc-row {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 14px;
+    align-items: start;
+  }
+
+  .cc-node {
+    min-height: 120px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 16px;
+    background: color-mix(in srgb, var(--surface) 96%, transparent);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+  }
+
+  .cc-node h4 { font-size: 16px; font-weight: 500; }
+  .cc-node p { margin-top: 8px; font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+  .feed {
+    margin-top: 24px;
+    padding: 18px 20px;
+    border-radius: 18px;
+    border: 1px dashed color-mix(in srgb, var(--accent) 40%, var(--border));
+    background: color-mix(in srgb, var(--accent-soft) 60%, transparent);
+  }
+  .feed h4 { font-family: var(--font-mono); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); }
+  .feed ul { list-style: none; margin-top: 12px; display: grid; gap: 10px; }
+  .feed li { font-size: 14px; color: var(--text-dim); }
+
+  .timeline {
+    width: min(1100px, 100%);
+    margin-top: 34px;
+    display: grid;
+    gap: 18px;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 74px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .timeline-step {
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 8px 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent);
+    text-align: center;
+  }
+
+  .timeline-body {
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, var(--surface), var(--surface-2));
+    border-radius: 18px;
+    padding: 18px 20px;
+  }
+
+  .timeline-body h4 { font-size: 20px; font-weight: 500; }
+  .timeline-body p { margin-top: 10px; color: var(--text-dim); line-height: 1.7; font-size: 15px; }
+
+  .impact-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    width: min(1100px, 100%);
+    margin-top: 38px;
+  }
+
+  .metric-number {
+    font-size: clamp(46px, 7vw, 84px);
+    line-height: .95;
+    letter-spacing: -2px;
+    color: var(--accent);
+  }
+
+  .metric-label {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .quote {
+    max-width: 980px;
+    text-align: center;
+    font-size: clamp(28px, 4vw, 54px);
+    line-height: 1.15;
+    letter-spacing: -1px;
+  }
+
+  .quote em { color: var(--accent); font-style: italic; }
+
+  .corner {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+    opacity: .5;
+  }
+  .corner.tl { top: 26px; left: 28px; }
+  .corner.br { bottom: 26px; right: 28px; transform: rotate(180deg); }
+
+  @media (max-width: 1024px) {
+    .grid-3, .pillars, .agent-grid, .impact-row, .cc-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .split { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 720px) {
+    .deck-dots { display: none; }
+    .grid-3, .grid-2, .pillars, .agent-grid, .impact-row, .cc-row { grid-template-columns: 1fr; }
+    .timeline-item { grid-template-columns: 1fr; }
+    .timeline-step { width: fit-content; padding-inline: 14px; }
+    .slide { padding: 28px 20px 48px; }
+    .deck-counter, .deck-hints { bottom: 12px; }
+    .corner { width: 80px; height: 80px; }
+  }
 </style>
 </head>
 <body>
+<div class="deck-progress"></div>
+<div class="deck" id="deck">
 
-<!-- Slide 1: Title -->
-<div class="slide active" id="s1">
-  <p class="kicker">Investor & Owner Presentation</p>
-  <h1>Yoora Sarah</h1>
-  <p class="body">AI-Powered Fashion Enterprise<br>Roadmap & Command Center Vision</p>
+  <section class="slide slide--title visible">
+    <svg class="corner tl" viewBox="0 0 120 120"><path d="M8 40V8h32" fill="none" stroke="var(--accent)" stroke-width="1.5"/><path d="M112 80v32H80" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"/></svg>
+    <svg class="corner br" viewBox="0 0 120 120"><path d="M8 40V8h32" fill="none" stroke="var(--accent)" stroke-width="1.5"/><path d="M112 80v32H80" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"/></svg>
+    <div class="label reveal">Owner / Investor Narrative · 2026</div>
+    <div class="display reveal">YOORA<br/>SARAH</div>
+    <div class="body reveal" style="max-width:900px; font-size:clamp(20px,2.4vw,28px)">AI-Powered Fashion Enterprise<br/>Roadmap, Operating Model &amp; Command Center Vision</div>
+  </section>
+
+  <section class="slide">
+    <div class="label reveal">Vision</div>
+    <div class="heading reveal">From Conventional Fashion Brand → <span style="color:var(--accent)">AI-Operated Company</span></div>
+    <div class="body reveal">Website menjadi mesin konversi. Dashboard menjadi mesin keputusan. AI menjadi lapisan kecerdasan yang membaca sinyal lintas divisi dan mengubahnya menjadi tindakan bisnis yang cepat, elegan, dan terukur.</div>
+     <div class="grid-3 reveal">
+      <div class="card"><span class="tag tag-live">Pillar 01</span><h3>Website = Conversion Engine</h3><p>Semua interaksi customer—discovery, styling, support, checkout, dan repeat purchase—dioptimalkan oleh AI.</p></div>
+      <div class="card"><span class="tag tag-live">Pillar 02</span><h3>Dashboard = Decision Engine</h3><p>Owner dan tim tidak hanya melihat data, tetapi menerima arahan prioritas, bottleneck, dan growth signal secara real-time.</p></div>
+      <div class="card"><span class="tag tag-live">Pillar 03</span><h3>AI = Intelligence Layer</h3><p>Setiap divisi memiliki agent khusus, lalu disatukan oleh Command Center agar keputusan dan automasi tidak berjalan silo.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="label reveal">Why Now</div>
+    <div class="heading reveal">The Brand Already Has the Foundations</div>
+    <div class="grid-3 reveal">
+      <div class="card"><span class="tag tag-live">✅ Assets</span><h3>Storefront + Portal</h3><p>Yoora Sarah sudah memiliki customer web, internal portal, backend API, CI/CD, dan product asset library yang cukup untuk masuk ke fase AI expansion.</p></div>
+      <div class="card"><span class="tag tag-live">✅ Signals</span><h3>Multi-Channel Presence</h3><p>Website, 3 akun Instagram, Shopee, dan TikTok membuka peluang besar untuk personalization, omnichannel CS, dan content automation.</p></div>
+      <div class="card"><span class="tag tag-live">✅ Readiness</span><h3>AI Entry Point Is Live</h3><p>AI Buyer Concierge dan AI Stylist Studio sudah berjalan. Langkah berikutnya adalah memperluasnya menjadi sistem intelligence yang benar-benar enterprise-grade.</p></div>
+    </div>
+  </section>
+
+  <section class="slide slide--split">
+    <div class="big-number">04</div>
+    <div class="split">
+      <div class="panel reveal">
+        <div class="label">Master Tech Stack</div>
+        <div class="heading">Production-Grade by Design</div>
+        <ul class="body" style="list-style:none; margin-top:22px; display:grid; gap:12px;">
+          <li><strong>Frontend:</strong> Next.js 16.1, React 19, Tailwind CSS, Framer Motion</li>
+          <li><strong>Backend:</strong> FastAPI, Python 3.12, Pydantic 2.14, Psycopg3</li>
+          <li><strong>Database:</strong> Supabase PostgreSQL 16</li>
+          <li><strong>AI/ML:</strong> Groq Llama 3.3, Google Gemini 2.5 Flash</li>
+          <li><strong>Testing:</strong> Vitest, Pytest, Playwright</li>
+        </ul>
+      </div>
+      <div class="panel reveal">
+        <div class="label">Infrastructure</div>
+        <div class="body" style="max-width:none; margin-top:6px;">
+          <p><strong>CI/CD:</strong> GitHub Actions</p>
+          <p style="margin-top:14px;"><strong>Backend Deploy:</strong> Render</p>
+          <p style="margin-top:14px;"><strong>Frontend Target:</strong> Vercel</p>
+          <p style="margin-top:14px;"><strong>Asset Storage:</strong> Tigris Object Storage</p>
+          <p style="margin-top:14px;"><strong>Monorepo:</strong> Turborepo + workspaces</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="label reveal">Current State — Part A</div>
+    <div class="heading reveal">Platform yang Sudah Berjalan Hari Ini</div>
+    <div class="grid-3 reveal">
+      <div class="card"><span class="tag tag-live">✅ LIVE</span><h3>Premium Storefront</h3><p>Homepage, catalog, PDP, cart, checkout, wishlist, profile, dan asset produk lokal 1.196 file.</p></div>
+      <div class="card"><span class="tag tag-live">✅ LIVE</span><h3>AI Buyer Concierge</h3><p>Chat assistant untuk discovery, sizing, order support, dan WhatsApp handoff in-chat.</p></div>
+      <div class="card"><span class="tag tag-live">✅ LIVE</span><h3>AI Stylist Studio</h3><p>Full-viewport studio dengan outfit composer, product rail, dan product-to-model panel.</p></div>
+      <div class="card"><span class="tag tag-live">✅ LIVE</span><h3>Internal Portal</h3><p>Dashboard internal untuk briefs, design, patterns, forecast, approvals, dan production plans.</p></div>
+      <div class="card"><span class="tag tag-live">✅ LIVE</span><h3>Backend API</h3><p>FastAPI backend dengan auth fail-closed, commerce dual-mode, dan grounded AI tooling.</p></div>
+      <div class="card"><span class="tag tag-live">✅ LIVE</span><h3>Quality & CI</h3><p>Vitest, Pytest, Playwright, GitHub Actions, Prettier, Ruff, dan CODEOWNERS.</p></div>
+    </div>
+  </section>
+
+  <section class="slide slide--split">
+    <div class="big-number">05</div>
+    <div class="split">
+      <div class="panel reveal">
+        <div class="label">Master Tech Stack</div>
+        <div class="heading">Production-Grade by Design</div>
+        <ul class="body" style="list-style:none; margin-top:22px; display:grid; gap:12px;">
+          <li><strong>Frontend:</strong> Next.js 16.1, React 19, Tailwind CSS, Framer Motion</li>
+          <li><strong>Backend:</strong> FastAPI, Python 3.12, Pydantic 2.14, Psycopg3</li>
+          <li><strong>Database:</strong> Supabase PostgreSQL 16</li>
+          <li><strong>AI/ML:</strong> Groq Llama 3.3, Google Gemini 2.5 Flash</li>
+          <li><strong>Testing:</strong> Vitest, Pytest, Playwright</li>
+        </ul>
+      </div>
+      <div class="panel reveal">
+        <div class="label">Infrastructure</div>
+        <div class="body" style="max-width:none; margin-top:6px;">
+          <p><strong>CI/CD:</strong> GitHub Actions</p>
+          <p style="margin-top:14px;"><strong>Backend Deploy:</strong> Render</p>
+          <p style="margin-top:14px;"><strong>Frontend Target:</strong> Vercel</p>
+          <p style="margin-top:14px;"><strong>Asset Storage:</strong> Tigris Object Storage</p>
+          <p style="margin-top:14px;"><strong>Monorepo:</strong> Turborepo + workspaces</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="big-number">01</div>
+    <div class="label reveal">Phase 1 — Week 1–4</div>
+    <div class="heading reveal">Quick Wins — Immediate ROI</div>
+    <div class="body reveal">Fase pertama berfokus pada fitur yang paling cepat mengembalikan nilai bisnis: conversion, content velocity, dan keputusan owner.</div>
+    <div class="grid-3 reveal">
+      <div class="card"><span class="tag tag-growth">🎯 high roi</span><h3>AI Content Factory</h3><p>Generate caption IG, script TikTok, deskripsi Shopee, dan moodboard dengan tone brand Yoora Sarah.</p></div>
+      <div class="card"><span class="tag tag-growth">🎯 high roi</span><h3>AI Cart Recovery</h3><p>Trigger WhatsApp personal untuk keranjang yang ditinggalkan: stok menipis, reminder produk, dan CTA lembut.</p></div>
+      <div class="card"><span class="tag tag-growth">🎯 high roi</span><h3>AI CEO Dashboard</h3><p>Insight proaktif untuk owner: revenue shifts, stock gaps, campaign opportunities, dan risk alerts harian.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="big-number">02</div>
+    <div class="label reveal">Phase 2 — Week 5–8</div>
+    <div class="heading reveal">Scale & Optimize</div>
+    <div class="body reveal">Setelah quick wins, fokus bergeser ke efisiensi operasional dan kualitas conversion lintas channel.</div>
+    <div class="grid-3 reveal">
+      <div class="card"><span class="tag tag-growth">growth</span><h3>AI Color Match</h3><p>Analisa undertone kulit dari foto untuk merekomendasikan warna produk yang paling flattering.</p></div>
+      <div class="card"><span class="tag tag-growth">growth</span><h3>AI Production Planner</h3><p>Forecast demand berbasis data sales, tren TikTok/IG, dan seasonality untuk menentukan quantity, size mix, dan warna.</p></div>
+      <div class="card"><span class="tag tag-growth">growth</span><h3>AI Omnichannel Inbox</h3><p>Satukan WhatsApp, Instagram DM, TikTok, dan web chat dalam satu queue dengan auto-classification dan escalation.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="big-number">03</div>
+    <div class="label reveal">Phase 3 — Week 9–12</div>
+    <div class="heading reveal">Full Automation</div>
+    <div class="body reveal">Fase lanjutan mendorong personalization ekstrem dan orkestrasi AI yang lebih otonom.</div>
+    <div class="grid-3 reveal">
+      <div class="card"><span class="tag tag-advanced">advanced</span><h3>AI Virtual Try-On</h3><p>Customer upload foto diri dan melihat preview produk dipakai secara visual — meningkatkan confidence beli.</p></div>
+      <div class="card"><span class="tag tag-advanced">advanced</span><h3>CEO AI Agent</h3><p>Central brain yang membaca seluruh data bisnis dan memprioritaskan keputusan strategis harian.</p></div>
+      <div class="card"><span class="tag tag-advanced">advanced</span><h3>Auto-Execution Engine</h3><p>AI mendeteksi pola → merekomendasikan aksi → approval → eksekusi otomatis dengan audit trail.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="label reveal">AI Command Center</div>
+    <div class="heading reveal">The Future Operating System</div>
+    <div class="command-center reveal">
+      <div class="cc-core">
+        <h3>CEO AI CORE</h3>
+        <p>Strategic Decision Engine · Priority Router · Cross-Division Insight</p>
+      </div>
+      <div class="cc-row">
+        <div class="cc-node"><h4>Sales</h4><p>Conversion signals<br/>Upsell priority</p></div>
+        <div class="cc-node"><h4>Marketing</h4><p>Campaign launch<br/>Budget reallocation</p></div>
+        <div class="cc-node"><h4>Creative</h4><p>Content concepts<br/>Moodboard generation</p></div>
+        <div class="cc-node"><h4>Ops</h4><p>Production capacity<br/>Execution bottlenecks</p></div>
+        <div class="cc-node"><h4>HR</h4><p>Workload balance<br/>Productivity alerts</p></div>
+        <div class="cc-node"><h4>Finance</h4><p>Margin watch<br/>Cashflow risk</p></div>
+      </div>
+      <div class="feed">
+        <h4>Live Feed</h4>
+        <ul>
+          <li>• TikTok spike detected on Medina Dress</li>
+          <li>• Stock low on Clara Dress size M</li>
+          <li>• Campaign performance up 18% this week</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="label reveal">Multi-Agent Ecosystem</div>
+    <div class="heading reveal">One Brand, Nine Specialized Agents</div>
+    <div class="agent-grid reveal">
+      <div class="agent"><div class="emoji">💬</div><h3>CS Support Agent</h3><p>Auto-reply, complaint handling, WhatsApp handoff.</p><div class="agent-status">✅ already live</div></div>
+      <div class="agent"><div class="emoji">🧠</div><h3>CEO Agent</h3><p>Strategic priorities, risk alerts, growth opportunity detection.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">📣</div><h3>Marketing Agent</h3><p>Campaign orchestration, ad optimization, channel decisions.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">🎨</div><h3>Creative Agent</h3><p>Caption, script, moodboard, styling language consistency.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">💰</div><h3>Sales Agent</h3><p>Conversion optimization, personalization, upsell logic.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">🏭</div><h3>Production Agent</h3><p>Capacity planning and batch prioritization.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">📦</div><h3>Inventory Agent</h3><p>Restock recommendations and stock risk signals.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">💳</div><h3>Finance Agent</h3><p>Margin analysis, pricing opportunities, cashflow watch.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">👥</div><h3>HR Agent</h3><p>Workload balancing and performance visibility.</p><div class="agent-status">⚪ planned</div></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="label reveal">Business Impact</div>
+    <div class="heading reveal">What This Unlocks for Yoora Sarah</div>
+    <div class="impact-row reveal">
+      <div class="card metric-card">
+        <div class="metric-label">Customer Support Efficiency</div>
+        <div class="metric-number">70%</div>
+        <p>Reduction target in repetitive CS workload through AI triage, grounded answers, and contextual WhatsApp escalation.</p>
+      </div>
+      <div class="card metric-card">
+        <div class="metric-label">Content Production Speed</div>
+        <div class="metric-number">3×</div>
+        <p>Faster turnaround for captions, scripts, and marketplace descriptions with a consistent luxury brand voice.</p>
+      </div>
+      <div class="card metric-card">
+        <div class="metric-label">Conversion Potential</div>
+        <div class="metric-number">15%</div>
+        <p>Expected lift from personalization, cart recovery, smarter sizing, and customer confidence features.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="label reveal">Investment & Timeline</div>
+    <div class="heading reveal">A Realistic 12-Week MVP Path</div>
+    <div class="split reveal">
+      <div class="panel">
+        <div class="timeline">
+          <div class="timeline-item"><div class="timeline-step">W1–W4</div><div class="timeline-body"><h4>Phase 1 — Quick Wins</h4><p>AI Content Factory, Cart Recovery, CEO Dashboard, and role dashboards for the highest immediate ROI.</p></div></div>
+          <div class="timeline-item"><div class="timeline-step">W5–W8</div><div class="timeline-body"><h4>Phase 2 — Scale & Optimize</h4><p>Color Match, Production Planner, Omnichannel Inbox, Finance Analyst, Marketplace Optimizer, Production Tracking.</p></div></div>
+          <div class="timeline-item"><div class="timeline-step">W9–W12</div><div class="timeline-body"><h4>Phase 3 — Full Automation</h4><p>Virtual Try-On, Smart Size Predictor, Loyalty Engine, CEO Agent, Multi-Agent Ecosystem, Auto-Execution.</p></div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="label">Operating Model</div>
+        <div class="body" style="max-width:none; margin-top:6px;">
+          <p><strong>Infra (start):</strong> $100–250/month</p>
+          <p style="margin-top:14px;"><strong>Core Team:</strong> 4–6 people</p>
+          <p style="margin-top:14px;"><strong>Disciplines:</strong> Frontend, Backend, AI Engineer, UI/UX, optional DevOps & Data</p>
+          <p style="margin-top:14px;"><strong>Go-live model:</strong> Build → Test → Improve</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide slide--title">
+    <svg class="corner tl" viewBox="0 0 120 120"><path d="M8 40V8h32" fill="none" stroke="var(--accent)" stroke-width="1.5"/><path d="M112 80v32H80" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"/></svg>
+    <svg class="corner br" viewBox="0 0 120 120"><path d="M8 40V8h32" fill="none" stroke="var(--accent)" stroke-width="1.5"/><path d="M112 80v32H80" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"/></svg>
+    <div class="label reveal">Closing Position</div>
+    <div class="quote reveal">Yoora Sarah bukan lagi sekadar brand fashion —<br/><em>tapi AI-Operated Fashion Enterprise.</em></div>
+    <div class="body reveal" style="margin-top:26px; max-width:760px;">Website menjadi mesin konversi. Dashboard menjadi mesin keputusan. AI menjadi lapisan kecerdasan yang menggerakkan seluruh perusahaan.</div>
+  </section>
+
 </div>
 
-<!-- Slide 2: Current State -->
-<div class="slide" id="s2">
-  <p class="kicker">Part A — Where We Are Now</p>
-  <h2>Platform Sudah Berjalan</h2>
-  <div class="grid">
-    <div class="card"><span class="tag tag-done">✅ LIVE</span><h3>Customer Storefront</h3><p>Next.js 16 website dengan hero video, katalog 10 kategori, cart, checkout, wishlist, dan profile.</p></div>
-    <div class="card"><span class="tag tag-done">✅ LIVE</span><h3>AI Buyer Concierge</h3><p>Premium chatbot untuk discovery, sizing, order tracking, dan WhatsApp handoff otomatis.</p></div>
-    <div class="card"><span class="tag tag-done">✅ LIVE</span><h3>AI Stylist Studio</h3><p>Full-viewport studio untuk outfit matching, product-to-model, dan template composition.</p></div>
-  </div>
-</div>
-
-<!-- Slide 3: Internal Portal -->
-<div class="slide" id="s3">
-  <p class="kicker">Part A — Internal Operations</p>
-  <h2>Portal Intelligence</h2>
-  <div class="grid">
-    <div class="card"><span class="tag tag-done">✅ LIVE</span><h3>Workflow Engine</h3><p>Briefs, Design Gallery, Pattern Tracking, Forecast Planning, dan Approval Queue.</p></div>
-    <div class="card"><span class="tag tag-done">✅ LIVE</span><h3>Backend API</h3><p>FastAPI dengan Commerce Engine dual-mode (DB-first → in-memory fallback) dan fail-closed auth.</p></div>
-    <div class="card"><span class="tag tag-done">✅ LIVE</span><h3>Quality Gates</h3><p>GitHub Actions CI, Vitest, Pytest, Playwright E2E, ESLint, Prettier, Ruff.</p></div>
-  </div>
-</div>
-
-<!-- Slide 4: The Vision -->
-<div class="slide" id="s4">
-  <p class="kicker">Part B — The Vision</p>
-  <h1 style="font-size: 56px;">AI Command Center</h1>
-  <p class="body">Satu otak pusat yang menghubungkan setiap divisi: Sales, Marketing, Creative, Operations, HR, dan Finance — semuanya diorchestrasi oleh CEO AI Agent.</p>
-</div>
-
-<!-- Slide 5: Phase 1 -->
-<div class="slide" id="s5">
-  <p class="kicker">Phase 1 — Week 1–4</p>
-  <div class="big-number">01</div>
-  <h2>Quick Wins</h2>
-  <div class="grid">
-    <div class="card"><span class="tag tag-planned">🎯 HIGH ROI</span><h3>AI Content Factory</h3><p>Auto-generate caption IG, script TikTok, deskripsi Shopee dengan tone brand Yoora Sarah.</p></div>
-    <div class="card"><span class="tag tag-planned">🎯 HIGH ROI</span><h3>AI Cart Recovery</h3><p>WhatsApp otomatis untuk abandoned cart: "Clara Dress masih menunggu. Stok tinggal 3."</p></div>
-    <div class="card"><span class="tag tag-planned">🎯 HIGH ROI</span><h3>AI CEO Dashboard</h3><p>Real-time KPI dengan insight proaktif: "Revenue turun 15% karena stok Bella Dress habis."</p></div>
-  </div>
-</div>
-
-<!-- Slide 6: Phase 2 -->
-<div class="slide" id="s6">
-  <p class="kicker">Phase 2 — Week 5–8</p>
-  <div class="big-number">02</div>
-  <h2>Scale & Optimize</h2>
-  <div class="grid">
-    <div class="card"><span class="tag tag-planned">GROWTH</span><h3>AI Color Match</h3><p>Analisa undertone kulit → rekomendasi warna produk paling cocok.</p></div>
-    <div class="card"><span class="tag tag-planned">GROWTH</span><h3>AI Production Planner</h3><p>Prediksi demand dari data sales + trend sosial media + musim.</p></div>
-    <div class="card"><span class="tag tag-planned">GROWTH</span><h3>AI Omnichannel Inbox</h3><p>Unified CS: WhatsApp + IG DM + TikTok + Web Chat dalam satu queue.</p></div>
-  </div>
-</div>
-
-<!-- Slide 7: Phase 3 -->
-<div class="slide" id="s7">
-  <p class="kicker">Phase 3 — Week 9–12</p>
-  <div class="big-number">03</div>
-  <h2>Full Automation</h2>
-  <div class="grid">
-    <div class="card"><span class="tag tag-planned">ADVANCED</span><h3>AI Virtual Try-On</h3><p>Customer foto diri → preview memakai produk. Mengurangi retur secara drastis.</p></div>
-    <div class="card"><span class="tag tag-planned">ADVANCED</span><h3>CEO AI Agent</h3><p>Central Brain: keputusan strategis lintas divisi, risk alerts, growth opportunities.</p></div>
-    <div class="card"><span class="tag tag-planned">ADVANCED</span><h3>Auto-Execution</h3><p>AI deteksi pattern → auto-trigger campaign, restock, atau produksi tanpa intervensi manual.</p></div>
-  </div>
-</div>
-
-<!-- Slide 8: Closing -->
-<div class="slide" id="s8">
-  <p class="kicker">Final Positioning</p>
-  <h1 style="font-size: 48px; max-width: 800px;">Yoora Sarah bukan lagi sekadar brand fashion — tapi <em style="color:var(--accent)">AI-Operated Fashion Enterprise</em></h1>
-  <p class="body" style="margin-top: 24px;">Website = Conversion Engine · Dashboard = Decision Engine · AI = Intelligence Layer</p>
-</div>
-
-<div class="nav" id="dots"></div>
-<div class="counter" id="counter"></div>
-<div class="hint">← → Arrow keys or click to navigate</div>
+<div class="deck-dots" id="deckDots"></div>
+<div class="deck-counter" id="deckCounter"></div>
+<div class="deck-hints" id="deckHints">← / → navigate · Space next · swipe on touch</div>
 
 <script>
-  const slides = document.querySelectorAll('.slide');
-  const dots = document.getElementById('dots');
-  const counter = document.getElementById('counter');
-  let current = 0;
+  const deck = document.getElementById('deck');
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const progress = document.querySelector('.deck-progress');
+  const dotsWrap = document.getElementById('deckDots');
+  const counter = document.getElementById('deckCounter');
+  const hints = document.getElementById('deckHints');
+
+  let activeIndex = 0;
+  let touchStartY = null;
 
   slides.forEach((_, i) => {
-    const d = document.createElement('div');
-    d.className = 'dot' + (i === 0 ? ' active' : '');
-    d.addEventListener('click', () => goTo(i));
-    dots.appendChild(d);
+    const btn = document.createElement('button');
+    btn.className = 'deck-dot' + (i === 0 ? ' active' : '');
+    btn.addEventListener('click', () => goToSlide(i));
+    dotsWrap.appendChild(btn);
   });
 
-  function goTo(i) {
-    slides[current].classList.remove('active');
-    dots.children[current].classList.remove('active');
-    current = Math.max(0, Math.min(i, slides.length - 1));
-    slides[current].classList.add('active');
-    dots.children[current].classList.add('active');
-    counter.textContent = (current + 1) + ' / ' + slides.length;
+  function setVisibleSlides() {
+    const deckRect = deck.getBoundingClientRect();
+    slides.forEach((slide) => {
+      const r = slide.getBoundingClientRect();
+      const mid = r.top + r.height / 2;
+      const isVisible = mid >= deckRect.top && mid <= deckRect.bottom;
+      slide.classList.toggle('visible', isVisible);
+    });
   }
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight' || e.key === ' ') goTo(current + 1);
-    if (e.key === 'ArrowLeft') goTo(current - 1);
+  function setActive(index) {
+    activeIndex = Math.max(0, Math.min(index, slides.length - 1));
+    Array.from(dotsWrap.children).forEach((dot, i) => dot.classList.toggle('active', i === activeIndex));
+    counter.textContent = `${activeIndex + 1} / ${slides.length}`;
+    const pct = ((activeIndex + 1) / slides.length) * 100;
+    progress.style.setProperty('--progress', pct + '%');
+  }
+
+  function goToSlide(index) {
+    setActive(index);
+    slides[activeIndex].scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  }
+
+  function updateActiveFromScroll() {
+    const deckRect = deck.getBoundingClientRect();
+    let nearest = 0;
+    let nearestDist = Infinity;
+    slides.forEach((slide, i) => {
+      const rect = slide.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      const dist = Math.abs(center - (deckRect.top + deckRect.height / 2));
+      if (dist < nearestDist) { nearestDist = dist; nearest = i; }
+    });
+    setActive(nearest);
+    setVisibleSlides();
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) {
+      e.preventDefault();
+      goToSlide(activeIndex + 1);
+    }
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) {
+      e.preventDefault();
+      goToSlide(activeIndex - 1);
+    }
+    if (e.key === 'Home') goToSlide(0);
+    if (e.key === 'End') goToSlide(slides.length - 1);
   });
 
-  counter.textContent = '1 / ' + slides.length;
+  deck.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  deck.addEventListener('touchend', (e) => {
+    if (touchStartY == null) return;
+    const delta = touchStartY - e.changedTouches[0].clientY;
+    if (Math.abs(delta) > 60) {
+      if (delta > 0) goToSlide(activeIndex + 1);
+      else goToSlide(activeIndex - 1);
+    }
+    touchStartY = null;
+  }, { passive: true });
+
+  let hintTimer = setTimeout(() => hints.classList.add('faded'), 5000);
+  ['mousemove', 'keydown', 'touchstart', 'click', 'scroll'].forEach(evt => {
+    window.addEventListener(evt, () => {
+      hints.classList.remove('faded');
+      clearTimeout(hintTimer);
+      hintTimer = setTimeout(() => hints.classList.add('faded'), 3000);
+    }, { passive: true });
+  });
+
+  deck.addEventListener('scroll', () => requestAnimationFrame(updateActiveFromScroll), { passive: true });
+
+  setActive(0);
+  setVisibleSlides();
+</script>
+</body>
+</html>    <div class="pillars reveal">
+      <div class="pillar"><div class="emoji">🛍️</div><h3>Website</h3><p>Conversion engine untuk customer: discovery, styling, cart, checkout, loyalty.</p></div>
+      <div class="pillar"><div class="emoji">📊</div><h3>Dashboard</h3><p>Decision engine untuk owner, CS, production, marketing, finance, dan HR.</p></div>
+      <div class="pillar"><div class="emoji">🧠</div><h3>AI Layer</h3><p>Intelligence engine yang membaca data, memberi insight, dan mengeksekusi aksi secara bertahap.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="label reveal">Current State — Part A</div>
+    <div class="heading reveal">Platform yang Sudah Berjalan Hari Ini</div>
+    <div class="grid-3 reveal">
+      <div class="card"><span class="tag tag-live">✅ LIVE</span><h3>Premium Storefront</h3><p>Homepage, catalog, PDP, cart, checkout, wishlist, profile, dan asset produk lokal 1.196 file.</p></div>
+      <div class="card"><span class="tag tag-live">✅ LIVE</span><h3>AI Buyer Concierge</h3><p>Chat assistant untuk discovery, sizing, order support, dan WhatsApp handoff in-chat.</p></div>
+      <div class="card"><span class="tag tag-live">✅ LIVE</span><h3>AI Stylist Studio</h3><p>Full-viewport studio dengan outfit composer, product rail, dan product-to-model panel.</p></div>
+      <div class="card"><span class="tag tag-live">✅ LIVE</span><h3>Internal Portal</h3><p>Dashboard internal untuk briefs, design, patterns, forecast, approvals, dan production plans.</p></div>
+      <div class="card"><span class="tag tag-live">✅ LIVE</span><h3>Backend API</h3><p>FastAPI backend dengan auth fail-closed, commerce dual-mode, dan grounded AI tooling.</p></div>
+      <div class="card"><span class="tag tag-live">✅ LIVE</span><h3>Quality & CI</h3><p>Vitest, Pytest, Playwright, GitHub Actions, Prettier, Ruff, dan CODEOWNERS.</p></div>
+    </div>
+  </section>
+
+  <section class="slide slide--split">
+    <div class="big-number">04</div>
+    <div class="split">
+      <div class="panel reveal">
+        <div class="label">Master Tech Stack</div>
+        <div class="heading">Production-Grade by Design</div>
+        <ul class="body" style="list-style:none; margin-top:22px; display:grid; gap:12px;">
+          <li><strong>Frontend:</strong> Next.js 16.1, React 19, Tailwind CSS, Framer Motion</li>
+          <li><strong>Backend:</strong> FastAPI, Python 3.12, Pydantic 2.14, Psycopg3</li>
+          <li><strong>Database:</strong> Supabase PostgreSQL 16</li>
+          <li><strong>AI/ML:</strong> Groq Llama 3.3, Google Gemini 2.5 Flash</li>
+          <li><strong>Testing:</strong> Vitest, Pytest, Playwright</li>
+        </ul>
+      </div>
+      <div class="panel reveal">
+        <div class="label">Infrastructure</div>
+        <div class="body" style="margin-top:4px; max-width:none;">
+          <p><strong>CI/CD:</strong> GitHub Actions</p>
+          <p style="margin-top:14px;"><strong>Backend Deploy:</strong> Render</p>
+          <p style="margin-top:14px;"><strong>Frontend Target:</strong> Vercel</p>
+          <p style="margin-top:14px;"><strong>Asset Storage:</strong> Tigris Object Storage</p>
+          <p style="margin-top:14px;"><strong>Monorepo:</strong> Turborepo + workspaces</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="big-number">01</div>
+    <div class="label reveal">Phase 1 — Week 1–4</div>
+    <div class="heading reveal">Quick Wins — Immediate ROI</div>
+    <div class="body reveal">Fase pertama berfokus pada fitur yang paling cepat mengembalikan nilai bisnis: conversion, content velocity, dan keputusan owner.</div>
+    <div class="grid-3 reveal">
+      <div class="card"><span class="tag tag-growth">🎯 high roi</span><h3>AI Content Factory</h3><p>Generate caption IG, script TikTok, deskripsi Shopee, dan moodboard dengan tone brand Yoora Sarah.</p></div>
+      <div class="card"><span class="tag tag-growth">🎯 high roi</span><h3>AI Cart Recovery</h3><p>Trigger WhatsApp personal untuk keranjang yang ditinggalkan: stok menipis, reminder produk, dan CTA lembut.</p></div>
+      <div class="card"><span class="tag tag-growth">🎯 high roi</span><h3>AI CEO Dashboard</h3><p>Insight proaktif untuk owner: revenue shifts, stock gaps, campaign opportunities, dan risk alerts harian.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="big-number">02</div>
+    <div class="label reveal">Phase 2 — Week 5–8</div>
+    <div class="heading reveal">Scale & Optimize</div>
+    <div class="body reveal">Setelah quick wins, fokus bergeser ke efisiensi operasional dan kualitas conversion lintas channel.</div>
+    <div class="grid-3 reveal">
+      <div class="card"><span class="tag tag-growth">growth</span><h3>AI Color Match</h3><p>Analisa undertone kulit dari foto untuk merekomendasikan warna produk yang paling flattering.</p></div>
+      <div class="card"><span class="tag tag-growth">growth</span><h3>AI Production Planner</h3><p>Forecast demand berbasis data sales, tren TikTok/IG, dan seasonality untuk menentukan quantity, size mix, dan warna.</p></div>
+      <div class="card"><span class="tag tag-growth">growth</span><h3>AI Omnichannel Inbox</h3><p>Satukan WhatsApp, Instagram DM, TikTok, dan web chat dalam satu queue dengan auto-classification dan escalation.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="big-number">03</div>
+    <div class="label reveal">Phase 3 — Week 9–12</div>
+    <div class="heading reveal">Full Automation</div>
+    <div class="body reveal">Fase lanjutan mendorong personalization ekstrem dan orkestrasi AI yang lebih otonom.</div>
+    <div class="grid-3 reveal">
+      <div class="card"><span class="tag tag-advanced">advanced</span><h3>AI Virtual Try-On</h3><p>Customer upload foto diri dan melihat preview produk dipakai secara visual — meningkatkan confidence beli.</p></div>
+      <div class="card"><span class="tag tag-advanced">advanced</span><h3>CEO AI Agent</h3><p>Central brain yang membaca seluruh data bisnis dan memprioritaskan keputusan strategis harian.</p></div>
+      <div class="card"><span class="tag tag-advanced">advanced</span><h3>Auto-Execution Engine</h3><p>AI mendeteksi pola → merekomendasikan aksi → approval → eksekusi otomatis dengan audit trail.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="label reveal">AI Command Center</div>
+    <div class="heading reveal">The Future Operating System</div>
+    <div class="command-center reveal">
+      <div class="cc-core">
+        <h3>CEO AI CORE</h3>
+        <p>Strategic Decision Engine · Priority Router · Cross-Division Insight</p>
+      </div>
+      <div class="cc-row">
+        <div class="cc-node"><h4>Sales</h4><p>Conversion signals<br/>Upsell priority</p></div>
+        <div class="cc-node"><h4>Marketing</h4><p>Campaign launch<br/>Budget reallocation</p></div>
+        <div class="cc-node"><h4>Creative</h4><p>Content concepts<br/>Moodboard generation</p></div>
+        <div class="cc-node"><h4>Ops</h4><p>Production capacity<br/>Execution bottlenecks</p></div>
+        <div class="cc-node"><h4>HR</h4><p>Workload balance<br/>Productivity alerts</p></div>
+        <div class="cc-node"><h4>Finance</h4><p>Margin watch<br/>Cashflow risk</p></div>
+      </div>
+      <div class="feed">
+        <h4>Live Feed</h4>
+        <ul>
+          <li>• TikTok spike detected on Medina Dress</li>
+          <li>• Stock low on Clara Dress size M</li>
+          <li>• Campaign performance up 18% this week</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="label reveal">Multi-Agent Ecosystem</div>
+    <div class="heading reveal">One Brand, Nine Specialized Agents</div>
+    <div class="agent-grid reveal">
+      <div class="agent"><div class="emoji">💬</div><h3>CS Support Agent</h3><p>Auto-reply, complaint handling, WhatsApp handoff.</p><div class="agent-status">✅ already live</div></div>
+      <div class="agent"><div class="emoji">🧠</div><h3>CEO Agent</h3><p>Strategic priorities, risk alerts, growth opportunity detection.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">📣</div><h3>Marketing Agent</h3><p>Campaign orchestration, ad optimization, channel decisions.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">🎨</div><h3>Creative Agent</h3><p>Caption, script, moodboard, styling language consistency.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">💰</div><h3>Sales Agent</h3><p>Conversion optimization, personalization, upsell logic.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">🏭</div><h3>Production Agent</h3><p>Capacity planning and batch prioritization.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">📦</div><h3>Inventory Agent</h3><p>Restock recommendations and stock risk signals.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">💳</div><h3>Finance Agent</h3><p>Margin analysis, pricing opportunities, cashflow watch.</p><div class="agent-status">⚪ planned</div></div>
+      <div class="agent"><div class="emoji">👥</div><h3>HR Agent</h3><p>Workload balancing and performance visibility.</p><div class="agent-status">⚪ planned</div></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="label reveal">Business Impact</div>
+    <div class="heading reveal">What This Unlocks for Yoora Sarah</div>
+    <div class="impact-row reveal">
+      <div class="card metric-card">
+        <div class="metric-label">Customer Support Efficiency</div>
+        <div class="metric-number">70%</div>
+        <p>Reduction target in repetitive CS workload through AI triage, grounded answers, and contextual WhatsApp escalation.</p>
+      </div>
+      <div class="card metric-card">
+        <div class="metric-label">Content Production Speed</div>
+        <div class="metric-number">3×</div>
+        <p>Faster turnaround for captions, scripts, and marketplace descriptions with a consistent luxury brand voice.</p>
+      </div>
+      <div class="card metric-card">
+        <div class="metric-label">Conversion Potential</div>
+        <div class="metric-number">15%</div>
+        <p>Expected lift from personalization, cart recovery, smarter sizing, and customer confidence features.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="label reveal">Investment & Timeline</div>
+    <div class="heading reveal">A Realistic 12-Week MVP Path</div>
+    <div class="split reveal">
+      <div class="panel">
+        <div class="timeline">
+          <div class="timeline-item"><div class="timeline-step">W1–W4</div><div class="timeline-body"><h4>Phase 1 — Quick Wins</h4><p>AI Content Factory, Cart Recovery, CEO Dashboard, and role dashboards for the highest immediate ROI.</p></div></div>
+          <div class="timeline-item"><div class="timeline-step">W5–W8</div><div class="timeline-body"><h4>Phase 2 — Scale & Optimize</h4><p>Color Match, Production Planner, Omnichannel Inbox, Finance Analyst, Marketplace Optimizer, Production Tracking.</p></div></div>
+          <div class="timeline-item"><div class="timeline-step">W9–W12</div><div class="timeline-body"><h4>Phase 3 — Full Automation</h4><p>Virtual Try-On, Smart Size Predictor, Loyalty Engine, CEO Agent, Multi-Agent Ecosystem, Auto-Execution.</p></div></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="label">Operating Model</div>
+        <div class="body" style="max-width:none; margin-top:6px;">
+          <p><strong>Infra (start):</strong> $100–250/month</p>
+          <p style="margin-top:14px;"><strong>Core Team:</strong> 4–6 people</p>
+          <p style="margin-top:14px;"><strong>Disciplines:</strong> Frontend, Backend, AI Engineer, UI/UX, optional DevOps & Data</p>
+          <p style="margin-top:14px;"><strong>Go-live model:</strong> Build → Test → Improve</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide slide--title">
+    <svg class="corner tl" viewBox="0 0 120 120"><path d="M8 40V8h32" fill="none" stroke="var(--accent)" stroke-width="1.5"/><path d="M112 80v32H80" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"/></svg>
+    <svg class="corner br" viewBox="0 0 120 120"><path d="M8 40V8h32" fill="none" stroke="var(--accent)" stroke-width="1.5"/><path d="M112 80v32H80" fill="none" stroke="var(--accent)" stroke-width="1.5" opacity="0.5"/></svg>
+    <div class="label reveal">Closing Position</div>
+    <div class="quote reveal">Yoora Sarah bukan lagi sekadar brand fashion —<br/><em>tapi AI-Operated Fashion Enterprise.</em></div>
+    <div class="body reveal" style="margin-top:26px; max-width:760px;">Website menjadi mesin konversi. Dashboard menjadi mesin keputusan. AI menjadi lapisan kecerdasan yang menggerakkan seluruh perusahaan.</div>
+  </section>
+
+</div>
+
+<div class="deck-dots" id="deckDots"></div>
+<div class="deck-counter" id="deckCounter"></div>
+<div class="deck-hints" id="deckHints">← / → navigate · Space next · swipe on touch</div>
+
+<script>
+  const deck = document.getElementById('deck');
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const progress = document.querySelector('.deck-progress');
+  const dotsWrap = document.getElementById('deckDots');
+  const counter = document.getElementById('deckCounter');
+  const hints = document.getElementById('deckHints');
+
+  let activeIndex = 0;
+  let touchStartY = null;
+
+  slides.forEach((_, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'deck-dot' + (i === 0 ? ' active' : '');
+    btn.addEventListener('click', () => goToSlide(i));
+    dotsWrap.appendChild(btn);
+  });
+
+  function setVisibleSlides() {
+    const deckRect = deck.getBoundingClientRect();
+    slides.forEach((slide) => {
+      const r = slide.getBoundingClientRect();
+      const mid = r.top + r.height / 2;
+      const isVisible = mid >= deckRect.top && mid <= deckRect.bottom;
+      slide.classList.toggle('visible', isVisible);
+    });
+  }
+
+  function setActive(index) {
+    activeIndex = Math.max(0, Math.min(index, slides.length - 1));
+    Array.from(dotsWrap.children).forEach((dot, i) => dot.classList.toggle('active', i === activeIndex));
+    counter.textContent = `${activeIndex + 1} / ${slides.length}`;
+    const pct = ((activeIndex + 1) / slides.length) * 100;
+    progress.style.setProperty('--progress', pct + '%');
+  }
+
+  function goToSlide(index) {
+    setActive(index);
+    slides[activeIndex].scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  }
+
+  function updateActiveFromScroll() {
+    const deckRect = deck.getBoundingClientRect();
+    let nearest = 0;
+    let nearestDist = Infinity;
+    slides.forEach((slide, i) => {
+      const rect = slide.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      const dist = Math.abs(center - (deckRect.top + deckRect.height / 2));
+      if (dist < nearestDist) { nearestDist = dist; nearest = i; }
+    });
+    setActive(nearest);
+    setVisibleSlides();
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) {
+      e.preventDefault();
+      goToSlide(activeIndex + 1);
+    }
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) {
+      e.preventDefault();
+      goToSlide(activeIndex - 1);
+    }
+    if (e.key === 'Home') goToSlide(0);
+    if (e.key === 'End') goToSlide(slides.length - 1);
+  });
+
+  deck.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  deck.addEventListener('touchend', (e) => {
+    if (touchStartY == null) return;
+    const delta = touchStartY - e.changedTouches[0].clientY;
+    if (Math.abs(delta) > 60) {
+      if (delta > 0) goToSlide(activeIndex + 1);
+      else goToSlide(activeIndex - 1);
+    }
+    touchStartY = null;
+  }, { passive: true });
+
+  let hintTimer = setTimeout(() => hints.classList.add('faded'), 5000);
+  ['mousemove', 'keydown', 'touchstart', 'click', 'scroll'].forEach(evt => {
+    window.addEventListener(evt, () => {
+      hints.classList.remove('faded');
+      clearTimeout(hintTimer);
+      hintTimer = setTimeout(() => hints.classList.add('faded'), 3000);
+    }, { passive: true });
+  });
+
+  deck.addEventListener('scroll', () => requestAnimationFrame(updateActiveFromScroll), { passive: true });
+
+  setActive(0);
+  setVisibleSlides();
 </script>
 </body>
 </html>

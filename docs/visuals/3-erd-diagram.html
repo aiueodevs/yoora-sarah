@@ -3,270 +3,1015 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yoora Sarah — Entity Relationship Diagram (ERD)</title>
+<title>Yoora Sarah -- Database ERD</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Fragment+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
+
 <style>
-  /* ============ THEME ============ */
+  /* ------------------------------------------------------------------ */
+  /*  CSS CUSTOM PROPERTIES                                             */
+  /* ------------------------------------------------------------------ */
   :root {
-    --font-body: 'Bricolage Grotesque', system-ui, sans-serif;
-    --font-mono: 'Fragment Mono', 'SF Mono', Consolas, monospace;
-
-    --bg: #fffdfa;
-    --surface: #ffffff;
-    --border: rgba(141, 115, 99, 0.16);
-    --text: #241915;
-    --text-dim: #8a6c5f;
-
-    --primary: #8a6c5f;
-    --primary-dim: rgba(138, 108, 95, 0.08);
+    --bg:            #f7ece6;
+    --bg-panel:      #fff8f4;
+    --bg-panel-alt:  #f0e0d6;
+    --surface:       #ffffff;
+    --text:          #241915;
+    --text-dim:      #8a6c5f;
+    --accent:        #c8a997;
+    --accent-strong: #8a6c5f;
+    --border:        rgba(138,108,95,.18);
+    --dot-color:     rgba(138,108,95,.10);
+    --shadow-sm:     0 1px 3px rgba(36,25,21,.06);
+    --shadow-md:     0 4px 16px rgba(36,25,21,.08);
+    --shadow-lg:     0 8px 32px rgba(36,25,21,.10);
+    --radius:        10px;
+    --radius-sm:     6px;
+    --font-sans:     'Bricolage Grotesque', system-ui, sans-serif;
+    --font-mono:     'Fragment Mono', 'Fira Code', monospace;
+    --transition:    .28s cubic-bezier(.4,0,.2,1);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #1c1411;
-      --surface: #241915;
-      --border: rgba(255, 255, 255, 0.08);
-      --text: #fdfaf7;
-      --text-dim: #d1b5a5;
-
-      --primary: #c8a997;
-      --primary-dim: rgba(200, 169, 151, 0.14);
+      --bg:            #1a120e;
+      --bg-panel:      #241915;
+      --bg-panel-alt:  #2e1f19;
+      --surface:       #2e1f19;
+      --text:          #f7ece6;
+      --text-dim:      #c8a997;
+      --accent:        #c8a997;
+      --accent-strong: #dfc4b5;
+      --border:        rgba(200,169,151,.14);
+      --dot-color:     rgba(200,169,151,.07);
+      --shadow-sm:     0 1px 3px rgba(0,0,0,.20);
+      --shadow-md:     0 4px 16px rgba(0,0,0,.28);
+      --shadow-lg:     0 8px 32px rgba(0,0,0,.36);
     }
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  /* ------------------------------------------------------------------ */
+  /*  REDUCED MOTION                                                    */
+  /* ------------------------------------------------------------------ */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 
-  body {
-    background-color: var(--bg);
-    background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
-    background-size: 24px 24px;
-    color: var(--text);
-    font-family: var(--font-body);
-    padding: 0;
-    margin: 0;
-    height: 100vh;
+  /* ------------------------------------------------------------------ */
+  /*  RESET & BASE                                                      */
+  /* ------------------------------------------------------------------ */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
     width: 100vw;
-    display: flex;
-    flex-direction: column;
+    height: 100vh;
     overflow: hidden;
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
   }
 
+  /* Dot grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  LAYOUT                                                            */
+  /* ------------------------------------------------------------------ */
+  .app {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  HEADER                                                            */
+  /* ------------------------------------------------------------------ */
   .header {
-    padding: 24px 32px 16px;
-    flex-shrink: 0;
-    z-index: 10;
-    background: linear-gradient(180deg, var(--bg) 60%, transparent);
-  }
-
-  .container {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    flex: 1;
     display: flex;
-    flex-direction: column;
-  }
-
-  h1 { font-size: 32px; font-weight: 700; letter-spacing: -1px; margin-bottom: 4px; }
-  .subtitle { color: var(--text-dim); font-family: var(--font-mono); font-size: 11px; margin-bottom: 0; }
-
-  .diagram-shell {
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-  }
-
-  .mermaid-wrap {
-    position: relative;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    padding: 0;
-    overflow: hidden;
-    margin-bottom: 0;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    gap: 12px;
+    animation: fadeSlideDown .5s var(--transition) both;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+    flex-shrink: 0;
+    letter-spacing: -.5px;
+  }
+
+  .header-title {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -.2px;
+    white-space: nowrap;
+  }
+
+  .header-title span {
+    color: var(--text-dim);
+    font-weight: 400;
+    margin-left: 6px;
+    font-size: 13px;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  TOOLBAR BUTTONS                                                   */
+  /* ------------------------------------------------------------------ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 32px;
+    min-width: 32px;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all var(--transition);
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  .btn:hover {
+    border-color: var(--accent);
+    background: var(--bg-panel-alt);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn:active {
+    transform: scale(.96);
+  }
+
+  .btn svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .btn-icon { padding: 0; }
+
+  .btn-group {
+    display: flex;
+    gap: 0;
+  }
+
+  .btn-group .btn {
+    border-radius: 0;
+    margin-left: -1px;
+  }
+
+  .btn-group .btn:first-child {
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+    margin-left: 0;
+  }
+
+  .btn-group .btn:last-child {
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+
+  .zoom-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    min-width: 42px;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .separator {
+    width: 1px;
+    height: 20px;
+    background: var(--border);
+    margin: 0 4px;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  DIAGRAM CANVAS                                                    */
+  /* ------------------------------------------------------------------ */
+  .canvas-wrap {
     flex: 1;
+    position: relative;
+    overflow: hidden;
     cursor: grab;
+    animation: fadeIn .6s .15s var(--transition) both;
   }
-  .mermaid-wrap.is-panning { cursor: grabbing; user-select: none; }
 
-  .zoom-controls {
-    position: absolute; top: 24px; right: 32px; display: flex; gap: 2px; z-index: 20;
-    background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 2px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  .canvas-wrap:active { cursor: grabbing; }
+
+  .canvas-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    will-change: transform;
   }
-  .zoom-controls button {
-    width: 28px; height: 28px; border: none; background: transparent; color: var(--text-dim);
-    font-family: var(--font-mono); font-size: 14px; cursor: pointer; border-radius: 4px;
+
+  .canvas-inner svg {
+    display: block;
   }
-  .zoom-controls button:hover { background: var(--border); color: var(--text); }
 
-  .mermaid-viewport { position: relative; overflow: hidden; width: 100%; height: 100%; min-height: 0; flex: 1; }
-  .mermaid-canvas { position: absolute; top: 0; left: 0; }
-  .zoom-label { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); padding: 0 6px; white-space: nowrap; line-height: 28px;}
+  /* Mermaid overrides */
+  .canvas-inner .entityBox   { rx: 6; ry: 6; }
+  .canvas-inner text         { font-family: var(--font-mono) !important; }
+  .canvas-inner .er          { stroke: var(--accent-strong) !important; }
 
-  /* Mermaid ERD overrides */
-  .mermaid .entityBox { fill: var(--surface) !important; stroke: var(--primary) !important; stroke-width: 2px !important; }
-  .mermaid .attributeBoxOdd { fill: var(--bg) !important; }
-  .mermaid .attributeBoxEven { fill: var(--surface) !important; }
-  .mermaid text { fill: var(--text) !important; font-family: var(--font-mono) !important; }
-  .mermaid .relationshipLine { stroke: var(--text-dim) !important; stroke-width: 2px !important; }
+  /* ------------------------------------------------------------------ */
+  /*  BOTTOM PANEL                                                      */
+  /* ------------------------------------------------------------------ */
+  .bottom-panel {
+    flex-shrink: 0;
+    border-top: 1px solid var(--border);
+    background: var(--bg-panel);
+    animation: fadeSlideUp .5s .25s var(--transition) both;
+  }
+
+  .stats-bar {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    overflow-x: auto;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 20px;
+    border-right: 1px solid var(--border);
+    min-width: max-content;
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+  }
+
+  .stat-value {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -.2px;
+  }
+
+  .stat-value code {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    background: var(--bg-panel-alt);
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin: 0 1px;
+  }
+
+  .callout-bar {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 20px;
+    border-top: 1px solid var(--border);
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+  }
+
+  .callout-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    stroke: var(--accent-strong);
+    fill: none;
+    stroke-width: 2;
+  }
+
+  .callout-bar strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  MINIMAP                                                           */
+  /* ------------------------------------------------------------------ */
+  .minimap {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 160px;
+    height: 100px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    opacity: .85;
+    transition: opacity var(--transition);
+    z-index: 10;
+    animation: fadeIn .5s .4s var(--transition) both;
+  }
+
+  .minimap:hover { opacity: 1; }
+
+  .minimap-content {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .minimap-content svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .minimap-viewport {
+    position: absolute;
+    border: 1.5px solid var(--accent-strong);
+    background: rgba(200,169,151,.1);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  ANIMATIONS                                                        */
+  /* ------------------------------------------------------------------ */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  RESPONSIVE                                                        */
+  /* ------------------------------------------------------------------ */
+  @media (max-width: 768px) {
+    .header { padding: 10px 14px; }
+    .header-title span { display: none; }
+    .stat-item { padding: 8px 12px; }
+    .callout-bar { padding: 8px 14px; font-size: 10.5px; }
+    .minimap { width: 120px; height: 75px; }
+    .hide-mobile { display: none !important; }
+  }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="header">
-    <h1>Database Schema (ERD)</h1>
-    <p class="subtitle">Core Architecture for the AI-Operated Enterprise</p>
-  </div>
+<div class="app">
 
-  <section class="diagram-shell">
-    <div class="mermaid-wrap">
-      <div class="zoom-controls">
-        <button type="button" data-action="zoom-in" title="Zoom in">+</button>
-        <button type="button" data-action="zoom-out" title="Zoom out">&minus;</button>
-        <button type="button" data-action="zoom-fit" title="Smart fit">&#8634;</button>
-        <button type="button" data-action="zoom-one" title="1:1 zoom">1:1</button>
-        <span class="zoom-label">Loading...</span>
-      </div>
-      <div class="mermaid-viewport">
-        <div class="mermaid mermaid-canvas"></div>
+  <!-- ============================================================== -->
+  <!--  HEADER                                                         -->
+  <!-- ============================================================== -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">YS</div>
+      <div class="header-title">
+        Entity Relationship Diagram
+        <span>Yoora Sarah Database Schema</span>
       </div>
     </div>
-    <script type="text/plain" class="diagram-source">
-      erDiagram
-        USERS {
-            uuid id PK
-            string email UK
-            string password_hash
-            uuid role_id FK
-            datetime created_at
-        }
 
-        CUSTOMER_PROFILES {
-            uuid id PK
-            uuid user_id FK
-            int height
-            int weight
-            json preferences
-        }
+    <div class="header-right">
+      <div class="btn-group">
+        <button class="btn btn-icon" id="zoom-out" title="Zoom Out (-)">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <span class="zoom-label" id="zoom-label">100%</span>
+        <button class="btn btn-icon" id="zoom-in" title="Zoom In (+)">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+      </div>
 
-        CATEGORIES {
-            uuid id PK
-            string slug UK
-            string name
-        }
+      <div class="separator"></div>
 
-        PRODUCTS {
-            uuid id PK
-            string slug UK
-            string name
-            uuid category_id FK
-            numeric price
-            string stock_state
-            string image
-        }
+      <button class="btn" id="fit-btn" title="Fit to View">
+        <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+        <span class="hide-mobile">Fit</span>
+      </button>
 
-        PRODUCT_VARIANTS {
-            uuid id PK
-            uuid product_id FK
-            string sku UK
-            string color
-            string size
-            int stock
-        }
+      <button class="btn" id="reset-btn" title="Reset to 1:1">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
+        <span class="hide-mobile">1:1</span>
+      </button>
 
-        ORDERS {
-            uuid id PK
-            uuid customer_id FK
-            string status
-            numeric total
-            datetime created_at
-        }
+      <div class="separator hide-mobile"></div>
 
-        ORDER_ITEMS {
-            uuid id PK
-            uuid order_id FK
-            uuid variant_id FK
-            int quantity
-            numeric unit_price
-        }
+      <button class="btn hide-mobile" id="expand-btn" title="Open in New Tab">
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        <span>New Tab</span>
+      </button>
+    </div>
+  </header>
 
-        PRODUCTION_JOBS {
-            uuid id PK
-            uuid order_id FK
-            string status
-            uuid assigned_to FK
-        }
+  <!-- ============================================================== -->
+  <!--  DIAGRAM CANVAS                                                 -->
+  <!-- ============================================================== -->
+  <div class="canvas-wrap" id="canvas-wrap">
+    <div class="canvas-inner" id="canvas-inner">
+      <div id="mermaid-target"></div>
+    </div>
 
-        INVENTORY_LOGS {
-            uuid id PK
-            uuid variant_id FK
-            int delta
-            string type
-            datetime created_at
-        }
+    <!-- Minimap -->
+    <div class="minimap" id="minimap">
+      <div class="minimap-content" id="minimap-content"></div>
+      <div class="minimap-viewport" id="minimap-viewport"></div>
+    </div>
+  </div>
 
-        AI_LOGS {
-            uuid id PK
-            uuid user_id FK
-            string type
-            json input
-            json output
-        }
+  <!-- ============================================================== -->
+  <!--  BOTTOM PANEL                                                   -->
+  <!-- ============================================================== -->
+  <div class="bottom-panel">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-label">Total Tables</span>
+        <span class="stat-value">16</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Total Relationships</span>
+        <span class="stat-value">15</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Core Domain</span>
+        <span class="stat-value"><code>Cart</code> &rarr; <code>Order</code> &rarr; <code>Production</code></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">AI Domain</span>
+        <span class="stat-value"><code>AI_LOGS</code> + <code>TELEMETRY_EVENTS</code></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Auth Domain</span>
+        <span class="stat-value"><code>USERS</code> + <code>ROLES</code></span>
+      </div>
+    </div>
 
-        USERS ||--o| CUSTOMER_PROFILES : "has"
-        USERS ||--o{ ORDERS : "places"
-        USERS ||--o{ AI_LOGS : "generates"
+    <div class="callout-bar">
+      <svg class="callout-icon" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="16" x2="12" y2="12"/>
+        <line x1="12" y1="8" x2="12.01" y2="8"/>
+      </svg>
+      <div>
+        <strong>Schema Design Notes</strong> &mdash;
+        Schema follows 3NF normalization with RLS (Row Level Security) enabled on all public tables.
+        Cart persistence uses a dual-mode pattern: database-first with in-memory fallback.
+      </div>
+    </div>
+  </div>
 
-        CATEGORIES ||--o{ PRODUCTS : "contains"
-        PRODUCTS ||--o{ PRODUCT_VARIANTS : "has"
-
-        ORDERS ||--o{ ORDER_ITEMS : "contains"
-        PRODUCT_VARIANTS ||--o{ ORDER_ITEMS : "included_in"
-
-        ORDERS ||--o| PRODUCTION_JOBS : "triggers"
-        PRODUCT_VARIANTS ||--o{ INVENTORY_LOGS : "tracks"
-    </script>
-  </section>
 </div>
 
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+<!-- ================================================================== -->
+<!--  MERMAID CDN                                                       -->
+<!-- ================================================================== -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 
-  const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+<script>
+(function () {
+  'use strict';
+
+  /* ---------------------------------------------------------------- */
+  /*  MERMAID CONFIG & RENDER                                          */
+  /* ---------------------------------------------------------------- */
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
   mermaid.initialize({
-    startOnLoad: false, theme: 'base',
-    themeVariables: {
-      fontFamily: "'Fragment Mono', monospace",
-      primaryColor: isDark ? '#241915' : '#ffffff',
-      primaryBorderColor: isDark ? '#c8a997' : '#8a6c5f',
-      primaryTextColor: isDark ? '#fdfaf7' : '#241915',
-      lineColor: isDark ? '#d1b5a5' : '#8a6c5f'
+    startOnLoad: false,
+    theme: 'base',
+    themeVariables: isDark ? {
+      primaryColor:      '#2e1f19',
+      primaryBorderColor:'#8a6c5f',
+      primaryTextColor:  '#f7ece6',
+      lineColor:         '#8a6c5f',
+      secondaryColor:    '#3a2820',
+      tertiaryColor:     '#241915',
+      background:        '#1a120e',
+      mainBkg:           '#2e1f19',
+      nodeBorder:        '#8a6c5f',
+      clusterBkg:        '#241915',
+      titleColor:        '#f7ece6',
+      edgeLabelBackground:'#241915',
+      attributeBackgroundColorOdd: '#2e1f19',
+      attributeBackgroundColorEven:'#3a2820',
+      fontSize: '13px'
+    } : {
+      primaryColor:      '#fff8f4',
+      primaryBorderColor:'#c8a997',
+      primaryTextColor:  '#241915',
+      lineColor:         '#8a6c5f',
+      secondaryColor:    '#f7ece6',
+      tertiaryColor:     '#f0e0d6',
+      background:        '#f7ece6',
+      mainBkg:           '#fff8f4',
+      nodeBorder:        '#c8a997',
+      clusterBkg:        '#f7ece6',
+      titleColor:        '#241915',
+      edgeLabelBackground:'#f7ece6',
+      attributeBackgroundColorOdd: '#fff8f4',
+      attributeBackgroundColorEven:'#f7ece6',
+      fontSize: '13px'
+    },
+    er: {
+      layoutDirection:  'TB',
+      entityPadding:    12,
+      useMaxWidth:      false,
+      diagramPadding:   40
+    },
+    fontFamily: "'Fragment Mono', 'Fira Code', monospace"
+  });
+
+  const erdDefinition = `erDiagram
+    USERS {
+        uuid id PK
+        string email UK
+        string password_hash
+        uuid role_id FK
+        datetime created_at
+    }
+
+    ROLES {
+        uuid id PK
+        string name UK
+    }
+
+    CUSTOMER_PROFILES {
+        uuid id PK
+        uuid user_id FK
+        int height
+        int weight
+        json preferences
+    }
+
+    CATEGORIES {
+        uuid id PK
+        string slug UK
+        string name
+        string hero_image
+        string eyebrow
+    }
+
+    PRODUCTS {
+        uuid id PK
+        string slug UK
+        string name
+        uuid category_id FK
+        numeric price
+        numeric compare_price
+        string image
+        string badge
+        boolean is_featured
+        string stock_state
+        string_array tags
+    }
+
+    PRODUCT_VARIANTS {
+        uuid id PK
+        uuid product_id FK
+        string sku UK
+        string color_name
+        string color_hex
+        string size_code
+        int stock
+        string_array image_urls
+    }
+
+    CUSTOMERS {
+        uuid id PK
+        string email UK
+        string name
+        string phone
+        string member_state
+    }
+
+    CUSTOMER_ADDRESSES {
+        uuid id PK
+        uuid customer_id FK
+        string label
+        string recipient_name
+        string address_line
+        string city
+        string province
+        boolean is_default
+    }
+
+    ORDERS {
+        uuid id PK
+        uuid customer_id FK
+        string order_number UK
+        string status
+        numeric total
+        datetime placed_at
+    }
+
+    ORDER_ITEMS {
+        uuid id PK
+        uuid order_id FK
+        uuid product_id FK
+        uuid variant_id FK
+        int quantity
+        numeric price
+    }
+
+    CARTS {
+        uuid id PK
+        uuid customer_id FK
+        string status
+        numeric shipping_cost
+        numeric service_fee
+    }
+
+    CART_ITEMS {
+        uuid id PK
+        uuid cart_id FK
+        uuid product_id FK
+        uuid variant_id FK
+        int quantity
+        numeric unit_price
+    }
+
+    PRODUCTION_JOBS {
+        uuid id PK
+        uuid order_id FK
+        string status
+        uuid assigned_to FK
+        datetime started_at
+        datetime finished_at
+    }
+
+    INVENTORY_LOGS {
+        uuid id PK
+        uuid variant_id FK
+        int delta
+        string reason
+        datetime created_at
+    }
+
+    AI_LOGS {
+        uuid id PK
+        uuid user_id FK
+        string type
+        json input
+        json output
+        int latency_ms
+    }
+
+    TELEMETRY_EVENTS {
+        uuid id PK
+        string event_name
+        json payload
+        datetime created_at
+    }
+
+    USERS ||--o| CUSTOMER_PROFILES : "has profile"
+    USERS ||--o{ ORDERS : "places"
+    USERS ||--o{ AI_LOGS : "generates"
+    USERS }o--|| ROLES : "assigned"
+
+    CATEGORIES ||--o{ PRODUCTS : "contains"
+    PRODUCTS ||--o{ PRODUCT_VARIANTS : "has variants"
+
+    CUSTOMERS ||--o{ CUSTOMER_ADDRESSES : "has addresses"
+    CUSTOMERS ||--o{ ORDERS : "places"
+    CUSTOMERS ||--o{ CARTS : "owns"
+
+    ORDERS ||--o{ ORDER_ITEMS : "contains"
+    PRODUCT_VARIANTS ||--o{ ORDER_ITEMS : "included in"
+    PRODUCTS ||--o{ ORDER_ITEMS : "referenced"
+
+    CARTS ||--o{ CART_ITEMS : "contains"
+    PRODUCTS ||--o{ CART_ITEMS : "added to"
+    PRODUCT_VARIANTS ||--o{ CART_ITEMS : "selected"
+
+    ORDERS ||--o| PRODUCTION_JOBS : "triggers"
+    PRODUCT_VARIANTS ||--o{ INVENTORY_LOGS : "tracked"
+`;
+
+  /* ---------------------------------------------------------------- */
+  /*  PAN / ZOOM STATE                                                 */
+  /* ---------------------------------------------------------------- */
+  const ZOOM_MIN   = 0.15;
+  const ZOOM_MAX   = 4;
+  const ZOOM_STEP  = 0.12;
+  let scale        = 1;
+  let panX         = 0;
+  let panY         = 0;
+  let dragging     = false;
+  let dragStartX   = 0;
+  let dragStartY   = 0;
+  let panStartX    = 0;
+  let panStartY    = 0;
+
+  const wrap   = document.getElementById('canvas-wrap');
+  const inner  = document.getElementById('canvas-inner');
+  const label  = document.getElementById('zoom-label');
+
+  function applyTransform() {
+    inner.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+    label.textContent = Math.round(scale * 100) + '%';
+    updateMinimap();
+  }
+
+  /* ---------------------------------------------------------------- */
+  /*  ZOOM FUNCTIONS                                                   */
+  /* ---------------------------------------------------------------- */
+  function zoomTo(newScale, cx, cy) {
+    const clamped = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, newScale));
+    if (cx !== undefined && cy !== undefined) {
+      panX = cx - (cx - panX) * (clamped / scale);
+      panY = cy - (cy - panY) * (clamped / scale);
+    }
+    scale = clamped;
+    applyTransform();
+  }
+
+  function fitToView() {
+    const svg = inner.querySelector('svg');
+    if (!svg) return;
+    const ww = wrap.clientWidth;
+    const wh = wrap.clientHeight;
+    const sw = svg.viewBox.baseVal.width  || svg.getBoundingClientRect().width  / scale;
+    const sh = svg.viewBox.baseVal.height || svg.getBoundingClientRect().height / scale;
+    const s  = Math.min(ww / sw, wh / sh) * 0.92;
+    scale = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, s));
+    panX  = (ww - sw * scale) / 2;
+    panY  = (wh - sh * scale) / 2;
+    applyTransform();
+  }
+
+  function resetZoom() {
+    scale = 1;
+    panX  = 24;
+    panY  = 24;
+    applyTransform();
+  }
+
+  /* ---------------------------------------------------------------- */
+  /*  MOUSE / TOUCH EVENTS                                             */
+  /* ---------------------------------------------------------------- */
+  wrap.addEventListener('mousedown', function (e) {
+    if (e.button !== 0) return;
+    dragging   = true;
+    dragStartX = e.clientX;
+    dragStartY = e.clientY;
+    panStartX  = panX;
+    panStartY  = panY;
+  });
+
+  window.addEventListener('mousemove', function (e) {
+    if (!dragging) return;
+    panX = panStartX + (e.clientX - dragStartX);
+    panY = panStartY + (e.clientY - dragStartY);
+    applyTransform();
+  });
+
+  window.addEventListener('mouseup', function () { dragging = false; });
+
+  wrap.addEventListener('dblclick', function () { fitToView(); });
+
+  wrap.addEventListener('wheel', function (e) {
+    e.preventDefault();
+    const rect = wrap.getBoundingClientRect();
+    const cx   = e.clientX - rect.left;
+    const cy   = e.clientY - rect.top;
+    const dir  = e.deltaY < 0 ? 1 : -1;
+    zoomTo(scale * (1 + dir * ZOOM_STEP), cx, cy);
+  }, { passive: false });
+
+  /* Touch: pinch-to-zoom + drag */
+  let lastTouchDist = 0;
+  let lastTouchMid  = { x: 0, y: 0 };
+
+  wrap.addEventListener('touchstart', function (e) {
+    if (e.touches.length === 1) {
+      dragging   = true;
+      dragStartX = e.touches[0].clientX;
+      dragStartY = e.touches[0].clientY;
+      panStartX  = panX;
+      panStartY  = panY;
+    } else if (e.touches.length === 2) {
+      dragging = false;
+      const dx = e.touches[0].clientX - e.touches[1].clientX;
+      const dy = e.touches[0].clientY - e.touches[1].clientY;
+      lastTouchDist = Math.hypot(dx, dy);
+      lastTouchMid  = {
+        x: (e.touches[0].clientX + e.touches[1].clientX) / 2,
+        y: (e.touches[0].clientY + e.touches[1].clientY) / 2
+      };
+    }
+  }, { passive: true });
+
+  wrap.addEventListener('touchmove', function (e) {
+    e.preventDefault();
+    if (e.touches.length === 1 && dragging) {
+      panX = panStartX + (e.touches[0].clientX - dragStartX);
+      panY = panStartY + (e.touches[0].clientY - dragStartY);
+      applyTransform();
+    } else if (e.touches.length === 2) {
+      const dx   = e.touches[0].clientX - e.touches[1].clientX;
+      const dy   = e.touches[0].clientY - e.touches[1].clientY;
+      const dist = Math.hypot(dx, dy);
+      const mid  = {
+        x: (e.touches[0].clientX + e.touches[1].clientX) / 2,
+        y: (e.touches[0].clientY + e.touches[1].clientY) / 2
+      };
+      const rect = wrap.getBoundingClientRect();
+      const cx   = mid.x - rect.left;
+      const cy   = mid.y - rect.top;
+      zoomTo(scale * (dist / lastTouchDist), cx, cy);
+      panX += mid.x - lastTouchMid.x;
+      panY += mid.y - lastTouchMid.y;
+      lastTouchDist = dist;
+      lastTouchMid  = mid;
+      applyTransform();
+    }
+  }, { passive: false });
+
+  wrap.addEventListener('touchend', function () { dragging = false; }, { passive: true });
+
+  /* ---------------------------------------------------------------- */
+  /*  TOOLBAR BUTTONS                                                  */
+  /* ---------------------------------------------------------------- */
+  document.getElementById('zoom-in').addEventListener('click', function () {
+    const rect = wrap.getBoundingClientRect();
+    zoomTo(scale * (1 + ZOOM_STEP), rect.width / 2, rect.height / 2);
+  });
+
+  document.getElementById('zoom-out').addEventListener('click', function () {
+    const rect = wrap.getBoundingClientRect();
+    zoomTo(scale * (1 - ZOOM_STEP), rect.width / 2, rect.height / 2);
+  });
+
+  document.getElementById('fit-btn').addEventListener('click', fitToView);
+  document.getElementById('reset-btn').addEventListener('click', resetZoom);
+
+  document.getElementById('expand-btn').addEventListener('click', function () {
+    const svg = inner.querySelector('svg');
+    if (!svg) return;
+    const blob = new Blob([svg.outerHTML], { type: 'image/svg+xml;charset=utf-8' });
+    const url  = URL.createObjectURL(blob);
+    window.open(url, '_blank');
+  });
+
+  /* Keyboard shortcuts */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === '=' || e.key === '+') {
+      e.preventDefault();
+      document.getElementById('zoom-in').click();
+    } else if (e.key === '-') {
+      e.preventDefault();
+      document.getElementById('zoom-out').click();
+    } else if (e.key === '0') {
+      e.preventDefault();
+      fitToView();
+    } else if (e.key === '1') {
+      e.preventDefault();
+      resetZoom();
     }
   });
 
-  async function render() {
-    const canvas = document.querySelector('.mermaid-canvas');
-    const source = document.querySelector('.diagram-source');
-    const label = document.querySelector('.zoom-label');
-    try {
-      const { svg } = await mermaid.render('diagram-' + Date.now(), source.textContent.trim());
-      canvas.innerHTML = svg;
-      label.textContent = "100%";
-      const svgNode = canvas.querySelector('svg');
-      svgNode.style.maxWidth = '100%';
-      svgNode.style.height = 'auto';
-    } catch (e) { label.textContent = 'Error'; }
+  /* ---------------------------------------------------------------- */
+  /*  MINIMAP                                                          */
+  /* ---------------------------------------------------------------- */
+  const minimapEl      = document.getElementById('minimap');
+  const minimapContent = document.getElementById('minimap-content');
+  const minimapVP      = document.getElementById('minimap-viewport');
+
+  function updateMinimap() {
+    const svg = inner.querySelector('svg');
+    if (!svg) return;
+
+    const sw = svg.viewBox.baseVal.width  || svg.getBoundingClientRect().width  / scale;
+    const sh = svg.viewBox.baseVal.height || svg.getBoundingClientRect().height / scale;
+    const mw = minimapEl.clientWidth;
+    const mh = minimapEl.clientHeight;
+    const ms = Math.min(mw / sw, mh / sh) * 0.9;
+
+    const ww = wrap.clientWidth;
+    const wh = wrap.clientHeight;
+
+    const vpW = (ww / scale) * ms;
+    const vpH = (wh / scale) * ms;
+    const vpX = (-panX / scale) * ms + (mw - sw * ms) / 2;
+    const vpY = (-panY / scale) * ms + (mh - sh * ms) / 2;
+
+    minimapVP.style.width  = Math.max(4, vpW) + 'px';
+    minimapVP.style.height = Math.max(4, vpH) + 'px';
+    minimapVP.style.left   = vpX + 'px';
+    minimapVP.style.top    = vpY + 'px';
   }
-  render();
+
+  /* ---------------------------------------------------------------- */
+  /*  RENDER                                                           */
+  /* ---------------------------------------------------------------- */
+  async function renderDiagram() {
+    try {
+      const { svg } = await mermaid.render('erd-svg', erdDefinition);
+      document.getElementById('mermaid-target').innerHTML = svg;
+
+      /* Clone SVG into minimap */
+      const svgEl = inner.querySelector('svg');
+      if (svgEl) {
+        const clone = svgEl.cloneNode(true);
+        clone.removeAttribute('id');
+        clone.style.width  = '100%';
+        clone.style.height = '100%';
+        minimapContent.innerHTML = '';
+        minimapContent.appendChild(clone);
+      }
+
+      /* Fit to view after render */
+      requestAnimationFrame(function () {
+        fitToView();
+      });
+    } catch (err) {
+      console.error('Mermaid render error:', err);
+      document.getElementById('mermaid-target').innerHTML =
+        '<p style="padding:40px;color:var(--text-dim);font-family:var(--font-mono);font-size:13px;">' +
+        'ERD rendering failed. Check console for details.</p>';
+    }
+  }
+
+  renderDiagram();
+
+  /* Re-fit on window resize */
+  let resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      updateMinimap();
+    }, 150);
+  });
+
+})();
 </script>
+
 </body>
 </html>
